@@ -5534,7 +5534,7 @@ html:not(.lt-ie10) .not-animated {
 
 .rd-navbar-fixed .rd-nav-link {
 	display: block;
-	padding: 9px 56px 9px 18px;
+	padding: 9px 56px 9px 0px;
 }
 
 .rd-navbar-fixed li.opened > .rd-navbar-dropdown {
@@ -11044,7 +11044,7 @@ color: #2B4C6F !important;
   }
 
   .faq-right {
-	padding: 40px;
+	padding-top: 40px;
   }
   
   @media (min-width: 992px) {
