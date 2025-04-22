@@ -1747,7 +1747,7 @@ a[href*='tel'], a[href*='mailto'] {
 	top: 10%;
 	left: 50%;
 	transform: translateX(-50%);
-	font-size: 50px;
+	font-size: 30px;
 	user-select: none;
 	font-weight: 700;
 	font-family: "DeadStock", serif;
@@ -11041,6 +11041,10 @@ color: #2B4C6F !important;
   .faq-left, .faq-right {
 	flex: 1 1 100%;
 	padding: 0px;
+  }
+
+  .faq-right {
+	padding: 40px;
   }
   
   @media (min-width: 992px) {

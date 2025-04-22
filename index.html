@@ -14,6 +14,13 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+    @media (max-width: 500px) {
+      .hide-on-small {
+        display: none !important;
+      }
+    }
+</style>
+  
   </style>
 
   <body>
@@ -41,8 +48,7 @@
                   <div class="rd-navbar-brand">
                     <!--Brand-->
                     <a class="brand rd-nav-link" href="" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-                      <img class="brand-logo-dark" src="images/holidayportugal.png" alt="" width="112" height="19"/>
-                      <img class="brand-logo-light" src="images/logo-default-225x39.png" alt="" width="112" height="19"/>
+                      <img src="images/holidayportugal.png" alt="Apartment illustration" class="hide-on-small" style="width: 15%; max-width: 350px; height: auto; display: block; margin: 0 auto;" />
                       <span class="nunito-font">Apartamento Mar Azul</span>
                     </a>
                   </div>
@@ -69,7 +75,7 @@
         </div>
       </header>
       <!--Swiper 2-->
-      <section class="section swiper-container swiper-slider swiper-slider-1" data-autoplay="500000" data-swiper='{"simulateTouch":false,"speed":500}'>
+      <section class="section swiper-container swiper-slider swiper-slider-1" data-autoplay="5000" data-swiper='{"simulateTouch":false,"speed":500}'>
         <!-- Static Text Overlay -->
         <div class="swiper-static-overlay" style="background-color: rgba(0, 0, 0, 0.3);">
           <div class="container">
@@ -101,9 +107,9 @@
         </div>
       
         <!-- Swiper Controls -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev fa-arrow-left"></div>
-        <div class="swiper-button-next fa-arrow-right"></div>
+        <div class="swiper-pagination hide-on-small"></div>
+        <div class="swiper-button-prev fa-arrow-left hide-on-small"></div>
+        <div class="swiper-button-next fa-arrow-right hide-on-small"></div>
       </section>
 
       <!--Way to Travel-->
