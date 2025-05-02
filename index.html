@@ -532,5 +532,46 @@
     <script src="js/core.min.js" defer></script>
     <script src="js/script.js" defer></script>
     <a href="#booking-apartamento"" class="book-now-button">Book<br>Now</a>
+    <script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: 'smooth' // Native smooth scroll (but limited control)
+      });
+
+      // Optional: For more control, use a manual scroll animation:
+      // Custom animation with ease-out and slower duration
+      /*
+      let start = null;
+      const duration = 1000; // milliseconds
+      const easeOutQuad = t => t * (2 - t);
+
+      const scrollFrom = window.scrollY;
+      const scrollTo = target.offsetTop;
+
+      const step = timestamp => {
+        if (!start) start = timestamp;
+        const time = timestamp - start;
+        const progress = Math.min(time / duration, 1);
+        const eased = easeOutQuad(progress);
+
+        window.scrollTo(0, scrollFrom + (scrollTo - scrollFrom) * eased);
+
+        if (time < duration) {
+          window.requestAnimationFrame(step);
+        }
+      };
+
+      window.requestAnimationFrame(step);
+      */
+    });
+  });
+</script>
   </body>
 </html>
