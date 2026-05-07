@@ -1,0 +1,51 @@
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+
+# Node / Astro
+node_modules/
+dist/
+.astro/
+.output/
+.vercel/
+.netlify/
+.wrangler/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Claude Code session state — local-only, not for the repo
+.claude/
+
+# Build artifacts
+*.tsbuildinfo
+
+# Misc
+*.bak
+*.tmp
+
+# Heavy video sources — store compressed .mp4/.webm only.
+# Originals stay in cloud backup (Google Drive).
+*.mov
+*.MOV
+*.mkv
+*.avi
+
+# RAW photo formats — keep originals out of git.
+*.cr2
+*.nef
+*.arw
+*.dng
+*.raw

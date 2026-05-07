@@ -1,0 +1,18 @@
+/**
+ * Cloudflare Workers + Static Assets configuration.
+ * Deploys the Astro static build at project/site/dist as edge-cached static assets.
+ * No Worker code (no `main` field) — pure static hosting.
+ *
+ * Production branch is configured in the Cloudflare dashboard, not here.
+ * Environment variables (LODGIFY_API_KEY, etc.) must be set in the CF dashboard,
+ * never in this file (which is committed to git).
+ */
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "marazul-redesign",
+  "compatibility_date": "2026-05-01",
+  "assets": {
+    "directory": "./project/site/dist",
+    "not_found_handling": "404-page"
+  }
+}

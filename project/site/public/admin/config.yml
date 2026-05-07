@@ -1,0 +1,28 @@
+# Sveltia CMS configuration (skeleton).
+# Full collection schemas — pages, blog posts, FAQ entries, reviews, amenities — defined in Sprint 2/3.
+# Auth via GitHub OAuth (set up alongside Cloudflare Pages deployment).
+
+backend:
+  name: github
+  repo: MarAzulApartamento/MarAzulApartamento.github.io
+  branch: redesign/v2
+  base_url: # filled in once OAuth proxy is configured
+
+site_url: https://apartamentomarazul.com
+display_url: https://apartamentomarazul.com
+locale: en
+
+# i18n — content edited per locale, English default.
+i18n:
+  structure: multiple_folders
+  locales: [en, pt, de, nl, fr]
+  default_locale: en
+
+# Placeholder collection so Sveltia loads cleanly. Replaced in Sprint 2.
+collections:
+  - name: placeholder
+    label: Placeholder (replaced Sprint 2)
+    folder: src/content/placeholder
+    create: false
+    fields:
+      - { name: title, label: Title, widget: string }
