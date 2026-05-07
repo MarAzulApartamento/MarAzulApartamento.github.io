@@ -1,15 +1,67 @@
 ---
 import '../styles/global.css';
+import { SITE, PROPERTY } from '../lib/config';
 
 interface Props {
   title: string;
   description: string;
   lang?: string;
   canonical?: string;
+  ogImage?: string;
+  /** Preload a hero image for LCP optimisation. */
+  preloadImage?: string;
 }
 
-const { title, description, lang = 'en', canonical } = Astro.props;
+const {
+  title,
+  description,
+  lang = 'en',
+  canonical,
+  ogImage = '/photos/marazul-01.jpg',
+  preloadImage,
+} = Astro.props;
+
 const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toString();
+const ogImageURL = new URL(ogImage, Astro.site).toString();
+
+// VacationRental schema. More specific than LodgingBusiness; Google rewards it.
+const vacationRentalSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VacationRental',
+  name: SITE.name,
+  description,
+  url: SITE.url,
+  image: ogImageURL,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Rua Dom Luís da Silveira lote V 44 B',
+    addressLocality: PROPERTY.city,
+    addressRegion: PROPERTY.region,
+    postalCode: PROPERTY.postalCode,
+    addressCountry: PROPERTY.countryCode,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: PROPERTY.geo.latitude,
+    longitude: PROPERTY.geo.longitude,
+  },
+  numberOfRooms: PROPERTY.bedrooms,
+  occupancy: {
+    '@type': 'QuantitativeValue',
+    minValue: PROPERTY.capacity.min,
+    maxValue: PROPERTY.capacity.max,
+  },
+  petsAllowed: false,
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Air conditioning', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Free Wi-Fi', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Free parking', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Private terrace', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Crib available', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'High chair available', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Linens included', value: true },
+  ],
+};
 ---
 
 <!doctype html>
@@ -17,18 +69,31 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#1E5B73" />
 
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
+    <meta property="og:site_name" content={SITE.name} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_GB' : `${lang}_${lang.toUpperCase()}`} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    {preloadImage && (
+      <link rel="preload" as="image" href={preloadImage} type="image/jpeg" fetchpriority="high" />
+    )}
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,8 +101,31 @@ const canonicalURL = canonical ?? new URL(Astro.url.pathname, Astro.site).toStri
       href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json" set:html={JSON.stringify(vacationRentalSchema)} />
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <slot />
   </body>
 </html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    padding: 12px 20px;
+    background: var(--color-atlantic-blue);
+    color: var(--color-warm-white);
+    font: 600 14px/1 'Manrope', sans-serif;
+    text-decoration: none;
+    border-radius: 0 0 8px 0;
+    z-index: 100;
+  }
+  .skip-link:focus {
+    left: 0;
+    outline: 2px solid var(--color-atlantic-blue);
+    outline-offset: 2px;
+  }
+</style>

@@ -1,0 +1,228 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopBar from '../components/TopBar.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, WHATSAPP } from '../lib/config';
+import { fetchPriceData } from '../lib/lodgify';
+
+const price = await fetchPriceData();
+const whatsappHref = WHATSAPP.number
+  ? `https://wa.me/${WHATSAPP.number}?text=${encodeURIComponent(WHATSAPP.defaultMessage)}`
+  : '#whatsapp';
+
+// Lodgify Booking Engine widget. The widget script and target div below
+// are placeholders. Once Stefania authorizes embedding on
+// apartamentomarazul.com in the Lodgify dashboard, replace LODGIFY_WIDGET_ID
+// in .env with the real widget code; the script tag below will mount
+// automatically. See project/docs/questions-for-stefania.md item #2.
+const lodgifyWidgetId = import.meta.env.PUBLIC_LODGIFY_WIDGET_ID || '';
+---
+
+<BaseLayout
+  title={`Book direct · ${SITE.name}`}
+  description="Book your stay at Apartamento Mar Azul direct. Best rate available, every time. Free parking, late check-out, direct WhatsApp line with the host."
+  lang="en"
+>
+  <TopBar lang="en" />
+
+  <main id="main">
+    <div class="book-page">
+      <div class="container book-inner">
+        <a class="back" href="/">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Back to the apartment</span>
+        </a>
+        <p class="eyebrow">Booking</p>
+        <h1 class="h1">Pick your dates.</h1>
+        <p class="lede">
+          Best rate available, every time. Booking direct includes free parking,
+          late check-out when the calendar allows, and a direct WhatsApp line
+          with Stefania.
+        </p>
+
+        <div class="lodgify-shell">
+          <div class="lodgify-head">
+            <span class="eyebrow" style="margin: 0;">Powered by Lodgify</span>
+            <span class="muted small">Secure checkout · {WHATSAPP.responseTime}</span>
+          </div>
+          <div class="lodgify-body">
+            {lodgifyWidgetId ? (
+              <div id="lodgify-booking-widget" data-widget-id={lodgifyWidgetId}>
+                <p class="loading-msg">Loading availability and pricing...</p>
+              </div>
+            ) : (
+              <div class="lodgify-placeholder">
+                <p class="lodgify-placeholder-title">Booking widget will load here.</p>
+                <p class="muted">
+                  The Lodgify Booking Engine widget renders inline on this page once
+                  the embed is authorized for apartamentomarazul.com in the Lodgify
+                  dashboard. Until then, this is the visual shell.
+                </p>
+                <p class="muted small">
+                  To pre-test: set <code>PUBLIC_LODGIFY_WIDGET_ID</code> in your
+                  Cloudflare Pages environment variables.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div class="reassure">
+          <div class="reassure-card">
+            <h3 class="reassure-title">Best rate, every time</h3>
+            <p class="muted">No platform mark-ups. Direct pricing matches every other channel.</p>
+          </div>
+          <div class="reassure-card">
+            <h3 class="reassure-title">No platform fees</h3>
+            <p class="muted">Skip the booking-platform service fees that get added at checkout elsewhere.</p>
+          </div>
+          <div class="reassure-card">
+            <h3 class="reassure-title">Direct line with Stefania</h3>
+            <p class="muted">Questions before, during, or after your stay. {WHATSAPP.responseTime}.</p>
+          </div>
+        </div>
+
+        <div class="whatsapp-fallback">
+          <p class="muted">
+            Prefer to ask first?
+            <a class="btn btn-ghost" href={whatsappHref} target={WHATSAPP.number ? '_blank' : undefined} rel={WHATSAPP.number ? 'noopener noreferrer' : undefined}>
+              <span>Message us on WhatsApp</span>
+              <span class="micro">{WHATSAPP.responseTime}</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  // Mount Lodgify widget if widget id is present.
+  // The exact embed snippet differs per Lodgify plan/widget type;
+  // adjust this block to whatever the dashboard provides.
+  const target = document.getElementById('lodgify-booking-widget');
+  if (target) {
+    const widgetId = target.getAttribute('data-widget-id');
+    if (widgetId) {
+      // PLACEHOLDER: replace with the exact script the Lodgify dashboard
+      // generates for the Booking Engine widget. The pattern is usually
+      // an external script + auto-mount targeting [data-widget-id].
+      console.info('[lodgify] Widget id present:', widgetId, '— add real embed script here.');
+    }
+  }
+</script>
+
+<style>
+  .book-page {
+    background: var(--color-warm-white);
+    min-height: calc(100vh - 200px);
+    padding: 48px 0 96px;
+    animation: bookin 220ms ease-out;
+  }
+  @keyframes bookin { from { opacity: 0; } to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .book-page { animation: none; } }
+
+  .book-inner {
+    max-width: 1080px;
+  }
+
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 0;
+    color: var(--color-atlantic-blue);
+    font: 500 14px/1 var(--font-body);
+    text-decoration: none;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+  .back:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  .h1 {
+    font: 700 clamp(36px, 4.6vw, 56px)/1.05 var(--font-display);
+    letter-spacing: -0.015em;
+    color: var(--color-deep-navy);
+    margin: 8px 0 16px;
+    text-wrap: balance;
+    max-width: 22ch;
+  }
+
+  .lodgify-shell {
+    background: var(--color-warm-white);
+    border: 1px solid #E5DED1;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 32px;
+    box-shadow: 0 4px 14px rgba(29, 38, 48, 0.08);
+  }
+  .lodgify-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 22px;
+    background: #F1EEE7;
+    border-bottom: 1px solid #E5DED1;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .lodgify-body {
+    padding: 32px 22px;
+    min-height: 480px;
+  }
+  .lodgify-placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 32px 0;
+  }
+  .lodgify-placeholder-title {
+    font: 700 22px/1.2 var(--font-display);
+    color: var(--color-deep-navy);
+    margin: 0;
+  }
+  .lodgify-placeholder code {
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 0.9em;
+    background: #F1EEE7;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .loading-msg {
+    color: var(--color-slate-grey);
+    text-align: center;
+    padding: 80px 0;
+  }
+
+  .reassure {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .reassure-card {
+    padding: 24px;
+    background: #F1EEE7;
+    border-radius: 14px;
+  }
+  .reassure-title {
+    font: 700 18px/1.3 var(--font-display);
+    color: var(--color-deep-navy);
+    margin: 0 0 8px;
+  }
+  @media (max-width: 720px) {
+    .reassure { grid-template-columns: 1fr; }
+  }
+
+  .whatsapp-fallback {
+    margin-top: 32px;
+    padding: 24px 0;
+    border-top: 1px solid #E5DED1;
+  }
+</style>

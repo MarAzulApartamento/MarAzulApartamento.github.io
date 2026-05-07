@@ -1,0 +1,46 @@
+---
+import { WHATSAPP } from '../lib/config';
+
+const whatsappHref = WHATSAPP.number
+  ? `https://wa.me/${WHATSAPP.number}?text=${encodeURIComponent(WHATSAPP.defaultMessage)}`
+  : '#whatsapp';
+---
+
+<section class="final" id="whatsapp">
+  <div class="container final-inner">
+    <div>
+      <p class="eyebrow eyebrow-light">Direct booking</p>
+      <h2 class="h2 h2-light">Ready when you are.</h2>
+    </div>
+    <div class="final-cta">
+      <a class="btn btn-primary-light" href="#availability" data-scroll>Check availability</a>
+      <a class="btn btn-ghost-light" href={whatsappHref} target={WHATSAPP.number ? '_blank' : undefined} rel={WHATSAPP.number ? 'noopener noreferrer' : undefined}>
+        <span>WhatsApp Stefy</span>
+        <span class="micro">{WHATSAPP.responseTime}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .final {
+    background: var(--color-atlantic-blue);
+    padding: 96px 0;
+  }
+  .final-inner {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .final-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  @media (max-width: 900px) {
+    .final-inner { grid-template-columns: 1fr; gap: 32px; }
+    .final { padding: 64px 0; }
+  }
+</style>

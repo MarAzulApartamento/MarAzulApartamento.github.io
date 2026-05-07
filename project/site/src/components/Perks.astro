@@ -1,0 +1,60 @@
+---
+const perks: string[] = [
+  'Free parking.',
+  'Late check-out and early check-in when the calendar allows.',
+  'Direct WhatsApp line with Stefania, before and during your stay.',
+  'Best rate available, every time.',
+  "A short walking guide of the host's favourite tasca, padaria, and quiet beach.",
+];
+---
+
+<section class="section">
+  <div class="container perks">
+    <div>
+      <p class="eyebrow">Direct booking</p>
+      <h2 class="h2">Booking direct gets you a few extra things.</h2>
+      <p class="lede">Same dates, same calendar, same apartment. A few small additions.</p>
+    </div>
+    <ul class="perks-list">
+      {perks.map((p) => (
+        <li>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>{p}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .perks {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .perks-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .perks-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font: 400 17px/1.5 var(--font-body);
+    color: var(--color-deep-navy);
+    border-bottom: 1px solid #E5DED1;
+    padding-bottom: 14px;
+  }
+  .perks-list li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .perks-list svg { flex: 0 0 auto; margin-top: 4px; color: var(--color-atlantic-blue); }
+  @media (max-width: 900px) {
+    .perks { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>

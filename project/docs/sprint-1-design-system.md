@@ -324,7 +324,7 @@ Section sequence (use exactly this order):
 4. At-a-glance facts grid: 9-12 small icons + labels for
    capacity, bedrooms, terrace, A/C, Wi-Fi, parking, linens,
    crib, high chair, walking distance, not pet-friendly.
-5. About section: two columns. Photo of host on one side,
+5. About section: two columns. Photo of host on one side ,
    60-80 words of place-driven copy on the other. Asymmetric
    layout, no centered-everything.
 6. Photo gallery: 12 photos in an editorial asymmetric mosaic

@@ -1,0 +1,67 @@
+---
+const facts: Array<[string, string, boolean?]> = [
+  ['Sleeps', '2 to 4'],
+  ['Bedrooms', '1 plus sofa bed'],
+  ['Terrace', 'South-facing'],
+  ['Air conditioning', 'In the bedroom'],
+  ['Wi-Fi', 'Fibre, 200 Mbps'],
+  ['Parking', 'Free, reserved'],
+  ['Linens & towels', 'Provided'],
+  ['Crib & high chair', 'On request'],
+  ['Walking distance', 'Centre & beaches'],
+  ['Pets', 'Not allowed', true],
+];
+---
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">At a glance</p>
+    <h2 class="h2">What's in the apartment, plainly.</h2>
+    <div class="facts">
+      {facts.map(([label, value, neg]) => (
+        <div class={`fact${neg ? ' is-neg' : ''}`}>
+          <span class="fact-label">{label}</span>
+          <span class="fact-value">{value}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: #E5DED1;
+    border: 1px solid #E5DED1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 24px;
+  }
+  .fact {
+    background: var(--color-warm-white);
+    padding: 18px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .fact-label {
+    font: 600 12px/1 var(--font-body);
+    letter-spacing: 0.06em;
+    color: var(--color-slate-grey);
+  }
+  .fact-value {
+    font: 700 17px/1.2 var(--font-display);
+    letter-spacing: -0.01em;
+    color: var(--color-deep-navy);
+  }
+  .fact.is-neg .fact-value {
+    color: var(--color-slate-grey);
+    font-weight: 400;
+    font-style: italic;
+  }
+  @media (max-width: 900px) {
+    .facts { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

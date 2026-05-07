@@ -1,0 +1,38 @@
+---
+import { WHATSAPP } from '../lib/config';
+---
+
+<section class="section section-tint">
+  <div class="container about">
+    <div class="about-photo" aria-hidden="true"></div>
+    <div class="about-text">
+      <p class="eyebrow">About</p>
+      <h2 class="h2">Walking distance from the centre and the beaches.</h2>
+      <p>
+        The apartment sits on a quiet residential street.
+        Walk down to the city centre for breakfast, cut through the centre for a dive
+        in the sea, and follow the coast path to Ponta da Piedade before the morning
+        crowds arrive.
+      </p>
+      <p class="muted">Hosted by Stefania. {WHATSAPP.responseTime}.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .about-photo {
+    aspect-ratio: 4/5;
+    background: url('/photos/owner_picture.jpg') center/cover;
+    border-radius: 14px;
+  }
+  @media (max-width: 900px) {
+    .about { grid-template-columns: 1fr; gap: 24px; }
+    .about-photo { aspect-ratio: 5/4; }
+  }
+</style>

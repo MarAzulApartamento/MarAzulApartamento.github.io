@@ -1,0 +1,83 @@
+---
+import { getCollection, render } from 'astro:content';
+
+const all = await getCollection('faqs', ({ data }) => data.language === 'en');
+const items = all.sort((a, b) => a.data.order - b.data.order);
+
+// Pre-render each entry's body markdown
+const rendered = await Promise.all(
+  items.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  })
+);
+---
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="h2">A few things people ask.</h2>
+    <div class="faq" data-faq>
+      {rendered.map(({ entry, Content }, i) => (
+        <details class="faq-item" open={i < 2}>
+          <summary class="faq-row">
+            <span class="faq-q">{entry.data.question}</span>
+            <span class="faq-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-panel">
+            <div class="faq-a">
+              <Content />
+            </div>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    margin-top: 24px;
+    max-width: 760px;
+  }
+  .faq-item {
+    border-bottom: 1px solid #E5DED1;
+  }
+  .faq-item:first-child { border-top: 1px solid #E5DED1; }
+  .faq-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-row::-webkit-details-marker { display: none; }
+  .faq-q {
+    font: 600 17px/1.4 var(--font-body);
+    color: var(--color-deep-navy);
+  }
+  .faq-chev {
+    width: 12px;
+    height: 12px;
+    border-right: 1.5px solid var(--color-deep-navy);
+    border-bottom: 1.5px solid var(--color-deep-navy);
+    transform: rotate(45deg);
+    transition: transform 220ms ease-out;
+    flex-shrink: 0;
+  }
+  .faq-item[open] .faq-chev { transform: rotate(225deg); }
+  .faq-panel {
+    padding-bottom: 18px;
+  }
+  .faq-a {
+    font: 400 16px/1.6 var(--font-body);
+    color: var(--color-slate-grey);
+    max-width: 60ch;
+  }
+  .faq-a :global(p) { margin: 0; max-width: none; color: var(--color-slate-grey); }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-chev { transition: none; }
+  }
+</style>

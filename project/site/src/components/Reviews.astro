@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+
+// Pull from content collection. Owner adds via Sveltia CMS.
+// Until real reviews populate the collection, the 3 placeholder entries render.
+const all = await getCollection('reviews', ({ data }) => data.language === 'en');
+const featured = all.filter((r) => r.data.featured);
+const items = (featured.length > 0 ? featured : all).slice(0, 5);
+
+const sourceBadgeColor: Record<string, string> = {
+  Google: '#4285F4',
+  Airbnb: '#FF5A5F',
+  'Booking.com': '#003580',
+  Direct: 'var(--color-atlantic-blue)',
+};
+---
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Reviews</p>
+    <h2 class="h2">What guests say.</h2>
+    <div class="reviews">
+      {items.map((r) => (
+        <article class="review">
+          <div class="review-head">
+            <span class="review-name">{r.data.name}</span>
+            <span class="review-date">{r.data.date}</span>
+          </div>
+          <div class="review-meta">
+            <div class="stars" aria-hidden="true">
+              {Array.from({ length: r.data.rating }).map(() => (
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                  <path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z" />
+                </svg>
+              ))}
+            </div>
+            <span class="review-source" style={`color: ${sourceBadgeColor[r.data.source]};`}>
+              {r.data.source}
+            </span>
+          </div>
+          <p class="review-quote">{r.data.quote}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .review {
+    background: #F1EEE7;
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .review-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .review-name {
+    font: 600 14px/1 var(--font-body);
+    color: var(--color-deep-navy);
+  }
+  .review-date {
+    font: 400 13px/1 var(--font-body);
+    color: var(--color-slate-grey);
+  }
+  .review-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .stars {
+    display: inline-flex;
+    gap: 2px;
+    color: var(--color-sun-sand);
+  }
+  .review-source {
+    font: 600 11px/1 var(--font-body);
+    letter-spacing: 0.04em;
+  }
+  .review-quote {
+    font: italic 400 17px/1.5 var(--font-display);
+    color: var(--color-deep-navy);
+    margin: 6px 0 0;
+    max-width: none;
+  }
+  @media (max-width: 900px) {
+    .reviews { grid-template-columns: 1fr; }
+  }
+</style>

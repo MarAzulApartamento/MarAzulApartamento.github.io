@@ -1,0 +1,181 @@
+---
+import { LANGUAGE_LABELS, LOCALES, DEFAULT_LOCALE, SITE } from '../lib/config';
+
+interface Props {
+  /** Current locale code, used to highlight the active language. */
+  lang?: string;
+}
+
+const { lang = DEFAULT_LOCALE } = Astro.props;
+const currentLabel = LANGUAGE_LABELS[lang as keyof typeof LANGUAGE_LABELS] ?? LANGUAGE_LABELS[DEFAULT_LOCALE];
+---
+
+<header class="topbar" id="topbar" data-component="topbar">
+  <div class="topbar-inner">
+    <a class="logo" href="/" aria-label={SITE.name}>
+      <img src="/logo/logo-primary.svg" alt={SITE.name} width="220" height="56" />
+    </a>
+    <div class="lang-dd" data-lang-dd>
+      <button
+        class="lang-toggle"
+        type="button"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+        data-lang-toggle
+      >
+        <span data-lang-current>{currentLabel}</span>
+        <span class="lang-chev" aria-hidden="true"></span>
+      </button>
+      <ul class="lang-menu" role="listbox" data-lang-menu hidden>
+        {LOCALES.map((code) => (
+          <li role="option" aria-selected={code === lang}>
+            <a
+              class={`lang-opt${code === lang ? ' is-active' : ''}`}
+              href={code === DEFAULT_LOCALE ? '/' : `/${code}/`}
+              hreflang={code}
+            >
+              {LANGUAGE_LABELS[code]}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</header>
+
+<style>
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(248, 246, 241, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #E5DED1;
+  }
+  .topbar.is-scrolled {
+    box-shadow: 0 1px 3px rgba(29, 38, 48, 0.06);
+  }
+  .topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 48px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  .logo img {
+    height: 56px;
+    width: auto;
+    display: block;
+  }
+
+  .lang-dd { position: relative; }
+  .lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    background: transparent;
+    border: 1px solid #D6CFC0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font: 500 14px/1 'Manrope', sans-serif;
+    color: var(--color-deep-navy);
+    cursor: pointer;
+    transition: background 160ms ease-out, border-color 160ms ease-out;
+  }
+  .lang-toggle:hover { background: #F1EEE7; }
+  .lang-toggle[aria-expanded='true'] { background: #F1EEE7; border-color: var(--color-atlantic-blue); }
+
+  .lang-chev {
+    width: 7px;
+    height: 7px;
+    border-right: 1.5px solid var(--color-deep-navy);
+    border-bottom: 1.5px solid var(--color-deep-navy);
+    transform: rotate(45deg) translate(-2px, -1px);
+    transition: transform 160ms ease-out;
+  }
+  .lang-toggle[aria-expanded='true'] .lang-chev {
+    transform: rotate(225deg) translate(-1px, -2px);
+  }
+
+  .lang-menu {
+    list-style: none;
+    padding: 6px;
+    margin: 8px 0 0;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 180px;
+    background: var(--color-warm-white);
+    border: 1px solid #E5DED1;
+    border-radius: 10px;
+    box-shadow: 0 12px 32px rgba(29, 38, 48, 0.12);
+    z-index: 31;
+  }
+  .lang-menu[hidden] { display: none; }
+  .lang-menu li { margin: 0; }
+
+  .lang-opt {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    padding: 10px 12px;
+    font: 500 14px/1.2 'Manrope', sans-serif;
+    color: var(--color-deep-navy);
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .lang-opt:hover { background: #F1EEE7; }
+  .lang-opt.is-active { color: var(--color-atlantic-blue); font-weight: 600; }
+
+  @media (max-width: 720px) {
+    .topbar-inner { padding: 12px 16px; }
+    .logo img { height: 44px; }
+    .lang-toggle { padding: 10px 12px; font-size: 13px; }
+    .lang-menu { min-width: 160px; }
+  }
+</style>
+
+<script>
+  // Lightweight vanilla JS — no React payload shipped to the client.
+  const toggle = document.querySelector<HTMLButtonElement>('[data-lang-toggle]');
+  const menu = document.querySelector<HTMLUListElement>('[data-lang-menu]');
+  const dd = document.querySelector<HTMLDivElement>('[data-lang-dd]');
+  const topbar = document.querySelector<HTMLElement>('#topbar');
+
+  if (toggle && menu && dd) {
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      menu.hidden = open;
+    });
+
+    document.addEventListener('mousedown', (e) => {
+      if (!dd.contains(e.target as Node)) {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.hidden = true;
+        toggle.focus();
+      }
+    });
+  }
+
+  // Topbar shadow when scrolled past 8px.
+  if (topbar) {
+    const onScroll = () => topbar.classList.toggle('is-scrolled', window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+</script>

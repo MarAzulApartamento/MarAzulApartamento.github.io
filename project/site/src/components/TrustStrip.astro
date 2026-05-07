@@ -1,0 +1,87 @@
+---
+import { PROPERTY } from '../lib/config';
+
+interface Props {
+  reviewCount?: number;
+  rating?: number;
+  googleReviewUrl?: string;
+}
+
+const {
+  reviewCount = 5,
+  rating = 5.0,
+  googleReviewUrl = 'https://www.google.com/maps',
+} = Astro.props;
+---
+
+<section class="trust" aria-label="Trust signals">
+  <div class="trust-inner">
+    <a class="trust-item trust-link" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
+      <div class="stars" aria-hidden="true">
+        {Array.from({ length: 5 }).map(() => (
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z" />
+          </svg>
+        ))}
+      </div>
+      <span class="trust-label">{rating.toFixed(1)} from {reviewCount} Google reviews</span>
+    </a>
+    <span class="trust-divider" aria-hidden="true"></span>
+    <div class="trust-item">
+      <div class="host-photo" aria-hidden="true"></div>
+      <span class="trust-label">Open since {PROPERTY.openSince}</span>
+    </div>
+    <span class="trust-divider" aria-hidden="true"></span>
+    <div class="trust-item">
+      <span class="trust-label muted">Speaks PT · IT · EN · ES</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust {
+    background: var(--color-warm-white);
+    border-bottom: 1px solid #E5DED1;
+  }
+  .trust-inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 18px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .trust-link:hover .trust-label { text-decoration: underline; text-underline-offset: 3px; }
+  .trust-divider {
+    width: 1px;
+    height: 22px;
+    background: #E5DED1;
+  }
+  .stars {
+    display: inline-flex;
+    gap: 2px;
+    color: var(--color-sun-sand);
+  }
+  .trust-label {
+    font: 500 14px/1.2 var(--font-body);
+    color: var(--color-deep-navy);
+  }
+  .host-photo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: url('/photos/owner_picture.jpg') center/cover;
+  }
+  @media (max-width: 720px) {
+    .trust-divider { display: none; }
+    .trust-inner { padding: 16px; gap: 14px; }
+  }
+</style>

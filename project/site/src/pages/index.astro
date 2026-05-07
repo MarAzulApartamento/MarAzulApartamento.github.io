@@ -1,17 +1,48 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TopBar from '../components/TopBar.astro';
+import Hero from '../components/Hero.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import FactsGrid from '../components/FactsGrid.astro';
+import About from '../components/About.astro';
+import Gallery from '../components/Gallery.astro';
+import Perks from '../components/Perks.astro';
+import Location from '../components/Location.astro';
+import Reviews from '../components/Reviews.astro';
+import Availability from '../components/Availability.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import StickyCTA from '../components/StickyCTA.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../lib/config';
+import { fetchPriceData } from '../lib/lodgify';
+
+// Build-time fetch from Lodgify — falls back to €100/3-night if API key absent.
+const price = await fetchPriceData();
 ---
 
 <BaseLayout
-  title="Apartamento Mar Azul · Lagos, Algarve"
-  description="A private apartment in Lagos, Algarve. 2-4 guests, terrace, A/C, Wi-Fi, free parking. 5 min by car from Dona Ana Beach."
+  title={`${SITE.name} · A quiet apartment in Lagos for couples and small families`}
+  description={`A quiet apartment in Lagos, Algarve. Walking distance from the centre and the beaches. Sleeps 2 to 4. Private terrace, A/C, Wi-Fi, free parking. From €${price.min} per night.`}
   lang="en"
+  preloadImage="/photos/marazul-01.jpg"
 >
-  <main class="mx-auto max-w-3xl px-6 py-24">
-    <p class="text-sm uppercase tracking-widest text-(--color-slate-grey)">Sprint 0 · Scaffold</p>
-    <h1 class="mt-4 text-(length:--text-hero) font-bold">Apartamento Mar Azul</h1>
-    <p class="mt-6 text-lg text-(--color-slate-grey)">
-      The Astro scaffold is in place. Real content arrives in Sprint 1 (design system) and Sprint 2 (build).
-    </p>
+  <TopBar lang="en" />
+
+  <main id="main">
+    <Hero priceFrom={price.min} minStay={price.minStay} />
+    <TrustStrip reviewCount={5} rating={5.0} />
+    <FactsGrid />
+    <About />
+    <Gallery />
+    <Perks />
+    <Location />
+    <Reviews />
+    <Availability priceFrom={price.min} minStay={price.minStay} />
+    <FAQ />
+    <FinalCTA />
   </main>
+
+  <Footer />
+  <StickyCTA priceFrom={price.min} />
 </BaseLayout>

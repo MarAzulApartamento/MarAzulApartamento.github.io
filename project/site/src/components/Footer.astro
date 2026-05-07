@@ -1,0 +1,115 @@
+---
+import { SITE, PROPERTY, SOCIAL, LANGUAGE_LABELS, LOCALES, DEFAULT_LOCALE } from '../lib/config';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img class="footer-logo" src="/logo/logo-monocrome.svg" alt={SITE.name} width="200" height="48" />
+      <p class="muted small">{PROPERTY.address}</p>
+      <div class="footer-social">
+        <a href={SOCIAL.instagram} aria-label="Instagram" rel="noopener noreferrer" target="_blank">Instagram</a>
+        <span aria-hidden="true">·</span>
+        <a href={SOCIAL.facebook} aria-label="Facebook" rel="noopener noreferrer" target="_blank">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <p class="footer-h">Languages</p>
+        <ul class="footer-langs">
+          {LOCALES.map((code) => (
+            <li>
+              <a href={code === DEFAULT_LOCALE ? '/' : `/${code}/`} hreflang={code}>
+                {LANGUAGE_LABELS[code]}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">Legal</p>
+        <ul class="footer-legal">
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/cookies">Cookies</a></li>
+          <li><a href="/terms">Terms</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-h">© {year}</p>
+        <p class="muted small">{SITE.name}</p>
+        <p class="muted small">Hosted on Cloudflare. Booking by Lodgify.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #F1EEE7;
+    padding: 48px 0 32px;
+    border-top: 1px solid #E5DED1;
+  }
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 32px;
+  }
+  .footer-logo {
+    height: 48px;
+    width: auto;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .footer-h {
+    font: 600 13px/1 'Manrope', sans-serif;
+    letter-spacing: 0.06em;
+    color: var(--color-deep-navy);
+    margin: 0 0 10px;
+  }
+  .footer-langs,
+  .footer-legal {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .footer-langs a,
+  .footer-legal a,
+  .footer-social a {
+    color: var(--color-atlantic-blue);
+    text-decoration: none;
+    font: 500 14px/1.4 'Manrope', sans-serif;
+  }
+  .footer-langs a:hover,
+  .footer-legal a:hover,
+  .footer-social a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .footer-social {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--color-slate-grey);
+  }
+  .muted { color: var(--color-slate-grey); }
+  .small { font-size: 14px; line-height: 1.5; margin: 0; }
+
+  @media (max-width: 720px) {
+    .footer-inner,
+    .footer-cols {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+</style>

@@ -1,28 +1,116 @@
-# Sveltia CMS configuration (skeleton).
-# Full collection schemas — pages, blog posts, FAQ entries, reviews, amenities — defined in Sprint 2/3.
-# Auth via GitHub OAuth (set up alongside Cloudflare Pages deployment).
+# Sveltia CMS configuration for Apartamento Mar Azul.
+# This file drives the visual editor at /admin/.
+# Stefania uses the editor to manage owner-curated content (reviews, FAQs)
+# without touching code or git directly.
+#
+# Repo backend: GitHub. Sveltia commits to the redesign/v2 branch via
+# GitHub OAuth. Auth proxy URL is set up alongside Cloudflare Pages
+# deployment (Sprint 4).
 
 backend:
   name: github
   repo: MarAzulApartamento/MarAzulApartamento.github.io
   branch: redesign/v2
-  base_url: # filled in once OAuth proxy is configured
+  base_url: # Filled in once OAuth proxy is configured (Cloudflare Worker, Sprint 4).
 
 site_url: https://apartamentomarazul.com
 display_url: https://apartamentomarazul.com
 locale: en
 
+media_folder: public/photos
+public_folder: /photos
+
 # i18n — content edited per locale, English default.
 i18n:
-  structure: multiple_folders
+  structure: multiple_files
   locales: [en, pt, es, it, de, nl, fr]
   default_locale: en
 
-# Placeholder collection so Sveltia loads cleanly. Replaced in Sprint 2.
 collections:
-  - name: placeholder
-    label: Placeholder (replaced Sprint 2)
-    folder: src/content/placeholder
-    create: false
+  # ---------- Reviews ----------
+  - name: reviews
+    label: Reviews
+    label_singular: Review
+    folder: project/site/src/content/reviews
+    create: true
+    delete: true
+    slug: '{{slug}}'
+    summary: '{{name}} ({{source}}) · {{date}}'
+    sortable_fields: [date, source, rating]
+    view_filters:
+      - { label: Featured, field: featured, pattern: 'true' }
+      - { label: Google,   field: source,   pattern: 'Google' }
+      - { label: Airbnb,   field: source,   pattern: 'Airbnb' }
+      - { label: Booking,  field: source,   pattern: 'Booking.com' }
     fields:
-      - { name: title, label: Title, widget: string }
+      - { name: name,     label: First name,            widget: string,  required: true }
+      - { name: date,     label: Stay date,             widget: string,  hint: 'Month YYYY format, e.g. April 2026' }
+      - {
+          name: source,
+          label: Source platform,
+          widget: select,
+          options: [Google, Airbnb, "Booking.com", Direct],
+          default: Google
+        }
+      - {
+          name: rating,
+          label: Stars,
+          widget: number,
+          min: 1, max: 5, default: 5,
+          value_type: int
+        }
+      - {
+          name: language,
+          label: Original review language,
+          widget: select,
+          options: [en, pt, es, it, de, nl, fr],
+          default: en
+        }
+      - {
+          name: quote,
+          label: Quote (verbatim, do not paraphrase),
+          widget: text,
+          hint: 'Paste the review text exactly as the guest wrote it. Attribution preserved.'
+        }
+      - {
+          name: featured,
+          label: Show on homepage?,
+          widget: boolean,
+          default: false,
+          hint: 'Up to 5 featured reviews surface on the homepage Reviews section.'
+        }
+
+  # ---------- FAQs ----------
+  - name: faqs
+    label: FAQs
+    label_singular: FAQ entry
+    folder: project/site/src/content/faqs
+    create: true
+    delete: true
+    slug: '{{order}}-{{slug}}'
+    summary: '{{order}}. {{question}}'
+    sortable_fields: [order]
+    fields:
+      - { name: question, label: Question,     widget: string,  required: true }
+      - {
+          name: order,
+          label: Display order,
+          widget: number,
+          min: 1, max: 99, default: 99,
+          value_type: int,
+          hint: 'Lower numbers appear first on the homepage FAQ.'
+        }
+      - {
+          name: language,
+          label: Language,
+          widget: select,
+          options: [en, pt, es, it, de, nl, fr],
+          default: en
+        }
+      - {
+          name: body,
+          label: Answer,
+          widget: markdown,
+          required: true,
+          hint: 'Plain prose. Keep answers short and specific.'
+        }

@@ -33,6 +33,10 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    // Load .env.local from the repo root (one level above project/site/)
+    // so build-time integrations (Lodgify, etc.) pick up the same .env
+    // the user maintains at C:\marazul\.env.local.
+    envDir: '../../',
   },
 
   integrations: [
