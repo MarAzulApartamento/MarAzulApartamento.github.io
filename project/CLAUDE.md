@@ -49,7 +49,7 @@ Located at: C:\marazul\project\website\assets\logo
 ## APARTMENT DETAILS
 
 ### Property
-- **Location:** R. Dom Luís da Silveira, 8600-575 Lagos, Portugal
+- **Location:** Rua Dom Luís da Silveira lote V 44 B, 8600-575 Lagos, Portugal
 - **Capacity:** 2–4 guests (ideal for couple, small family, or friends)
 - **Setting:** Peaceful residential area. 5 min by car to Dona Ana Beach. 4 min by car / 20 min on foot to Praia da Batata.
 

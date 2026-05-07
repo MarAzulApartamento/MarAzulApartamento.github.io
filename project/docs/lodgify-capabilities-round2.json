@@ -1,0 +1,110 @@
+[
+  {
+    "label": "Quote — 3 nights, 2 adults (with room type id)",
+    "status": 400,
+    "ok": false,
+    "summary": "Invalid dates."
+  },
+  {
+    "label": "Rates calendar (alt: house_id param)",
+    "status": 200,
+    "ok": true,
+    "summary": "keys=[calendar_items,rate_settings]"
+  },
+  {
+    "label": "Reviews v1",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Reviews v2 (no /reservations prefix)",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Webhooks v1 root",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Webhooks v2",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Webhooks subscriptions v1",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Messaging threads v1",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Messaging conversations v2",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Account v1",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "User v2",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Bookings (filter by source) — direct",
+    "status": 200,
+    "ok": true,
+    "summary": "items=10 totalCount=?"
+  },
+  {
+    "label": "External bookings",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Promotion codes",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Promotion codes alt",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Property amenities",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Property reviews",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  },
+  {
+    "label": "Property translations",
+    "status": 404,
+    "ok": false,
+    "summary": ""
+  }
+]

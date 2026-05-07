@@ -1,0 +1,308 @@
+[
+  {
+    "label": "List properties",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v2/properties",
+    "status": 200,
+    "ok": true,
+    "bytes": 3430,
+    "ms": 595,
+    "sample": {
+      "_keys": [
+        "count",
+        "items"
+      ],
+      "_itemsLength": 1,
+      "_firstItemKeys": [
+        "id",
+        "name",
+        "internal_name",
+        "description",
+        "latitude",
+        "longitude",
+        "address",
+        "hide_address",
+        "zip",
+        "city",
+        "state",
+        "country_code",
+        "country",
+        "image_url",
+        "has_addons",
+        "has_agreement",
+        "agreement_text",
+        "agreement_url",
+        "contact",
+        "rating",
+        "price_unit_in_days",
+        "min_price",
+        "original_min_price",
+        "max_price",
+        "original_max_price",
+        "rooms",
+        "in_out_max_date",
+        "in_out",
+        "currency_code",
+        "created_at",
+        "updated_at",
+        "is_active",
+        "subscription_plans"
+      ],
+      "_count": null
+    },
+    "error": null
+  },
+  {
+    "label": "Property details",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v2/properties/<PROPERTY_ID>",
+    "status": 200,
+    "ok": true,
+    "bytes": 3405,
+    "ms": 406,
+    "sample": {
+      "_keys": [
+        "id",
+        "name",
+        "internal_name",
+        "description",
+        "latitude",
+        "longitude",
+        "address",
+        "hide_address",
+        "zip",
+        "city",
+        "state",
+        "country_code",
+        "country",
+        "image_url",
+        "has_addons",
+        "has_agreement",
+        "agreement_text",
+        "agreement_url",
+        "contact",
+        "rating",
+        "price_unit_in_days",
+        "min_price",
+        "original_min_price",
+        "max_price",
+        "original_max_price",
+        "rooms",
+        "in_out_max_date",
+        "in_out",
+        "currency_code",
+        "created_at",
+        "updated_at",
+        "is_active",
+        "subscription_plans"
+      ]
+    },
+    "error": null
+  },
+  {
+    "label": "Property rooms / units",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v2/properties/<PROPERTY_ID>/rooms",
+    "status": 200,
+    "ok": true,
+    "bytes": 4537,
+    "ms": 180,
+    "sample": {
+      "_arrayLength": 1,
+      "_firstItemKeys": [
+        "images",
+        "amenities",
+        "description",
+        "breakfast_included",
+        "has_parking",
+        "adults_only",
+        "pets_allowed",
+        "show_additional_key_facts",
+        "id",
+        "name",
+        "image_url",
+        "max_people",
+        "units",
+        "has_wifi",
+        "has_meal_plan",
+        "bedrooms",
+        "bathrooms",
+        "area_unit",
+        "area",
+        "min_price",
+        "original_min_price",
+        "max_price",
+        "original_max_price",
+        "price_unit_in_days"
+      ]
+    },
+    "error": null
+  },
+  {
+    "label": "Availability (next 30 days)",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v2/availability/<PROPERTY_ID>?start=2026-05-08&end=2026-06-06",
+    "status": 200,
+    "ok": true,
+    "bytes": 1295,
+    "ms": 137,
+    "sample": {
+      "_arrayLength": 1,
+      "_firstItemKeys": [
+        "user_id",
+        "property_id",
+        "room_type_id",
+        "periods"
+      ]
+    },
+    "error": null
+  },
+  {
+    "label": "Availability all properties",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v2/availability?start=2026-05-08&end=2026-06-06",
+    "status": 200,
+    "ok": true,
+    "bytes": 1295,
+    "ms": 144,
+    "sample": {
+      "_arrayLength": 1,
+      "_firstItemKeys": [
+        "user_id",
+        "property_id",
+        "room_type_id",
+        "periods"
+      ]
+    },
+    "error": null
+  },
+  {
+    "label": "Daily rates calendar",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v2/rates/calendar?propertyId=<PROPERTY_ID>&start=2026-05-08&end=2026-06-06",
+    "status": 400,
+    "ok": false,
+    "bytes": 152,
+    "ms": 210,
+    "sample": {
+      "_keys": [
+        "message",
+        "code",
+        "correlation_id",
+        "event_id"
+      ]
+    },
+    "error": null
+  },
+  {
+    "label": "Quote for sample 3-night stay",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v2/quote/<PROPERTY_ID>?roomTypes[0].Id=&from=2026-05-08&to=2026-05-11&guest_breakdown[adults]=2",
+    "status": 400,
+    "ok": false,
+    "bytes": 16,
+    "ms": 262,
+    "sample": {
+      "_scalar": "string"
+    },
+    "error": null
+  },
+  {
+    "label": "Bookings (page 1)",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v2/reservations/bookings?size=5",
+    "status": 200,
+    "ok": true,
+    "bytes": 7124,
+    "ms": 158,
+    "sample": {
+      "_keys": [
+        "count",
+        "items"
+      ],
+      "_itemsLength": 5,
+      "_firstItemKeys": [
+        "id",
+        "user_id",
+        "arrival",
+        "departure",
+        "property_id",
+        "rooms",
+        "guest",
+        "language",
+        "status",
+        "is_unavailable",
+        "is_overbooked",
+        "tentative_expires_at",
+        "source",
+        "source_text",
+        "created_from_ip",
+        "created_at",
+        "updated_at",
+        "canceled_at",
+        "is_new",
+        "is_deleted",
+        "currency_code",
+        "total_amount",
+        "subtotals",
+        "amount_paid",
+        "amount_due",
+        "quote",
+        "transactions",
+        "damage_protection",
+        "notes",
+        "thread_uid",
+        "external_booking",
+        "check_in",
+        "check_out",
+        "upgraded_enquiry_id"
+      ],
+      "_count": null
+    },
+    "error": null
+  },
+  {
+    "label": "Reviews",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v2/reservations/reviews?size=10",
+    "status": 404,
+    "ok": false,
+    "bytes": 0,
+    "ms": 112,
+    "sample": null,
+    "error": null
+  },
+  {
+    "label": "Webhooks subscriptions",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v1/webhooks/list",
+    "status": 404,
+    "ok": false,
+    "bytes": 0,
+    "ms": 123,
+    "sample": null,
+    "error": null
+  },
+  {
+    "label": "Messages threads",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v2/messaging",
+    "status": 404,
+    "ok": false,
+    "bytes": 0,
+    "ms": 143,
+    "sample": null,
+    "error": null
+  },
+  {
+    "label": "Account info",
+    "method": "GET",
+    "url": "https://api.lodgify.com/v1/users/me",
+    "status": 404,
+    "ok": false,
+    "bytes": 0,
+    "ms": 132,
+    "sample": null,
+    "error": null
+  }
+]
