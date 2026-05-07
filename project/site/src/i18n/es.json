@@ -1,1 +1,164 @@
-{}
+{
+  "common": {
+    "whatsappCta": "WhatsApp con Stefy",
+    "whatsappMicro": "respondemos en menos de 12 horas",
+    "whatsappFallback": "O escríbenos por WhatsApp",
+    "bookDirect": "Reservar directamente",
+    "bookDirectArrow": "Reservar directamente →",
+    "checkAvailability": "Ver disponibilidad",
+    "continueToBooking": "Continuar a la reserva →",
+    "from": "Desde",
+    "perNight": "por noche",
+    "minStayShort": "estancia mínima de {n} noches"
+  },
+  "topBar": {
+    "siteNameAria": "Apartamento Mar Azul"
+  },
+  "home": {
+    "metaTitle": "Apartamento Mar Azul · Apartamento tranquilo en Lagos para parejas y familias pequeñas",
+    "metaDescription": "Un apartamento tranquilo en Lagos, Algarve. A pie del centro y de las playas. Capacidad para 2 a 4 personas. Terraza, aire acondicionado, Wi-Fi, aparcamiento gratuito. Desde €{priceFrom} por noche."
+  },
+  "hero": {
+    "eyebrow": "Lagos · Algarve",
+    "title": "Un apartamento tranquilo en Lagos para parejas y familias pequeñas.",
+    "subtitle": "A pie del centro y de las playas. Capacidad para 2 a 4 personas."
+  },
+  "trustStrip": {
+    "ratingLabel": "{rating} sobre {count} reseñas en Google",
+    "openSince": "Abierto desde junio de 2025",
+    "languages": "Hablamos PT · IT · EN · ES"
+  },
+  "factsGrid": {
+    "eyebrow": "De un vistazo",
+    "title": "Lo que tiene el apartamento, sin rodeos.",
+    "facts": [
+      ["Capacidad", "2 a 4 personas"],
+      ["Habitaciones", "1 más sofá cama"],
+      ["Terraza", "Orientación sur"],
+      ["Aire acondicionado", "En el dormitorio"],
+      ["Wi-Fi", "Fibra, 200 Mbps"],
+      ["Aparcamiento", "Gratuito, reservado"],
+      ["Sábanas y toallas", "Incluidas"],
+      ["Cuna y trona", "Bajo petición"],
+      ["A pie", "Centro y playas"],
+      ["Mascotas", "No permitidas", true]
+    ]
+  },
+  "about": {
+    "eyebrow": "Sobre el apartamento",
+    "title": "A pie del centro y de las playas.",
+    "body": "El apartamento se encuentra en una calle residencial tranquila. Baja hasta el centro de Lagos para desayunar, cruza el centro para darte un baño en el mar, y sigue el sendero costero hasta la Ponta da Piedade antes de que llegue la gente por la mañana.",
+    "hostedBy": "Anfitriona: Stefania."
+  },
+  "gallery": {
+    "eyebrow": "Por dentro",
+    "title": "Por dentro del apartamento.",
+    "openLabel": "Abrir foto:",
+    "captions": {
+      "marazul-01": "Salón, con vistas",
+      "marazul-02": "Zona de estar",
+      "marazul-03": "Desde la entrada",
+      "marazul-04": "Cocina y comedor",
+      "marazul-05": "Cocinando",
+      "marazul-06": "Detalle",
+      "marazul-07": "Salón, segunda vista",
+      "marazul-08": "Dormitorio",
+      "marazul-09": "Rincón del dormitorio",
+      "marazul-10": "Mirando a través",
+      "marazul-11": "Baño"
+    }
+  },
+  "perks": {
+    "eyebrow": "Reserva directa",
+    "title": "Reservar directamente incluye algunos extras.",
+    "lede": "Mismas fechas, mismo calendario, mismo apartamento. Solo algunas pequeñas ventajas.",
+    "items": [
+      "Aparcamiento gratuito.",
+      "Late check-out y early check-in cuando el calendario lo permite.",
+      "Línea directa de WhatsApp con Stefania, antes y durante tu estancia.",
+      "Mejor precio disponible, siempre.",
+      "Una pequeña guía a pie con la tasca, la panadería y la playa tranquila favoritas de la anfitriona."
+    ]
+  },
+  "location": {
+    "eyebrow": "Ubicación",
+    "title": "Lagos, a pie.",
+    "mapLabel": "Mapa de Lagos con la ubicación del apartamento",
+    "mapPlaceholder": "Mapa pendiente · Leaflet + OpenStreetMap en producción",
+    "places": [
+      ["Tasca", "Prato Cheio", "A pie"],
+      ["Supermercado", "Intermarché Lagos", "10 min a pie"],
+      ["Playa", "Praia da Batata", "A pie"],
+      ["Playa", "Praia Dona Ana", "A pie"],
+      ["Puerto", "Marina de Lagos", "A pie"],
+      ["Panadería", "Padaria Central", "A pie"]
+    ]
+  },
+  "reviews": {
+    "eyebrow": "Reseñas",
+    "title": "Lo que dicen los huéspedes."
+  },
+  "availability": {
+    "eyebrow": "Tus fechas",
+    "title": "Elige tus fechas.",
+    "ledeWithPrice": "Disponibilidad en tiempo real. Precios desde €{priceFrom} por noche. Estancia mínima de {minStay} noches."
+  },
+  "faq": {
+    "eyebrow": "Preguntas frecuentes",
+    "title": "Algunas preguntas habituales."
+  },
+  "finalCta": {
+    "eyebrow": "Reserva directa",
+    "title": "Cuando quieras."
+  },
+  "stickyCta": {
+    "priceLabel": "Desde €{priceFrom} por noche",
+    "meta": "Mejor precio disponible, siempre."
+  },
+  "calendarPicker": {
+    "pickHeadline": "Elige una fecha de entrada.",
+    "pickMeta": "Estancia mínima de {minStay} noches.",
+    "pickMetaLive": "Estancia mínima de {minStay} noches. Disponibilidad en tiempo real.",
+    "checkInPrefix": "Entrada:",
+    "checkInPickout": "Ahora elige la fecha de salida. Mínimo {minStay} noches.",
+    "nightSingular": "noche",
+    "nightsLabel": "noches",
+    "totalLabelTemplate": "€{total} en total (media €{ppn}/noche)",
+    "minStayWarning": "Selecciona al menos {minStay} noches para continuar.",
+    "blockedError": "Algunas fechas en este rango no están disponibles.",
+    "clearDates": "Borrar fechas",
+    "navPrevious": "Anterior",
+    "navNext": "Siguiente",
+    "navAriaPrevious": "Meses anteriores",
+    "navAriaNext": "Meses siguientes",
+    "datesEnRoute": "Ahora elige la fecha de salida. Mínimo {minStay} noches.",
+    "minNights": "{nights} noche (mínimo {minStay})",
+    "minNightsPlural": "{nights} noches (mínimo {minStay})"
+  },
+  "footer": {
+    "languagesHeading": "Idiomas",
+    "legalHeading": "Legal",
+    "legalPrivacy": "Privacidad",
+    "legalCookies": "Cookies",
+    "legalTerms": "Términos",
+    "hostedNote": "Alojado en Cloudflare. Reservas con Lodgify."
+  },
+  "bookPage": {
+    "metaTitle": "Reservar directamente · Apartamento Mar Azul",
+    "metaDescription": "Reserva tu estancia en Apartamento Mar Azul directamente. Mejor precio disponible, siempre. Aparcamiento gratuito, late check-out, línea directa de WhatsApp con la anfitriona.",
+    "ctaLabel": "Reservar directamente →",
+    "back": "Volver al apartamento",
+    "eyebrow": "Reserva",
+    "title": "Elige tus fechas.",
+    "lede": "Mejor precio disponible, siempre. Reservar directamente incluye aparcamiento gratuito, late check-out y early check-in cuando el calendario lo permite, y línea directa de WhatsApp con Stefania.",
+    "perksList": [
+      "Aparcamiento gratuito, Wi-Fi gratuito, sábanas incluidas",
+      "Cancelación gratuita hasta 7 días antes de la llegada",
+      "Mejor precio disponible, sin comisiones de plataforma"
+    ],
+    "perkPriceLine": "Desde €{priceFrom} por noche · estancia mínima de {minStay} noches",
+    "helpLine": "¿Dudas antes de reservar?",
+    "widgetNote": "La reserva abre el pago seguro de Lodgify en una nueva pestaña al hacer clic en \"Reservar directamente\"."
+  },
+  "skipLink": "Saltar al contenido"
+}

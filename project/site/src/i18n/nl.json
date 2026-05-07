@@ -1,1 +1,164 @@
-{}
+{
+  "common": {
+    "whatsappCta": "WhatsApp met Stefy",
+    "whatsappMicro": "we reageren binnen 12 uur",
+    "whatsappFallback": "Of stuur ons een bericht op WhatsApp",
+    "bookDirect": "Direct boeken",
+    "bookDirectArrow": "Direct boeken →",
+    "checkAvailability": "Beschikbaarheid bekijken",
+    "continueToBooking": "Naar de boeking →",
+    "from": "Vanaf",
+    "perNight": "per nacht",
+    "minStayShort": "minimaal {n} nachten"
+  },
+  "topBar": {
+    "siteNameAria": "Apartamento Mar Azul"
+  },
+  "home": {
+    "metaTitle": "Apartamento Mar Azul · Een rustig appartement in Lagos voor stellen en kleine gezinnen",
+    "metaDescription": "Een rustig appartement in Lagos, Algarve. Op loopafstand van het centrum en de stranden. Voor 2 tot 4 personen. Terras, airconditioning, wifi, gratis parkeren. Vanaf €{priceFrom} per nacht."
+  },
+  "hero": {
+    "eyebrow": "Lagos · Algarve",
+    "title": "Een rustig appartement in Lagos voor stellen en kleine gezinnen.",
+    "subtitle": "Op loopafstand van het centrum en de stranden. Voor 2 tot 4 personen."
+  },
+  "trustStrip": {
+    "ratingLabel": "{rating} uit {count} Google-reviews",
+    "openSince": "Open sinds juni 2025",
+    "languages": "Wij spreken PT · IT · EN · ES"
+  },
+  "factsGrid": {
+    "eyebrow": "In het kort",
+    "title": "Wat het appartement biedt, zonder omhaal.",
+    "facts": [
+      ["Capaciteit", "2 tot 4 personen"],
+      ["Slaapkamers", "1 plus slaapbank"],
+      ["Terras", "Op het zuiden"],
+      ["Airconditioning", "In de slaapkamer"],
+      ["Wifi", "Glasvezel, 200 Mbps"],
+      ["Parkeren", "Gratis, gereserveerd"],
+      ["Beddengoed & handdoeken", "Inbegrepen"],
+      ["Wieg & kinderstoel", "Op aanvraag"],
+      ["Op loopafstand", "Centrum & stranden"],
+      ["Huisdieren", "Niet toegestaan", true]
+    ]
+  },
+  "about": {
+    "eyebrow": "Over",
+    "title": "Op loopafstand van het centrum en de stranden.",
+    "body": "Het appartement ligt in een rustige woonstraat. Loop naar het centrum van Lagos voor het ontbijt, dwars door de oude stad voor een duik in zee, en volg het kustpad naar Ponta da Piedade voordat de ochtenddrukte begint.",
+    "hostedBy": "Gastvrouw: Stefania."
+  },
+  "gallery": {
+    "eyebrow": "Binnen",
+    "title": "Binnenkijken in het appartement.",
+    "openLabel": "Foto openen:",
+    "captions": {
+      "marazul-01": "Woonkamer, met uitzicht",
+      "marazul-02": "Zithoek",
+      "marazul-03": "Vanaf de ingang",
+      "marazul-04": "Keuken en eethoek",
+      "marazul-05": "Aan het koken",
+      "marazul-06": "Detail",
+      "marazul-07": "Woonkamer, andere hoek",
+      "marazul-08": "Slaapkamer",
+      "marazul-09": "Hoek van de slaapkamer",
+      "marazul-10": "Doorkijkje",
+      "marazul-11": "Badkamer"
+    }
+  },
+  "perks": {
+    "eyebrow": "Direct boeken",
+    "title": "Direct boeken levert een paar extra's op.",
+    "lede": "Dezelfde data, dezelfde kalender, hetzelfde appartement. Met een paar kleine voordelen erbij.",
+    "items": [
+      "Gratis parkeren.",
+      "Late check-out en vroege check-in als de kalender dat toelaat.",
+      "Directe WhatsApp-lijn met Stefania, voor en tijdens het verblijf.",
+      "Beste tarief beschikbaar, altijd.",
+      "Een korte wandelgids met de favoriete tasca, bakker en rustige strand van de gastvrouw."
+    ]
+  },
+  "location": {
+    "eyebrow": "Locatie",
+    "title": "Lagos, lopend.",
+    "mapLabel": "Kaart van Lagos met het appartement",
+    "mapPlaceholder": "Kaart-tijdelijk · Leaflet + OpenStreetMap bij oplevering",
+    "places": [
+      ["Tasca", "Prato Cheio", "Op loopafstand"],
+      ["Supermarkt", "Intermarché Lagos", "10 min lopen"],
+      ["Strand", "Praia da Batata", "Op loopafstand"],
+      ["Strand", "Praia Dona Ana", "Op loopafstand"],
+      ["Jachthaven", "Marina de Lagos", "Op loopafstand"],
+      ["Bakker", "Padaria Central", "Op loopafstand"]
+    ]
+  },
+  "reviews": {
+    "eyebrow": "Reviews",
+    "title": "Wat gasten zeggen."
+  },
+  "availability": {
+    "eyebrow": "Jouw data",
+    "title": "Kies je data.",
+    "ledeWithPrice": "Beschikbaarheid in real time. Prijzen vanaf €{priceFrom} per nacht. Minimaal {minStay} nachten."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Een paar veelgestelde vragen."
+  },
+  "finalCta": {
+    "eyebrow": "Direct boeken",
+    "title": "Wanneer je er klaar voor bent."
+  },
+  "stickyCta": {
+    "priceLabel": "Vanaf €{priceFrom} per nacht",
+    "meta": "Beste tarief beschikbaar, altijd."
+  },
+  "calendarPicker": {
+    "pickHeadline": "Kies een aankomstdatum.",
+    "pickMeta": "Minimaal {minStay} nachten.",
+    "pickMetaLive": "Minimaal {minStay} nachten. Beschikbaarheid in real time.",
+    "checkInPrefix": "Aankomst:",
+    "checkInPickout": "Kies nu je vertrekdatum. Minimaal {minStay} nachten.",
+    "nightSingular": "nacht",
+    "nightsLabel": "nachten",
+    "totalLabelTemplate": "€{total} totaal (gem. €{ppn}/nacht)",
+    "minStayWarning": "Selecteer minimaal {minStay} nachten om door te gaan.",
+    "blockedError": "Sommige data in dit bereik zijn niet beschikbaar.",
+    "clearDates": "Data wissen",
+    "navPrevious": "Vorige",
+    "navNext": "Volgende",
+    "navAriaPrevious": "Vorige maanden",
+    "navAriaNext": "Volgende maanden",
+    "datesEnRoute": "Kies nu je vertrekdatum. Minimaal {minStay} nachten.",
+    "minNights": "{nights} nacht (minimaal {minStay})",
+    "minNightsPlural": "{nights} nachten (minimaal {minStay})"
+  },
+  "footer": {
+    "languagesHeading": "Talen",
+    "legalHeading": "Juridisch",
+    "legalPrivacy": "Privacy",
+    "legalCookies": "Cookies",
+    "legalTerms": "Voorwaarden",
+    "hostedNote": "Gehost op Cloudflare. Boekingen via Lodgify."
+  },
+  "bookPage": {
+    "metaTitle": "Direct boeken · Apartamento Mar Azul",
+    "metaDescription": "Boek je verblijf in Apartamento Mar Azul direct. Beste tarief beschikbaar, altijd. Gratis parkeren, late check-out, directe WhatsApp-lijn met de gastvrouw.",
+    "ctaLabel": "Direct boeken →",
+    "back": "Terug naar het appartement",
+    "eyebrow": "Boeking",
+    "title": "Kies je data.",
+    "lede": "Beste tarief beschikbaar, altijd. Direct boeken omvat gratis parkeren, late check-out en vroege check-in als de kalender dat toelaat, en een directe WhatsApp-lijn met Stefania.",
+    "perksList": [
+      "Gratis parkeren, gratis wifi, beddengoed inbegrepen",
+      "Gratis annulering tot 7 dagen voor aankomst",
+      "Beste tarief beschikbaar, geen platformkosten"
+    ],
+    "perkPriceLine": "Vanaf €{priceFrom} per nacht · minimaal {minStay} nachten",
+    "helpLine": "Vragen vóór je boekt?",
+    "widgetNote": "Bij het klikken op \"Direct boeken\" opent de beveiligde Lodgify-afrekenpagina in een nieuw tabblad."
+  },
+  "skipLink": "Naar inhoud"
+}

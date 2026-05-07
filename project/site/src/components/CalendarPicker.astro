@@ -1,36 +1,39 @@
 ---
 import type { CalendarData } from '../lib/lodgify';
 import { WHATSAPP } from '../lib/config';
+import { getStrings, interp } from '../lib/i18n';
 
 interface Props {
   data: CalendarData;
-  /** How many months to show at once. Pagination scrolls through more if data has them. */
   visibleMonths?: number;
-  /** CTA label on the booking handoff button. */
   ctaLabel?: string;
 }
 
-const { data, visibleMonths = 2, ctaLabel = 'Continue to booking →' } = Astro.props;
+const { data, visibleMonths = 2, ctaLabel } = Astro.props;
+const t = getStrings(Astro.currentLocale);
 
-// Render ALL months in data; CSS + JS show only the visible window.
+const lang = Astro.currentLocale || 'en';
+const localeMap: Record<string, string> = {
+  en: 'en-GB', pt: 'pt-PT', es: 'es-ES', it: 'it-IT',
+  de: 'de-DE', nl: 'nl-NL', fr: 'fr-FR',
+};
+const localeCode = localeMap[lang] || 'en-GB';
+
 const monthStarts = data.monthsCovered;
 
-// Parse ISO date string ("2026-05-01") into year+month without timezone shift.
 function monthMeta(isoStart: string) {
   const [yearStr, monthStr] = isoStart.split('-');
   const year = parseInt(yearStr, 10);
-  const month = parseInt(monthStr, 10) - 1; // 0-indexed
+  const month = parseInt(monthStr, 10) - 1;
   const refDate = new Date(year, month, 1);
-  const monthName = refDate.toLocaleString('en-GB', { month: 'long', year: 'numeric' });
+  const monthName = refDate.toLocaleString(localeCode, { month: 'long', year: 'numeric' });
   const daysInMonth = new Date(year, month + 1, 0).getDate();
-  // Monday-start offset: JS getDay() Sun=0..Sat=6 → Mon=0..Sun=6
   const firstWeekdayMondayBased = (refDate.getDay() + 6) % 7;
   return { year, month, monthName, daysInMonth, firstWeekdayMondayBased };
 }
 
 const monthsToRender = monthStarts.map((iso) => ({ iso, ...monthMeta(iso) }));
 
-// Today's local ISO date, computed without UTC conversion
 const _today = new Date();
 const todayIso = `${_today.getFullYear()}-${String(_today.getMonth() + 1).padStart(2, '0')}-${String(_today.getDate()).padStart(2, '0')}`;
 
@@ -43,6 +46,18 @@ const calendarJson = JSON.stringify({
   rentalSlug: 'apartamento-mar-azul',
   rentalId: '671442',
   visibleMonths,
+  localeCode,
+});
+
+const i18nJson = JSON.stringify({
+  checkInPrefix: t.calendarPicker.checkInPrefix,
+  checkInPickout: t.calendarPicker.checkInPickout,
+  totalLabelTemplate: t.calendarPicker.totalLabelTemplate,
+  minStayWarning: t.calendarPicker.minStayWarning,
+  minNights: t.calendarPicker.minNights,
+  minNightsPlural: t.calendarPicker.minNightsPlural,
+  nightSingular: t.calendarPicker.nightSingular,
+  nightsLabel: t.calendarPicker.nightsLabel,
 });
 
 const whatsappHref = WHATSAPP.number
@@ -53,20 +68,22 @@ const isoFor = (year: number, month: number, day: number) =>
   `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
 const showNav = monthsToRender.length > visibleMonths;
+const resolvedCtaLabel = ctaLabel ?? t.common.continueToBooking;
+const pickMetaText = data.isLive ? interp(t.calendarPicker.pickMetaLive, { minStay: data.minStay }) : interp(t.calendarPicker.pickMeta, { minStay: data.minStay });
 ---
 
-<div class="cp" data-calendar-picker data-config={calendarJson} data-visible={visibleMonths}>
+<div class="cp" data-calendar-picker data-config={calendarJson} data-i18n={i18nJson} data-visible={visibleMonths}>
   {showNav && (
     <div class="cp-nav">
-      <button type="button" class="cp-nav-btn" data-cp-prev aria-label="Previous months" disabled>
+      <button type="button" class="cp-nav-btn" data-cp-prev aria-label={t.calendarPicker.navAriaPrevious} disabled>
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
-        <span>Previous</span>
+        <span>{t.calendarPicker.navPrevious}</span>
       </button>
       <span class="cp-nav-range" data-cp-range aria-live="polite"></span>
-      <button type="button" class="cp-nav-btn" data-cp-next aria-label="Next months">
-        <span>Next</span>
+      <button type="button" class="cp-nav-btn" data-cp-next aria-label={t.calendarPicker.navAriaNext}>
+        <span>{t.calendarPicker.navNext}</span>
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="9 18 15 12 9 6"></polyline>
         </svg>
@@ -124,38 +141,35 @@ const showNav = monthsToRender.length > visibleMonths;
   <div class="cp-footer">
     <div class="cp-summary">
       <div class="cp-summary-default" data-summary-default>
-        <p class="cp-summary-headline">Pick a check-in date.</p>
-        <p class="cp-summary-meta">{data.minStay}-night minimum.{data.isLive ? ' Real-time availability.' : ''}</p>
+        <p class="cp-summary-headline">{t.calendarPicker.pickHeadline}</p>
+        <p class="cp-summary-meta">{pickMetaText}</p>
       </div>
       <div class="cp-summary-active" data-summary-active hidden>
-        <p class="cp-summary-headline">
-          <span data-summary-nights>0</span> nights ·
-          <span data-summary-from></span> to <span data-summary-to></span>
-        </p>
-        <p class="cp-summary-meta">
+        <p class="cp-summary-headline" data-summary-active-headline></p>
+        <p class="cp-summary-meta" data-summary-active-meta>
           <span data-summary-total></span>
           <span class="cp-summary-meta-sep" aria-hidden="true"> · </span>
-          <button type="button" class="cp-clear" data-clear>Clear dates</button>
+          <button type="button" class="cp-clear" data-clear>{t.calendarPicker.clearDates}</button>
         </p>
       </div>
       <div class="cp-summary-error" data-summary-error hidden>
-        <p class="cp-summary-headline cp-error">Some dates in this range are unavailable.</p>
+        <p class="cp-summary-headline cp-error">{t.calendarPicker.blockedError}</p>
         <p class="cp-summary-meta">
-          <button type="button" class="cp-clear" data-clear>Clear dates</button>
+          <button type="button" class="cp-clear" data-clear>{t.calendarPicker.clearDates}</button>
         </p>
       </div>
     </div>
 
     <div class="cp-cta">
-      <a class="btn btn-primary cp-book" data-book href="#" hidden>{ctaLabel}</a>
+      <a class="btn btn-primary cp-book" data-book href="#" hidden>{resolvedCtaLabel}</a>
       <a
         class="btn btn-ghost"
         href={whatsappHref}
         target={WHATSAPP.number ? '_blank' : undefined}
         rel={WHATSAPP.number ? 'noopener noreferrer' : undefined}
       >
-        <span>Or message us on WhatsApp</span>
-        <span class="micro">{WHATSAPP.responseTime}</span>
+        <span>{t.common.whatsappFallback}</span>
+        <span class="micro">{t.common.whatsappMicro}</span>
       </a>
     </div>
   </div>
@@ -360,11 +374,27 @@ const showNav = monthsToRender.length > visibleMonths;
     rentalSlug: string;
     rentalId: string;
     visibleMonths: number;
+    localeCode: string;
   };
 
-  function fmtDate(iso: string): string {
+  type I18n = {
+    checkInPrefix: string;
+    checkInPickout: string;
+    totalLabelTemplate: string;
+    minStayWarning: string;
+    minNights: string;
+    minNightsPlural: string;
+    nightSingular: string;
+    nightsLabel: string;
+  };
+
+  function interp(template: string, values: Record<string, string | number>): string {
+    return template.replace(/\{(\w+)\}/g, (_, key) => String(values[key] ?? `{${key}}`));
+  }
+
+  function fmtDate(iso: string, localeCode: string): string {
     const [y, m, d] = iso.split('-').map(Number);
-    return new Date(y, m - 1, d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+    return new Date(y, m - 1, d).toLocaleDateString(localeCode, { day: 'numeric', month: 'short' });
   }
   function nightsBetween(from: string, to: string): number {
     const [ay, am, ad] = from.split('-').map(Number);
@@ -407,15 +437,15 @@ const showNav = monthsToRender.length > visibleMonths;
 
   document.querySelectorAll<HTMLDivElement>('[data-calendar-picker]').forEach((root) => {
     const cfg: Cfg = JSON.parse(root.getAttribute('data-config') || '{}');
+    const i18n: I18n = JSON.parse(root.getAttribute('data-i18n') || '{}');
+    const localeCode = cfg.localeCode || 'en-GB';
     const blockedSet = new Set(cfg.blocked);
     const cells = Array.from(root.querySelectorAll<HTMLButtonElement>('.cp-d[data-date]'));
     const months = Array.from(root.querySelectorAll<HTMLDivElement>('.cp-month'));
     const summaryDefault = root.querySelector<HTMLDivElement>('[data-summary-default]');
     const summaryActive = root.querySelector<HTMLDivElement>('[data-summary-active]');
+    const summaryActiveHeadline = root.querySelector<HTMLParagraphElement>('[data-summary-active-headline]');
     const summaryError = root.querySelector<HTMLDivElement>('[data-summary-error]');
-    const summaryNights = root.querySelector<HTMLSpanElement>('[data-summary-nights]');
-    const summaryFrom = root.querySelector<HTMLSpanElement>('[data-summary-from]');
-    const summaryTo = root.querySelector<HTMLSpanElement>('[data-summary-to]');
     const summaryTotal = root.querySelector<HTMLSpanElement>('[data-summary-total]');
     const bookBtn = root.querySelector<HTMLAnchorElement>('[data-book]');
     const clearBtns = root.querySelectorAll<HTMLButtonElement>('[data-clear]');
@@ -467,31 +497,32 @@ const showNav = monthsToRender.length > visibleMonths;
           return;
         }
         if (nights < cfg.minStay) {
-          if (summaryActive) {
-            const headline = summaryActive.querySelector<HTMLParagraphElement>('.cp-summary-headline');
-            const meta = summaryActive.querySelector<HTMLParagraphElement>('.cp-summary-meta');
-            if (headline) headline.textContent = `${nights} night${nights === 1 ? '' : 's'} (minimum ${cfg.minStay})`;
-            if (meta) meta.textContent = `Pick at least ${cfg.minStay} nights to continue.`;
+          if (summaryActiveHeadline) {
+            const tmpl = nights === 1 ? i18n.minNights : i18n.minNightsPlural;
+            summaryActiveHeadline.textContent = interp(tmpl, { nights, minStay: cfg.minStay });
           }
+          if (summaryTotal) summaryTotal.textContent = interp(i18n.minStayWarning, { minStay: cfg.minStay });
           bookBtn?.toggleAttribute('hidden', true);
           return;
         }
         const total = rangeTotal(cfg.rates, checkIn, checkOut);
-        if (summaryNights) summaryNights.textContent = String(nights);
-        if (summaryFrom) summaryFrom.textContent = fmtDate(checkIn);
-        if (summaryTo) summaryTo.textContent = fmtDate(checkOut);
+        if (summaryActiveHeadline) {
+          const noun = nights === 1 ? i18n.nightSingular : i18n.nightsLabel;
+          summaryActiveHeadline.textContent = `${nights} ${noun} · ${fmtDate(checkIn, localeCode)} → ${fmtDate(checkOut, localeCode)}`;
+        }
         if (summaryTotal) {
           const ppn = nights > 0 ? Math.round(total / nights) : 0;
-          summaryTotal.textContent = `€${total.toLocaleString('en-GB')} total (avg €${ppn}/night)`;
+          summaryTotal.textContent = interp(i18n.totalLabelTemplate, {
+            total: total.toLocaleString(localeCode),
+            ppn,
+          });
         }
         if (bookBtn) bookBtn.href = buildCheckout(cfg, checkIn, checkOut);
       } else if (checkIn && !checkOut) {
-        if (summaryActive) {
-          const headline = summaryActive.querySelector<HTMLParagraphElement>('.cp-summary-headline');
-          const meta = summaryActive.querySelector<HTMLParagraphElement>('.cp-summary-meta');
-          if (headline) headline.textContent = `Check-in: ${fmtDate(checkIn)}`;
-          if (meta) meta.textContent = `Now pick your check-out date. Minimum ${cfg.minStay} nights.`;
+        if (summaryActiveHeadline) {
+          summaryActiveHeadline.textContent = `${i18n.checkInPrefix} ${fmtDate(checkIn, localeCode)}`;
         }
+        if (summaryTotal) summaryTotal.textContent = interp(i18n.checkInPickout, { minStay: cfg.minStay });
         summaryActive?.toggleAttribute('hidden', false);
         summaryDefault?.toggleAttribute('hidden', true);
         bookBtn?.toggleAttribute('hidden', true);

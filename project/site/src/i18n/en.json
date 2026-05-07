@@ -121,6 +121,7 @@
     "pickMetaLive": "{minStay}-night minimum. Real-time availability.",
     "checkInPrefix": "Check-in:",
     "checkInPickout": "Now pick your check-out date. Minimum {minStay} nights.",
+    "nightSingular": "night",
     "nightsLabel": "nights",
     "totalLabelTemplate": "€{total} total (avg €{ppn}/night)",
     "minStayWarning": "Pick at least {minStay} nights to continue.",
