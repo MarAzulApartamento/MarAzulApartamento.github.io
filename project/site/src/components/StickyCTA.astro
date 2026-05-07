@@ -1,18 +1,22 @@
 ---
+import { getStrings, interp } from '../lib/i18n';
+
 interface Props {
   priceFrom?: number;
 }
 
 const { priceFrom = 100 } = Astro.props;
+const t = getStrings(Astro.currentLocale);
+const langPrefix = Astro.currentLocale && Astro.currentLocale !== 'en' ? `/${Astro.currentLocale}` : '';
 ---
 
 <div class="sticky-cta" data-sticky-cta role="complementary">
   <div class="sticky-cta-inner">
     <div class="sticky-info">
-      <span class="sticky-price">From €{priceFrom} per night</span>
-      <span class="sticky-meta">Best rate available, every time.</span>
+      <span class="sticky-price">{interp(t.stickyCta.priceLabel, { priceFrom })}</span>
+      <span class="sticky-meta">{t.stickyCta.meta}</span>
     </div>
-    <a class="btn btn-primary" href="/book">Book direct</a>
+    <a class="btn btn-primary" href={`${langPrefix}/book`}>{t.common.bookDirect}</a>
   </div>
 </div>
 

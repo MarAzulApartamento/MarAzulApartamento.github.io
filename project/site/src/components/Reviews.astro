@@ -1,11 +1,14 @@
 ---
 import { getCollection } from 'astro:content';
+import { getStrings } from '../lib/i18n';
 
-// Pull from content collection. Owner adds via Sveltia CMS.
-// Until real reviews populate the collection, the 3 placeholder entries render.
-const all = await getCollection('reviews', ({ data }) => data.language === 'en');
-const featured = all.filter((r) => r.data.featured);
-const items = (featured.length > 0 ? featured : all).slice(0, 5);
+const lang = Astro.currentLocale || 'en';
+const tr = getStrings(lang);
+const all = await getCollection('reviews', ({ data }) => data.language === lang);
+const fallback = lang !== 'en' ? await getCollection('reviews', ({ data }) => data.language === 'en') : [];
+const pool = all.length > 0 ? all : fallback;
+const featured = pool.filter((r) => r.data.featured);
+const items = (featured.length > 0 ? featured : pool).slice(0, 5);
 
 const sourceBadgeColor: Record<string, string> = {
   Google: '#4285F4',
@@ -17,8 +20,8 @@ const sourceBadgeColor: Record<string, string> = {
 
 <section class="section">
   <div class="container">
-    <p class="eyebrow">Reviews</p>
-    <h2 class="h2">What guests say.</h2>
+    <p class="eyebrow">{tr.reviews.eyebrow}</p>
+    <h2 class="h2">{tr.reviews.title}</h2>
     <div class="reviews">
       {items.map((r) => (
         <article class="review">

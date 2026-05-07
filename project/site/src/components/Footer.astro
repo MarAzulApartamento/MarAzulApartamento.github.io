@@ -1,7 +1,10 @@
 ---
 import { SITE, PROPERTY, SOCIAL, LANGUAGE_LABELS, LOCALES, DEFAULT_LOCALE } from '../lib/config';
+import { getStrings } from '../lib/i18n';
 
 const year = new Date().getFullYear();
+const t = getStrings(Astro.currentLocale);
+const langPrefix = Astro.currentLocale && Astro.currentLocale !== DEFAULT_LOCALE ? `/${Astro.currentLocale}` : '';
 ---
 
 <footer class="footer">
@@ -17,7 +20,7 @@ const year = new Date().getFullYear();
     </div>
     <div class="footer-cols">
       <div>
-        <p class="footer-h">Languages</p>
+        <p class="footer-h">{t.footer.languagesHeading}</p>
         <ul class="footer-langs">
           {LOCALES.map((code) => (
             <li>
@@ -29,17 +32,17 @@ const year = new Date().getFullYear();
         </ul>
       </div>
       <div>
-        <p class="footer-h">Legal</p>
+        <p class="footer-h">{t.footer.legalHeading}</p>
         <ul class="footer-legal">
-          <li><a href="/privacy">Privacy</a></li>
-          <li><a href="/cookies">Cookies</a></li>
-          <li><a href="/terms">Terms</a></li>
+          <li><a href={`${langPrefix}/privacy`}>{t.footer.legalPrivacy}</a></li>
+          <li><a href={`${langPrefix}/cookies`}>{t.footer.legalCookies}</a></li>
+          <li><a href={`${langPrefix}/terms`}>{t.footer.legalTerms}</a></li>
         </ul>
       </div>
       <div>
         <p class="footer-h">© {year}</p>
         <p class="muted small">{SITE.name}</p>
-        <p class="muted small">Hosted on Cloudflare. Booking by Lodgify.</p>
+        <p class="muted small">{t.footer.hostedNote}</p>
       </div>
     </div>
   </div>

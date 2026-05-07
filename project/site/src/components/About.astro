@@ -1,20 +1,16 @@
 ---
-import { WHATSAPP } from '../lib/config';
+import { getStrings } from '../lib/i18n';
+const t = getStrings(Astro.currentLocale);
 ---
 
 <section class="section section-tint">
   <div class="container about">
     <div class="about-photo" aria-hidden="true"></div>
     <div class="about-text">
-      <p class="eyebrow">About</p>
-      <h2 class="h2">Walking distance from the centre and the beaches.</h2>
-      <p>
-        The apartment sits on a quiet residential street.
-        Walk down to the city centre for breakfast, cut through the centre for a dive
-        in the sea, and follow the coast path to Ponta da Piedade before the morning
-        crowds arrive.
-      </p>
-      <p class="muted">Hosted by Stefania. {WHATSAPP.responseTime}.</p>
+      <p class="eyebrow">{t.about.eyebrow}</p>
+      <h2 class="h2">{t.about.title}</h2>
+      <p>{t.about.body}</p>
+      <p class="muted">{t.about.hostedBy} {t.common.whatsappMicro}.</p>
     </div>
   </div>
 </section>

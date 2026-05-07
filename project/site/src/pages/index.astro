@@ -14,17 +14,17 @@ import FAQ from '../components/FAQ.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Footer from '../components/Footer.astro';
-import { SITE } from '../lib/config';
 import { fetchPriceData, fetchCalendarData } from '../lib/lodgify';
+import { getStrings, interp } from '../lib/i18n';
 
-// 6 months gives ~3 paginated pairs of "next 2 months" navigation
 const price = await fetchPriceData();
 const calendar = await fetchCalendarData(6);
+const t = getStrings('en');
 ---
 
 <BaseLayout
-  title={`${SITE.name} · A quiet apartment in Lagos for couples and small families`}
-  description={`A quiet apartment in Lagos, Algarve. Walking distance from the centre and the beaches. Sleeps 2 to 4. Private terrace, A/C, Wi-Fi, free parking. From €${price.min} per night.`}
+  title={t.home.metaTitle}
+  description={interp(t.home.metaDescription, { priceFrom: price.min })}
   lang="en"
   preloadImage="/photos/marazul-01.jpg"
 >

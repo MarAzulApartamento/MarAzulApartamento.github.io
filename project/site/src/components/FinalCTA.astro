@@ -1,22 +1,24 @@
 ---
 import { WHATSAPP } from '../lib/config';
+import { getStrings } from '../lib/i18n';
 
 const whatsappHref = WHATSAPP.number
   ? `https://wa.me/${WHATSAPP.number}?text=${encodeURIComponent(WHATSAPP.defaultMessage)}`
   : '#whatsapp';
+const t = getStrings(Astro.currentLocale);
 ---
 
 <section class="final" id="whatsapp">
   <div class="container final-inner">
     <div>
-      <p class="eyebrow eyebrow-light">Direct booking</p>
-      <h2 class="h2 h2-light">Ready when you are.</h2>
+      <p class="eyebrow eyebrow-light">{t.finalCta.eyebrow}</p>
+      <h2 class="h2 h2-light">{t.finalCta.title}</h2>
     </div>
     <div class="final-cta">
-      <a class="btn btn-primary-light" href="#availability" data-scroll>Check availability</a>
+      <a class="btn btn-primary-light" href="#availability" data-scroll>{t.common.checkAvailability}</a>
       <a class="btn btn-ghost-light" href={whatsappHref} target={WHATSAPP.number ? '_blank' : undefined} rel={WHATSAPP.number ? 'noopener noreferrer' : undefined}>
-        <span>WhatsApp Stefy</span>
-        <span class="micro">{WHATSAPP.responseTime}</span>
+        <span>{t.common.whatsappCta}</span>
+        <span class="micro">{t.common.whatsappMicro}</span>
       </a>
     </div>
   </div>

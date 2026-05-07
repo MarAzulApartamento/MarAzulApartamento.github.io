@@ -1,46 +1,51 @@
 ---
+import { getStrings } from '../lib/i18n';
+
 interface Tile {
   src: string;
   cap: string;
   span?: string;
 }
 
+const t = getStrings(Astro.currentLocale);
+const c = t.gallery.captions;
+
 const tiles: Tile[] = [
-  { src: '/photos/marazul-01.jpg', cap: 'Living, looking out', span: 'wide tall' },
-  { src: '/photos/marazul-02.jpg', cap: 'Sitting area' },
-  { src: '/photos/marazul-08.jpg', cap: 'Bedroom' },
-  { src: '/photos/marazul-04.jpg', cap: 'Kitchen and dining' },
-  { src: '/photos/marazul-05.jpg', cap: 'Cooking' },
-  { src: '/photos/marazul-09.jpg', cap: 'Bedroom corner' },
-  { src: '/photos/marazul-11.jpg', cap: 'Bathroom' },
-  { src: '/photos/marazul-07.jpg', cap: 'Living, second view' },
-  { src: '/photos/marazul-03.jpg', cap: 'From the entrance' },
-  { src: '/photos/marazul-10.jpg', cap: 'Looking through' },
-  { src: '/photos/marazul-06.jpg', cap: 'Detail' },
+  { src: '/photos/marazul-01.jpg', cap: c['marazul-01'], span: 'wide tall' },
+  { src: '/photos/marazul-02.jpg', cap: c['marazul-02'] },
+  { src: '/photos/marazul-08.jpg', cap: c['marazul-08'] },
+  { src: '/photos/marazul-04.jpg', cap: c['marazul-04'] },
+  { src: '/photos/marazul-05.jpg', cap: c['marazul-05'] },
+  { src: '/photos/marazul-09.jpg', cap: c['marazul-09'] },
+  { src: '/photos/marazul-11.jpg', cap: c['marazul-11'] },
+  { src: '/photos/marazul-07.jpg', cap: c['marazul-07'] },
+  { src: '/photos/marazul-03.jpg', cap: c['marazul-03'] },
+  { src: '/photos/marazul-10.jpg', cap: c['marazul-10'] },
+  { src: '/photos/marazul-06.jpg', cap: c['marazul-06'] },
 ];
 ---
 
 <section class="section">
   <div class="container">
-    <p class="eyebrow">Inside</p>
-    <h2 class="h2">Inside the apartment.</h2>
+    <p class="eyebrow">{t.gallery.eyebrow}</p>
+    <h2 class="h2">{t.gallery.title}</h2>
     <div class="mosaic" data-gallery>
-      {tiles.map((t, i) => (
+      {tiles.map((tile, i) => (
         <button
-          class={`tile${t.span ? ` ${t.span}` : ''}`}
+          class={`tile${tile.span ? ` ${tile.span}` : ''}`}
           data-tile-index={i}
-          data-src={t.src}
-          data-cap={t.cap}
-          aria-label={`Open photo: ${t.cap}`}
+          data-src={tile.src}
+          data-cap={tile.cap}
+          aria-label={`${t.gallery.openLabel} ${tile.cap}`}
           type="button"
         >
           <img
-            src={t.src}
-            alt={t.cap}
+            src={tile.src}
+            alt={tile.cap}
             loading={i === 0 ? 'eager' : 'lazy'}
             decoding="async"
           />
-          <span class="cap">{t.cap}</span>
+          <span class="cap">{tile.cap}</span>
         </button>
       ))}
     </div>

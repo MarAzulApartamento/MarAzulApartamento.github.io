@@ -1,22 +1,24 @@
 ---
 import CalendarPicker from './CalendarPicker.astro';
 import type { CalendarData } from '../lib/lodgify';
+import { getStrings, interp } from '../lib/i18n';
 
 interface Props {
   data: CalendarData;
 }
 
 const { data } = Astro.props;
+const t = getStrings(Astro.currentLocale);
+const priceFrom = Object.values(data.rates).length > 0 ? Math.min(...Object.values(data.rates)) : 100;
+const lede = interp(t.availability.ledeWithPrice, { priceFrom, minStay: data.minStay });
 ---
 
 <section class="section" id="availability">
   <div class="container">
-    <p class="eyebrow">Your dates</p>
-    <h2 class="h2">Pick your dates.</h2>
-    <p class="lede">
-      Real-time availability. Prices update from €{Object.values(data.rates).length > 0 ? Math.min(...Object.values(data.rates)) : 100} per night. {data.minStay}-night minimum.
-    </p>
+    <p class="eyebrow">{t.availability.eyebrow}</p>
+    <h2 class="h2">{t.availability.title}</h2>
+    <p class="lede">{lede}</p>
 
-    <CalendarPicker data={data} visibleMonths={2} ctaLabel="Continue to booking →" />
+    <CalendarPicker data={data} visibleMonths={2} ctaLabel={t.common.continueToBooking} />
   </div>
 </section>

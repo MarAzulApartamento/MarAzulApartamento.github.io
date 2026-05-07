@@ -1,19 +1,15 @@
 ---
-const perks: string[] = [
-  'Free parking.',
-  'Late check-out and early check-in when the calendar allows.',
-  'Direct WhatsApp line with Stefania, before and during your stay.',
-  'Best rate available, every time.',
-  "A short walking guide of the host's favourite tasca, padaria, and quiet beach.",
-];
+import { getStrings } from '../lib/i18n';
+const t = getStrings(Astro.currentLocale);
+const perks = t.perks.items;
 ---
 
 <section class="section">
   <div class="container perks">
     <div>
-      <p class="eyebrow">Direct booking</p>
-      <h2 class="h2">Booking direct gets you a few extra things.</h2>
-      <p class="lede">Same dates, same calendar, same apartment. A few small additions.</p>
+      <p class="eyebrow">{t.perks.eyebrow}</p>
+      <h2 class="h2">{t.perks.title}</h2>
+      <p class="lede">{t.perks.lede}</p>
     </div>
     <ul class="perks-list">
       {perks.map((p) => (

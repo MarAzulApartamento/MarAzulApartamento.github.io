@@ -1,5 +1,5 @@
 ---
-import { PROPERTY } from '../lib/config';
+import { getStrings, interp } from '../lib/i18n';
 
 interface Props {
   reviewCount?: number;
@@ -12,6 +12,8 @@ const {
   rating = 5.0,
   googleReviewUrl = 'https://www.google.com/maps',
 } = Astro.props;
+const t = getStrings(Astro.currentLocale);
+const ratingLabel = interp(t.trustStrip.ratingLabel, { rating: rating.toFixed(1), count: reviewCount });
 ---
 
 <section class="trust" aria-label="Trust signals">
@@ -24,16 +26,16 @@ const {
           </svg>
         ))}
       </div>
-      <span class="trust-label">{rating.toFixed(1)} from {reviewCount} Google reviews</span>
+      <span class="trust-label">{ratingLabel}</span>
     </a>
     <span class="trust-divider" aria-hidden="true"></span>
     <div class="trust-item">
       <div class="host-photo" aria-hidden="true"></div>
-      <span class="trust-label">Open since {PROPERTY.openSince}</span>
+      <span class="trust-label">{t.trustStrip.openSince}</span>
     </div>
     <span class="trust-divider" aria-hidden="true"></span>
     <div class="trust-item">
-      <span class="trust-label muted">Speaks PT · IT · EN · ES</span>
+      <span class="trust-label muted">{t.trustStrip.languages}</span>
     </div>
   </div>
 </section>

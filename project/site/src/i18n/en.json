@@ -1,0 +1,163 @@
+{
+  "common": {
+    "whatsappCta": "WhatsApp Stefy",
+    "whatsappMicro": "we may answer within 12 hours",
+    "whatsappFallback": "Or message us on WhatsApp",
+    "bookDirect": "Book direct",
+    "bookDirectArrow": "Book direct →",
+    "checkAvailability": "Check availability",
+    "continueToBooking": "Continue to booking →",
+    "from": "From",
+    "perNight": "per night",
+    "minStayShort": "{n}-night minimum"
+  },
+  "topBar": {
+    "siteNameAria": "Apartamento Mar Azul"
+  },
+  "home": {
+    "metaTitle": "Apartamento Mar Azul · A quiet apartment in Lagos for couples and small families",
+    "metaDescription": "A quiet apartment in Lagos, Algarve. Walking distance from the centre and the beaches. Sleeps 2 to 4. Private terrace, A/C, Wi-Fi, free parking. From €{priceFrom} per night."
+  },
+  "hero": {
+    "eyebrow": "Lagos · Algarve",
+    "title": "A quiet apartment in Lagos for couples and small families.",
+    "subtitle": "Walking distance from the centre and the beaches. Sleeps 2 to 4."
+  },
+  "trustStrip": {
+    "ratingLabel": "{rating} from {count} Google reviews",
+    "openSince": "Open since June 2025",
+    "languages": "Speaks PT · IT · EN · ES"
+  },
+  "factsGrid": {
+    "eyebrow": "At a glance",
+    "title": "What's in the apartment, plainly.",
+    "facts": [
+      ["Sleeps", "2 to 4"],
+      ["Bedrooms", "1 plus sofa bed"],
+      ["Terrace", "South-facing"],
+      ["Air conditioning", "In the bedroom"],
+      ["Wi-Fi", "Fibre, 200 Mbps"],
+      ["Parking", "Free, reserved"],
+      ["Linens & towels", "Provided"],
+      ["Crib & high chair", "On request"],
+      ["Walking distance", "Centre & beaches"],
+      ["Pets", "Not allowed", true]
+    ]
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Walking distance from the centre and the beaches.",
+    "body": "The apartment sits on a quiet residential street. Walk down to the city centre for breakfast, cut through the centre for a dive in the sea, and follow the coast path to Ponta da Piedade before the morning crowds arrive.",
+    "hostedBy": "Hosted by Stefania."
+  },
+  "gallery": {
+    "eyebrow": "Inside",
+    "title": "Inside the apartment.",
+    "openLabel": "Open photo:",
+    "captions": {
+      "marazul-01": "Living, looking out",
+      "marazul-02": "Sitting area",
+      "marazul-03": "From the entrance",
+      "marazul-04": "Kitchen and dining",
+      "marazul-05": "Cooking",
+      "marazul-06": "Detail",
+      "marazul-07": "Living, second view",
+      "marazul-08": "Bedroom",
+      "marazul-09": "Bedroom corner",
+      "marazul-10": "Looking through",
+      "marazul-11": "Bathroom"
+    }
+  },
+  "perks": {
+    "eyebrow": "Direct booking",
+    "title": "Booking direct gets you a few extra things.",
+    "lede": "Same dates, same calendar, same apartment. A few small additions.",
+    "items": [
+      "Free parking.",
+      "Late check-out and early check-in when the calendar allows.",
+      "Direct WhatsApp line with Stefania, before and during your stay.",
+      "Best rate available, every time.",
+      "A short walking guide of the host's favourite tasca, padaria, and quiet beach."
+    ]
+  },
+  "location": {
+    "eyebrow": "Location",
+    "title": "Lagos, on foot.",
+    "mapLabel": "Map of Lagos showing the apartment",
+    "mapPlaceholder": "Map placeholder · Leaflet + OpenStreetMap in production",
+    "places": [
+      ["Tasca", "Prato Cheio", "Walking distance"],
+      ["Groceries", "Intermarché Lagos", "10 min walk"],
+      ["Beach", "Praia da Batata", "Walking distance"],
+      ["Beach", "Praia Dona Ana", "Walking distance"],
+      ["Marina", "Marina de Lagos", "Walking distance"],
+      ["Bakery", "Padaria Central", "Walking distance"]
+    ]
+  },
+  "reviews": {
+    "eyebrow": "Reviews",
+    "title": "What guests say."
+  },
+  "availability": {
+    "eyebrow": "Your dates",
+    "title": "Pick your dates.",
+    "ledeWithPrice": "Real-time availability. Prices update from €{priceFrom} per night. {minStay}-night minimum."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "A few things people ask."
+  },
+  "finalCta": {
+    "eyebrow": "Direct booking",
+    "title": "Ready when you are."
+  },
+  "stickyCta": {
+    "priceLabel": "From €{priceFrom} per night",
+    "meta": "Best rate available, every time."
+  },
+  "calendarPicker": {
+    "pickHeadline": "Pick a check-in date.",
+    "pickMeta": "{minStay}-night minimum.",
+    "pickMetaLive": "{minStay}-night minimum. Real-time availability.",
+    "checkInPrefix": "Check-in:",
+    "checkInPickout": "Now pick your check-out date. Minimum {minStay} nights.",
+    "nightsLabel": "nights",
+    "totalLabelTemplate": "€{total} total (avg €{ppn}/night)",
+    "minStayWarning": "Pick at least {minStay} nights to continue.",
+    "blockedError": "Some dates in this range are unavailable.",
+    "clearDates": "Clear dates",
+    "navPrevious": "Previous",
+    "navNext": "Next",
+    "navAriaPrevious": "Previous months",
+    "navAriaNext": "Next months",
+    "datesEnRoute": "Now pick your check-out date. Minimum {minStay} nights.",
+    "minNights": "{nights} night (minimum {minStay})",
+    "minNightsPlural": "{nights} nights (minimum {minStay})"
+  },
+  "footer": {
+    "languagesHeading": "Languages",
+    "legalHeading": "Legal",
+    "legalPrivacy": "Privacy",
+    "legalCookies": "Cookies",
+    "legalTerms": "Terms",
+    "hostedNote": "Hosted on Cloudflare. Booking by Lodgify."
+  },
+  "bookPage": {
+    "metaTitle": "Book direct · Apartamento Mar Azul",
+    "metaDescription": "Book your stay at Apartamento Mar Azul direct. Best rate available, every time. Free parking, late check-out, direct WhatsApp line with the host.",
+    "ctaLabel": "Book direct →",
+    "back": "Back to the apartment",
+    "eyebrow": "Booking",
+    "title": "Pick your dates.",
+    "lede": "Best rate available, every time. Booking direct includes free parking, late check-out and early check-in when the calendar allows, and a direct WhatsApp line with Stefania.",
+    "perksList": [
+      "Free parking, free Wi-Fi, linens included",
+      "Free cancellation up to 7 days before arrival",
+      "Best rate available, no platform service fees"
+    ],
+    "perkPriceLine": "From €{priceFrom} per night · {minStay}-night minimum",
+    "helpLine": "Questions before you book?",
+    "widgetNote": "Booking opens Lodgify's secure checkout in a new tab once you click \"Book direct\"."
+  },
+  "skipLink": "Skip to content"
+}

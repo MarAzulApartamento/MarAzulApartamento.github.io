@@ -1,26 +1,21 @@
 ---
-const places: Array<[string, string, string]> = [
-  ['Tasca', 'Prato Cheio', 'Walking distance'],
-  ['Groceries', 'Intermarché Lagos', '10 min walk'],
-  ['Beach', 'Praia da Batata', 'Walking distance'],
-  ['Beach', 'Praia Dona Ana', 'Walking distance'],
-  ['Marina', 'Marina de Lagos', 'Walking distance'],
-  ['Bakery', 'Padaria Central', 'Walking distance'],
-];
+import { getStrings } from '../lib/i18n';
+const t = getStrings(Astro.currentLocale);
+const places = t.location.places as Array<[string, string, string]>;
 ---
 
 <section class="section section-tint">
   <div class="container">
-    <p class="eyebrow">Location</p>
-    <h2 class="h2">Lagos, on foot.</h2>
-    <div class="map" aria-label="Map of Lagos showing the apartment">
+    <p class="eyebrow">{t.location.eyebrow}</p>
+    <h2 class="h2">{t.location.title}</h2>
+    <div class="map" aria-label={t.location.mapLabel}>
       <div class="map-grid" aria-hidden="true"></div>
       <div class="map-pin" title="Apartamento Mar Azul">
         <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" stroke="var(--color-warm-white)" stroke-width="1.5" aria-hidden="true">
           <path d="M12 2c-3.9 0-7 3.1-7 7 0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
         </svg>
       </div>
-      <span class="map-watermark">Map placeholder · Leaflet + OpenStreetMap in production</span>
+      <span class="map-watermark">{t.location.mapPlaceholder}</span>
     </div>
     <ul class="places">
       {places.map(([type, name, dist]) => (

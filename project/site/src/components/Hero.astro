@@ -1,8 +1,8 @@
 ---
 import { WHATSAPP } from '../lib/config';
+import { getStrings, interp } from '../lib/i18n';
 
 interface Props {
-  /** Minimum nightly rate in EUR. Sprint 2 hardcoded; Sprint 6 fetches at build. */
   priceFrom?: number;
   minStay?: number;
 }
@@ -11,24 +11,25 @@ const { priceFrom = 100, minStay = 3 } = Astro.props;
 const whatsappHref = WHATSAPP.number
   ? `https://wa.me/${WHATSAPP.number}?text=${encodeURIComponent(WHATSAPP.defaultMessage)}`
   : '#whatsapp';
+const t = getStrings(Astro.currentLocale);
 ---
 
 <section class="hero" id="top">
   <div class="hero-photo" aria-hidden="true"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-inner">
-    <p class="eyebrow eyebrow-light">Lagos · Algarve</p>
-    <h1 class="hero-title">A quiet apartment in Lagos for couples and small families.</h1>
-    <p class="hero-sub">Walking distance from the centre and the beaches. Sleeps 2 to 4.</p>
+    <p class="eyebrow eyebrow-light">{t.hero.eyebrow}</p>
+    <h1 class="hero-title">{t.hero.title}</h1>
+    <p class="hero-sub">{t.hero.subtitle}</p>
     <p class="hero-price">
-      From €{priceFrom} per night
-      <span class="hero-price-meta">· {minStay}-night minimum</span>
+      {t.common.from} €{priceFrom} {t.common.perNight}
+      <span class="hero-price-meta">· {interp(t.common.minStayShort, { n: minStay })}</span>
     </p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#availability" data-scroll>Check availability</a>
+      <a class="btn btn-primary" href="#availability" data-scroll>{t.common.checkAvailability}</a>
       <a class="btn btn-ghost-light" href={whatsappHref} target={WHATSAPP.number ? '_blank' : undefined} rel={WHATSAPP.number ? 'noopener noreferrer' : undefined}>
-        <span>WhatsApp Stefy</span>
-        <span class="micro">{WHATSAPP.responseTime}</span>
+        <span>{t.common.whatsappCta}</span>
+        <span class="micro">{t.common.whatsappMicro}</span>
       </a>
     </div>
   </div>

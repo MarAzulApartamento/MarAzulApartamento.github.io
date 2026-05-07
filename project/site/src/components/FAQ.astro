@@ -1,10 +1,14 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { getStrings } from '../lib/i18n';
 
-const all = await getCollection('faqs', ({ data }) => data.language === 'en');
-const items = all.sort((a, b) => a.data.order - b.data.order);
+const lang = Astro.currentLocale || 'en';
+const t = getStrings(lang);
+const all = await getCollection('faqs', ({ data }) => data.language === lang);
+const fallback = lang !== 'en' ? await getCollection('faqs', ({ data }) => data.language === 'en') : [];
+const pool = all.length > 0 ? all : fallback;
+const items = pool.sort((a, b) => a.data.order - b.data.order);
 
-// Pre-render each entry's body markdown
 const rendered = await Promise.all(
   items.map(async (entry) => {
     const { Content } = await render(entry);
@@ -15,8 +19,8 @@ const rendered = await Promise.all(
 
 <section class="section">
   <div class="container">
-    <p class="eyebrow">FAQ</p>
-    <h2 class="h2">A few things people ask.</h2>
+    <p class="eyebrow">{t.faq.eyebrow}</p>
+    <h2 class="h2">{t.faq.title}</h2>
     <div class="faq" data-faq>
       {rendered.map(({ entry, Content }, i) => (
         <details class="faq-item" open={i < 2}>
