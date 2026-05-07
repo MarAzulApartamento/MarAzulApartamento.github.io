@@ -10,10 +10,10 @@ export default defineConfig({
   site: SITE,
 
   // Multilingual routing — English is the default (unprefixed: /).
-  // Other languages live at /pt/, /de/, /nl/, /fr/.
+  // Other languages live at /pt/, /es/, /it/, /de/, /nl/, /fr/.
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'pt', 'de', 'nl', 'fr'],
+    locales: ['en', 'pt', 'es', 'it', 'de', 'nl', 'fr'],
     routing: {
       prefixDefaultLocale: false,
       redirectToDefaultLocale: false,
@@ -42,6 +42,8 @@ export default defineConfig({
         locales: {
           en: 'en-GB',
           pt: 'pt-PT',
+          es: 'es-ES',
+          it: 'it-IT',
           de: 'de-DE',
           nl: 'nl-NL',
           fr: 'fr-FR',

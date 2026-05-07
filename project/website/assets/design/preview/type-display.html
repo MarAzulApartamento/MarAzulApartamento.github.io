@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Display type</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:24px 28px;background:var(--bg);font-family:var(--font-body);color:var(--fg)}
+  .row{display:flex;align-items:baseline;gap:18px;padding:10px 0;border-bottom:1px dashed var(--border)}
+  .row:last-child{border-bottom:0}
+  .lbl{flex:0 0 110px;font-size:11.5px;font-weight:600;letter-spacing:0.06em;color:var(--fg-muted);text-transform:none}
+  .specimen{font-family:var(--font-display);color:var(--fg);letter-spacing:-0.01em;line-height:1.1}
+  .s-hero{font-size:48px;font-weight:700}
+  .s-h2{font-size:32px;font-weight:700}
+  .s-h3{font-size:24px;font-weight:700}
+  .s-italic{font-size:24px;font-weight:400;font-style:italic}
+</style></head>
+<body class="dsx">
+  <div class="row"><div class="lbl">Hero / 48</div><div class="specimen s-hero">A quiet apartment in Lagos.</div></div>
+  <div class="row"><div class="lbl">H2 / 32</div><div class="specimen s-h2">Walking distance from the centre and the beaches.</div></div>
+  <div class="row"><div class="lbl">H3 / 24</div><div class="specimen s-h3">Hosted by Stefania.</div></div>
+  <div class="row"><div class="lbl">Italic / 24</div><div class="specimen s-italic">A glimpse of the Atlantic over the rooftops.</div></div>
+</body></html>

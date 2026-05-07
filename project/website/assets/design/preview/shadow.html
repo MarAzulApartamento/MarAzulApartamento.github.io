@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Shadow</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:32px;background:var(--bg)}
+  .row{display:flex;gap:28px}
+  .item{display:flex;flex-direction:column;align-items:center;gap:10px}
+  .box{width:140px;height:88px;background:var(--warm-white);border-radius:8px}
+  .sm{box-shadow:0 1px 3px rgba(29,38,48,0.08)}
+  .md{box-shadow:0 4px 14px rgba(29,38,48,0.10)}
+  .lg{box-shadow:0 12px 32px rgba(29,38,48,0.13)}
+  .lbl{font:600 12px/1 var(--font-body);color:var(--fg);letter-spacing:0.04em}
+  .px{font-family:ui-monospace,Menlo,monospace;font-size:11px;color:var(--fg-muted)}
+</style></head>
+<body class="dsx">
+  <div class="row">
+    <div class="item"><div class="box sm"></div><div class="lbl">shadow-sm</div><div class="px">hairline</div></div>
+    <div class="item"><div class="box md"></div><div class="lbl">shadow-md</div><div class="px">cards</div></div>
+    <div class="item"><div class="box lg"></div><div class="lbl">shadow-lg</div><div class="px">lightbox / dropdown</div></div>
+  </div>
+</body></html>

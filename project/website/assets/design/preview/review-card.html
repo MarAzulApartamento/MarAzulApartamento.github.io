@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Review card</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:22px;background:var(--bg);font-family:var(--font-body);color:var(--fg)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:var(--warm-white);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+  .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .name{font:600 14px/1 var(--font-body);color:var(--fg)}
+  .date{font:400 13px/1 var(--font-body);color:var(--fg-muted)}
+  .stars{display:inline-flex;gap:2px;margin-bottom:8px}
+  .star{width:14px;height:14px}
+  .quote{font:italic 400 17px/1.45 var(--font-display);color:var(--fg);margin:0;text-wrap:pretty}
+</style></head>
+<body class="dsx">
+  <!-- NOTE: review content placeholders. Real Google Reviews from the property's
+       GBP listing will populate these in Sprint 2. Card structure stays as-is. -->
+  <div class="grid">
+    <div class="card">
+      <div class="head"><span class="name">[Real reviewer name]</span><span class="date">[Real date]</span></div>
+      <div class="stars">
+        <svg class="star" viewBox="0 0 24 24" fill="#D8B98A"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="#D8B98A"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="#D8B98A"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="#D8B98A"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="#D8B98A"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+      </div>
+      <p class="quote">[Pull verbatim from Google Business Profile review #1. Do not invent or paraphrase.]</p>
+    </div>
+    <div class="card">
+      <div class="head"><span class="name">[Real reviewer name]</span><span class="date">[Real date]</span></div>
+      <div class="stars">
+        <svg class="star" viewBox="0 0 24 24" fill="#D8B98A"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="#D8B98A"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="#D8B98A"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="#D8B98A"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+        <svg class="star" viewBox="0 0 24 24" fill="#D8B98A"><path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z"/></svg>
+      </div>
+      <p class="quote">[Pull verbatim from Google Business Profile review #2. Do not invent or paraphrase.]</p>
+    </div>
+  </div>
+</body></html>

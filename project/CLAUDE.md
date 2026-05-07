@@ -38,8 +38,10 @@ ACCENT:
 - SUN SAND: #E6D8B7 
 
 ### Typography
-- Display/Headings: Playfair Display (elegant, coastal editorial feel) — only at 24px and above
-- Body/UI: Inter (clean, modern, readable) — minimum 16px for body copy
+- Display/Headings: **Spectral** (Production Type, SIL OFL via Google Fonts) — weights 400, 700 + 400 italic. Only at 24px and above.
+- Body/UI: **Manrope** (SIL OFL via Google Fonts) — weights 400, 500, 600. Minimum 16px for body copy.
+- Replaces both Brand.md's original Playfair Display + Inter pair (flagged by `impeccable` as AI-default reflex picks) and the brief PP Editorial New + Switzer detour (incompatible with Pangram Pangram's Free-for-Personal-Use EULA for our commercial site). Both Spectral and Manrope are SIL OFL, fully free for commercial use, no licensing risk.
+- Brand.md still lists the older pair; flag for owner update if relevant. Print materials may keep an older pair if that work has already begun.
 
 ### Logo Files
 Located at: C:\marazul\project\website\assets\logo
@@ -51,7 +53,7 @@ Located at: C:\marazul\project\website\assets\logo
 ### Property
 - **Location:** Rua Dom Luís da Silveira lote V 44 B, 8600-575 Lagos, Portugal
 - **Capacity:** 2–4 guests (ideal for couple, small family, or friends)
-- **Setting:** Peaceful residential area. 5 min by car to Dona Ana Beach. 4 min by car / 20 min on foot to Praia da Batata.
+- **Setting:** Peaceful residential area. Walking distance from the centre of Lagos and the beaches.
 
 ### Key Features
 - Bright & cozy with large windows
@@ -144,7 +146,7 @@ Located at: "C:\marazul\project\website\assets\images\video-overlay-370x288.mov"
 ## VOICE & CONTENT RULES (apply to every public-facing surface)
 - **No em dashes (`—`) anywhere on public-facing copy** — use a full stop or rewrite the line.
 - **Never** position "sea view," "ocean view," or "beachfront" as headline features. The terrace has a sea glimpse; mention casually if at all, never as a headline.
-- **Beach distances** must always be stated as: "5 min by car to Dona Ana Beach" and "4 min by car / 20 min on foot to Praia da Batata." Never "near the beach" or "close to the beach."
+- **Location framing:** say "walking distance from the centre of Lagos and the beaches." Avoid stating exact minutes-by-car or minutes-on-foot for individual beaches in marketing copy.
 - **Not pet-friendly** — remove from all messaging.
 - **Direct booking incentives = perks**, not price discounts (avoids breaking Booking.com rate parity). Examples: welcome bottle of vinho verde, late checkout, free parking guaranteed.
 - **WhatsApp CTA** must always include the response-time expectation: "we may answer within 12 hours."

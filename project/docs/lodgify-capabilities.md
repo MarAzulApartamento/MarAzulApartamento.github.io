@@ -146,3 +146,18 @@ This pattern:
 - `project/site/scripts/lodgify-spike-2.mjs` — round 2 script
 
 Both scripts can be re-run any time to re-verify capabilities (e.g., after a plan upgrade).
+
+- `project/site/scripts/lodgify-price.mjs` — fetches the **minimum nightly rate** over the next 60 days. Used in Sprint 2 to populate the hero "From €X per night" badge at Astro build time.
+
+## Pricing data confirmed (2026-05-07)
+
+- Currency: **EUR**
+- Min rate next 60 days: **€100/night**
+- Max rate next 60 days: **€192/night**
+- 39 distinct price points across the window (clear seasonal/dynamic pricing)
+- Minimum stay: 3 nights
+- Cleaning fee: €50 per stay (not per night)
+- VAT: 0%
+- Check-in: 16:00 / Check-out: 10:00
+- 6 active promotion rules in Lodgify (weekly discount 10%, last-minute 15%, monthly stay 30%, "Endless summer" 15%, "August last minute" 30%, "Sunny Escape" 10%)
+- ⚠️ A "Pet Nightly Fee" of €20/night exists in Lodgify rate settings even though brand says **not pet-friendly**. Likely a vestigial config — verify with owner whether to remove (would require a Lodgify dashboard edit, must ask before changing per the production-safety rule).

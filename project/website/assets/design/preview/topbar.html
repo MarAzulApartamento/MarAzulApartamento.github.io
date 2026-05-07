@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Top bar</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:0;background:var(--bg);font-family:var(--font-body)}
+  .bar{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border);background:rgba(248,246,241,0.92);backdrop-filter:blur(12px)}
+  .logo{height:32px}
+  .lang{display:flex;gap:14px;font:500 14px/1 var(--font-body)}
+  .lang a{color:var(--fg-muted);text-decoration:none}
+  .lang a.active{color:var(--atlantic-blue);font-weight:600}
+  .below{padding:24px;color:var(--fg-muted);font-size:13px}
+</style></head>
+<body class="dsx">
+  <div class="bar">
+    <img class="logo" src="../assets/logo-primary.svg" alt="Apartamento Mar Azul">
+    <nav class="lang">
+      <a href="#" class="active">English</a>
+      <a href="#">Português</a>
+      <a href="#">Deutsch</a>
+      <a href="#">Nederlands</a>
+      <a href="#">Français</a>
+    </nav>
+  </div>
+  <div class="below">No nav menu — single-page site. Logo + language switcher only.</div>
+</body></html>

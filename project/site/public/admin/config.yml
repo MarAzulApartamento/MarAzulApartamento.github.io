@@ -15,7 +15,7 @@ locale: en
 # i18n — content edited per locale, English default.
 i18n:
   structure: multiple_folders
-  locales: [en, pt, de, nl, fr]
+  locales: [en, pt, es, it, de, nl, fr]
   default_locale: en
 
 # Placeholder collection so Sveltia loads cleanly. Replaced in Sprint 2.

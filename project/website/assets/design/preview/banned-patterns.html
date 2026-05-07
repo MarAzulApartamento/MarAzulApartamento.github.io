@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Banned patterns</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:18px 20px;background:var(--bg);font-family:var(--font-body)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{padding:14px 16px;border-radius:8px;background:var(--warm-white);border:1px solid var(--border);position:relative}
+  .bad{border-left:4px solid var(--atlantic-blue);border-color:var(--border)}
+  .good{background:var(--seafoam);border:0}
+  .ribbon{position:absolute;top:8px;right:10px;font:600 10px/1 var(--font-body);letter-spacing:0.08em;padding:3px 7px;border-radius:3px}
+  .r-bad{background:#a13c2c;color:#fff}
+  .r-good{background:var(--atlantic-blue);color:#fff}
+  h4{font:700 16px/1.2 var(--font-display);margin:0 0 4px;color:var(--fg);letter-spacing:-0.01em}
+  p{font:400 13px/1.5 var(--font-body);color:var(--fg-muted);margin:0}
+  .gradtxt{font:700 22px/1.2 var(--font-display);background:linear-gradient(90deg,#1E5B73,#D8B98A);-webkit-background-clip:text;background-clip:text;color:transparent}
+</style></head>
+<body class="dsx">
+  <div class="row">
+    <div class="card bad"><span class="ribbon r-bad">Banned</span><h4>Coloured left stripe</h4><p>The single most overused AI tell. Use full borders or tinted backgrounds.</p></div>
+    <div class="card good"><span class="ribbon r-good">On-brand</span><h4>Tinted full surface</h4><p>Seafoam fill, no border. Calm separation.</p></div>
+  </div>
+  <div class="row" style="margin-top:14px">
+    <div class="card"><span class="ribbon r-bad">Banned</span><div class="gradtxt">Gradient text</div><p style="margin-top:6px">Solid colours only.</p></div>
+    <div class="card good"><span class="ribbon r-good">On-brand</span><h4>A quiet apartment in Lagos.</h4><p>Spectral, Deep Navy, solid.</p></div>
+  </div>
+</body></html>

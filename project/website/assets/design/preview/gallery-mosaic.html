@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Photo treatment</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:0;background:var(--bg);font-family:var(--font-body)}
+  .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:120px 120px;gap:6px;padding:6px;background:var(--bg)}
+  .tile{background:#ddd;background-size:cover;background-position:center;border-radius:4px;position:relative}
+  .a{grid-row:1/3;background-image:url(../assets/marazul-01.jpg)}
+  .b{background-image:url(../assets/marazul-04.jpg)}
+  .c{background-image:url(../assets/marazul-08.jpg)}
+  .d{background-image:url(../assets/marazul-09.jpg)}
+  .e{background-image:url(../assets/marazul-12.jpg)}
+  .cap{position:absolute;left:8px;bottom:8px;font:500 11px/1 var(--font-body);color:#fff;background:rgba(29,38,48,0.55);padding:5px 8px;border-radius:4px}
+</style></head>
+<body class="dsx">
+  <div class="grid">
+    <div class="tile a"><div class="cap">Living, looking out</div></div>
+    <div class="tile b"></div>
+    <div class="tile c"><div class="cap">Bedroom</div></div>
+    <div class="tile d"></div>
+    <div class="tile e"></div>
+  </div>
+</body></html>

@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 /* Brand tokens — single source of truth.
-   These mirror project/website/assets/Brand (1).md and feed Tailwind via CSS custom properties. */
+   Colours expressed in OKLCH-equivalent hex (OKLCH shown in comments for
+   perceptually uniform shade computation via color-mix() at the call site). */
 @theme {
   /* Colours */
-  --color-atlantic-blue: #1E5B73;
-  --color-seafoam: #CFE3DE;
-  --color-sun-sand: #D8B98A;
-  --color-warm-white: #F8F6F1;
-  --color-deep-navy: #1D2630;
-  --color-slate-grey: #6F7A86;
+  --color-atlantic-blue: #1E5B73;  /* oklch(0.41 0.06 220) — primary, CTAs, links */
+  --color-seafoam: #CFE3DE;        /* oklch(0.88 0.02 175) — section tints, hover */
+  --color-sun-sand: #D8B98A;       /* oklch(0.78 0.07 80)  — accent, sparingly */
+  --color-warm-white: #F8F6F1;     /* oklch(0.97 0.005 80) — page background */
+  --color-deep-navy: #1D2630;      /* oklch(0.21 0.015 235) — body text */
+  --color-slate-grey: #6F7A86;     /* oklch(0.53 0.02 235) — muted text */
 
-  /* Display + body fonts (Google Fonts loaded in BaseLayout) */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+  /* Display + body fonts — Google Fonts, SIL OFL, free for commercial use.
+     Loaded via <link> in BaseLayout.astro. */
+  --font-display: 'Spectral', Georgia, serif;
+  --font-body: 'Manrope', system-ui, 'Helvetica Neue', sans-serif;
 
   /* Type scale */
   --text-hero: clamp(2.5rem, 5vw, 4.5rem);
@@ -24,6 +26,7 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 14px;
+  --radius-full: 9999px;
 
   /* Shadow */
   --shadow-sm: 0 1px 3px rgba(29, 38, 48, 0.08);

@@ -49,3 +49,8 @@ Thumbs.db
 *.arw
 *.dng
 *.raw
+
+# Local font downloads kept for reference but unused by the build.
+# Production fonts load from Google Fonts CDN.
+project/website/assets/fonts/
+project/website/assets/design/fonts/
