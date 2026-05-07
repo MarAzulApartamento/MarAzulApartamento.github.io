@@ -59,10 +59,9 @@ The Portable Search Bar widget is saved in reserve for a future sticky-header / 
 
 ## 🟡 Content & assets needed
 
-### 5. Real photo of you for the trust strip and About section
+### 5. Real photo of you for the trust strip and About section ✅ RESOLVED
 
-**Currently:** the host photo on the trust strip and the About-section photo both use `marazul-08.jpg` (an interior shot) as placeholder.
-**Need:** one good portrait of Stefania (could be casual — at the apartment, on the terrace, in Lagos). Doesn't need to be professional. **Trust signal: a real human face cuts scam-radar by ~50%.**
+**Resolved 2026-05-07.** `owner_picture.jpg` provided by Stefania. Now used in the homepage trust strip (host bubble) and the About section. Stored at `project/site/public/photos/owner_picture.jpg`. If you ever want to swap it for a different photo, just replace that file.
 
 ### 6. Reviews — manual entries from Airbnb + Booking.com
 
@@ -99,7 +98,13 @@ The welcome card sits inside the apartment for arriving guests. Needs:
 
 ## 🟢 Brand & strategy decisions
 
-### 10. Brand.md still has older language — update to match current decisions?
+### 10. Brand.md still has older language — update to match current decisions? ✅ RESOLVED
+
+**Resolved 2026-05-07.** `project/website/assets/Brand (1).md` rewritten as v2.0 with all current decisions reconciled. Decision log section at the bottom captures the major changes (typography, Slate Grey, Error Red, address, owner name, languages, location framing, cancellation, Lodgify plan, etc.).
+
+---
+
+### 10. ARCHIVED — original question about Brand.md reconciliation
 
 **Three contradictions between Brand.md (your owner-edited file) and current project decisions:**
 
@@ -111,39 +116,33 @@ The welcome card sits inside the apartment for arriving guests. Needs:
 
 **Question:** want me to update Brand.md to reflect these (it's owner-edited so I haven't touched it without permission), or leave Brand.md as a historical reference?
 
-### 11. Air conditioning scope — confirm
+### 11. Air conditioning scope — confirm ✅ RESOLVED
 
-**Currently in design copy:** "Air conditioning · In the bedroom" (per your 2026-05-07 update).
-**Confirmation needed:** A/C is in the bedroom only (not living room or kitchen)?
-**Why I'm asking:** if it's in living room too, the trust copy can say "In the bedroom and living room" which is stronger. If it's truly bedroom-only, leave as-is.
+**Resolved 2026-05-07.** A/C is in the **bedroom only**, not living room or kitchen. Site copy already correct.
 
-### 12. Languages spoken — final list
+### 12. Languages spoken — final list ✅ RESOLVED
 
-**Currently in trust strip:** "Speaks PT · IT · EN · ES" (your update).
-**Question:** is "ES" (Spanish) genuinely conversational, or basic? If basic, downgrading to "PT · IT · EN" avoids over-promising. Some guests pick rentals based on host's language match.
+**Resolved 2026-05-07.** Stefy speaks **Portuguese, Italian, English, Spanish**. Trust strip and FAQ copy reflect this.
 
-### 13. Cancellation policy — confirm wording
+### 13. Cancellation policy — confirm wording ✅ RESOLVED
 
-**Currently in FAQ:** "Free cancellation up to 7 days before arrival. Within 7 days, 50% of the amount is non-refundable."
-**Confirmation needed:** does "50% of the amount" mean the full booking total, or just the first 50% paid? Wording precision matters legally + for guest expectations.
+**Resolved 2026-05-07.**
+- **Payment:** 100% at the time of booking.
+- **Cancellation:** more than 7 days before arrival = full refund. Within 7 days of arrival = 50% of the booking is non-refundable (the other 50% IS refunded).
+- FAQ updated to: "Payment in full at the time of booking. Cancel more than 7 days before arrival for a full refund. Within 7 days of arrival, 50% of the booking is non-refundable."
+- Brand.md updated. CMS faqs/04-cancellation.md updated.
 
 ---
 
 ## 🔵 Domain, deploy, accounts
 
-### 14. Domain ownership and DNS access
+### 14. Domain ownership and DNS access ✅ RESOLVED
 
-**Confirmed:** Stefania owns `apartamentomarazul.com`. Currently points at GitHub Pages.
-**Need before cutover day:**
-- Login to the domain registrar (where the domain is registered — GoDaddy / Namecheap / Hover / etc.). She'll need to update the A/CNAME records to point at Cloudflare Pages.
-- Either Stefania does this with our guidance (15-min walkthrough) or she shares registrar-only access for me to handle (less recommended; she should retain control).
+**Resolved 2026-05-07.** Domain is registered at **Namecheap**. Stefania (or owner) will handle the DNS swap to Cloudflare Pages on cutover day. Sprint 9 (DNS cutover) plan: provide a step-by-step Namecheap walkthrough at the time, no surprises.
 
-**Question:** which registrar is the domain on?
+### 15. Cloudflare account ownership ✅ RESOLVED
 
-### 15. Cloudflare account ownership
-
-**Currently:** Stefania (or someone with her authorization) created a Cloudflare account and connected the GitHub repo, since the staging URL `marazul.marazulapartamento.workers.dev` is now live.
-**Confirmation:** she has access to the Cloudflare dashboard? She'll need to add environment variables (Lodgify API key, Clarity ID, GA4 ID, etc.) in Sprint 4.
+**Resolved 2026-05-07.** Owner will handle Cloudflare environment variables. Already added: `LODGIFY_API_KEY`, `LODGIFY_PROPERTY_ID`. Pending (when each tool is set up): `PUBLIC_WHATSAPP_NUMBER`, `PUBLIC_GA4_ID`, `PUBLIC_CLARITY_ID`, `PUBLIC_CF_ANALYTICS_TOKEN`.
 
 ### 16. Email — `hello@apartamentomarazul.com` or similar
 

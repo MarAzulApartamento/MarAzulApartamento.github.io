@@ -1,489 +1,501 @@
-# \# Apartamento Mar Azul — Brand System & AI Prompts
+# Apartamento Mar Azul — Brand System & AI Prompts
 
-\---
+**Last updated:** 2026-05-07
+**Version:** 2.0 (post-Sprint-2 reconciliation)
 
-## \#\# 1\. Brand Design System
+---
 
-\> Insert this entire Design System block into \*\*Claude Design\*\* before starting any task.
+## 1. Brand Design System
 
-\---
+> Insert this Design System block into any AI session before starting design or copy work.
 
-### \#\#\# 1.1 Brand Identity
+---
 
-\*\*Property:\*\* Apartamento Mar Azul  
-\*\*Location:\*\* R. Dom Luís da Silveira, 8600-575 Lagos, Algarve, Portugal  
-\*\*Type:\*\* Independent short-stay apartment (2-4 guests), family-friendly  
-\*\*URL:\*\* \[www.apartamentomarazul.com\](https://www.apartamentomarazul.com)
+### 1.1 Brand Identity
 
-\*\*Brand idea:\*\* A calm, sunlit coastal apartment where the sea is always close. Not a hotel. Not a chain. A real place, a real stay, with a quiet premium feel.
+- **Property:** Apartamento Mar Azul
+- **Address:** Rua Dom Luís da Silveira lote V 44 B, 8600-575 Lagos, Algarve, Portugal
+- **Open since:** June 2025
+- **Type:** Independent short-stay apartment (2–4 guests), family-friendly
+- **URL:** [www.apartamentomarazul.com](https://www.apartamentomarazul.com)
+- **Owner / Host:** Stefania (informal: Stefy — used on the WhatsApp CTA button only)
+- **Languages spoken by host:** Portuguese, Italian, English, Spanish
 
-\*\*Brand personality:\*\* relaxed · trustworthy · coastal · quietly premium · local · welcoming
+**Brand idea:** A calm, sunlit coastal apartment in Lagos. Not a hotel. Not a chain. A real place, hosted by a real person, with a quietly premium feel.
 
-\*\*Brand voice:\*\* Specific, calm, place-driven. Never corporate. Never generic.  
-\*\*Tone examples:\*\*  
-\- ✅ "Private terrace apartment in Lagos, 5 min by car from Dona Ana Beach."  
-\- ✅ "A peaceful Algarve base with everything you need."  
-\- ❌ "Unlock the ultimate coastal experience."  
-\- ❌ "Your all-in-one holiday solution."
+**Brand personality:** relaxed · trustworthy · coastal · quietly premium · local · welcoming
 
-\*\*What this property is NOT:\*\*  
-\- ❌ Not pet-friendly \- remove from all messaging  
-\- ❌ No panoramic sea view \- there is a glimpse of the sea from the terrace; mention casually, never as a headline feature  
-\- ❌ Not walking distance to Dona Ana Beach \- always say "5 min by car"  
-\- ❌ Never use em dashes on any online material public facing
+**Brand voice:** Specific, calm, place-driven. Never corporate. Never generic.
 
-\---
+**Tone examples:**
+- ✅ "A quiet apartment in Lagos for couples and small families."
+- ✅ "Walking distance from the centre and the beaches. Sleeps 2 to 4."
+- ✅ "Best rate available, every time."
+- ❌ "Unlock the ultimate coastal experience."
+- ❌ "Your dream Algarve escape."
 
-### \#\#\# 1.2 Colour Palette
+**What this property is NOT:**
+- ❌ Not pet-friendly. Remove from all messaging.
+- ❌ No panoramic sea view. There is a glimpse of the sea from the terrace; mention casually if at all, never as a headline feature.
+- ❌ Never use em dashes on any public-facing copy. Use full stops or rewrite.
+- ❌ Never use the words: ocean view, sea view, beachfront, luxurious, ultimate, dream, escape, paradise, oasis, hidden gem, magical.
 
-| Role | Name | Hex | Usage |  
-|---|---|---|---|  
-| Primary | Atlantic Blue | \`\#1E5B73\` | CTAs, headings, logo, key highlights |  
-| Secondary | Seafoam | \`\#CFE3DE\` | Backgrounds, section tints, hover states |  
-| Accent | Sun Sand | \`\#D8B98A\` | Small accents, warmth moments, borders |  
-| Background | Warm White | \`\#F8F6F1\` | Page background, cards |  
-| Text | Deep Navy | \`\#1D2630\` | Body copy, headings |  
-| Muted | Slate Grey | \`\#6F7A86\` | Secondary text, labels, placeholders |  
-| Inverse | White | \`\#FFFFFF\` | Text on dark/blue backgrounds |
+**Location framing (Sprint 1, owner-confirmed):**
+- ✅ "Walking distance from the centre of Lagos and the beaches."
+- ❌ Avoid stating exact minutes-by-car or minutes-on-foot for individual beaches in marketing copy.
 
-\*\*Colour rules:\*\*  
-\- Keep backgrounds mostly Warm White \- let photography dominate.  
-\- Atlantic Blue is for buttons, links, and the logo only.  
-\- Sun Sand used sparingly (small highlights, dividers, icon accents).  
-\- No gradients on buttons. No neon blues. No purple.  
-\- Maximum 2 non-neutral hues per screen viewport.
+---
 
-\*\*CSS variables:\*\*  
-\`\`\`css  
-:root {  
-  \--color-primary:    \#1E5B73;  
-  \--color-secondary:  \#CFE3DE;  
-  \--color-accent:     \#D8B98A;  
-  \--color-bg:         \#F8F6F1;  
-  \--color-text:       \#1D2630;  
-  \--color-muted:      \#6F7A86;  
-  \--color-white:      \#FFFFFF;  
-}  
-\`\`\`
+### 1.2 Colour Palette
 
-\---
+| Role | Name | Hex | Usage |
+|---|---|---|---|
+| Primary | Atlantic Blue | `#1E5B73` | CTAs, headings, logo, key highlights, brand accents |
+| Secondary | Seafoam | `#CFE3DE` | Section tints, hover states, calendar selected range |
+| Accent | Sun Sand | `#D8B98A` | Small highlights, dividers, icon accents, star ratings |
+| Background | Warm White | `#F8F6F1` | Page background, cards |
+| Text | Deep Navy | `#1D2630` | Body copy, headings |
+| Muted | Slate Grey | `#5F6B77` | Secondary text, captions, hints. WCAG AA compliant on Warm White (5.07:1). |
+| Validation | Error Red | `#B0392A` | Inline form validation only. Never decorative. |
+| Inverse | White | `#FFFFFF` | Text on dark/blue backgrounds |
 
-### \#\#\# 1.3 Typography
+**Colour rules:**
+- Keep backgrounds mostly Warm White. Let photography dominate.
+- Atlantic Blue is for CTAs, links, and the logo.
+- Sun Sand used sparingly (small highlights, dividers, icon accents).
+- Error Red ONLY for inline form validation. Never decorative.
+- No gradients on buttons. No neon blues. No purple.
+- Maximum 2 non-neutral hues per screen viewport.
+- Tint neutrals subtly toward Atlantic Blue (chroma 0.005–0.01).
 
-| Role | Font | Weight | Usage |  
-|---|---|---|---|  
-| Display / Headings | Playfair Display | 400, 700 | Hero titles, section headings (24px+) |  
-| Body / UI | Inter | 400, 500, 600 | Body copy, buttons, labels, nav |
+**CSS variables:**
+```css
+:root {
+  --color-atlantic-blue: #1E5B73;
+  --color-seafoam:       #CFE3DE;
+  --color-sun-sand:      #D8B98A;
+  --color-warm-white:    #F8F6F1;
+  --color-deep-navy:     #1D2630;
+  --color-slate-grey:    #5F6B77;
+  --color-error-red:     #B0392A;
+}
+```
 
-\*\*Font loading (Google Fonts):\*\*  
-\`\`\`html  
-\<link rel="preconnect" href="https://fonts.googleapis.com"\>  
-\<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin\>  
-\<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700\&family=Inter:wght@400;500;600\&display=swap" rel="stylesheet"\>  
-\`\`\`
+---
 
-\*\*CSS variables:\*\*  
-\`\`\`css  
-:root {  
-  \--font-display: 'Playfair Display', Georgia, serif;  
-  \--font-body:    'Inter', 'Helvetica Neue', sans-serif;  
-}  
-\`\`\`
+### 1.3 Typography
 
-\*\*Type scale:\*\*  
-| Level | Font | Size | Weight |  
-|---|---|---|---|  
-| Hero | Playfair Display | clamp(2.5rem, 5vw, 4.5rem) | 700 |  
-| H2 Section | Playfair Display | clamp(1.8rem, 3vw, 2.5rem) | 400 |  
-| H3 Subhead | Inter | clamp(1.1rem, 1.5vw, 1.4rem) | 600 |  
-| Body | Inter | 1rem (16px) | 400 |  
-| Caption / Label | Inter | 0.875rem (14px) | 500, uppercase tracked |  
-| Button | Inter | 0.9375rem (15px) | 600 |
+| Role | Font | Weights | Usage |
+|---|---|---|---|
+| Display / Headings | **Spectral** | 400, 700 + 400 italic | Hero titles, section headings (24px+) |
+| Body / UI | **Manrope** | 400, 500, 600 | Body copy, buttons, labels, navigation |
 
-\*\*Rules:\*\*  
-\- Playfair Display only at 24px and above.  
-\- Body text minimum 16px \- never below.  
-\- Sentence case everywhere. No ALL CAPS headings.  
-\- Line length for body: max 68 characters.
+**Why these two (decided 2026-05-07):**
+The original Brand.md specified Playfair Display + Inter. Both are SIL OFL but flagged by the `impeccable` skill as AI-default reflex picks (every AI-generated coastal rental uses them). Spectral (Production Type) and Manrope retain editorial / quietly-premium feel without the monoculture risk. Both are **SIL OFL via Google Fonts, fully free for commercial use**, no licensing exposure.
 
-\---
+**Font loading (Google Fonts):**
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+```
 
-### \#\#\# 1.4 Logo Concept
+**CSS variables:**
+```css
+:root {
+  --font-display: 'Spectral', Georgia, 'Times New Roman', serif;
+  --font-body:    'Manrope', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+}
+```
 
-\*\*Wordmark:\*\* \`Apartamento Mar Azul\`  
-\*\*Icon:\*\* A minimal single-line wave or horizon mark (thin stroke, geometric).
+**Type scale:**
 
-\*\*Logo construction:\*\*  
-\- Icon sits to the left of the wordmark.  
-\- Icon: one continuous line forming a gentle wave or a sun-over-horizon.  
-\- Wordmark: "Apartamento" in Inter 500 small caps or regular, "Mar Azul" in Playfair Display 700\.  
-\- Lock-up: horizontal preferred; stacked version for social/favicon.
+| Level | Font | Size | Weight |
+|---|---|---|---|
+| Hero | Spectral | clamp(2.5rem, 5vw, 4.5rem) | 700 |
+| H2 Section | Spectral | clamp(1.8rem, 3vw, 2.5rem) | 700 |
+| H3 Subhead | Spectral | 1.5rem (24px floor for display) | 700 |
+| Body | Manrope | 1rem (16px) | 400 |
+| Caption / Label | Manrope | 0.875rem (14px) | 500 |
+| Button | Manrope | 0.9375rem (15px) | 600 |
+| Eyebrow | Manrope | 0.8125rem (13px) | 600, slightly tracked, sentence case |
 
-\*\*Colour versions:\*\*  
-| Version | Icon | Text |  
-|---|---|---|  
-| Primary | Atlantic Blue \`\#1E5B73\` | Atlantic Blue \`\#1E5B73\` |  
-| Reversed | White \`\#FFFFFF\` | White \`\#FFFFFF\` |  
-| Monochrome | Deep Navy \`\#1D2630\` | Deep Navy \`\#1D2630\` |
+**Rules:**
+- Spectral only at 24px and above.
+- Body text minimum 16px. Never below.
+- Sentence case everywhere. No ALL CAPS headings.
+- Line length for body: max 68 characters.
 
-\*\*Rules:\*\*  
-\- No drop shadows on the logo.  
-\- No coloured backgrounds on the icon shape.  
-\- Minimum width: 120px.  
-\- Clear space: equal to the height of the "M" in "Mar" on all sides.
+---
 
-\---
+### 1.4 Logo Concept
 
-### \#\#\# 1.5 Spacing & Radius
+- **Wordmark:** `Apartamento Mar Azul`
+- **Icon:** Minimal single-line wave or horizon mark, thin geometric stroke.
 
-\`\`\`css  
-:root {  
-  \--space-1: 0.25rem;   /\*  4px \*/  
-  \--space-2: 0.5rem;    /\*  8px \*/  
-  \--space-3: 0.75rem;   /\* 12px \*/  
-  \--space-4: 1rem;      /\* 16px \*/  
-  \--space-6: 1.5rem;    /\* 24px \*/  
-  \--space-8: 2rem;      /\* 32px \*/  
-  \--space-12: 3rem;     /\* 48px \*/  
-  \--space-16: 4rem;     /\* 64px \*/  
-  \--space-20: 5rem;     /\* 80px \*/
+**Logo construction:**
+- Icon sits to the left of the wordmark.
+- Icon: one continuous line forming a gentle wave or sun-over-horizon.
+- Wordmark: "Apartamento" in Manrope 500, "Mar Azul" in Spectral 700.
+- Lock-up: horizontal preferred; stacked version for social/favicon.
 
-  \--radius-sm: 4px;  
-  \--radius-md: 8px;  
-  \--radius-lg: 14px;  
-  \--radius-full: 9999px;
+**Colour versions (provided as SVG + PNG):**
 
-  \--shadow-sm: 0 1px 3px rgba(29, 38, 48, 0.08);  
-  \--shadow-md: 0 4px 14px rgba(29, 38, 48, 0.10);  
-  \--shadow-lg: 0 12px 32px rgba(29, 38, 48, 0.13);  
-}  
-\`\`\`
+| Version | Icon | Text |
+|---|---|---|
+| Primary | Atlantic Blue `#1E5B73` | Atlantic Blue `#1E5B73` |
+| Reversed | White `#FFFFFF` | White `#FFFFFF` |
+| Monochrome | Deep Navy `#1D2630` | Deep Navy `#1D2630` |
 
-\---
+Filenames at `project/website/assets/logo/`:
+- `logo-primary.svg` / `.png`
+- `logo-reversed.svg` / `.png`
+- `logo-monocrome.svg` / `.png` (note typo preserved in filename)
 
-### \#\#\# 1.6 Imagery & Photography Direction
+**Rules:**
+- No drop shadows on the logo.
+- No coloured backgrounds on the icon shape.
+- Minimum width: 120px.
+- Clear space: equal to the height of the "M" in "Mar" on all sides.
 
-\- \*\*Hero:\*\* Full-width, high-quality photograph of the terrace or Lagos coastline at golden hour.  
-\- \*\*Interior shots:\*\* Bright, natural light, minimal staging, wide-angle showing space and light.  
-\- \*\*Location:\*\* Dona Ana Beach, Praia da Batata, Lagos old town, Algarve cliffs.  
-\- \*\*Mood:\*\* Calm, warm, sunlit, spacious. Never staged "stock photo" families.  
-\- \*\*Format:\*\* Landscape 16:9 for hero; square 1:1 for social cards; portrait 4:5 for Instagram feed.  
-\- \*\*Colour treatment:\*\* Natural tones, slightly warm-shifted. No heavy filters or saturation.  
-\- \*\*Do not use:\*\* Images implying sea view as a headline feature, pets, or beachfront access.
+---
 
-\---
+### 1.5 Spacing & Radius
 
-### \#\#\# 1.7 Social Post Template Rules
+```css
+:root {
+  --space-1: 0.25rem;   /*  4px */
+  --space-2: 0.5rem;    /*  8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
 
-\- \*\*Grid:\*\* 1080x1080px (Instagram) or 1080x1920px (Stories/Reels).  
-\- \*\*Layout zones:\*\* Image occupies 70% of frame; text overlay sits in bottom 30% on a semi-transparent deep navy bar (\`rgba(29,38,48,0.72)\`).  
-\- \*\*Headline font:\*\* Playfair Display 700, white, max 2 lines.  
-\- \*\*Caption font:\*\* Inter 500, white or Seafoam, 1 line.  
-\- \*\*Logo:\*\* Always bottom-right corner, white reversed version, minimum 80px wide.  
-\- \*\*Hashtag set:\*\* \#Lagos \#Algarve \#ApartamentoMarAzul \#PortugalTravel \#CoastalStay \#VisitAlgarve \#LagosPortugal \#BeachApartment  
-\- \*\*Call to action:\*\* Always end posts with "Link in bio to book direct 🌊"  
-\- \*\*No em dashes\*\* in any public-facing copy.
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   14px;
+  --radius-full: 9999px;
 
-\---
+  --shadow-sm: 0 1px 3px rgba(29, 38, 48, 0.08);
+  --shadow-md: 0 4px 14px rgba(29, 38, 48, 0.10);
+  --shadow-lg: 0 12px 32px rgba(29, 38, 48, 0.13);
+}
+```
 
-## \#\# 2\. Claude Design Prompt
+---
 
-\> Paste this prompt into \*\*Claude Design\*\* to start the project.
+### 1.6 Imagery & Photography Direction
 
-\---
+- **Hero:** Full-width photograph of the terrace or Lagos coastline at golden hour.
+- **Interior shots:** Bright, natural light, minimal staging, wide-angle showing space and light.
+- **Location:** Lagos old town, Marina de Lagos, Praia da Batata, Praia Dona Ana, Algarve cliffs.
+- **Mood:** Calm, warm, sunlit, spacious. Never staged "stock photo" families.
+- **Format:** Landscape 16:9 for hero; square 1:1 for social cards; portrait 4:5 for Instagram feed.
+- **Colour treatment:** Natural tones, slightly warm-shifted. No heavy filters or saturation.
+- **Photo priority:** Photos in `project/website/assets/images/firts choises/` (sic — typo preserved): `marazul-01.jpg` is the highest priority, descending with the number, last numbered file is the toilet (use sparingly). Backup pool in `second choises/`.
+- **Owner photo:** `owner_picture.jpg` — used in homepage trust strip + About section. Replace at the file path to swap.
+- **Do not use:** Images implying sea view as a headline feature, pets, or beachfront access.
 
-You are designing the complete visual identity and digital presence for Apartamento Mar Azul, a single independent short-stay apartment in Lagos, Algarve, Portugal (www.apartamentomarazul.com). The property has a private terrace with a sea glimpse, sleeps 2-4 guests, is family-friendly (crib \+ high chair available), and is 5 minutes by car from Dona Ana Beach and 4 minutes by car from Praia da Batata.
+---
 
-IMPORTANT CONSTRAINTS:
+### 1.7 Social Post Template Rules
 
-* Do NOT reference "sea view," "ocean view," or "beachfront" as headline features  
-* Do NOT reference pet-friendly  
-* Beach distances must always be stated as "5 min by car" (Dona Ana) or "4 min by car / 20 min on foot" (Praia da Batata)  
-* No em dashes in any public-facing copy
+- **Grid:** 1080×1080px (Instagram) or 1080×1920px (Stories/Reels).
+- **Layout zones:** Image occupies 70% of frame; text overlay sits in bottom 30% on a semi-transparent Deep Navy bar (`rgba(29,38,48,0.72)`).
+- **Headline font:** Spectral 700, white, max 2 lines.
+- **Caption font:** Manrope 500, white or Seafoam, 1 line.
+- **Logo:** Always bottom-right corner, white reversed version, minimum 80px wide.
+- **Hashtag set:** #Lagos #Algarve #ApartamentoMarAzul #PortugalTravel #CoastalStay #VisitAlgarve #LagosPortugal #BeachApartment
+- **Call to action:** Always end posts with "Link in bio to book direct 🌊"
+- **No em dashes** in any public-facing copy.
 
-BRAND SYSTEM (use exactly):
+---
 
-* Primary colour: Atlantic Blue \#1E5B73  
-* Secondary: Seafoam \#CFE3DE  
-* Accent: Sun Sand \#D8B98A  
-* Background: Warm White \#F8F6F1  
-* Text: Deep Navy \#1D2630  
-* Muted: Slate Grey \#6F7A86  
-* Display font: Playfair Display (400, 700\) \- headings 24px+ only  
-* Body font: Inter (400, 500, 600\) \- all UI and body copy  
-* Tone: calm, coastal, quietly premium, specific, local, never generic
+## 2. Claude Design Prompt (historical, reference only)
 
-## DELIVERABLES \- produce all three:
+> This prompt was used in Sprint 1 to seed Claude.ai/design. The site has now been built (Sprint 2). Kept here as reference if a new Claude.ai/design session is started for new collateral.
 
-1. WEBSITE REDESIGN  
-   Single-page responsive website (HTML/CSS/JS). Sections in order:  
-   * Hero: full-width terrace photo \+ property name \+ "Book direct" CTA button  
-   * Trust strip: 5 key icons (private terrace, free parking, A/C, Wi-Fi, linens included)  
-   * About: 2-column layout \- left text, right photo. Max 60 words. Specific, local.  
-   * Gallery: 6-image grid, lightbox on click  
-   * Amenities: icon \+ label grid, 12 items max  
-   * Location: embedded Google Maps \+ "5 min by car to Dona Ana Beach" callout  
-   * Reviews: 3 guest quote cards, star rating  
-   * FAQ: accordion, 6 questions (check-in, parking, crib, Wi-Fi, cancellation, beach access)  
-   * Booking CTA: full-width section, Atlantic Blue background, white text, "Book Direct" button  
-   * Footer: logo, address, social links, copyright
+You are designing for Apartamento Mar Azul, a single independent short-stay apartment in Lagos, Algarve, Portugal (www.apartamentomarazul.com). The property has a private terrace with a sea glimpse, sleeps 2-4 guests, is family-friendly (crib + high chair available), and is within walking distance from the centre of Lagos and the beaches.
 
-Rules: mobile-first, no gradients on buttons, max 2 non-neutral hues per viewport, no stock photo families, Playfair Display only for headings.
+**IMPORTANT CONSTRAINTS:**
+- Do NOT reference "sea view," "ocean view," "beachfront," "luxurious," "ultimate," "dream," "escape," "paradise" as headline features
+- Do NOT reference pet-friendly
+- Frame location as "walking distance from the centre and the beaches." Avoid specific minutes-by-car.
+- No em dashes in any public-facing copy
 
-2. SOCIAL POST TEMPLATES  
-   Create 3 Canva-style layout compositions (as HTML visual mockups, 1080x1080px):  
-   * Template A: "Property highlight" \- full-bleed photo, bottom overlay bar, headline \+ sub-label \+ logo  
-   * Template B: "Guest review" \- quote on Seafoam background, star rating, guest name, logo bottom-right  
-   * Template C: "Local tip / Lagos" \- split layout: left photo of Lagos, right Warm White with text and CTA  
-3. LOGO REDESIGN  
-   SVG logo with:  
-   * Icon: minimal single continuous wave line (Atlantic Blue stroke, no fill)  
-   * Wordmark: "Apartamento" in Inter 500, "Mar Azul" in Playfair Display 700  
-   * Horizontal lock-up and stacked version  
-   * Deliver in 3 colour versions: primary (blue), reversed (white), monochrome (navy)
+**BRAND SYSTEM (use exactly):**
+- Primary colour: Atlantic Blue `#1E5B73`
+- Secondary: Seafoam `#CFE3DE`
+- Accent: Sun Sand `#D8B98A`
+- Background: Warm White `#F8F6F1`
+- Text: Deep Navy `#1D2630`
+- Muted: Slate Grey `#5F6B77`
+- Validation: Error Red `#B0392A` (form errors only)
+- Display font: Spectral (400, 700) — headings 24px+ only
+- Body font: Manrope (400, 500, 600) — all UI and body copy
+- Tone: calm, coastal, quietly premium, specific, local, never generic
 
-No gradients, no drop shadows, no clip art, no icons in coloured circles. Every design decision must trace back to coastal, calm, quietly premium.
+---
 
-text
+## 3. Marketing Strategy Prompt
 
-`---`
-
-## \#\# 3\. Claude Code / Opus Prompt \- Strategy & Marketing
-
-`> Paste this prompt into **Claude Code with Opus** for the strategy document.`
-
-`---`
+> Paste this prompt into Claude Code (or Claude.ai) for the strategy document. Updated 2026-05-07.
 
 You are a senior digital strategist helping a single independent short-stay apartment called Apartamento Mar Azul (Lagos, Algarve, Portugal) build its direct-booking presence and reduce dependency on OTAs like Airbnb and Booking.com.
 
-PROPERTY FACTS (use only these, do not invent):
+**PROPERTY FACTS (use only these, do not invent):**
+- Address: Rua Dom Luís da Silveira lote V 44 B, 8600-575 Lagos, Portugal
+- Open since: June 2025
+- Sleeps: 2-4 guests
+- Amenities: private terrace, A/C in the bedroom, free parking nearby, high-speed Wi-Fi, crib + high chair available, linens provided
+- Location: walking distance from the centre of Lagos and the beaches
+- Cancellation policy: payment in full at booking. Free up to 7 days before arrival. Within 7 days, 50% non-refundable.
+- Website: www.apartamentomarazul.com
+- Booking: Lodgify Ultimate plan, Channel Manager active for Airbnb + Booking.com
+- Social: Instagram + Facebook
+- Owner / host: Stefania (informal: Stefy)
+- Languages spoken: Portuguese, Italian, English, Spanish
 
-* Address: R. Dom Luís da Silveira, 8600-575 Lagos, Portugal  
-* Sleeps: 2-4 guests  
-* Amenities: private terrace, A/C, free parking nearby, high-speed Wi-Fi, crib \+ high chair available, linens provided  
-* Beach access: 5 min by car to Dona Ana Beach | 4 min by car / 20 min on foot to Praia da Batata  
-* Website: www.apartamentomarazul.com  
-* Social: Instagram and Facebook
+**DIRECT BOOKING DATA (Sprint 0 baseline):**
+- 27 historical bookings: Booking.com 16 (59%), Airbnb 10 (37%), Vrbo 1 (4%), Direct 0 (0%)
+- The +40% direct-booking goal is therefore growth from zero, not optimization.
 
-TARGET AUDIENCES:
+**TARGET AUDIENCES:**
+- **Primary A (Couples):** travelling as two, looking for a calm, well-equipped Lagos base. Value the terrace, easy parking, good Wi-Fi, and proximity to beaches.
+- **Primary B (Small Families):** 2-4 guests, at least one young child. Value the crib, high chair, linens included, easy walking access to beaches, and nearby parking.
 
-* Primary A (Couples): travelling as two, looking for a calm, well-equipped Lagos base. Value the terrace, easy parking, good Wi-Fi, and proximity to beaches by car.  
-* Primary B (Small Families): 2-4 guests, at least one young child. Value the crib, high chair, linens included, easy car access to beaches, and nearby parking.
+**MESSAGING CONSTRAINTS:**
+- Lead with: Private terrace + practical comfort (A/C, Wi-Fi, linens, parking)
+- Support with: Walking distance from the centre and the beaches
+- Reinforce with: Family-ready essentials (crib, high chair, sleeps 4)
+- Mention lightly: Sea glimpse from the terrace — a nice bonus, never a promise
+- Direct booking incentives = perks, not price discounts (Booking.com rate parity rules)
+- Never mention: sea view, ocean view, beachfront, pet-friendly
+- Never use em dashes in public-facing copy
+- WhatsApp CTAs always include "we may answer within 12 hours"
 
-MESSAGING CONSTRAINTS:
+**OBJECTIVE:** Increase direct bookings (currently 0) to 40% of total bookings within 12 months. Build a repeatable content + advertising engine. Never undercut OTA prices publicly (rate parity); compete on perks instead.
 
-* Lead with: Private terrace \+ practical comfort (A/C, Wi-Fi, linens, parking)  
-* Support with: Beach access by car (specific minutes, not "near the beach")  
-* Reinforce with: Family-ready essentials (crib, high chair, sleeps 4\)  
-* Mention lightly: Sea glimpse from the terrace \- a nice bonus, never a promise  
-* Never mention: sea view, ocean view, beachfront, pet-friendly  
-* Never use em dashes in public-facing copy
+Produce a structured strategy document with these sections — be specific, actionable, concise. No filler. No generic advice:
 
-OBJECTIVE: Increase direct bookings by 40% over 12 months. Reduce OTA commission cost. Build a repeatable content and advertising engine.
+1. **Website strategy** — IA, conversion elements, SEO target keywords (10 long-tail per language), technical must-haves
+2. **Content & social strategy** — 3 content pillars, posting frequency, 30-day calendar, hashtag strategy
+3. **Paid advertising** — Google Ads + Meta Ads + remarketing + OTA-as-discovery strategy
+4. **Email & guest retention** — pre-arrival sequence, post-stay follow-up, repeat-guest programme
+5. **KPIs & 12-month roadmap** — 5 KPIs with targets + phased roadmap (months 1-3 / 4-6 / 7-12)
 
-Produce a structured strategy document with these exact sections \- be specific, actionable, and concise. No filler. No generic advice:
+Format as clean markdown. Use tables where helpful. Be specific to this property.
 
-1. WEBSITE STRATEGY  
-   * Information architecture (page structure and content priority)  
-   * Conversion elements (what to add, where, and why)  
-   * SEO target keywords (10 long-tail keywords, with search intent label)  
-   * Technical must-haves (speed, schema markup, Google Hotel links)  
-2. CONTENT & SOCIAL STRATEGY  
-   * Content pillars (3 pillars with rationale)  
-   * Posting frequency and platform priority  
-   * 30-day content calendar (week by week, platform, format, topic)  
-   * Hashtag strategy (primary \+ secondary \+ niche sets)  
-3. PAID ADVERTISING STRATEGY  
-   * Google Ads: campaign structure, match types, 10 keywords, budget recommendation  
-   * Meta Ads: audience targeting, creative direction, 3 ad concepts  
-   * Remarketing: audience setup, message, budget split  
-   * OTA strategy: how to use Booking.com and Airbnb to drive awareness while pushing direct  
-4. EMAIL & GUEST RETENTION  
-   * Pre-arrival email sequence (3 emails, timing, content outline)  
-   * Post-stay follow-up (review request \+ direct rebook offer)  
-   * Repeat guest incentive programme  
-5. KPIs & 12-MONTH ROADMAP  
-   * 5 core KPIs with targets and measurement tools  
-   * Phased roadmap: Month 1-3 (foundation), Month 4-6 (growth), Month 7-12 (optimise)
+---
 
-Format output as a clean markdown document. Use tables where helpful. Be specific to this property \- no generic hospitality advice.
+## 4. Design Tokens (canonical)
 
-text
+```css
+/* APARTAMENTO MAR AZUL — Design Tokens v2.0 (2026-05-07) */
+:root {
+  /* Colours */
+  --color-atlantic-blue: #1E5B73;   /* primary — CTAs, logo, links */
+  --color-seafoam:       #CFE3DE;   /* secondary — section tints, hover */
+  --color-sun-sand:      #D8B98A;   /* accent — sparingly */
+  --color-warm-white:    #F8F6F1;   /* page background */
+  --color-deep-navy:     #1D2630;   /* body text, headings */
+  --color-slate-grey:    #5F6B77;   /* muted text, WCAG AA */
+  --color-error-red:     #B0392A;   /* form validation only */
+  --color-white:         #FFFFFF;
 
-`---`
+  /* Typography */
+  --font-display: 'Spectral', Georgia, 'Times New Roman', serif;
+  --font-body:    'Manrope', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
 
-## \#\# 4\. Design Tokens \- Paste into Claude Design
+  /* Type scale */
+  --text-hero: clamp(2.5rem, 5vw, 4.5rem);
+  --text-h2:   clamp(1.8rem, 3vw, 2.5rem);
+  --text-h3:   1.5rem;
+  --text-base: 1rem;
+  --text-sm:   0.875rem;
+  --text-xs:   0.8125rem;
 
-`> Minimal token block to paste as context at the start of any Claude Design session.`
+  /* Spacing (4px base) */
+  --space-1:  0.25rem;  --space-2: 0.5rem;  --space-3: 0.75rem;
+  --space-4:  1rem;     --space-6: 1.5rem;  --space-8: 2rem;
+  --space-12: 3rem;     --space-16: 4rem;   --space-20: 5rem;
 
-`---`
+  /* Radius */
+  --radius-sm: 4px;  --radius-md: 8px;  --radius-lg: 14px;  --radius-full: 9999px;
 
-```` ```css ````  
-`/* APARTAMENTO MAR AZUL - Design Tokens v1.0 */`  
-`:root {`  
-  `/* Colours */`  
-  `--color-primary:    #1E5B73;   /* Atlantic Blue - CTA, logo, links */`  
-  `--color-secondary:  #CFE3DE;   /* Seafoam - backgrounds, tints */`  
-  `--color-accent:     #D8B98A;   /* Sun Sand - warmth, borders */`  
-  `--color-bg:         #F8F6F1;   /* Warm White - page bg */`  
-  `--color-text:       #1D2630;   /* Deep Navy - body copy */`  
-  `--color-muted:      #6F7A86;   /* Slate Grey - secondary text */`  
-  `--color-white:      #FFFFFF;`
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(29, 38, 48, 0.08);
+  --shadow-md: 0 4px 14px rgba(29, 38, 48, 0.10);
+  --shadow-lg: 0 12px 32px rgba(29, 38, 48, 0.13);
 
-  `/* Typography */`  
-  `--font-display: 'Playfair Display', Georgia, serif;`  
-  `--font-body:    'Inter', 'Helvetica Neue', sans-serif;`
+  /* Motion */
+  --motion-fast: 160ms;
+  --motion-base: 220ms;
+  --motion-slow: 450ms;
+  --ease-standard: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out:      cubic-bezier(0.22, 1, 0.36, 1);
+}
+```
 
-  `/* Type scale */`  
-  `--text-hero:    clamp(2.5rem, 5vw, 4.5rem);`  
-  `--text-h2:      clamp(1.8rem, 3vw, 2.5rem);`  
-  `--text-h3:      clamp(1.1rem, 1.5vw, 1.4rem);`  
-  `--text-base:    1rem;`  
-  `--text-sm:      0.875rem;`  
-  `--text-xs:      0.75rem;`
+---
 
-  `/* Spacing (4px base) */`  
-  `--space-1: 0.25rem; --space-2: 0.5rem;  --space-3: 0.75rem;`  
-  `--space-4: 1rem;    --space-6: 1.5rem;  --space-8: 2rem;`  
-  `--space-12: 3rem;   --space-16: 4rem;   --space-20: 5rem;`
+## 5. Project Brief — paste at the start of any AI session
 
-  `/* Radius */`  
-  `--radius-sm: 4px; --radius-md: 8px;`  
-  `--radius-lg: 14px; --radius-full: 9999px;`
+> This section orients the model on what this project is, who it's for, and what rules always apply.
 
-  `/* Shadow */`  
-  `--shadow-sm: 0 1px 3px rgba(29,38,48,0.08);`  
-  `--shadow-md: 0 4px 14px rgba(29,38,48,0.10);`  
-  `--shadow-lg: 0 12px 32px rgba(29,38,48,0.13);`  
-`}`  
-```` ``` ````
+### Property Facts (Confirmed)
 
-`---`
+- **Name:** Apartamento Mar Azul
+- **Address:** Rua Dom Luís da Silveira lote V 44 B, 8600-575 Lagos, Portugal
+- **Website:** apartamentomarazul.com
+- **Open since:** June 2025
+- **Owner / host:** Stefania (informal: Stefy)
+- **Languages spoken by host:** Portuguese, Italian, English, Spanish
+- **Sleeps:** 2-4 guests
+- **Bedrooms:** 1 plus sofa bed
+- **Amenities:** A/C in the bedroom, high-speed Wi-Fi (200 Mbps), free parking nearby, linens provided, crib + high chair available, private terrace, full kitchen
+- **Location:** walking distance from the centre of Lagos and the beaches
+- **Booking:** Lodgify Ultimate plan, Channel Manager active for Airbnb + Booking.com
+- **Cancellation policy:** Payment in full at booking. Free cancellation up to 7 days before arrival. Within 7 days of arrival, 50% of the booking is non-refundable.
+- **Social:** Instagram + Facebook
 
-## \#\# 5\. Project Brief \- Apartamento Mar Azul
+### Site languages
 
-`For Use in Prompt Creation`
+The website ships in 7 languages: English (default), Portuguese, Spanish, Italian, German, Dutch, French.
 
-`> Paste this section at the start of any AI session to orient the model on what this project is, who it's for, and what rules always apply.`
+### What This Property Is NOT
 
-`---`
+- ❌ Not pet-friendly. Remove from all messaging.
+- ❌ No panoramic sea view. There is a glimpse of the sea from the terrace; mention casually if at all, never as a headline feature.
+- ❌ Avoid stating exact minutes-by-car or minutes-on-foot for individual beaches in marketing copy.
+- ❌ Never use em dashes on any public-facing copy.
 
-### \#\#\# Property Facts (Confirmed)
+### Target Audiences
 
-`- **Name:** Apartamento Mar Azul`  
-`- **Address:** R. Dom Luís da Silveira, 8600-575 Lagos, Portugal`  
-`- **Website:** apartamentomarazul.com`  
-`- **Sleeps:** 2-4 guests`  
-`- **Amenities:** A/C, high-speed Wi-Fi, free parking nearby, linens provided, crib + high chair available, private terrace`  
-`- **Beach access:** 5 min by car to Dona Ana Beach | 4 min by car / 20 min on foot to Praia da Batata`  
-`- **Social:** Instagram + Facebook`
+**Primary A — Couples (25-50)**
+Travelling as two, looking for a calm, well-equipped Lagos base. Value the terrace, easy parking, good Wi-Fi, and proximity to beaches.
 
-`---`
+**Primary B — Small Families (2-4 guests, at least one young child)**
+Value the crib, high chair, linens included, easy walking access to beaches, and nearby parking.
 
-### \#\#\# What This Property Is NOT
+### Core Positioning Statement
 
-`- ❌ Not pet-friendly - remove from all messaging`  
-`- ❌ No panoramic sea view - there is a glimpse of the sea from the terrace; mention casually, never as a headline feature`  
-`- ❌ Not walking distance to Dona Ana Beach - always say "5 min by car"`  
-`- ❌ Never use em dashes on any online material public facing`
+A quiet apartment in Lagos for couples and small families. Walking distance from the centre and the beaches. Sleeps 2 to 4. Private terrace, A/C, free parking, free Wi-Fi.
 
-`---`
+### Messaging Hierarchy
 
-### \#\#\# Target Audiences
+1. **Lead with:** Walking distance from the centre and the beaches. Sleeps 2 to 4.
+2. **Support with:** Practical comfort (private terrace, A/C, Wi-Fi, free parking, linens included)
+3. **Reinforce with:** Family-ready essentials (crib, high chair, sleeps 4)
+4. **Mention lightly:** Sea glimpse from the terrace. A nice bonus, never a promise.
 
-`**Primary A - Couples**`  
-`Travelling as two, looking for a calm, well-equipped Lagos base. Value the terrace, easy parking, good Wi-Fi, and proximity to beaches by car.`
+### Direct booking incentives (perks, not price)
 
-`**Primary B - Small Families**`  
-`2-4 guests, at least one young child. Value the crib, high chair, linens included, easy car access to beaches, and nearby parking.`
+- Free parking
+- Late check-out and early check-in when the calendar allows
+- Direct WhatsApp line with Stefania (we may answer within 12 hours)
+- Best rate available, every time
+- A short walking guide of the host's favourite tasca, padaria, and quiet beach
 
-`---`
+### Keyword Approach
 
-### \#\#\# Core Positioning Statement
+**Primary focus** — broad Lagos apartment terms with intent modifiers:
+- "apartment Lagos Algarve"
+- "Lagos Portugal holiday apartment for couples"
+- "family apartment Lagos Portugal"
+- "apartment for 4 guests Lagos"
+- "direct booking apartment Lagos Algarve"
+- "Lagos apartment walking distance to beach"
 
-`A well-equipped Lagos apartment for couples and small families. Private terrace, A/C, everything included - 5 minutes by car from Dona Ana Beach, 4 minutes from Praia da Batata.`
+**Secondary** (supporting, not lead) — named beach terms at lower priority:
+- "apartment near Praia da Batata Lagos"
+- "accommodation walking distance Praia Dona Ana"
 
-`---`
+**Avoid:** Generic Algarve-wide terms (too broad, too expensive).
 
-### \#\#\# Messaging Hierarchy
+Per-language keyword research is required before translation (Sprint 3) — German users search "Ferienwohnung Lagos," not literal translation of English keywords.
 
-`1. **Lead with:** Private terrace + practical comfort (A/C, Wi-Fi, linens, parking)`  
-`2. **Support with:** Beach access by car (specific minutes, not "near the beach")`  
-`3. **Reinforce with:** Family-ready essentials (crib, high chair, sleeps 4)`  
-`4. **Mention lightly:** Sea glimpse from the terrace - a nice bonus, never a promise`
+### Content Tone of Voice
 
-`---`
+- Warm but direct. No fluff, no oversell.
+- Honest about what it is. Compact, well-equipped, great location for beach holidays.
+- Audience-aware. Speak to couples or families specifically per piece, not both at once.
+- **Avoid:** "ocean view," "sea view," "pet-friendly," "beachfront," "luxurious," "ultimate," "dream," "escape"
+- **Use instead:** "private terrace," "sea glimpse," "walking distance," "families welcome," "couple's retreat in Lagos," "best rate available"
 
-### \#\#\# Keyword Approach
+### Content Pillars
 
-`**Primary focus** - broad Lagos apartment terms with intent modifiers:`  
-`- "apartment Lagos Algarve"`  
-`- "Lagos Portugal holiday apartment for couples"`  
-`- "family apartment Lagos Portugal"`  
-`- "apartment for 4 guests Lagos"`  
-`- "direct booking apartment Lagos Algarve"`
+| Pillar | Audience | Core idea |
+|---|---|---|
+| Couples in Lagos | Couples | Calm base, terrace mornings, easy beach days |
+| Family Beach Stays | Families | Practical stay, included essentials, easy walking access |
+| Local Convenience | Both | Parking, Wi-Fi, walking distances, Lagos as a destination |
 
-`**Secondary** (supporting, not lead) - named beach terms at lower priority:`  
-`- "apartment near Dona Ana Beach Lagos"`  
-`- "accommodation near Praia da Batata Lagos"`
+### Channels
 
-`**Avoid:** Generic Algarve-wide terms (too broad, too expensive)`
+| Channel | Role |
+|---|---|
+| Direct website (apartamentomarazul.com) | Primary — direct booking conversion |
+| Lodgify Booking Engine | Payment + reservation handoff (new tab from custom calendar) |
+| Instagram | Primary social — Reels + Carousels + Stories |
+| Facebook | Secondary social — trust, guides, offers |
+| Google Business Profile | Essential — photos, posts, reviews, booking link |
+| Google Ads | Search intent capture — couples + families |
+| Meta Ads | Discovery — segmented by audience |
+| Email (Lodgify built-in) | Retention — pre-arrival, post-stay, rebook |
+| WhatsApp | Pre-booking questions and guest support (12h response promise) |
 
-`---`
+### Booking architecture (Sprint 2 result)
 
-### \#\#\# Content Tone of Voice
+Custom calendar UI on `apartamentomarazul.com` (real availability + per-day rates from Lodgify API at build time, paginated 6 months). Date selection happens in our brand. Click "Book direct" / "Continue to booking" → Lodgify-hosted checkout in a new tab with `arrival` + `departure` pre-filled.
 
-`- Warm but direct - no fluff, no oversell`  
-`- Honest about what it is - compact, well-equipped, great location for beach holidays`  
-`- Audience-aware - speak to couples or families specifically, not both at once in the same piece of content`  
-`- **Avoid:** "ocean view," "sea view," "pet-friendly," "beachfront"`  
-`- **Use instead:** "private terrace," "sea glimpse," "5 min by car," "families welcome," "couple's retreat in Lagos"`
+Lodgify support confirmed (2026-05-07) that no fully-inline-checkout widget exists on any plan, including Ultimate. The hybrid pattern above is the maximum brand-cohesion possible.
 
-`---`
+### Direct Booking Objective
 
-### \#\#\# Content Pillars
+- **Goal:** +40% direct bookings over 12 months (growth from zero)
+- **Direct rate advantage:** Always offer perks (welcome gestures, late checkout, etc.), never undercut OTA prices publicly. Booking.com rate parity rules apply.
+- **OTAs:** Keep live as discovery channels. Use post-stay touchpoints to drive future direct bookings.
+- **Never advertise:** "Skip Airbnb" or "Skip Booking.com." Frame positively: "Book directly with your host."
 
-`| Pillar | Audience | Core idea |`  
-`|---|---|---|`  
-`| Couples in Lagos | Couples | Calm base, terrace mornings, easy beach days |`  
-`| Family Beach Stays | Families | Practical stay, included essentials, easy car access |`  
-`| Local Convenience | Both | Parking, Wi-Fi, beach access times, Lagos as a destination |`
+### Pre-Publishing Checklist
 
-`---`
+Before publishing any content, always verify:
+- [ ] No mention of sea view as a feature
+- [ ] No mention of pet-friendly
+- [ ] Location framed as "walking distance from the centre and the beaches" (not specific minutes)
+- [ ] Audience is clearly one of: couples, families, or both
+- [ ] CTAs point to apartamentomarazul.com (direct booking) or WhatsApp (pre-sales questions)
+- [ ] WhatsApp CTAs include "we may answer within 12 hours"
+- [ ] No em dashes used
+- [ ] No banned words: ocean view, sea view, beachfront, luxurious, ultimate, dream, escape, paradise, oasis, hidden gem, magical
+- [ ] Direct booking framed as perks, never as price discount
 
-### \#\#\# Channels
+---
 
-`| Channel | Role |`  
-`|---|---|`  
-`| Instagram | Primary - Reels + Carousels + Stories |`  
-`| Facebook | Secondary - trust, guides, offers |`  
-`| Google Business Profile | Essential - photos, seasonal posts, booking link |`  
-`| Google Ads | Search intent capture - couples + families |`  
-`| Meta Ads | Discovery - segmented by audience |`  
-`| Email | Retention - pre-arrival, post-stay, rebook |`
+## 6. Decision log (recent updates)
 
-`---`
+**2026-05-07** — Brand.md v2.0 reconciliation against project memory and Sprint 0–2 outputs.
 
-### \#\#\# Direct Booking Objective
+Major updates:
+- **Typography** changed from Playfair Display + Inter to **Spectral + Manrope** (impeccable skill flagged Playfair+Inter as AI-default reflex pair; Spectral+Manrope are SIL OFL on Google Fonts, fully free for commercial use)
+- **Slate Grey** darkened from `#6F7A86` to `#5F6B77` for WCAG AA compliance against Warm White (audit P1 fix)
+- **Error Red `#B0392A`** added as 7th brand token for inline form validation
+- **Address** corrected to include "lote V 44 B" (precise to GBP listing)
+- **Owner name** confirmed: Stefania (formal) / Stefy (informal, WhatsApp button only)
+- **Languages spoken** updated to PT/IT/EN/ES (added Spanish)
+- **Site languages** expanded from 5 to 7 (added Italian + Spanish): EN/PT/ES/IT/DE/NL/FR
+- **Location framing** softened from "5 min by car to Dona Ana, 4 min by car / 20 min on foot to Praia da Batata" to "walking distance from the centre and the beaches" (per owner direction)
+- **Welcome bottle of vinho verde** removed from direct-booking perks (per owner direction)
+- **A/C amenity** clarified to "in the bedroom" (was "in every room")
+- **Cancellation policy** confirmed: free up to 7 days, then 50% non-refundable
+- **Lodgify plan** corrected to Ultimate (was Professional)
+- **Booking architecture** locked: custom UI + Lodgify checkout handoff (no inline checkout exists on any Lodgify plan)
+- **Direct-booking baseline** captured: 27 historical bookings, 0 direct (the +40% goal is growth from zero)
 
-`- **Goal:** +40% direct bookings over 12 months`  
-`- **Direct rate advantage:** Always offer a better or equal rate vs OTAs`  
-`- **OTAs:** Keep live as discovery channels only; use post-stay touchpoints to drive future direct bookings`  
-`- **Never advertise:** "Skip Airbnb" or "Skip Booking.com" - focus on the positive: "Book directly with your host"`
+---
 
-`---`
-
-### \#\#\# Pre-Publishing Checklist
-
-`Before publishing any content, always verify:`  
-`- [ ] No mention of sea view as a feature`  
-`- [ ] No mention of pet-friendly`  
-`- [ ] Beach distance stated correctly (5 min by car / 4 min by car / 20 min walk)`  
-`- [ ] Audience is clearly one of: couples, families, or both`  
-`- [ ] CTA points to apartamentomarazul.com`  
-`- [ ] No em dashes used`
-
-`---`
-
-`*Document generated for Apartamento Mar Azul, Lagos, Portugal - May 2026*`
-
+*Document maintained for Apartamento Mar Azul, Lagos, Portugal. Reflects current state as of Sprint 2 close.*

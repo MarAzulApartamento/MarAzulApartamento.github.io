@@ -37,9 +37,24 @@ export const SOCIAL = {
   facebook: 'https://www.facebook.com/people/Apartamento-Mar-Azul',
 };
 
+// Astro/Vite exposes PUBLIC_-prefixed env vars on import.meta.env.
+// Falls back to process.env for server contexts where one or the other
+// is unavailable. Strips +, spaces, parentheses and dashes so any
+// variation of the format (+351 912 345 678 or 351912345678) works.
+const _waRaw =
+  ((import.meta as any).env?.PUBLIC_WHATSAPP_NUMBER as string | undefined) ||
+  process.env.PUBLIC_WHATSAPP_NUMBER ||
+  '';
+const _waNumber = _waRaw.replace(/[\s+()\-]/g, '');
+
+const _waMessage =
+  ((import.meta as any).env?.PUBLIC_WHATSAPP_DEFAULT_MESSAGE as string | undefined) ||
+  process.env.PUBLIC_WHATSAPP_DEFAULT_MESSAGE ||
+  "Olá! I'm interested in Apartamento Mar Azul.";
+
 export const WHATSAPP = {
-  number: process.env.PUBLIC_WHATSAPP_NUMBER || '',
-  defaultMessage: process.env.PUBLIC_WHATSAPP_DEFAULT_MESSAGE || "Olá! I'm interested in Apartamento Mar Azul.",
+  number: _waNumber,
+  defaultMessage: _waMessage,
   responseTime: 'we may answer within 12 hours',
 };
 
