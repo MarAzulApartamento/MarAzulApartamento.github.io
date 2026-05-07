@@ -17,11 +17,23 @@ Organised by urgency, then by topic. Newest items at the top of each section.
 - (a) Is this fee a leftover from an earlier policy you've changed? Should I ask you to remove it from the Lodgify dashboard?
 - (b) If you keep it: do you want it surfaced anywhere on the site, or stays invisible in Lodgify config?
 
-### 2. Lodgify Booking Engine widget — allow embedding on apartamentomarazul.com
+### 2. Lodgify Booking Engine widget — allow embedding on apartamentomarazul.com ✅ RESOLVED
 
-**Why it matters for Sprint 2:** the embedded booking widget needs to be authorized to load inside `apartamentomarazul.com` (CSP / referrer settings). Currently the booking flow redirects out to `apartamento-mar-azul.lodgify.com`. Sprint 2 brings it in-house via the embed widget.
-**Action she needs to take:** in Lodgify dashboard → Website → Booking Box / Engine → enable embed for the domain `apartamentomarazul.com` (and the staging URL `marazul.marazulapartamento.workers.dev` for testing).
-**I will provide:** the exact dashboard path + a screenshot reference once we hit Sprint 2.
+**Resolved 2026-05-07.** Stefania pulled the embed snippets from her Lodgify dashboard (Website Builder → Settings → External widgets). Two widgets retrieved:
+- **Book Now Box** (`renderBookNowBox.js`) — full date picker + guest count + inline price + "Book Now" button
+- **Portable Search Bar** (`renderPortableSearchBar.js`) — compact date picker + "Search" button
+
+Both wired into `src/components/LodgifyBookNowBox.astro`. The Book Now Box is now live on:
+- Homepage `/#availability` section (replaces the static placeholder calendar)
+- `/book` page (replaces the placeholder shell)
+
+Brand-overridden via CSS variables: Atlantic Blue primary, Seafoam selection, our radius/shadow tokens. Widget script is `app.lodgify.com/book-now-box/stable/renderBookNowBox.js` with `data-rental-id=671442`, `data-website-id=581042`, `data-currency=EUR`.
+
+**Confirmed by Lodgify support 2026-05-07:** even on the Ultimate plan, **no widget with fully inline checkout exists**. The Book Now Box (with `data-new-tab="true"` opening Lodgify checkout in a new tab on the user's click) is the most brand-cohesive booking flow Lodgify supports. The user picks dates and sees the total on `apartamentomarazul.com`; they only leave for the actual payment step.
+
+**Plan correction:** Stefania's Lodgify subscription is **Ultimate** (not Professional, as initially recorded). Update memory and any references.
+
+The Portable Search Bar widget is saved in reserve for a future sticky-header / hero search use case (Sprint 4 polish).
 
 ### 3. Active Lodgify promotions — keep, surface, or simplify?
 

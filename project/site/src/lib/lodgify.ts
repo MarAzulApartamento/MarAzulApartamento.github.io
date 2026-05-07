@@ -118,3 +118,151 @@ export async function fetchPriceData(): Promise<PriceData> {
     return FALLBACK;
   }
 }
+
+export interface CalendarData {
+  /** Map of YYYY-MM-DD → price per night in EUR. Missing keys = no rate set. */
+  rates: Record<string, number>;
+  /** Set of YYYY-MM-DD strings the property is unavailable. */
+  blocked: string[];
+  /** Min stay (nights) — typically 3 for this property. */
+  minStay: number;
+  /** ISO 4217. */
+  currency: string;
+  /** True if data is from a live API call. */
+  isLive: boolean;
+  /** ISO date strings of the start of months we have data for. */
+  monthsCovered: string[];
+}
+
+const CALENDAR_FALLBACK: CalendarData = {
+  rates: {},
+  blocked: [],
+  minStay: 3,
+  currency: 'EUR',
+  isLive: false,
+  monthsCovered: [],
+};
+
+/**
+ * Fetch availability + rates for the next `monthsAhead` months, starting today.
+ * Returns a calendar JSON the client-side picker reads to render and price stays.
+ */
+export async function fetchCalendarData(monthsAhead: number = 6): Promise<CalendarData> {
+  const { apiKey, propertyId } = getEnv();
+  if (!apiKey || !propertyId) {
+    console.warn('[lodgify] LODGIFY_API_KEY or LODGIFY_PROPERTY_ID missing; using empty calendar.');
+    return CALENDAR_FALLBACK;
+  }
+
+  try {
+    const rooms = await lodgifyGet<Array<{ id: number }>>(`/v2/properties/${propertyId}/rooms`, apiKey);
+    const roomTypeId = rooms?.[0]?.id;
+    if (!roomTypeId) return CALENDAR_FALLBACK;
+
+    // Use string-based ISO dates to avoid timezone shift bugs
+    // (toISOString() converts to UTC and can land on the previous month
+    // when the local timezone is ahead of UTC, e.g., Portugal in summer).
+    const today = new Date();
+    const localYear = today.getFullYear();
+    const localMonth = today.getMonth(); // 0-indexed
+    const isoFromYM = (y: number, m: number, d: number) =>
+      `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+    const fromIso = isoFromYM(localYear, localMonth, 1);
+    const lastM = localMonth + monthsAhead - 1;
+    const lastY = localYear + Math.floor(lastM / 12);
+    const lastMm = ((lastM % 12) + 12) % 12;
+    const daysInLast = new Date(lastY, lastMm + 1, 0).getDate();
+    const toIso = isoFromYM(lastY, lastMm, daysInLast);
+
+    // Rates calendar: per-day prices.
+    const rates = await lodgifyGet<{
+      calendar_items: Array<{
+        date: string;
+        prices: Array<{ price_per_day?: number; min_stay?: number }>;
+      }>;
+      rate_settings?: { currency_code?: string };
+    }>(
+      `/v2/rates/calendar?HouseId=${propertyId}&RoomTypeId=${roomTypeId}&StartDate=${fromIso}&EndDate=${toIso}`,
+      apiKey
+    );
+
+    const ratesMap: Record<string, number> = {};
+    let minStay = Infinity;
+    for (const item of rates.calendar_items || []) {
+      const p = item.prices?.[0];
+      if (p && typeof p.price_per_day === 'number' && p.price_per_day > 0) {
+        ratesMap[item.date] = Math.round(p.price_per_day);
+      }
+      if (p && typeof p.min_stay === 'number' && p.min_stay > 0 && p.min_stay < minStay) {
+        minStay = p.min_stay;
+      }
+    }
+
+    // Availability: periods of available/unavailable.
+    const availability = await lodgifyGet<Array<{
+      periods: Array<{ start: string; end: string; available: number }>;
+    }>>(
+      `/v2/availability/${propertyId}?start=${fromIso}&end=${toIso}`,
+      apiKey
+    );
+
+    const blockedSet = new Set<string>();
+    for (const entry of availability) {
+      for (const period of entry.periods || []) {
+        // Lodgify "available" is 1 (yes) or 0 (no). Period is inclusive on both ends.
+        if (period.available === 0) {
+          const startD = new Date(period.start);
+          const endD = new Date(period.end);
+          for (let d = new Date(startD); d <= endD; d.setUTCDate(d.getUTCDate() + 1)) {
+            blockedSet.add(d.toISOString().slice(0, 10));
+          }
+        }
+      }
+    }
+
+    const monthsCovered: string[] = [];
+    for (let i = 0; i < monthsAhead; i++) {
+      const m = localMonth + i;
+      const y = localYear + Math.floor(m / 12);
+      const mm = ((m % 12) + 12) % 12;
+      monthsCovered.push(isoFromYM(y, mm, 1));
+    }
+
+    return {
+      rates: ratesMap,
+      blocked: [...blockedSet].sort(),
+      minStay: minStay === Infinity ? CALENDAR_FALLBACK.minStay : minStay,
+      currency: rates.rate_settings?.currency_code || 'EUR',
+      isLive: true,
+      monthsCovered,
+    };
+  } catch (err) {
+    console.warn('[lodgify] Calendar fetch failed, using empty calendar:', err);
+    return CALENDAR_FALLBACK;
+  }
+}
+
+/**
+ * Build the Lodgify checkout URL with dates + guests pre-filled.
+ * User lands directly on the checkout page with their selection.
+ */
+export function buildCheckoutUrl(opts: {
+  arrival: string;
+  departure: string;
+  adults?: number;
+  children?: number;
+  infants?: number;
+  language?: string;
+}): string {
+  const slug = 'apartamento-mar-azul';
+  const rentalId = '671442';
+  const lang = opts.language || 'en';
+  const params = new URLSearchParams({
+    arrival: opts.arrival,
+    departure: opts.departure,
+    adults: String(opts.adults ?? 2),
+    children: String(opts.children ?? 0),
+    infants: String(opts.infants ?? 0),
+  });
+  return `https://checkout.lodgify.com/${slug}/${lang}/?${params.toString()}#/${rentalId}`;
+}

@@ -15,10 +15,11 @@ import FinalCTA from '../components/FinalCTA.astro';
 import StickyCTA from '../components/StickyCTA.astro';
 import Footer from '../components/Footer.astro';
 import { SITE } from '../lib/config';
-import { fetchPriceData } from '../lib/lodgify';
+import { fetchPriceData, fetchCalendarData } from '../lib/lodgify';
 
-// Build-time fetch from Lodgify — falls back to €100/3-night if API key absent.
+// 6 months gives ~3 paginated pairs of "next 2 months" navigation
 const price = await fetchPriceData();
+const calendar = await fetchCalendarData(6);
 ---
 
 <BaseLayout
@@ -38,7 +39,7 @@ const price = await fetchPriceData();
     <Perks />
     <Location />
     <Reviews />
-    <Availability priceFrom={price.min} minStay={price.minStay} />
+    <Availability data={calendar} />
     <FAQ />
     <FinalCTA />
   </main>
