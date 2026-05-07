@@ -9,7 +9,7 @@
  */
 {
   "$schema": "https://unpkg.com/wrangler/config-schema.json",
-  "name": "marazul-redesign",
+  "name": "marazul",
   "compatibility_date": "2026-05-01",
   "assets": {
     "directory": "./project/site/dist",
