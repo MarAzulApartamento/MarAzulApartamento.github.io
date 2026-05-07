@@ -1,0 +1,14 @@
+# Sveltia CMS auth worker — handles GitHub OAuth for /admin/ on the production site.
+# Lives outside the Astro project so its deploy is independent of site builds.
+#
+# Deploy:  cd cms-auth && wrangler deploy
+# Secrets: wrangler secret put GITHUB_CLIENT_ID
+#          wrangler secret put GITHUB_CLIENT_SECRET
+
+name = "marazul-cms-auth"
+main = "worker.js"
+compatibility_date = "2026-05-01"
+
+# Optional: pin to a custom subdomain like cms-auth.apartamentomarazul.com
+# by adding a route in the Cloudflare dashboard once DNS is on Cloudflare.
+# Until then, the *.workers.dev URL is fine.
