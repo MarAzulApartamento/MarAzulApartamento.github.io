@@ -13,7 +13,7 @@
   --sun-sand:      #D8B98A;   /* accent — sparingly                            */
   --warm-white:    #F8F6F1;   /* page background                               */
   --deep-navy:     #1D2630;   /* body text, headings                           */
-  --slate-grey:    #6F7A86;   /* muted text, captions                          */
+  --slate-grey:    #5F6B77;   /* muted text, captions (WCAG AA on warm-white)  */
   --error-red:     #B0392A;   /* inline validation only — never decorative      */
 
   /* Subtle blue-tinted neutrals (per brand: tint neutrals toward Atlantic). */

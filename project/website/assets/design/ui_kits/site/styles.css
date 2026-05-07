@@ -67,14 +67,14 @@ a:hover { text-decoration-color: var(--atlantic-blue); }
 
 /* Language dropdown */
 .lang-dd { position: relative; }
-.lang-toggle { display: inline-flex; align-items: center; gap: 10px; background: transparent; border: 1px solid var(--border-strong); border-radius: 8px; padding: 9px 14px; font: 500 14px/1 var(--font-body); color: var(--fg); cursor: pointer; transition: background 160ms var(--ease-out), border-color 160ms var(--ease-out); }
+.lang-toggle { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; background: transparent; border: 1px solid var(--border-strong); border-radius: 8px; padding: 10px 14px; font: 500 14px/1 var(--font-body); color: var(--fg); cursor: pointer; transition: background 160ms var(--ease-out), border-color 160ms var(--ease-out); }
 .lang-toggle:hover { background: var(--bg-inset); }
 .lang-toggle.is-open { background: var(--bg-inset); border-color: var(--atlantic-blue); }
 .lang-chev { width: 7px; height: 7px; border-right: 1.5px solid var(--fg); border-bottom: 1.5px solid var(--fg); transform: rotate(45deg) translate(-2px, -1px); transition: transform 160ms var(--ease-out); }
 .lang-toggle.is-open .lang-chev { transform: rotate(225deg) translate(-1px, -2px); }
 .lang-menu { list-style: none; padding: 6px; margin: 8px 0 0; position: absolute; top: 100%; right: 0; min-width: 180px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 12px 32px rgba(29,38,48,0.12); z-index: 31; }
 .lang-menu li { margin: 0; }
-.lang-opt { display: block; width: 100%; text-align: left; background: transparent; border: 0; padding: 9px 12px; font: 500 14px/1.2 var(--font-body); color: var(--fg); border-radius: 6px; cursor: pointer; }
+.lang-opt { display: flex; align-items: center; width: 100%; min-height: 44px; text-align: left; background: transparent; border: 0; padding: 10px 12px; font: 500 14px/1.2 var(--font-body); color: var(--fg); border-radius: 6px; cursor: pointer; }
 .lang-opt:hover { background: var(--bg-inset); }
 .lang-opt.is-active { color: var(--atlantic-blue); font-weight: 600; }
 
@@ -238,7 +238,7 @@ a:hover { text-decoration-color: var(--atlantic-blue); }
 .lightbox-prev { left: 24px; }
 .lightbox-next { right: 24px; }
 @media (max-width: 720px) {
-  .lightbox-nav { width: 40px; height: 40px; }
+  .lightbox-nav { width: 44px; height: 44px; }
   .lightbox-prev { left: 12px; }
   .lightbox-next { right: 12px; }
   .lightbox-close { top: 12px; right: 12px; }
