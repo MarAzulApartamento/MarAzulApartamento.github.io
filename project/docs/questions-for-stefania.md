@@ -132,6 +132,55 @@ A6 flat card, sits on the kitchen counter, single side, QR straight to the GBP r
 
 A5 folded tent, stands on the dining table. Front face = "leave a Google review" with QR; back face = brand reinforcement + "direct booking is the cheapest channel." 10 tents for the first batch, six quick decisions.
 
+### 28. Social media starter pack — strategy overview before we draft
+
+**Status:** strategy below for review; full templates + starter posts written after Stefania approves the direction.
+
+**What we'd build (post-approval):**
+- **5 starter posts** (rotation-ready) with copy + photo selection
+- **Caption templates** by category — interior detail, Lagos location, perks, seasonal note, host moment
+- **Hashtag set** — restrained list aligned with Algarve / Lagos / vacation-rental search behaviour, no emoji-heavy influencer style
+- **Cadence guidance** — Instagram weekly in high season (Apr-Oct) and biweekly low season; Facebook follows the same rhythm; Stories ad-hoc when Stefania has a moment
+- **Cross-posting note** — recommend Instagram first, repurposed to Facebook (not the reverse)
+
+**Voice + visual intent:**
+- Photo-first (we have a strong shot set; the brand stands or falls on the photos)
+- Calm, editorial, brand-voiced — matches the site, no marketing-speak
+- One CTA per post (visit site, check availability, book direct), never multiple
+- Mix the surfaces: apartment detail, Lagos walking moments, the occasional host-voice piece
+- No emoji clusters, no #travel #wanderlust spray-tags
+
+**Decisions for Stefania (six quick):**
+1. Comfortable appearing in posts (host moment, behind-the-scenes), or stick to the apartment + Lagos?
+2. Hashtag posture — restrained brand-aligned set (recommended) or broader reach hashtags (more views, dilutes brand)?
+3. Cross-post Instagram → Facebook automatically (cheap, slightly off-brand on FB), or curate each separately?
+4. Posting tool — Buffer / Later (free tiers exist), or post manually?
+5. Frequency — weekly in season is sustainable, or commit to biweekly year-round?
+6. Stories — yes, occasional behind-the-scenes when something happens? Or skip Stories entirely?
+
+### 27. Email templates — strategy overview before we draft
+
+**Status:** strategy below for review; full templates written after Stefania approves the direction.
+
+**What we'd build (post-approval):**
+- **Booking confirmation** — sent automatically by Lodgify the moment a direct booking completes. Brand-voiced version of the default Lodgify template.
+- **Pre-arrival** — sent 3 days before check-in. Includes Wi-Fi prep, parking, key/lockbox location, the walking-guide preview from the welcome card, link to a "before you arrive" mini-guide on the site.
+- **Post-stay review request** — sent 24h after check-out. One ask: leave a Google review. QR + direct link. Optionally an Instagram follow.
+
+**Voice + format intent:**
+- Tone: warm + practical, matches the welcome card and the WhatsApp microcopy
+- Mobile-first reading — short paragraphs, scannable headers, single primary CTA per email
+- Plain-text-friendly fallback (Lodgify's email rendering is uneven)
+- Multilingual — EN master, translated to PT / IT / ES (the languages Stefania actually corresponds in); DE / NL / FR get EN until volume justifies translation
+
+**Decisions for Stefania (six quick):**
+1. Send platform — Lodgify native (it handles confirmation + can do pre-arrival), or external (Mailchimp / Resend / dedicated tool) for full design control? Recommendation: Lodgify for the first two, manual or simple tool for the review request.
+2. Reply-to address — `hello@apartamentomarazul.com` once item #16 is set up; her personal email until then?
+3. Sign-off — "Stefania", "Stefania at Mar Azul", or just "Mar Azul"?
+4. Soft pitch for repeat-booking — include a "book direct next time, ask for our returning-guest rate" line in the post-stay email, or keep it pure? Note: any discount commitment should align with item #20 mechanism.
+5. Pre-arrival timing — 3 days before is standard; some hosts prefer 5 days for international guests still planning. Default 3 days unless preference.
+6. Add an optional Instagram follow nudge to the post-stay email, or keep it focused on the review ask only? Single-CTA emails convert better; two CTAs split attention.
+
 ### 26. SEO content plan — review the article cluster before we write
 
 **Plan drafted 2026-05-08 at** `project/docs/seo-content-plan.md`.
