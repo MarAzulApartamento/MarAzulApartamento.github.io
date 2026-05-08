@@ -1,11 +1,11 @@
 /**
  * Brand-voice overrides for the Klaro consent UI.
  *
- * Klaro ships built-in translations for all 7 locales we use. We only
- * override the strings where the default reads generic / corporate; Klaro
- * falls back to its built-in text for everything else.
+ * Friendlier, less technical wording than Klaro's defaults — no name-dropping
+ * Cloudflare or Google Analytics in the top-level message. The user opens
+ * Cookie settings if they want the per-tool detail.
  *
- * Voice rules apply (no em dashes, plain British English on EN, etc.).
+ * Voice rules apply (no em dashes, plain British English on EN).
  */
 
 export interface KlaroBrandTranslation {
@@ -34,13 +34,13 @@ export interface KlaroBrandTranslation {
 const en: KlaroBrandTranslation = {
   consentNotice: {
     description:
-      "Cloudflare counts visits without cookies; that runs by default. Google Analytics uses cookies and is only on if you accept it here.",
+      "We use a couple of small tools to understand how the site is used. You decide what's comfortable.",
     learnMore: "Cookie settings",
   },
   consentModal: {
     title: "Cookies on this site",
     description:
-      "Two analytics tools, one optional. Pick what you're comfortable with. You can change your mind any time from Cookie settings in the footer.",
+      "Pick what you're happy with. You can change your mind any time from Cookie settings in the footer.",
   },
   acceptAll: "Accept all",
   acceptSelected: "Save selection",
@@ -49,10 +49,10 @@ const en: KlaroBrandTranslation = {
   save: "Save",
   service: {
     'cloudflare-web-analytics': {
-      description: "Cookieless. Counts visits without identifying you.",
+      description: "Counts visits without cookies. Always on.",
     },
     'google-analytics': {
-      description: "Cookies that help us see how the site is used.",
+      description: "Helps us see how the site is used. Uses cookies.",
     },
   },
   purposes: { analytics: "Analytics" },
@@ -61,13 +61,13 @@ const en: KlaroBrandTranslation = {
 const pt: KlaroBrandTranslation = {
   consentNotice: {
     description:
-      "A Cloudflare conta as visitas sem cookies; está sempre ativa. O Google Analytics usa cookies e só se ativa se aceitar aqui.",
+      "Usamos algumas pequenas ferramentas para perceber como o site é utilizado. Decida o que lhe parece bem.",
     learnMore: "Definições de cookies",
   },
   consentModal: {
     title: "Cookies neste site",
     description:
-      "Duas ferramentas de análise, uma opcional. Escolha o que lhe parece bem. Pode mudar a sua decisão a qualquer momento em Definições de cookies, no rodapé.",
+      "Escolha o que lhe parece bem. Pode mudar de ideias a qualquer momento em Definições de cookies, no rodapé.",
   },
   acceptAll: "Aceitar tudo",
   acceptSelected: "Guardar seleção",
@@ -76,10 +76,10 @@ const pt: KlaroBrandTranslation = {
   save: "Guardar",
   service: {
     'cloudflare-web-analytics': {
-      description: "Sem cookies. Conta as visitas sem o identificar.",
+      description: "Conta as visitas sem cookies. Sempre ativa.",
     },
     'google-analytics': {
-      description: "Cookies que nos ajudam a ver como o site é utilizado.",
+      description: "Ajuda-nos a ver como o site é utilizado. Usa cookies.",
     },
   },
   purposes: { analytics: "Análise" },
@@ -88,13 +88,13 @@ const pt: KlaroBrandTranslation = {
 const es: KlaroBrandTranslation = {
   consentNotice: {
     description:
-      "Cloudflare cuenta las visitas sin cookies; está siempre activa. Google Analytics usa cookies y solo se activa si lo aceptas aquí.",
+      "Usamos algunas herramientas pequeñas para entender cómo se usa el sitio. Tú decides con qué te sientes cómodo.",
     learnMore: "Configuración de cookies",
   },
   consentModal: {
     title: "Cookies en este sitio",
     description:
-      "Dos herramientas de análisis, una opcional. Elige lo que te parezca bien. Puedes cambiar tu decisión en cualquier momento desde Configuración de cookies, en el pie de página.",
+      "Elige lo que te parezca bien. Puedes cambiar de opinión en cualquier momento desde Configuración de cookies, en el pie de página.",
   },
   acceptAll: "Aceptar todo",
   acceptSelected: "Guardar selección",
@@ -103,10 +103,10 @@ const es: KlaroBrandTranslation = {
   save: "Guardar",
   service: {
     'cloudflare-web-analytics': {
-      description: "Sin cookies. Cuenta las visitas sin identificarte.",
+      description: "Cuenta las visitas sin cookies. Siempre activa.",
     },
     'google-analytics': {
-      description: "Cookies que nos ayudan a ver cómo se usa el sitio.",
+      description: "Nos ayuda a ver cómo se usa el sitio. Usa cookies.",
     },
   },
   purposes: { analytics: "Análisis" },
@@ -115,13 +115,13 @@ const es: KlaroBrandTranslation = {
 const it: KlaroBrandTranslation = {
   consentNotice: {
     description:
-      "Cloudflare conta le visite senza cookie; è sempre attivo. Google Analytics usa i cookie e si attiva solo se lo accetti qui.",
+      "Usiamo alcuni piccoli strumenti per capire come viene usato il sito. Decidi tu cosa ti va bene.",
     learnMore: "Impostazioni cookie",
   },
   consentModal: {
     title: "Cookie su questo sito",
     description:
-      "Due strumenti di analisi, uno opzionale. Scegli quello con cui ti senti a tuo agio. Puoi cambiare idea in qualsiasi momento dalle Impostazioni cookie nel piè di pagina.",
+      "Scegli quello che ti va bene. Puoi cambiare idea in qualsiasi momento dalle Impostazioni cookie nel piè di pagina.",
   },
   acceptAll: "Accetta tutto",
   acceptSelected: "Salva selezione",
@@ -130,10 +130,10 @@ const it: KlaroBrandTranslation = {
   save: "Salva",
   service: {
     'cloudflare-web-analytics': {
-      description: "Senza cookie. Conta le visite senza identificarti.",
+      description: "Conta le visite senza cookie. Sempre attiva.",
     },
     'google-analytics': {
-      description: "Cookie che ci aiutano a vedere come viene usato il sito.",
+      description: "Ci aiuta a capire come viene usato il sito. Usa cookie.",
     },
   },
   purposes: { analytics: "Analisi" },
@@ -142,13 +142,13 @@ const it: KlaroBrandTranslation = {
 const de: KlaroBrandTranslation = {
   consentNotice: {
     description:
-      "Cloudflare zählt Besuche ohne Cookies und ist immer aktiv. Google Analytics verwendet Cookies und ist nur aktiv, wenn du hier zustimmst.",
+      "Wir nutzen ein paar kleine Tools, um zu verstehen, wie die Seite genutzt wird. Du entscheidest, womit du dich wohl fühlst.",
     learnMore: "Cookie-Einstellungen",
   },
   consentModal: {
     title: "Cookies auf dieser Seite",
     description:
-      "Zwei Analyse-Tools, eines optional. Wähle, womit du dich wohl fühlst. Du kannst deine Entscheidung jederzeit über Cookie-Einstellungen im Footer ändern.",
+      "Wähle, was sich für dich gut anfühlt. Du kannst deine Entscheidung jederzeit über Cookie-Einstellungen im Footer ändern.",
   },
   acceptAll: "Alle akzeptieren",
   acceptSelected: "Auswahl speichern",
@@ -157,10 +157,10 @@ const de: KlaroBrandTranslation = {
   save: "Speichern",
   service: {
     'cloudflare-web-analytics': {
-      description: "Ohne Cookies. Zählt Besuche, ohne dich zu identifizieren.",
+      description: "Zählt Besuche ohne Cookies. Immer aktiv.",
     },
     'google-analytics': {
-      description: "Cookies, die uns zeigen, wie die Seite genutzt wird.",
+      description: "Hilft uns zu sehen, wie die Seite genutzt wird. Nutzt Cookies.",
     },
   },
   purposes: { analytics: "Analyse" },
@@ -169,13 +169,13 @@ const de: KlaroBrandTranslation = {
 const nl: KlaroBrandTranslation = {
   consentNotice: {
     description:
-      "Cloudflare telt bezoeken zonder cookies en staat altijd aan. Google Analytics gebruikt cookies en is alleen actief als je dat hier accepteert.",
+      "We gebruiken een paar kleine tools om te begrijpen hoe de site wordt gebruikt. Jij beslist wat goed voelt.",
     learnMore: "Cookie-instellingen",
   },
   consentModal: {
     title: "Cookies op deze site",
     description:
-      "Twee analysetools, één optioneel. Kies wat goed voelt. Je kunt je keuze altijd wijzigen via Cookie-instellingen in de footer.",
+      "Kies wat goed voelt. Je kunt je keuze altijd wijzigen via Cookie-instellingen in de footer.",
   },
   acceptAll: "Alles accepteren",
   acceptSelected: "Selectie opslaan",
@@ -184,10 +184,10 @@ const nl: KlaroBrandTranslation = {
   save: "Opslaan",
   service: {
     'cloudflare-web-analytics': {
-      description: "Zonder cookies. Telt bezoeken zonder je te identificeren.",
+      description: "Telt bezoeken zonder cookies. Altijd aan.",
     },
     'google-analytics': {
-      description: "Cookies waarmee we zien hoe de site wordt gebruikt.",
+      description: "Helpt ons zien hoe de site wordt gebruikt. Gebruikt cookies.",
     },
   },
   purposes: { analytics: "Analyse" },
@@ -196,13 +196,13 @@ const nl: KlaroBrandTranslation = {
 const fr: KlaroBrandTranslation = {
   consentNotice: {
     description:
-      "Cloudflare compte les visites sans cookies et est toujours actif. Google Analytics utilise des cookies et n'est activé que si vous l'acceptez ici.",
+      "Nous utilisons quelques petits outils pour comprendre comment le site est utilisé. Vous décidez de ce qui vous convient.",
     learnMore: "Réglages des cookies",
   },
   consentModal: {
     title: "Cookies sur ce site",
     description:
-      "Deux outils d'analyse, un optionnel. Choisissez ce qui vous convient. Vous pouvez changer d'avis à tout moment depuis Réglages des cookies dans le pied de page.",
+      "Choisissez ce qui vous convient. Vous pouvez changer d'avis à tout moment depuis Réglages des cookies dans le pied de page.",
   },
   acceptAll: "Tout accepter",
   acceptSelected: "Enregistrer la sélection",
@@ -211,10 +211,10 @@ const fr: KlaroBrandTranslation = {
   save: "Enregistrer",
   service: {
     'cloudflare-web-analytics': {
-      description: "Sans cookies. Compte les visites sans vous identifier.",
+      description: "Compte les visites sans cookies. Toujours actif.",
     },
     'google-analytics': {
-      description: "Cookies qui nous aident à voir comment le site est utilisé.",
+      description: "Nous aide à voir comment le site est utilisé. Utilise des cookies.",
     },
   },
   purposes: { analytics: "Analyse" },
