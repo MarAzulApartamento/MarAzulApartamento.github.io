@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { SITE, PROPERTY, ANALYTICS, LOCALES, DEFAULT_LOCALE } from '../lib/config';
+import { getKlaroTranslations } from '../lib/klaro-translations';
 
 interface Props {
   title: string;
@@ -168,7 +169,8 @@ if (PROPERTY.alNumber) {
     {ANALYTICS.consentRequired && (
       <Fragment>
         <link rel="stylesheet" href="/klaro/klaro.css" />
-        <script is:inline define:vars={{ ga4Id: ANALYTICS.ga4Id, lang }}>
+        <link rel="stylesheet" href="/klaro/klaro-brand.css" />
+        <script is:inline define:vars={{ ga4Id: ANALYTICS.ga4Id, lang, brandTranslations: getKlaroTranslations(lang) }}>
           window.klaroConfig = {
             elementID: 'klaro',
             storageMethod: 'cookie',
@@ -181,6 +183,7 @@ if (PROPERTY.alNumber) {
             hideDeclineAll: false,
             htmlTexts: true,
             lang,
+            translations: { [lang]: brandTranslations },
             services: [
               {
                 name: 'cloudflare-web-analytics',
@@ -188,7 +191,6 @@ if (PROPERTY.alNumber) {
                 purposes: ['analytics'],
                 cookies: [],
                 required: true,
-                description: 'Cookieless, privacy-first traffic counter. Always on.',
               },
               {
                 name: 'google-analytics',
@@ -196,7 +198,6 @@ if (PROPERTY.alNumber) {
                 purposes: ['analytics'],
                 cookies: [/^_ga/, /^_gid$/, /^_gat/],
                 required: false,
-                description: 'Detailed traffic and engagement data.',
               },
             ],
             purposes: [{ name: 'analytics' }],
