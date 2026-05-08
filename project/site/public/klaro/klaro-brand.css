@@ -2,71 +2,103 @@
  * Brand overrides for Klaro consent UI — Apartamento Mar Azul.
  * Loads after klaro.css so these rules win on equal specificity.
  *
- * Brand tokens cascade from :root in global.css:
- *   --color-atlantic-blue, --color-warm-white, --color-deep-navy,
- *   --color-slate-grey, --color-seafoam.
+ * Surface treatment:
+ *   - Notice (small bottom card): solid Atlantic Blue, warm-white text.
+ *     Reads as a brand object, like the FinalCTA section.
+ *   - Modal (full settings): warm-white body for readability of long
+ *     descriptions, Atlantic Blue header strip carrying the title.
+ *
+ * Brand tokens cascade from :root in global.css.
  */
 
-/* ----- Containers (notice + modal) ----- */
+/* ==========================================================
+   Containers
+   ========================================================== */
+
 .klaro .cookie-notice,
 .klaro .cookie-modal .cm-modal {
   font-family: 'Manrope', system-ui, sans-serif;
-  background: var(--color-warm-white);
-  color: var(--color-deep-navy);
   border-radius: 14px;
-  border: 1px solid #E5DED1;
-  box-shadow: 0 12px 40px rgba(29, 38, 48, 0.18);
+  box-shadow: 0 12px 40px rgba(29, 38, 48, 0.22);
   overflow: hidden;
 }
 
+/* Notice — solid Atlantic Blue */
 .klaro .cookie-notice {
+  background: var(--color-atlantic-blue);
+  color: var(--color-warm-white);
+  border: 1px solid var(--color-atlantic-blue);
   max-width: 480px;
 }
 
-/* Modal backdrop: deep-navy tint with subtle blur. */
+/* Modal body — warm-white */
+.klaro .cookie-modal .cm-modal {
+  background: var(--color-warm-white);
+  color: var(--color-deep-navy);
+  border: 1px solid #E5DED1;
+}
+
+/* Modal backdrop */
 .klaro .cookie-modal .cm-bg {
   background: rgba(29, 38, 48, 0.55);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
 
-/* ----- Typography ----- */
+/* ==========================================================
+   Typography
+   ========================================================== */
+
+/* Notice text — warm-white on blue */
 .klaro .cookie-notice p,
+.klaro .cookie-notice .cn-body {
+  color: var(--color-warm-white);
+  font: 400 15px/1.55 'Manrope', system-ui, sans-serif;
+  margin: 0 0 12px;
+}
+.klaro .cookie-notice .cn-body { padding: 24px; }
+
+/* Modal text — deep-navy on warm-white */
 .klaro .cookie-modal p,
-.klaro .cookie-notice .cn-body,
 .klaro .cookie-modal .cm-body {
   color: var(--color-deep-navy);
   font: 400 15px/1.55 'Manrope', system-ui, sans-serif;
   margin: 0 0 12px;
 }
+.klaro .cookie-modal .cm-body { padding: 24px; }
 
-.klaro .cookie-notice .cn-body,
-.klaro .cookie-modal .cm-body {
-  padding: 24px;
-}
-
-/* Modal heading uses the display face (Spectral) at 24px+ per brand rule. */
+/* Modal title — Atlantic Blue header strip with warm-white Spectral */
+.klaro .cookie-modal .cm-modal .cm-header,
 .klaro .cookie-modal .cm-modal h1,
-.klaro .cookie-modal .cm-modal h2,
-.klaro .cookie-notice .cn-title {
+.klaro .cookie-modal .cm-modal h2 {
+  background: var(--color-atlantic-blue);
+  color: var(--color-warm-white);
+  margin: 0;
+  padding: 22px 24px;
   font: 700 24px/1.2 'Spectral', serif;
   letter-spacing: -0.01em;
-  color: var(--color-deep-navy);
-  margin: 0 0 14px;
+}
+.klaro .cookie-modal .cm-modal .cm-header h1,
+.klaro .cookie-modal .cm-modal .cm-header h2 {
+  background: transparent;
+  padding: 0;
 }
 
-/* Service list rows */
+/* Service rows */
 .klaro .cm-list-title {
   font: 600 15px/1.3 'Manrope', system-ui, sans-serif;
   color: var(--color-deep-navy);
 }
+.klaro .cookie-notice .cm-list-title { color: var(--color-warm-white); }
+
 .klaro .cm-list-description {
   font: 400 13px/1.55 'Manrope', system-ui, sans-serif;
   color: var(--color-slate-grey);
   margin-top: 4px;
 }
+.klaro .cookie-notice .cm-list-description { color: rgba(250, 250, 247, 0.85); }
 
-/* Section headers (e.g. purpose names) */
+/* Purpose / section labels */
 .klaro .cm-purpose .cm-purpose-title,
 .klaro .cookie-modal .cm-services .title {
   font: 600 12px/1 'Manrope', system-ui, sans-serif;
@@ -76,78 +108,123 @@
   margin: 16px 0 8px;
 }
 
-/* Links inside Klaro UI */
+/* Links */
 .klaro .cookie-notice a,
+.klaro .cookie-notice .cm-link {
+  color: var(--color-warm-white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  font-weight: 500;
+}
 .klaro .cookie-modal a,
-.klaro .cm-link {
+.klaro .cookie-modal .cm-link {
   color: var(--color-atlantic-blue);
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   font-weight: 500;
 }
-.klaro .cookie-notice a:hover,
-.klaro .cookie-modal a:hover,
-.klaro .cm-link:hover {
-  text-decoration-thickness: 2px;
-}
+.klaro a:hover,
+.klaro .cm-link:hover { text-decoration-thickness: 2px; }
 
-/* ----- Buttons ----- */
+/* ==========================================================
+   Buttons
+   ========================================================== */
+
 .klaro .cm-btn {
   font: 600 14px/1 'Manrope', system-ui, sans-serif;
   letter-spacing: 0.01em;
   border-radius: 8px;
   padding: 12px 20px;
-  min-height: 44px; /* WCAG touch target */
+  min-height: 44px;
   border: 1px solid transparent;
   cursor: pointer;
   transition: background 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out;
 }
-.klaro .cm-btn + .cm-btn {
-  margin-left: 8px;
-}
+.klaro .cm-btn + .cm-btn { margin-left: 8px; }
 
-/* Primary action — Accept all */
-.klaro .cm-btn-success,
-.klaro .cm-btn-accept,
-.klaro .cm-btn.cm-btn-success-var {
+/* --- Buttons inside the modal (warm-white surface) --- */
+
+.klaro .cookie-modal .cm-btn-success,
+.klaro .cookie-modal .cm-btn-accept,
+.klaro .cookie-modal .cm-btn.cm-btn-success-var {
   background: var(--color-atlantic-blue);
   color: var(--color-warm-white);
   border-color: var(--color-atlantic-blue);
 }
-.klaro .cm-btn-success:hover,
-.klaro .cm-btn-accept:hover,
-.klaro .cm-btn.cm-btn-success-var:hover {
+.klaro .cookie-modal .cm-btn-success:hover,
+.klaro .cookie-modal .cm-btn-accept:hover,
+.klaro .cookie-modal .cm-btn.cm-btn-success-var:hover {
   background: var(--color-deep-navy);
   border-color: var(--color-deep-navy);
 }
 
-/* Secondary action — Cookie settings */
-.klaro .cm-btn-info {
+.klaro .cookie-modal .cm-btn-info {
   background: transparent;
   color: var(--color-atlantic-blue);
   border-color: var(--color-atlantic-blue);
 }
-.klaro .cm-btn-info:hover {
+.klaro .cookie-modal .cm-btn-info:hover {
   background: var(--color-atlantic-blue);
   color: var(--color-warm-white);
 }
 
-/* Tertiary action — Decline all */
-.klaro .cm-btn-decline,
-.klaro .cm-btn-danger {
+.klaro .cookie-modal .cm-btn-decline,
+.klaro .cookie-modal .cm-btn-danger {
   background: transparent;
   color: var(--color-slate-grey);
   border-color: #D6CFC0;
 }
-.klaro .cm-btn-decline:hover,
-.klaro .cm-btn-danger:hover {
+.klaro .cookie-modal .cm-btn-decline:hover,
+.klaro .cookie-modal .cm-btn-danger:hover {
   background: #F1EEE7;
   color: var(--color-deep-navy);
   border-color: #C5BFB1;
 }
 
-/* Modal footer button row */
+/* --- Buttons inside the notice (Atlantic Blue surface) --- */
+
+.klaro .cookie-notice .cm-btn-success,
+.klaro .cookie-notice .cm-btn-accept,
+.klaro .cookie-notice .cm-btn.cm-btn-success-var {
+  background: var(--color-warm-white);
+  color: var(--color-atlantic-blue);
+  border-color: var(--color-warm-white);
+}
+.klaro .cookie-notice .cm-btn-success:hover,
+.klaro .cookie-notice .cm-btn-accept:hover,
+.klaro .cookie-notice .cm-btn.cm-btn-success-var:hover {
+  background: var(--color-deep-navy);
+  color: var(--color-warm-white);
+  border-color: var(--color-deep-navy);
+}
+
+.klaro .cookie-notice .cm-btn-info {
+  background: transparent;
+  color: var(--color-warm-white);
+  border-color: rgba(250, 250, 247, 0.6);
+}
+.klaro .cookie-notice .cm-btn-info:hover {
+  background: var(--color-warm-white);
+  color: var(--color-atlantic-blue);
+  border-color: var(--color-warm-white);
+}
+
+.klaro .cookie-notice .cm-btn-decline,
+.klaro .cookie-notice .cm-btn-danger {
+  background: transparent;
+  color: rgba(250, 250, 247, 0.85);
+  border-color: rgba(250, 250, 247, 0.35);
+}
+.klaro .cookie-notice .cm-btn-decline:hover,
+.klaro .cookie-notice .cm-btn-danger:hover {
+  background: rgba(250, 250, 247, 0.12);
+  color: var(--color-warm-white);
+  border-color: var(--color-warm-white);
+}
+
+/* Modal footer */
 .klaro .cookie-modal .cm-footer {
   padding: 16px 24px;
   background: #F1EEE7;
@@ -157,44 +234,59 @@
   gap: 8px;
 }
 
-/* ----- Toggle switches (per service) ----- */
-.klaro .cm-switch-container {
-  display: flex;
-  align-items: center;
-}
+/* ==========================================================
+   Toggle switches
+   ========================================================== */
 
+.klaro .cm-switch-container { display: flex; align-items: center; }
+
+/* Track — inactive */
 .klaro .slider {
   background: #C5BFB1;
   border-radius: 999px;
   transition: background 160ms ease-out;
 }
+.klaro .cookie-notice .slider {
+  background: rgba(250, 250, 247, 0.3);
+}
 
-/* Active service */
+/* Track — active (consent given) */
 .klaro .cm-list-input:checked + .cm-list-label .slider {
   background: var(--color-atlantic-blue);
 }
+.klaro .cookie-notice .cm-list-input:checked + .cm-list-label .slider {
+  background: var(--color-sun-sand);
+}
 
-/* Required service (always on, can't toggle) */
+/* Track — required (always on) */
 .klaro .cm-list-input.required + .cm-list-label .slider,
 .klaro .cm-list-input:disabled + .cm-list-label .slider {
   background: var(--color-seafoam);
   cursor: not-allowed;
 }
 
-/* Toggle knob */
+/* Knob */
 .klaro .slider:before {
   background: var(--color-warm-white);
   box-shadow: 0 1px 3px rgba(29, 38, 48, 0.3);
 }
 
-/* Focus outlines — match the rest of the site */
-.klaro .cm-btn:focus-visible,
-.klaro .cm-list-input:focus + .cm-list-label .slider {
+/* Focus rings */
+.klaro .cookie-modal .cm-btn:focus-visible,
+.klaro .cookie-modal .cm-list-input:focus + .cm-list-label .slider {
   outline: 2px solid var(--color-atlantic-blue);
   outline-offset: 3px;
 }
+.klaro .cookie-notice .cm-btn:focus-visible,
+.klaro .cookie-notice .cm-list-input:focus + .cm-list-label .slider {
+  outline: 2px solid var(--color-warm-white);
+  outline-offset: 3px;
+}
 
-/* ----- Reduced motion ----- */
+/* ==========================================================
+   Reduced motion
+   ========================================================== */
+
 @media (prefers-reduced-motion: reduce) {
   .klaro .cm-btn,
   .klaro .slider,
