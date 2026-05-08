@@ -19,6 +19,11 @@ const t = getStrings(Astro.currentLocale);
         aria-label="Apartamento Mar Azul, the entrance and living area"
       >
       </video>
+      <button class="about-play" data-about-play type="button" aria-label="Play video">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </button>
     </div>
     <div class="about-text">
       <p class="eyebrow">{t.about.eyebrow}</p>
@@ -51,9 +56,38 @@ const t = getStrings(Astro.currentLocale);
     object-fit: cover;
     display: block;
   }
+  /* Play button: hidden on desktop (autoplay handles it), shown on mobile
+     where autoplay is unreliable and we'd rather let the user opt in. */
+  .about-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 4px; /* nudge play triangle to optical centre */
+    background: rgba(248, 246, 241, 0.92);
+    border: 0;
+    border-radius: 50%;
+    color: var(--color-atlantic-blue);
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(29, 38, 48, 0.25);
+    transition: transform 160ms ease-out, background 160ms ease-out;
+    z-index: 2;
+  }
+  .about-play:hover { background: var(--color-warm-white); transform: translate(-50%, -50%) scale(1.05); }
+  .about-play:focus-visible { outline: 3px solid var(--color-warm-white); outline-offset: 3px; }
+  .about-play[hidden] { display: none !important; }
+  @media (max-width: 720px) {
+    .about-play { display: flex; }
+  }
   /* Respect users who prefer reduced motion: pause autoplay, show poster only. */
   @media (prefers-reduced-motion: reduce) {
     .about-video { display: none; }
+    .about-play { display: none !important; }
     .about-media { background: var(--about-poster) center/cover; }
   }
   @media (max-width: 900px) {
@@ -63,15 +97,34 @@ const t = getStrings(Astro.currentLocale);
 </style>
 
 <script>
-  // If the user prefers reduced motion, explicitly pause and reset the video so
-  // the poster shows. The CSS @media query handles the visual side; this stops
-  // the playback engine entirely.
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  function applyMotionPreference() {
-    document.querySelectorAll<HTMLVideoElement>('.about-video').forEach((video) => {
-      if (reduce.matches) { video.pause(); video.currentTime = 0; }
+  const mobile = window.matchMedia('(max-width: 720px)');
+
+  document.querySelectorAll<HTMLDivElement>('.about-media').forEach((media) => {
+    const video = media.querySelector<HTMLVideoElement>('.about-video');
+    const button = media.querySelector<HTMLButtonElement>('[data-about-play]');
+    if (!video || !button) return;
+
+    // Reduced-motion: never play.
+    if (reduce.matches) { video.pause(); video.currentTime = 0; return; }
+
+    // Mobile: don't autoplay. Wait for the user to tap the play button.
+    if (mobile.matches) {
+      video.removeAttribute('autoplay');
+      video.pause();
+    } else {
+      // Desktop autoplay succeeded: hide the button.
+      button.hidden = true;
+    }
+
+    button.addEventListener('click', () => {
+      video.play().then(() => { button.hidden = true; }).catch(() => {});
     });
-  }
-  applyMotionPreference();
-  reduce.addEventListener('change', applyMotionPreference);
+
+    // If anything pauses the video on mobile, surface the button again.
+    video.addEventListener('pause', () => {
+      if (mobile.matches && !video.ended) button.hidden = false;
+    });
+    video.addEventListener('playing', () => { button.hidden = true; });
+  });
 </script>
