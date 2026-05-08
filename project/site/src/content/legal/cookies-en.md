@@ -14,33 +14,45 @@ Cookies are small text files that a website asks your browser to store. They hel
 
 ## What we set
 
-Right now, **apartamentomarazul.com sets no cookies of its own** for browsing or analytics. Our hosting and analytics provider Cloudflare uses a privacy-first, cookieless system that estimates traffic without tracking individuals.
+The site uses two analytics tools and a consent manager. Together they may set the following cookies on your browser, depending on your choices.
 
-Cookies appear in two cases:
+**Always present (essential):**
 
-**1. Booking checkout**
+- `klaro` — set the moment you interact with the consent banner. Stores your decision (accept or decline) so the banner doesn't reappear on every page. Lifetime: 1 year. This cookie is *strictly necessary* under the ePrivacy Directive and doesn't require consent — it's the cookie that records your consent.
 
-When you click "Book direct", a new tab opens at `checkout.lodgify.com`. That page is operated by Lodgify Ltd and sets cookies needed for the checkout flow (session, fraud prevention, payment via Stripe). Their privacy and cookie policy applies on that page: https://www.lodgify.com/privacy-policy.
+**Set only if you accept analytics:**
 
-**2. WhatsApp**
+- `_ga` — Google Analytics, distinguishes unique visitors. Lifetime: 2 years.
+- `_ga_<container>` — Google Analytics, holds session state for the current site. Lifetime: 2 years.
+- `_gid` — Google Analytics, distinguishes users for the current 24-hour window. Lifetime: 24 hours.
 
-When you click "WhatsApp Stefy", you are redirected to wa.me (Meta Platforms Ireland Ltd). WhatsApp's own cookies and policies apply.
+If you decline analytics in the banner, the three Google Analytics cookies above are not set; the `klaro` cookie still records your decline.
 
-If you only browse our website and don't click through to a third-party booking or WhatsApp, no cookies are set.
+**Cookieless (no consent needed):**
+
+We also use **Cloudflare Web Analytics**, which counts traffic without setting any cookie or persistent identifier. It runs regardless of your consent choice because it cannot identify you.
+
+**Cookies you'll only encounter if you click through:**
+
+- **Booking checkout** — when you click *Book direct*, a new tab opens at `checkout.lodgify.com`. That page is operated by Lodgify Ltd and sets cookies needed for the checkout flow (session, fraud prevention, payment via Stripe). Their cookie policy applies on that page: https://www.lodgify.com/privacy-policy.
+- **WhatsApp** — when you click *WhatsApp Stefy*, you're redirected to `wa.me` (Meta Platforms Ireland Ltd). WhatsApp's own cookies and policies apply.
+
+If you don't click those buttons, those third-party cookies don't appear on your machine.
 
 ## Site editor (admins only)
 
 The `/admin/` route on this site loads the Sveltia CMS editor and is used only by the property owner. It uses GitHub OAuth, which sets short-lived cookies on github.com during the login flow. Visitors to the public site don't encounter these cookies.
 
+## Withdrawing or changing consent
+
+You can change your decision at any time. Click the small **Cookie settings** link in the footer to reopen the banner and accept or decline categories. Your new choice takes effect immediately and the relevant cookies are added or removed.
+
 ## Cookies that may appear in the future
 
-If we add tools that require cookies, we'll update this page **before** the tools go live and a cookie banner will ask for your consent. Tools we may add:
+We may add tools that require additional consent in future releases. When that happens, we'll update this page before the tools go live and the banner will ask for explicit consent for the new purpose. Tools currently planned:
 
-- **Google Analytics 4** for site-traffic measurement (would require analytics consent)
-- **Google Hotel Ads conversion tracking** for measuring direct bookings from Google search (would require marketing consent)
-- **Meta Pixel** for Facebook/Instagram ad attribution (would require marketing consent)
-
-You'll be able to accept, refuse, or pick categories at the moment a banner appears, and change your choice any time afterwards.
+- **Google Hotel Ads conversion tracking** for measuring direct bookings from Google search (would require marketing consent).
+- **Meta Pixel** for Facebook/Instagram ad attribution (would require marketing consent).
 
 ## Managing cookies
 

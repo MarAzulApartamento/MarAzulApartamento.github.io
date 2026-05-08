@@ -160,6 +160,66 @@ if (PROPERTY.alNumber) {
         data-cf-beacon={JSON.stringify({ token: ANALYTICS.cfAnalyticsToken })}
       />
     )}
+
+    {/* Klaro consent manager + GA4 — wired together. Only injected when
+        PUBLIC_GA4_ID is set, since GA4 is the only consent-required service.
+        Klaro's `klaro` cookie (consent state) is essential and self-justified;
+        GA4 cookies only set after the user accepts the analytics purpose. */}
+    {ANALYTICS.consentRequired && (
+      <Fragment>
+        <link rel="stylesheet" href="/klaro/klaro.css" />
+        <script is:inline define:vars={{ ga4Id: ANALYTICS.ga4Id, lang }}>
+          window.klaroConfig = {
+            elementID: 'klaro',
+            storageMethod: 'cookie',
+            cookieName: 'klaro',
+            cookieExpiresAfterDays: 365,
+            privacyPolicy: lang === 'en' ? '/privacy/' : `/${lang}/privacy/`,
+            default: false,
+            mustConsent: false,
+            acceptAll: true,
+            hideDeclineAll: false,
+            htmlTexts: true,
+            lang,
+            services: [
+              {
+                name: 'cloudflare-web-analytics',
+                title: 'Cloudflare Web Analytics',
+                purposes: ['analytics'],
+                cookies: [],
+                required: true,
+                description: 'Cookieless, privacy-first traffic counter. Always on.',
+              },
+              {
+                name: 'google-analytics',
+                title: 'Google Analytics',
+                purposes: ['analytics'],
+                cookies: [/^_ga/, /^_gid$/, /^_gat/],
+                required: false,
+                description: 'Detailed traffic and engagement data.',
+              },
+            ],
+            purposes: [{ name: 'analytics' }],
+          };
+        </script>
+        <script defer src="/klaro/klaro.js"></script>
+        {/* GA4 scripts — controlled by Klaro via data-name. They sit inert
+            (type=text/plain) until Klaro flips them to executable on consent. */}
+        <script
+          type="text/plain"
+          data-type="application/javascript"
+          data-name="google-analytics"
+          data-src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS.ga4Id}`}
+          async
+        />
+        <script
+          type="text/plain"
+          data-type="application/javascript"
+          data-name="google-analytics"
+          set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','${ANALYTICS.ga4Id}',{anonymize_ip:true});`}
+        />
+      </Fragment>
+    )}
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>

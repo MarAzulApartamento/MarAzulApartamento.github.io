@@ -53,7 +53,8 @@ We do not collect special categories of personal data (health, religion, politic
 | Sending booking confirmations and pre-arrival information | Performance of a contract |
 | Issuing invoices and meeting tax obligations in Portugal | Legal obligation |
 | Publishing your review with attribution | Consent (you posted the review on the source platform with the intent it be public) |
-| Improving how the site works (aggregated, no cookies) | Legitimate interest |
+| Cookieless traffic counting (Cloudflare Web Analytics) | Legitimate interest |
+| Detailed analytics via Google Analytics 4 | Consent (only if you accept in the cookie banner) |
 
 We do **not** use your data for marketing, profiling, or automated decision-making.
 
@@ -64,7 +65,7 @@ We share data with the following processors and partners, only to the extent nee
 - **Lodgify Ltd** — booking management, payment processing (via Stripe), pre-arrival emails. Privacy policy: https://www.lodgify.com/privacy-policy
 - **Cloudflare, Inc.** — website hosting and security. Cloudflare Web Analytics is cookieless and does not identify individual visitors.
 - **GitHub, Inc.** — stores the website source code; the owner uses GitHub to manage site content. Personal data of visitors is not stored on GitHub.
-- **Google LLC** — when you click on a Google review or visit our Google Business Profile, you interact with Google directly under their privacy policy.
+- **Google LLC** — Google Analytics 4 (only when you've granted analytics consent), Google reviews, and Google Business Profile interactions. Privacy policy: https://policies.google.com/privacy
 - **Meta Platforms Ireland Ltd** — when you message us via WhatsApp.
 
 We do not sell your data to anyone. We do not share it with third parties for their own marketing.
@@ -100,7 +101,7 @@ You also have the right to lodge a complaint with the Portuguese supervisory aut
 
 ## Cookies
 
-We don't set marketing or analytics cookies on apartamentomarazul.com. Our analytics provider (Cloudflare) is cookieless. If we add tools that require cookies in the future, we'll ask for your consent first via a cookie banner. See the [Cookie Policy](/cookies/) for the current list.
+The site uses Cloudflare Web Analytics (cookieless, no consent needed) and, if you accept it in the consent banner, Google Analytics 4 (cookies). The full list and how to change your choice are in the [Cookie Policy](/cookies/).
 
 ## Changes to this notice
 

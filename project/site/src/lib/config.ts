@@ -81,8 +81,22 @@ const _cfAnalyticsToken =
   process.env.PUBLIC_CF_ANALYTICS_TOKEN ||
   '';
 
+// GA4 Measurement ID. When empty, no GA4 script is injected and the Klaro
+// consent banner stays inactive (since GA4 is currently the only consent-
+// required service). Once set, Klaro initialises and asks for consent; GA4
+// only loads after the user accepts.
+const _ga4Id =
+  ((import.meta as any).env?.PUBLIC_GA4_ID as string | undefined) ||
+  process.env.PUBLIC_GA4_ID ||
+  '';
+
 export const ANALYTICS = {
   cfAnalyticsToken: _cfAnalyticsToken,
+  ga4Id: _ga4Id,
+  // Convenience: any consent-required service active?
+  get consentRequired() {
+    return Boolean(this.ga4Id);
+  },
 };
 
 export const LOCALES = ['en', 'pt', 'es', 'it', 'de', 'nl', 'fr'] as const;

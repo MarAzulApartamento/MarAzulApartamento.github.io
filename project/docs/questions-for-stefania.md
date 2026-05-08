@@ -163,6 +163,25 @@ The welcome card sits inside the apartment for arriving guests. Needs:
 
 ## 🔵 Domain, deploy, accounts
 
+### 23. GA4 — create a property + paste the Measurement ID (~10 minutes)
+
+**Discovered:** 2026-05-08. The Klaro consent banner + GA4 wiring are in the site code; both stay inactive until a Measurement ID is set. Once it's set, the consent banner appears for visitors and GA4 fires only after they accept the analytics purpose.
+
+**What to do:**
+1. Visit https://analytics.google.com/. Sign in with the same Google account that owns GBP and Hotel Center.
+2. **Admin** → **Create property** → name: `Apartamento Mar Azul`, time zone: `(GMT+00:00) Lisbon`, currency: `EUR`.
+3. Set **Industry category** to *Travel* and **Business size** to *Small*. Click **Next**, then select **Generate leads** + **Examine user behaviour** as objectives.
+4. Choose **Web** as the platform. Website URL: `https://apartamentomarazul.com`. Stream name: `Apartamento Mar Azul Site`.
+5. Cloudflare Pages dashboard → Mar Azul project → **Settings** → **Environment Variables** → **Add variable**:
+   - Variable name: `PUBLIC_GA4_ID`
+   - Value: the Measurement ID from step 4 (looks like `G-XXXXXXXXXX`)
+   - Apply to: **both Production and Preview**
+6. Trigger a redeploy. Once deployed, the Klaro consent banner appears for visitors. After they click **Accept all** (or accept the analytics purpose specifically), GA4 starts logging.
+
+**Verify:** open the site in an incognito window, accept the banner, refresh once, then check GA4 → **Reports** → **Realtime**. The visit should appear within ~30 seconds.
+
+**Privacy + Cookies pages** auto-update for the new state — they already mention GA4 as conditional on consent.
+
 ### 21. Cloudflare Web Analytics — create a site + paste the token (~5 minutes)
 
 **Discovered:** 2026-05-08. The CF Web Analytics beacon is now wired into the site code; it stays inactive until a token is set.
