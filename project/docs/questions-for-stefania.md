@@ -132,6 +132,26 @@ A6 flat card, sits on the kitchen counter, single side, QR straight to the GBP r
 
 A5 folded tent, stands on the dining table. Front face = "leave a Google review" with QR; back face = brand reinforcement + "direct booking is the cheapest channel." 10 tents for the first batch, six quick decisions.
 
+### 26. SEO content plan — review the article cluster before we write
+
+**Plan drafted 2026-05-08 at** `project/docs/seo-content-plan.md`.
+
+Twelve long-form articles in English (the master cluster), localised to the other six languages with 1-2 per-market substitutions, plus a publishing cadence (5 articles per sprint). The plan includes:
+- Title + slug + target search query + audience for each article
+- Chapter-by-chapter outline (4-6 H2s per article)
+- Internal-linking strategy and word-count estimate
+- Per-language substitutions for PT / IT / DE / NL / FR
+- A six-decision list at the end
+
+**The articles span:** Lagos in shoulder / winter / summer; walking to beaches; the coast path; Ponta da Piedade; family travel; food (tascas + padaria + wine bar); quiet beaches; day trips; booking direct vs Booking.com; packing; and the brand "our story" piece.
+
+**Stefania's input matters most for:**
+- Article #5 (where to eat) — needs her actual recommendations beyond the homepage's two named places.
+- Article #12 (our story) — best done as a short call where she talks, we transcribe.
+- Confirming the 12 topics feel right and aren't missing something specific to her experience hosting.
+
+Once she approves the plan, the writing starts in Sprint 4 (5 articles) and continues through Sprint 4.5.
+
 ### 9. Business card brief — review before we go to print
 
 **Spec drafted 2026-05-08 at** `project/docs/print-business-card-spec.md`.
