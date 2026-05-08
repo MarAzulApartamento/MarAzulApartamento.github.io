@@ -30,6 +30,14 @@ export const PROPERTY = {
   // supplies it (see questions-for-stefania.md item #18). Footer + Terms
   // render the AL declaration only when this is non-empty.
   alNumber: '',
+  // Public phone in international display format. Same number as WHATSAPP.number
+  // but human-readable. Used in JSON-LD `telephone` and any future visible
+  // phone display. Already public on GBP, Booking.com, Airbnb, Lodgify.
+  phone: '+351 936 083 766',
+  phoneE164: '+351936083766',
+  // Check-in / check-out per Terms (terms-en.md). HH:MM:SS for schema.org Time.
+  checkinTime: '15:00:00',
+  checkoutTime: '11:00:00',
   geo: {
     // From Lodgify property record. Used for VacationRental schema + map.
     latitude: 37.0997,
