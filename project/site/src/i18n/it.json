@@ -32,16 +32,16 @@
     "eyebrow": "In sintesi",
     "title": "Cosa offre l'appartamento, in breve.",
     "facts": [
-      ["Posti letto", "Da 2 a 4"],
-      ["Camere", "1 più divano letto"],
-      ["Terrazzo", "Esposto a sud"],
-      ["Aria condizionata", "In camera"],
-      ["Wi-Fi", "Fibra, 200 Mbps"],
-      ["Parcheggio", "Gratuito, riservato"],
-      ["Lenzuola e asciugamani", "Inclusi"],
-      ["Culla e seggiolone", "Su richiesta"],
-      ["A piedi", "Centro e spiagge"],
-      ["Animali", "Non ammessi", true]
+      { "label": "Posti letto", "value": "Da 2 a 4", "neg": false },
+      { "label": "Camere", "value": "1 più divano letto", "neg": false },
+      { "label": "Terrazzo", "value": "Esposto a sud", "neg": false },
+      { "label": "Aria condizionata", "value": "In camera", "neg": false },
+      { "label": "Wi-Fi", "value": "Fibra, 200 Mbps", "neg": false },
+      { "label": "Parcheggio", "value": "Gratuito, riservato", "neg": false },
+      { "label": "Lenzuola e asciugamani", "value": "Inclusi", "neg": false },
+      { "label": "Culla e seggiolone", "value": "Su richiesta", "neg": false },
+      { "label": "A piedi", "value": "Centro e spiagge", "neg": false },
+      { "label": "Animali", "value": "Non ammessi", "neg": true }
     ]
   },
   "about": {
@@ -54,19 +54,19 @@
     "eyebrow": "Dentro",
     "title": "Dentro l'appartamento.",
     "openLabel": "Apri foto:",
-    "captions": {
-      "marazul-01": "Soggiorno, con vista",
-      "marazul-02": "Zona living",
-      "marazul-03": "Dall'ingresso",
-      "marazul-04": "Cucina e zona pranzo",
-      "marazul-05": "Cucina, dettaglio",
-      "marazul-06": "Dettaglio",
-      "marazul-07": "Soggiorno, seconda vista",
-      "marazul-08": "Camera",
-      "marazul-09": "Angolo della camera",
-      "marazul-10": "Vista in profondità",
-      "marazul-11": "Bagno"
-    }
+    "captions": [
+      { "id": "marazul-01", "caption": "Soggiorno, con vista" },
+      { "id": "marazul-02", "caption": "Zona living" },
+      { "id": "marazul-03", "caption": "Dall'ingresso" },
+      { "id": "marazul-04", "caption": "Cucina e zona pranzo" },
+      { "id": "marazul-05", "caption": "Cucina, dettaglio" },
+      { "id": "marazul-06", "caption": "Dettaglio" },
+      { "id": "marazul-07", "caption": "Soggiorno, seconda vista" },
+      { "id": "marazul-08", "caption": "Camera" },
+      { "id": "marazul-09", "caption": "Angolo della camera" },
+      { "id": "marazul-10", "caption": "Vista in profondità" },
+      { "id": "marazul-11", "caption": "Bagno" }
+    ]
   },
   "perks": {
     "eyebrow": "Prenotazione diretta",
@@ -86,12 +86,12 @@
     "mapLabel": "Mappa di Lagos con la posizione dell'appartamento",
     "mapPlaceholder": "Mappa segnaposto · Leaflet + OpenStreetMap in produzione",
     "places": [
-      ["Tasca", "Prato Cheio", "A piedi"],
-      ["Supermercato", "Intermarché Lagos", "10 min a piedi"],
-      ["Spiaggia", "Praia da Batata", "A piedi"],
-      ["Spiaggia", "Praia Dona Ana", "A piedi"],
-      ["Marina", "Marina de Lagos", "A piedi"],
-      ["Panificio", "Padaria Central", "A piedi"]
+      { "type": "Tasca", "name": "Prato Cheio", "distance": "A piedi" },
+      { "type": "Supermercato", "name": "Intermarché Lagos", "distance": "10 min a piedi" },
+      { "type": "Spiaggia", "name": "Praia da Batata", "distance": "A piedi" },
+      { "type": "Spiaggia", "name": "Praia Dona Ana", "distance": "A piedi" },
+      { "type": "Marina", "name": "Marina de Lagos", "distance": "A piedi" },
+      { "type": "Panificio", "name": "Padaria Central", "distance": "A piedi" }
     ]
   },
   "reviews": {

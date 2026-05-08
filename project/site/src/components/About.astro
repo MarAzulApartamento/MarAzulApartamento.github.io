@@ -1,11 +1,25 @@
 ---
 import { getStrings } from '../lib/i18n';
+import { site } from '../lib/site';
 const t = getStrings(Astro.currentLocale);
 ---
 
 <section class="section section-tint">
   <div class="container about">
-    <div class="about-photo" aria-hidden="true"></div>
+    <div class="about-media" style={`--about-poster: url(${site.about.poster})`}>
+      <video
+        class="about-video"
+        src={site.about.video}
+        poster={site.about.poster}
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-label="Apartamento Mar Azul, the entrance and living area"
+      >
+      </video>
+    </div>
     <div class="about-text">
       <p class="eyebrow">{t.about.eyebrow}</p>
       <h2 class="h2">{t.about.title}</h2>
@@ -18,17 +32,46 @@ const t = getStrings(Astro.currentLocale);
 <style>
   .about {
     display: grid;
-    grid-template-columns: 5fr 7fr;
-    gap: 48px;
+    grid-template-columns: 7fr 5fr;
+    gap: 56px;
     align-items: center;
   }
-  .about-photo {
-    aspect-ratio: 4/5;
-    background: url('/photos/owner_picture.jpg') center/cover;
+  .about-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
     border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 4px 24px rgba(29, 38, 48, 0.08);
+  }
+  .about-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* Respect users who prefer reduced motion: pause autoplay, show poster only. */
+  @media (prefers-reduced-motion: reduce) {
+    .about-video { display: none; }
+    .about-media { background: var(--about-poster) center/cover; }
   }
   @media (max-width: 900px) {
     .about { grid-template-columns: 1fr; gap: 24px; }
-    .about-photo { aspect-ratio: 5/4; }
+    .about-media { aspect-ratio: 16 / 9; }
   }
 </style>
+
+<script>
+  // If the user prefers reduced motion, explicitly pause and reset the video so
+  // the poster shows. The CSS @media query handles the visual side; this stops
+  // the playback engine entirely.
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function applyMotionPreference() {
+    document.querySelectorAll<HTMLVideoElement>('.about-video').forEach((video) => {
+      if (reduce.matches) { video.pause(); video.currentTime = 0; }
+    });
+  }
+  applyMotionPreference();
+  reduce.addEventListener('change', applyMotionPreference);
+</script>

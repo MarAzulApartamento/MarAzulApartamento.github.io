@@ -1,28 +1,22 @@
 ---
 import { getStrings } from '../lib/i18n';
+import { site } from '../lib/site';
 
 interface Tile {
   src: string;
   cap: string;
-  span?: string;
+  span: string;
 }
 
 const t = getStrings(Astro.currentLocale);
-const c = t.gallery.captions;
+const captionList = t.gallery.captions as Array<{ id: string; caption: string }>;
+const captions = Object.fromEntries(captionList.map((c) => [c.id, c.caption]));
 
-const tiles: Tile[] = [
-  { src: '/photos/marazul-01.jpg', cap: c['marazul-01'], span: 'wide tall' },
-  { src: '/photos/marazul-02.jpg', cap: c['marazul-02'] },
-  { src: '/photos/marazul-08.jpg', cap: c['marazul-08'] },
-  { src: '/photos/marazul-04.jpg', cap: c['marazul-04'] },
-  { src: '/photos/marazul-05.jpg', cap: c['marazul-05'] },
-  { src: '/photos/marazul-09.jpg', cap: c['marazul-09'] },
-  { src: '/photos/marazul-11.jpg', cap: c['marazul-11'] },
-  { src: '/photos/marazul-07.jpg', cap: c['marazul-07'] },
-  { src: '/photos/marazul-03.jpg', cap: c['marazul-03'] },
-  { src: '/photos/marazul-10.jpg', cap: c['marazul-10'] },
-  { src: '/photos/marazul-06.jpg', cap: c['marazul-06'] },
-];
+const tiles: Tile[] = site.gallery.items.map((item) => ({
+  src: item.src,
+  cap: captions[item.id] || item.id,
+  span: item.span || '',
+}));
 ---
 
 <section class="section">

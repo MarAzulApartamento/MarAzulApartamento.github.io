@@ -1,11 +1,12 @@
 # Sveltia CMS configuration for Apartamento Mar Azul.
-# This file drives the visual editor at /admin/.
-# Stefania uses the editor to manage owner-curated content (reviews, FAQs)
-# without touching code or git directly.
+# Drives the visual editor at /admin/.
+#
+# Stefania uses the editor to manage all owner-curated content:
+# reviews, FAQs, all 7 language copies of the site, and all media
+# (gallery photos, hero photo, About video, owner photo).
 #
 # Repo backend: GitHub. Sveltia commits to the redesign/v2 branch via
-# GitHub OAuth. Auth proxy URL is set up alongside Cloudflare Pages
-# deployment (Sprint 4).
+# GitHub OAuth. Auth proxy is a Cloudflare Worker at cms-auth/.
 
 backend:
   name: github
@@ -18,15 +19,224 @@ site_url: https://apartamentomarazul.com
 display_url: https://apartamentomarazul.com
 locale: en
 
-media_folder: public/photos
+media_folder: project/site/public/photos
 public_folder: /photos
 
-# i18n — content edited per locale, English default.
+# i18n at the CMS level — Sveltia's per-collection i18n is unused here
+# because we expose each language's JSON file as its own editable file
+# under Site copy, which gives Stefania a clearer mental model.
 i18n:
   structure: multiple_files
   locales: [en, pt, es, it, de, nl, fr]
   default_locale: en
 
+# ---------------------------------------------------------------
+# Reusable field schema for each language's i18n JSON file.
+# Defined once at the top via a YAML anchor (&i18n_fields), then
+# referenced (*i18n_fields) by every file in the Site copy collection.
+# ---------------------------------------------------------------
+_anchors:
+  i18n_fields: &i18n_fields
+    - name: common
+      label: 'Shared UI labels'
+      widget: object
+      collapsed: true
+      fields:
+        - { name: whatsappCta, label: 'WhatsApp button label', widget: string }
+        - { name: whatsappMicro, label: 'WhatsApp response-time microcopy', widget: string, hint: 'Always shown next to WhatsApp CTA. Sets expectations.' }
+        - { name: whatsappFallback, label: 'WhatsApp fallback prompt (calendar)', widget: string }
+        - { name: bookDirect, label: 'Book direct (button)', widget: string }
+        - { name: bookDirectArrow, label: 'Book direct (with arrow)', widget: string }
+        - { name: checkAvailability, label: 'Check availability (hero CTA)', widget: string }
+        - { name: continueToBooking, label: 'Continue to booking (calendar CTA)', widget: string }
+        - { name: from, label: 'Price prefix (e.g. From)', widget: string }
+        - { name: perNight, label: 'Price suffix (e.g. per night)', widget: string }
+        - { name: minStayShort, label: 'Min stay short (use {n} for the number)', widget: string }
+    - name: topBar
+      label: 'Top bar'
+      widget: object
+      collapsed: true
+      fields:
+        - { name: siteNameAria, label: 'Site name (screen readers)', widget: string }
+    - name: home
+      label: 'Homepage SEO'
+      widget: object
+      fields:
+        - { name: metaTitle, label: 'SEO title (Google search result heading)', widget: string }
+        - { name: metaDescription, label: 'SEO description (use {priceFrom} for price)', widget: text }
+    - name: hero
+      label: 'Hero (top of homepage)'
+      widget: object
+      fields:
+        - { name: eyebrow, label: 'Eyebrow (small label above headline)', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+        - { name: subtitle, label: 'Subtitle', widget: string }
+    - name: trustStrip
+      label: 'Trust strip (under hero)'
+      widget: object
+      collapsed: true
+      fields:
+        - { name: ratingLabel, label: 'Rating label (use {rating} and {count})', widget: string }
+        - { name: openSince, label: 'Open since', widget: string }
+        - { name: languages, label: 'Languages spoken', widget: string }
+    - name: factsGrid
+      label: 'Facts grid (At a glance)'
+      widget: object
+      fields:
+        - { name: eyebrow, label: 'Eyebrow', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+        - name: facts
+          label: 'Facts (10 items recommended)'
+          widget: list
+          summary: '{{fields.label}}: {{fields.value}}'
+          fields:
+            - { name: label, label: 'Label', widget: string }
+            - { name: value, label: 'Value', widget: string }
+            - { name: neg, label: 'Style as negative (crossed-out, italic)', widget: boolean, default: false }
+    - name: about
+      label: 'About (with video)'
+      widget: object
+      fields:
+        - { name: eyebrow, label: 'Eyebrow', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+        - { name: body, label: 'Body paragraph', widget: text }
+        - { name: hostedBy, label: 'Hosted by line', widget: string }
+    - name: gallery
+      label: 'Gallery'
+      widget: object
+      fields:
+        - { name: eyebrow, label: 'Eyebrow', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+        - { name: openLabel, label: 'Aria label prefix for photos (accessibility)', widget: string }
+        - name: captions
+          label: 'Photo captions (one per gallery photo)'
+          widget: list
+          summary: '{{fields.id}} → {{fields.caption}}'
+          hint: 'IDs must match gallery items in Media (Site media → Gallery items).'
+          fields:
+            - { name: id, label: 'Photo ID (e.g. marazul-01)', widget: string }
+            - { name: caption, label: 'Caption', widget: string }
+    - name: perks
+      label: 'Perks (Booking direct)'
+      widget: object
+      fields:
+        - { name: eyebrow, label: 'Eyebrow', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+        - { name: lede, label: 'Lede paragraph', widget: text }
+        - name: items
+          label: 'Perk items'
+          widget: list
+          field: { name: item, label: 'Perk', widget: string }
+    - name: location
+      label: 'Location'
+      widget: object
+      fields:
+        - { name: eyebrow, label: 'Eyebrow', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+        - { name: mapLabel, label: 'Map aria-label (accessibility)', widget: string }
+        - { name: mapPlaceholder, label: 'Map placeholder text (until Leaflet ships)', widget: string }
+        - name: places
+          label: 'Nearby places'
+          widget: list
+          summary: '{{fields.type}} · {{fields.name}}'
+          fields:
+            - { name: type, label: 'Type (Beach, Tasca, etc.)', widget: string }
+            - { name: name, label: 'Name', widget: string }
+            - { name: distance, label: 'Distance (Walking, 10 min walk, etc.)', widget: string }
+    - name: reviews
+      label: 'Reviews section heading'
+      widget: object
+      collapsed: true
+      fields:
+        - { name: eyebrow, label: 'Eyebrow', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+    - name: availability
+      label: 'Availability section'
+      widget: object
+      collapsed: true
+      fields:
+        - { name: eyebrow, label: 'Eyebrow', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+        - { name: ledeWithPrice, label: 'Lede (use {priceFrom} and {minStay})', widget: text }
+    - name: faq
+      label: 'FAQ section heading'
+      widget: object
+      collapsed: true
+      fields:
+        - { name: eyebrow, label: 'Eyebrow', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+    - name: finalCta
+      label: 'Final CTA section'
+      widget: object
+      collapsed: true
+      fields:
+        - { name: eyebrow, label: 'Eyebrow', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+    - name: stickyCta
+      label: 'Sticky CTA (bottom bar)'
+      widget: object
+      collapsed: true
+      fields:
+        - { name: priceLabel, label: 'Price label (use {priceFrom})', widget: string }
+        - { name: meta, label: 'Meta tagline', widget: string }
+    - name: calendarPicker
+      label: 'Calendar picker UI'
+      widget: object
+      collapsed: true
+      hint: 'Translations for the date-picker. Most rarely change.'
+      fields:
+        - { name: pickHeadline, label: 'Pick check-in headline', widget: string }
+        - { name: pickMeta, label: 'Pick meta (use {minStay})', widget: string }
+        - { name: pickMetaLive, label: 'Pick meta with live availability (use {minStay})', widget: string }
+        - { name: checkInPrefix, label: 'Check-in prefix', widget: string }
+        - { name: checkInPickout, label: 'After check-in selected (use {minStay})', widget: string }
+        - { name: nightSingular, label: 'Night (singular)', widget: string }
+        - { name: nightsLabel, label: 'Nights (plural)', widget: string }
+        - { name: totalLabelTemplate, label: 'Total label (use {total} and {ppn})', widget: string }
+        - { name: minStayWarning, label: 'Min stay warning (use {minStay})', widget: string }
+        - { name: blockedError, label: 'Blocked range error', widget: string }
+        - { name: clearDates, label: 'Clear dates', widget: string }
+        - { name: navPrevious, label: 'Previous (button)', widget: string }
+        - { name: navNext, label: 'Next (button)', widget: string }
+        - { name: navAriaPrevious, label: 'Previous (aria)', widget: string }
+        - { name: navAriaNext, label: 'Next (aria)', widget: string }
+        - { name: datesEnRoute, label: 'Dates en-route (legacy, mirror of checkInPickout)', widget: string }
+        - { name: minNights, label: 'Min nights singular (use {nights}, {minStay})', widget: string }
+        - { name: minNightsPlural, label: 'Min nights plural (use {nights}, {minStay})', widget: string }
+    - name: footer
+      label: 'Footer'
+      widget: object
+      collapsed: true
+      fields:
+        - { name: languagesHeading, label: 'Languages heading', widget: string }
+        - { name: legalHeading, label: 'Legal heading', widget: string }
+        - { name: legalPrivacy, label: 'Privacy link', widget: string }
+        - { name: legalCookies, label: 'Cookies link', widget: string }
+        - { name: legalTerms, label: 'Terms link', widget: string }
+        - { name: hostedNote, label: 'Hosting note', widget: string }
+    - name: bookPage
+      label: 'Book page'
+      widget: object
+      fields:
+        - { name: metaTitle, label: 'SEO title', widget: string }
+        - { name: metaDescription, label: 'SEO description', widget: text }
+        - { name: ctaLabel, label: 'Final CTA button label', widget: string }
+        - { name: back, label: 'Back link text', widget: string }
+        - { name: eyebrow, label: 'Eyebrow', widget: string }
+        - { name: title, label: 'Headline', widget: string }
+        - { name: lede, label: 'Lede paragraph', widget: text }
+        - name: perksList
+          label: 'Perks (under price line)'
+          widget: list
+          field: { name: item, label: 'Perk', widget: string }
+        - { name: perkPriceLine, label: 'Price line (use {priceFrom}, {minStay})', widget: string }
+        - { name: helpLine, label: 'Help line above WhatsApp', widget: string }
+        - { name: widgetNote, label: 'Booking widget note', widget: text }
+    - { name: skipLink, label: 'Skip-to-content link', widget: string }
+
+# ---------------------------------------------------------------
+# Collections (what Stefania sees in the sidebar)
+# ---------------------------------------------------------------
 collections:
   # ---------- Reviews ----------
   - name: reviews
@@ -115,3 +325,85 @@ collections:
           required: true,
           hint: 'Plain prose. Keep answers short and specific.'
         }
+
+  # ---------- Site copy (per-language text) ----------
+  - name: site_copy
+    label: 'Site copy'
+    label_singular: 'Site copy file'
+    description: 'All on-page text, per language. Edit English first; translations live in the other six files.'
+    files:
+      - name: en
+        label: '🇬🇧 English (master)'
+        file: project/site/src/i18n/en.json
+        format: json
+        fields: *i18n_fields
+      - name: pt
+        label: '🇵🇹 Português'
+        file: project/site/src/i18n/pt.json
+        format: json
+        fields: *i18n_fields
+      - name: es
+        label: '🇪🇸 Español'
+        file: project/site/src/i18n/es.json
+        format: json
+        fields: *i18n_fields
+      - name: it
+        label: '🇮🇹 Italiano'
+        file: project/site/src/i18n/it.json
+        format: json
+        fields: *i18n_fields
+      - name: de
+        label: '🇩🇪 Deutsch'
+        file: project/site/src/i18n/de.json
+        format: json
+        fields: *i18n_fields
+      - name: nl
+        label: '🇳🇱 Nederlands'
+        file: project/site/src/i18n/nl.json
+        format: json
+        fields: *i18n_fields
+      - name: fr
+        label: '🇫🇷 Français'
+        file: project/site/src/i18n/fr.json
+        format: json
+        fields: *i18n_fields
+
+  # ---------- Site media (global, not localized) ----------
+  - name: site_media
+    label: 'Media'
+    description: 'Photos and video used across the site. Captions live in Site copy.'
+    files:
+      - name: media
+        label: 'Media settings'
+        file: project/site/src/data/site.json
+        format: json
+        fields:
+          - name: hero
+            label: 'Hero photo (top of homepage)'
+            widget: object
+            fields:
+              - { name: photo, label: 'Hero photo', widget: image, hint: 'Full-bleed background of the hero. Use a high-resolution landscape photo.' }
+          - name: about
+            label: 'About section (video block)'
+            widget: object
+            fields:
+              - { name: video, label: 'About video', widget: file, hint: 'MP4 only, ideally H.264, no audio, under 10 MB. Use ffmpeg to compress.' }
+              - { name: poster, label: 'About video poster (thumbnail before play)', widget: image }
+          - name: trustStrip
+            label: 'Trust strip'
+            widget: object
+            fields:
+              - { name: ownerPhoto, label: 'Owner avatar', widget: image }
+          - name: gallery
+            label: 'Gallery'
+            widget: object
+            fields:
+              - name: items
+                label: 'Gallery items (order = display order)'
+                widget: list
+                summary: '{{fields.id}}'
+                hint: 'IDs must match the captions list in Site copy.'
+                fields:
+                  - { name: id, label: 'Photo ID (e.g. marazul-12)', widget: string }
+                  - { name: src, label: 'Photo file', widget: image }
+                  - { name: span, label: 'Layout span', widget: select, options: ['', 'wide', 'tall', 'wide tall'], default: '', hint: 'Empty for normal size. "wide tall" makes the photo a feature tile (only use once).' }

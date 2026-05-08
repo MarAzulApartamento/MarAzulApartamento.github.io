@@ -1,7 +1,7 @@
 ---
 import { getStrings } from '../lib/i18n';
 const t = getStrings(Astro.currentLocale);
-const places = t.location.places as Array<[string, string, string]>;
+const places = t.location.places as Array<{ type: string; name: string; distance: string }>;
 ---
 
 <section class="section section-tint">
@@ -18,11 +18,11 @@ const places = t.location.places as Array<[string, string, string]>;
       <span class="map-watermark">{t.location.mapPlaceholder}</span>
     </div>
     <ul class="places">
-      {places.map(([type, name, dist]) => (
+      {places.map((p) => (
         <li class="place">
-          <span class="place-type">{type}</span>
-          <span class="place-name">{name}</span>
-          <span class="place-dist">{dist}</span>
+          <span class="place-type">{p.type}</span>
+          <span class="place-name">{p.name}</span>
+          <span class="place-dist">{p.distance}</span>
         </li>
       ))}
     </ul>

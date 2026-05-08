@@ -1,6 +1,7 @@
 ---
 import { WHATSAPP } from '../lib/config';
 import { getStrings, interp } from '../lib/i18n';
+import { site } from '../lib/site';
 
 interface Props {
   priceFrom?: number;
@@ -15,7 +16,7 @@ const t = getStrings(Astro.currentLocale);
 ---
 
 <section class="hero" id="top">
-  <div class="hero-photo" aria-hidden="true"></div>
+  <div class="hero-photo" style={`background-image: url(${site.hero.photo})`} aria-hidden="true"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-inner">
     <p class="eyebrow eyebrow-light">{t.hero.eyebrow}</p>
@@ -45,7 +46,6 @@ const t = getStrings(Astro.currentLocale);
   .hero-photo {
     position: absolute;
     inset: 0;
-    background-image: url('/photos/marazul-01.jpg');
     background-size: cover;
     background-position: center;
     transform: scale(1.06);

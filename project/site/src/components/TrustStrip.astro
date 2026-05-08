@@ -1,5 +1,6 @@
 ---
 import { getStrings, interp } from '../lib/i18n';
+import { site } from '../lib/site';
 
 interface Props {
   reviewCount?: number;
@@ -30,7 +31,7 @@ const ratingLabel = interp(t.trustStrip.ratingLabel, { rating: rating.toFixed(1)
     </a>
     <span class="trust-divider" aria-hidden="true"></span>
     <div class="trust-item">
-      <div class="host-photo" aria-hidden="true"></div>
+      <div class="host-photo" style={`background-image: url(${site.trustStrip.ownerPhoto})`} aria-hidden="true"></div>
       <span class="trust-label">{t.trustStrip.openSince}</span>
     </div>
     <span class="trust-divider" aria-hidden="true"></span>
@@ -80,7 +81,8 @@ const ratingLabel = interp(t.trustStrip.ratingLabel, { rating: rating.toFixed(1)
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: url('/photos/owner_picture.jpg') center/cover;
+    background-size: cover;
+    background-position: center;
   }
   @media (max-width: 720px) {
     .trust-divider { display: none; }

@@ -1,7 +1,7 @@
 ---
 import { getStrings } from '../lib/i18n';
 const t = getStrings(Astro.currentLocale);
-const facts = t.factsGrid.facts as Array<[string, string, boolean?]>;
+const facts = t.factsGrid.facts as Array<{ label: string; value: string; neg?: boolean }>;
 ---
 
 <section class="section">
@@ -9,10 +9,10 @@ const facts = t.factsGrid.facts as Array<[string, string, boolean?]>;
     <p class="eyebrow">{t.factsGrid.eyebrow}</p>
     <h2 class="h2">{t.factsGrid.title}</h2>
     <div class="facts">
-      {facts.map(([label, value, neg]) => (
-        <div class={`fact${neg ? ' is-neg' : ''}`}>
-          <span class="fact-label">{label}</span>
-          <span class="fact-value">{value}</span>
+      {facts.map((f) => (
+        <div class={`fact${f.neg ? ' is-neg' : ''}`}>
+          <span class="fact-label">{f.label}</span>
+          <span class="fact-value">{f.value}</span>
         </div>
       ))}
     </div>

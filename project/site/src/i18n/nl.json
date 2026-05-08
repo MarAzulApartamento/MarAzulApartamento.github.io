@@ -32,16 +32,16 @@
     "eyebrow": "In het kort",
     "title": "Wat het appartement biedt, zonder omhaal.",
     "facts": [
-      ["Capaciteit", "2 tot 4 personen"],
-      ["Slaapkamers", "1 plus slaapbank"],
-      ["Terras", "Op het zuiden"],
-      ["Airconditioning", "In de slaapkamer"],
-      ["Wifi", "Glasvezel, 200 Mbps"],
-      ["Parkeren", "Gratis, gereserveerd"],
-      ["Beddengoed & handdoeken", "Inbegrepen"],
-      ["Wieg & kinderstoel", "Op aanvraag"],
-      ["Op loopafstand", "Centrum & stranden"],
-      ["Huisdieren", "Niet toegestaan", true]
+      { "label": "Capaciteit", "value": "2 tot 4 personen", "neg": false },
+      { "label": "Slaapkamers", "value": "1 plus slaapbank", "neg": false },
+      { "label": "Terras", "value": "Op het zuiden", "neg": false },
+      { "label": "Airconditioning", "value": "In de slaapkamer", "neg": false },
+      { "label": "Wifi", "value": "Glasvezel, 200 Mbps", "neg": false },
+      { "label": "Parkeren", "value": "Gratis, gereserveerd", "neg": false },
+      { "label": "Beddengoed & handdoeken", "value": "Inbegrepen", "neg": false },
+      { "label": "Wieg & kinderstoel", "value": "Op aanvraag", "neg": false },
+      { "label": "Op loopafstand", "value": "Centrum & stranden", "neg": false },
+      { "label": "Huisdieren", "value": "Niet toegestaan", "neg": true }
     ]
   },
   "about": {
@@ -54,19 +54,19 @@
     "eyebrow": "Binnen",
     "title": "Binnenkijken in het appartement.",
     "openLabel": "Foto openen:",
-    "captions": {
-      "marazul-01": "Woonkamer, met uitzicht",
-      "marazul-02": "Zithoek",
-      "marazul-03": "Vanaf de ingang",
-      "marazul-04": "Keuken en eethoek",
-      "marazul-05": "Aan het koken",
-      "marazul-06": "Detail",
-      "marazul-07": "Woonkamer, andere hoek",
-      "marazul-08": "Slaapkamer",
-      "marazul-09": "Hoek van de slaapkamer",
-      "marazul-10": "Doorkijkje",
-      "marazul-11": "Badkamer"
-    }
+    "captions": [
+      { "id": "marazul-01", "caption": "Woonkamer, met uitzicht" },
+      { "id": "marazul-02", "caption": "Zithoek" },
+      { "id": "marazul-03", "caption": "Vanaf de ingang" },
+      { "id": "marazul-04", "caption": "Keuken en eethoek" },
+      { "id": "marazul-05", "caption": "Aan het koken" },
+      { "id": "marazul-06", "caption": "Detail" },
+      { "id": "marazul-07", "caption": "Woonkamer, andere hoek" },
+      { "id": "marazul-08", "caption": "Slaapkamer" },
+      { "id": "marazul-09", "caption": "Hoek van de slaapkamer" },
+      { "id": "marazul-10", "caption": "Doorkijkje" },
+      { "id": "marazul-11", "caption": "Badkamer" }
+    ]
   },
   "perks": {
     "eyebrow": "Direct boeken",
@@ -86,12 +86,12 @@
     "mapLabel": "Kaart van Lagos met het appartement",
     "mapPlaceholder": "Kaart-tijdelijk · Leaflet + OpenStreetMap bij oplevering",
     "places": [
-      ["Tasca", "Prato Cheio", "Op loopafstand"],
-      ["Supermarkt", "Intermarché Lagos", "10 min lopen"],
-      ["Strand", "Praia da Batata", "Op loopafstand"],
-      ["Strand", "Praia Dona Ana", "Op loopafstand"],
-      ["Jachthaven", "Marina de Lagos", "Op loopafstand"],
-      ["Bakker", "Padaria Central", "Op loopafstand"]
+      { "type": "Tasca", "name": "Prato Cheio", "distance": "Op loopafstand" },
+      { "type": "Supermarkt", "name": "Intermarché Lagos", "distance": "10 min lopen" },
+      { "type": "Strand", "name": "Praia da Batata", "distance": "Op loopafstand" },
+      { "type": "Strand", "name": "Praia Dona Ana", "distance": "Op loopafstand" },
+      { "type": "Jachthaven", "name": "Marina de Lagos", "distance": "Op loopafstand" },
+      { "type": "Bakker", "name": "Padaria Central", "distance": "Op loopafstand" }
     ]
   },
   "reviews": {
