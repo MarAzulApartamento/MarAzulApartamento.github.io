@@ -117,16 +117,13 @@ _anchors:
             - { name: id, label: 'Photo ID (e.g. marazul-01)', widget: string }
             - { name: caption, label: 'Caption', widget: string }
     - name: perks
-      label: 'Perks (Booking direct)'
+      label: 'Direct booking band'
       widget: object
+      hint: 'Short band that says direct booking is the best rate.'
       fields:
         - { name: eyebrow, label: 'Eyebrow', widget: string }
         - { name: title, label: 'Headline', widget: string }
-        - { name: lede, label: 'Lede paragraph', widget: text }
-        - name: items
-          label: 'Perk items'
-          widget: list
-          field: { name: item, label: 'Perk', widget: string }
+        - { name: lede, label: 'Sub line', widget: text }
     - name: location
       label: 'Location'
       widget: object

@@ -37,7 +37,7 @@
       { "label": "Terras", "value": "Op het zuiden", "neg": false },
       { "label": "Airconditioning", "value": "In de slaapkamer", "neg": false },
       { "label": "Wifi", "value": "Glasvezel, 200 Mbps", "neg": false },
-      { "label": "Parkeren", "value": "Gratis, gereserveerd", "neg": false },
+      { "label": "Parkeren", "value": "Gratis", "neg": false },
       { "label": "Beddengoed & handdoeken", "value": "Inbegrepen", "neg": false },
       { "label": "Wieg & kinderstoel", "value": "Op aanvraag", "neg": false },
       { "label": "Op loopafstand", "value": "Centrum & stranden", "neg": false },
@@ -70,15 +70,8 @@
   },
   "perks": {
     "eyebrow": "Direct boeken",
-    "title": "Direct boeken levert een paar extra's op.",
-    "lede": "Dezelfde data, dezelfde kalender, hetzelfde appartement. Met een paar kleine voordelen erbij.",
-    "items": [
-      "Gratis parkeren.",
-      "Late check-out en vroege check-in als de kalender dat toelaat.",
-      "Directe WhatsApp-lijn met Stefania, voor en tijdens het verblijf.",
-      "Beste tarief beschikbaar, altijd.",
-      "Een korte wandelgids met de favoriete tasca, bakker en rustige strand van de gastvrouw."
-    ]
+    "title": "Beste tarief beschikbaar, altijd.",
+    "lede": "Altijd voordeliger dan boeken via een ander kanaal."
   },
   "location": {
     "eyebrow": "Locatie",
@@ -150,11 +143,9 @@
     "back": "Terug naar het appartement",
     "eyebrow": "Boeking",
     "title": "Kies je data.",
-    "lede": "Beste tarief beschikbaar, altijd. Direct boeken omvat gratis parkeren, late check-out en vroege check-in als de kalender dat toelaat, en een directe WhatsApp-lijn met Stefania.",
+    "lede": "Beste tarief beschikbaar, altijd.",
     "perksList": [
-      "Gratis parkeren, gratis wifi, beddengoed inbegrepen",
-      "Gratis annulering tot 7 dagen voor aankomst",
-      "Beste tarief beschikbaar, geen platformkosten"
+      "Gratis annulering tot 7 dagen voor aankomst"
     ],
     "perkPriceLine": "Vanaf €{priceFrom} per nacht · minimaal {minStay} nachten",
     "helpLine": "Vragen vóór je boekt?",

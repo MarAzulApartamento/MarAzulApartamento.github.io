@@ -49,6 +49,20 @@ The Portable Search Bar widget is saved in reserve for a future sticky-header / 
 - (a) Do you want any of these promos surfaced on the site copy ("Stay 6+ nights, 10% off")? Note: doing so on the website while OTAs see different rates can violate Booking.com rate parity. Recommendation: keep promos invisible, let the booking engine apply them automatically.
 - (b) Should I ask you to clean up the expired ones in the Lodgify dashboard?
 
+### 20. Direct-booking pricing — pick a mechanism
+
+**Discovered:** 2026-05-08, while updating site copy to remove the (incorrect) "perks of direct booking" framing.
+
+**Background:** the homepage and `/book` page now state simply that direct is the **best rate available, every time**, and **always cheaper than booking through any other channel**. To make that true in practice, we need to choose one of three Lodgify configurations. This is a Lodgify dashboard change — owner-only.
+
+**Option A — Channel-specific automatic promotion in Lodgify.** Add a promo in the Promotions tab with channel filter = **Website only**. Applies automatically at checkout for direct bookings; OTAs don't see it. Quick to set up, but Booking.com's rate parity terms technically prohibit a lower public direct price. Many hosts do it without enforcement — long-running grey area.
+
+**Option B — Mark up OTA rates instead of discounting direct.** Set the base rate to the price you want direct guests to pay. Add a Booking.com / Airbnb channel mark-up of 15–20% in Lodgify's channel rate-adjustment settings. Direct stays at base; OTAs are higher. End result is the same; framed as "OTA pricing covers their commission" rather than "we discount direct," which is unambiguously rate-parity compliant.
+
+**Option C — Do nothing, message it differently.** Keep current parity. The "best rate available" wording on the site is honest under rate parity (the listed price matches Booking.com; the difference is the platform service fee Booking.com adds that we don't). The current site copy says "always cheaper than other channels" which only holds if the OTA is genuinely more expensive, so this option requires either A or B in practice — listed for completeness.
+
+**Recommendation:** **B** if you want direct to be visibly cheaper without any rate-parity ambiguity. **A** only if you're confident Booking.com won't push back. **C** is incompatible with the new site copy.
+
 ### 4. Phone number — add `+351` country-code prefix on GBP
 
 **GBP currently shows:** `936 083 766` (no country code).
@@ -71,12 +85,6 @@ We are drafting the Privacy Notice, Cookie Policy, and Terms pages required for 
 - (e) **AL number** (Alojamento Local registration number issued by the Portuguese tourism authority — required by law on every public-facing channel for short-stay rentals in Portugal). Already declared on Booking.com/Airbnb? Copy the same number.
 - (f) **Insurance** (optional disclosure): is there a third-party liability insurance policy covering guest stays? Needed for the Terms page liability section.
 - (g) **Lodgify business sub-processor confirmation:** Lodgify is the booking and payment processor (Stripe under the hood). Their privacy policy: https://www.lodgify.com/privacy-policy. Stefania confirms she's read and accepts that they're our processor.
-
-### 17. Stefania's GitHub username (for CMS access)
-
-**Discovered:** 2026-05-07 during Sveltia CMS production setup.
-**What's needed:** Stefania's GitHub username (or sign-up if she doesn't have an account yet — github.com/signup, free).
-**Why it's blocking:** Sveltia commits her edits via the GitHub API on her behalf. To do that, her GitHub account must be added as a Write collaborator on the `MarAzulApartamento/MarAzulApartamento.github.io` repo. Until then, she can sign in to `/admin/` but every Save will fail with "Bad credentials". Owner adds her via repo Settings → Collaborators → Add people.
 
 ### 5. Real photo of you for the trust strip and About section ✅ RESOLVED
 

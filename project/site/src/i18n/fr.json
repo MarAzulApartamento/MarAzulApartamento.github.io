@@ -37,7 +37,7 @@
       { "label": "Terrasse", "value": "Exposée sud", "neg": false },
       { "label": "Climatisation", "value": "Dans la chambre", "neg": false },
       { "label": "Wi-Fi", "value": "Fibre, 200 Mbps", "neg": false },
-      { "label": "Parking", "value": "Gratuit, réservé", "neg": false },
+      { "label": "Parking", "value": "Gratuit", "neg": false },
       { "label": "Linge de lit & serviettes", "value": "Inclus", "neg": false },
       { "label": "Lit bébé & chaise haute", "value": "Sur demande", "neg": false },
       { "label": "À pied", "value": "Centre & plages", "neg": false },
@@ -70,15 +70,8 @@
   },
   "perks": {
     "eyebrow": "Réservation directe",
-    "title": "Réserver en direct apporte quelques avantages.",
-    "lede": "Mêmes dates, même calendrier, même appartement. Juste quelques petits plus.",
-    "items": [
-      "Parking gratuit.",
-      "Départ tardif et arrivée anticipée quand le calendrier le permet.",
-      "Ligne WhatsApp directe avec Stefania, avant et pendant le séjour.",
-      "Meilleur tarif disponible, à chaque fois.",
-      "Un petit guide à pied avec la tasca, la boulangerie et la plage tranquille préférées de l'hôtesse."
-    ]
+    "title": "Meilleur tarif disponible, à chaque fois.",
+    "lede": "Toujours moins cher que de réserver via un autre canal."
   },
   "location": {
     "eyebrow": "Emplacement",
@@ -150,11 +143,9 @@
     "back": "Retour à l'appartement",
     "eyebrow": "Réservation",
     "title": "Choisissez vos dates.",
-    "lede": "Meilleur tarif disponible, à chaque fois. Réserver en direct comprend le parking gratuit, le départ tardif et l'arrivée anticipée quand le calendrier le permet, et une ligne WhatsApp directe avec Stefania.",
+    "lede": "Meilleur tarif disponible, à chaque fois.",
     "perksList": [
-      "Parking gratuit, Wi-Fi gratuit, linge de lit inclus",
-      "Annulation gratuite jusqu'à 7 jours avant l'arrivée",
-      "Meilleur tarif disponible, sans frais de plateforme"
+      "Annulation gratuite jusqu'à 7 jours avant l'arrivée"
     ],
     "perkPriceLine": "À partir de €{priceFrom} par nuit · séjour minimum de {minStay} nuits",
     "helpLine": "Des questions avant de réserver ?",

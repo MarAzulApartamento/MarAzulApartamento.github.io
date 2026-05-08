@@ -148,7 +148,7 @@ Located at: "C:\marazul\project\website\assets\images\video-overlay-370x288.mov"
 - **Never** position "sea view," "ocean view," or "beachfront" as headline features. The terrace has a sea glimpse; mention casually if at all, never as a headline.
 - **Location framing:** say "walking distance from the centre of Lagos and the beaches." Avoid stating exact minutes-by-car or minutes-on-foot for individual beaches in marketing copy.
 - **Not pet-friendly** — remove from all messaging.
-- **Direct booking incentives = perks**, not price discounts (avoids breaking Booking.com rate parity). Examples: welcome bottle of vinho verde, late checkout, free parking guaranteed.
+- **Direct-booking advantage = best price** (always cheaper than other channels). Stay-experience perks (parking, Wi-Fi, cancellation policy, WhatsApp line) apply equally on every channel — don't position them as direct-only. The pricing mechanism (Lodgify channel mark-up vs direct-only promo) is tracked in `questions-for-stefania.md` item #20.
 - **WhatsApp CTA** must always include the response-time expectation: "we may answer within 12 hours."
 - **Never** say "skip Airbnb" or "skip Booking.com." Frame positively: "Book directly with your host."
 - **Audience-aware copy**: speak to couples OR families specifically per piece, not both at once.

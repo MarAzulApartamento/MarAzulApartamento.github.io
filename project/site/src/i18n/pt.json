@@ -37,7 +37,7 @@
       { "label": "Terraço", "value": "Virado a sul", "neg": false },
       { "label": "Ar condicionado", "value": "No quarto", "neg": false },
       { "label": "Wi-Fi", "value": "Fibra, 200 Mbps", "neg": false },
-      { "label": "Estacionamento", "value": "Gratuito, reservado", "neg": false },
+      { "label": "Estacionamento", "value": "Gratuito", "neg": false },
       { "label": "Lençóis e toalhas", "value": "Incluídos", "neg": false },
       { "label": "Berço e cadeira de bebé", "value": "A pedido", "neg": false },
       { "label": "A pé", "value": "Centro e praias", "neg": false },
@@ -70,15 +70,8 @@
   },
   "perks": {
     "eyebrow": "Reserva direta",
-    "title": "Reservar diretamente traz alguns extras.",
-    "lede": "Mesmas datas, mesmo calendário, mesmo apartamento. Apenas algumas pequenas vantagens.",
-    "items": [
-      "Estacionamento gratuito.",
-      "Late check-out e early check-in quando o calendário permite.",
-      "Linha direta de WhatsApp com a Stefania, antes e durante a estadia.",
-      "Melhor preço disponível, sempre.",
-      "Um pequeno guia a pé com a tasca, a padaria e a praia tranquila preferidas da anfitriã."
-    ]
+    "title": "Melhor preço disponível, sempre.",
+    "lede": "Sempre mais barato do que reservar por qualquer outro canal."
   },
   "location": {
     "eyebrow": "Localização",
@@ -150,11 +143,9 @@
     "back": "Voltar ao apartamento",
     "eyebrow": "Reserva",
     "title": "Escolha as suas datas.",
-    "lede": "Melhor preço disponível, sempre. Reservar diretamente inclui estacionamento gratuito, late check-out e early check-in quando o calendário permite, e linha direta de WhatsApp com a Stefania.",
+    "lede": "Melhor preço disponível, sempre.",
     "perksList": [
-      "Estacionamento gratuito, Wi-Fi gratuito, lençóis incluídos",
-      "Cancelamento gratuito até 7 dias antes da chegada",
-      "Melhor preço disponível, sem taxas de plataforma"
+      "Cancelamento gratuito até 7 dias antes da chegada"
     ],
     "perkPriceLine": "Desde €{priceFrom} por noite · estadia mínima de {minStay} noites",
     "helpLine": "Dúvidas antes de reservar?",

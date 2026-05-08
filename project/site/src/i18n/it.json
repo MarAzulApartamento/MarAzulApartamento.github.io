@@ -37,7 +37,7 @@
       { "label": "Terrazzo", "value": "Esposto a sud", "neg": false },
       { "label": "Aria condizionata", "value": "In camera", "neg": false },
       { "label": "Wi-Fi", "value": "Fibra, 200 Mbps", "neg": false },
-      { "label": "Parcheggio", "value": "Gratuito, riservato", "neg": false },
+      { "label": "Parcheggio", "value": "Gratuito", "neg": false },
       { "label": "Lenzuola e asciugamani", "value": "Inclusi", "neg": false },
       { "label": "Culla e seggiolone", "value": "Su richiesta", "neg": false },
       { "label": "A piedi", "value": "Centro e spiagge", "neg": false },
@@ -70,15 +70,8 @@
   },
   "perks": {
     "eyebrow": "Prenotazione diretta",
-    "title": "Prenotare direttamente offre qualcosa in più.",
-    "lede": "Stesse date, stesso calendario, stesso appartamento. Solo qualche piccolo extra.",
-    "items": [
-      "Parcheggio gratuito.",
-      "Late check-out ed early check-in quando il calendario lo permette.",
-      "Linea WhatsApp diretta con Stefania, prima e durante il soggiorno.",
-      "Miglior tariffa disponibile, sempre.",
-      "Una breve guida a piedi con la tasca, il forno e la spiaggia tranquilla preferiti dalla padrona di casa."
-    ]
+    "title": "Miglior tariffa disponibile, sempre.",
+    "lede": "Sempre più conveniente che prenotare tramite qualsiasi altro canale."
   },
   "location": {
     "eyebrow": "Posizione",
@@ -150,11 +143,9 @@
     "back": "Torna all'appartamento",
     "eyebrow": "Prenotazione",
     "title": "Scegli le tue date.",
-    "lede": "Miglior tariffa disponibile, sempre. Prenotare direttamente include parcheggio gratuito, late check-out ed early check-in quando il calendario lo permette, e linea WhatsApp diretta con Stefania.",
+    "lede": "Miglior tariffa disponibile, sempre.",
     "perksList": [
-      "Parcheggio gratuito, Wi-Fi gratuito, lenzuola incluse",
-      "Cancellazione gratuita fino a 7 giorni prima dell'arrivo",
-      "Miglior tariffa disponibile, nessuna commissione di piattaforma"
+      "Cancellazione gratuita fino a 7 giorni prima dell'arrivo"
     ],
     "perkPriceLine": "Da €{priceFrom} a notte · soggiorno minimo di {minStay} notti",
     "helpLine": "Domande prima di prenotare?",

@@ -37,7 +37,7 @@
       { "label": "Terrace", "value": "South-facing", "neg": false },
       { "label": "Air conditioning", "value": "In the bedroom", "neg": false },
       { "label": "Wi-Fi", "value": "Fibre, 200 Mbps", "neg": false },
-      { "label": "Parking", "value": "Free, reserved", "neg": false },
+      { "label": "Parking", "value": "Free", "neg": false },
       { "label": "Linens & towels", "value": "Provided", "neg": false },
       { "label": "Crib & high chair", "value": "On request", "neg": false },
       { "label": "Walking distance", "value": "Centre & beaches", "neg": false },
@@ -70,15 +70,8 @@
   },
   "perks": {
     "eyebrow": "Direct booking",
-    "title": "Booking direct gets you a few extra things.",
-    "lede": "Same dates, same calendar, same apartment. A few small additions.",
-    "items": [
-      "Free parking.",
-      "Late check-out and early check-in when the calendar allows.",
-      "Direct WhatsApp line with Stefania, before and during your stay.",
-      "Best rate available, every time.",
-      "A short walking guide of the host's favourite tasca, padaria, and quiet beach."
-    ]
+    "title": "Best rate available, every time.",
+    "lede": "Always cheaper than booking through any other channel."
   },
   "location": {
     "eyebrow": "Location",
@@ -150,11 +143,9 @@
     "back": "Back to the apartment",
     "eyebrow": "Booking",
     "title": "Pick your dates.",
-    "lede": "Best rate available, every time. Booking direct includes free parking, late check-out and early check-in when the calendar allows, and a direct WhatsApp line with Stefania.",
+    "lede": "Best rate available, every time.",
     "perksList": [
-      "Free parking, free Wi-Fi, linens included",
-      "Free cancellation up to 7 days before arrival",
-      "Best rate available, no platform service fees"
+      "Free cancellation up to 7 days before arrival"
     ],
     "perkPriceLine": "From €{priceFrom} per night · {minStay}-night minimum",
     "helpLine": "Questions before you book?",
