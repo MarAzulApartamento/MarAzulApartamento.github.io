@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Self-hosted brand fonts — Spectral (display) and Manrope (body), SIL OFL.
+   Bundled with the build via @fontsource so we don't depend on Google Fonts
+   at runtime. font-display: swap is the default in @fontsource (FOUT, not
+   FOIT), which beats invisible text while the font loads. */
+@import "@fontsource/spectral/400.css";
+@import "@fontsource/spectral/700.css";
+@import "@fontsource/spectral/400-italic.css";
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+
 /* Brand tokens — single source of truth.
    Colours expressed in OKLCH-equivalent hex (OKLCH shown in comments for
    perceptually uniform shade computation via color-mix() at the call site). */
@@ -12,8 +23,8 @@
   --color-deep-navy: #1D2630;      /* oklch(0.21 0.015 235) — body text */
   --color-slate-grey: #4F5A65;     /* muted text, WCAG AA on warm-white AND on Seafoam tint */
 
-  /* Display + body fonts — Google Fonts, SIL OFL, free for commercial use.
-     Loaded via <link> in BaseLayout.astro. */
+  /* Display + body fonts — self-hosted via @fontsource (SIL OFL).
+     Bundle imported at the top of this file. */
   --font-display: 'Spectral', Georgia, serif;
   --font-body: 'Manrope', system-ui, 'Helvetica Neue', sans-serif;
 

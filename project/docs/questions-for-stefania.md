@@ -264,6 +264,22 @@ The spec also flags a few items still blocked on her: legal name, NIF, optional 
 
 **Resolved 2026-05-08.** GA4 property created, `PUBLIC_GA4_ID` set in both `.env.local` and Cloudflare Pages env vars (Production + Preview). Branded Klaro consent banner now appears for visitors; GA4 fires after the analytics purpose is accepted. Verify after the next production rebuild: open the site in an incognito window, accept the banner, refresh once, then check GA4 → Reports → Realtime — the visit should appear within ~30 seconds.
 
+### 29. Daily rebuild build-hook (~5 minutes)
+
+**Discovered:** 2026-05-08. The site's rates + availability calendar are read from Lodgify at build time, so without periodic deploys the calendar drifts up to 7 days behind reality. A scheduled GitHub Actions workflow now fires once a day to trigger a Cloudflare Pages rebuild, but the workflow needs a secret to call.
+
+**What to do:**
+1. Cloudflare dashboard → Workers & Pages → Mar Azul Pages project → **Settings** → **Builds & deployments** → **Deploy hooks** → **Add deploy hook**.
+2. Name: `Daily rebuild`. Branch: `main` (or whichever branch serves production after cutover; for now `redesign/v2`).
+3. Cloudflare gives a URL. Copy it.
+4. GitHub repo `MarAzulApartamento/MarAzulApartamento.github.io` → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+5. Name: `CLOUDFLARE_BUILD_HOOK`. Value: the URL from step 3.
+6. Save. The workflow at `.github/workflows/daily-rebuild.yml` runs at 04:00 UTC daily and fires the hook.
+
+**To test immediately:** GitHub repo → **Actions** tab → **Daily rebuild** workflow → **Run workflow** → confirm green result. Cloudflare Pages should show a new deployment within a couple of minutes.
+
+**To change the time / cadence:** edit the cron expression in `.github/workflows/daily-rebuild.yml`. Currently `0 4 * * *` (04:00 UTC). For Lisbon, that's 04:00 UTC = 04:00 WET (winter) or 05:00 WEST (summer) — guests typically aren't browsing then so the rebuild doesn't compete with traffic.
+
 ### 21. Cloudflare Web Analytics — create a site + paste the token (~5 minutes)
 
 **Discovered:** 2026-05-08. The CF Web Analytics beacon is now wired into the site code; it stays inactive until a token is set.
