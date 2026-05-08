@@ -102,7 +102,7 @@ const pickMetaText = data.isLive ? interp(t.calendarPicker.pickMetaLive, { minSt
         <div class="cp-dow" aria-hidden="true">
           <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
         </div>
-        <div class="cp-grid" role="grid">
+        <div class="cp-grid">
           {Array.from({ length: m.firstWeekdayMondayBased }).map(() => (
             <span class="cp-d cp-d-empty" aria-hidden="true"></span>
           ))}
@@ -308,7 +308,6 @@ const pickMetaText = data.isLive ? interp(t.calendarPicker.pickMetaLive, { minSt
     font-size: 9px;
     line-height: 1;
     color: var(--color-slate-grey);
-    opacity: 0.85;
     font-weight: 500;
   }
   .cp-d.is-sel .cp-d-price,

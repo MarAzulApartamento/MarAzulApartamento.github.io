@@ -9,13 +9,12 @@ const t = getStrings(Astro.currentLocale);
     <div class="about-media" style={`--about-poster: url(${site.about.poster})`}>
       <video
         class="about-video"
-        src={site.about.video}
+        data-src={site.about.video}
         poster={site.about.poster}
-        autoplay
         muted
         loop
         playsinline
-        preload="metadata"
+        preload="none"
         aria-label="Apartamento Mar Azul, the entrance and living area"
       >
       </video>
@@ -97,6 +96,15 @@ const t = getStrings(Astro.currentLocale);
 </style>
 
 <script>
+  // Lazy-load + lazy-autoplay the About video.
+  // The video file is ~8 MB; loading it eagerly on page load tanks the
+  // Largest Contentful Paint score. We:
+  //   1. Skip preload entirely (preload="none") and defer src assignment.
+  //   2. When the .about-media element scrolls within ~50% of the viewport,
+  //      swap data-src -> src so the browser starts fetching.
+  //   3. On desktop, attempt autoplay-muted as soon as it's ready. On mobile,
+  //      keep the play-button overlay so the user opts in.
+  //   4. prefers-reduced-motion: never play; only the poster is shown.
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   const mobile = window.matchMedia('(max-width: 720px)');
 
@@ -105,25 +113,43 @@ const t = getStrings(Astro.currentLocale);
     const button = media.querySelector<HTMLButtonElement>('[data-about-play]');
     if (!video || !button) return;
 
-    // Reduced-motion: never play.
-    if (reduce.matches) { video.pause(); video.currentTime = 0; return; }
-
-    // Mobile: don't autoplay. Wait for the user to tap the play button.
-    if (mobile.matches) {
-      video.removeAttribute('autoplay');
-      video.pause();
-    } else {
-      // Desktop autoplay succeeded: hide the button.
-      button.hidden = true;
+    if (reduce.matches) {
+      // Don't even load the video file.
+      return;
     }
 
-    button.addEventListener('click', () => {
-      video.play().then(() => { button.hidden = true; }).catch(() => {});
-    });
+    let loaded = false;
+    function loadVideo() {
+      if (loaded) return;
+      const src = video!.getAttribute('data-src');
+      if (src) {
+        video!.setAttribute('src', src);
+        video!.load();
+        loaded = true;
+      }
+    }
+
+    // Hover the desktop play button if autoplay isn't desired on mobile.
+    if (mobile.matches) {
+      button.addEventListener('click', () => {
+        loadVideo();
+        video.play().then(() => { button.hidden = true; }).catch(() => {});
+      });
+    } else {
+      // Desktop: when the section nears the viewport, load + autoplay-muted.
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          loadVideo();
+          video.play().then(() => { button.hidden = true; }).catch(() => {});
+          observer.disconnect();
+        }
+      }, { rootMargin: '0px 0px 200px 0px' });
+      observer.observe(media);
+    }
 
     // If anything pauses the video on mobile, surface the button again.
     video.addEventListener('pause', () => {
-      if (mobile.matches && !video.ended) button.hidden = false;
+      if (mobile.matches && !video.ended && loaded) button.hidden = false;
     });
     video.addEventListener('playing', () => { button.hidden = true; });
   });

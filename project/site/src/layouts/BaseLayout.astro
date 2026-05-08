@@ -204,6 +204,25 @@ if (PROPERTY.alNumber) {
           };
         </script>
         <script defer src="/klaro/klaro.js"></script>
+        {/* Klaro doesn't always render a title element matching aria-labelledby,
+            which trips a11y audits with "dialog has no accessible name". Add a
+            fallback aria-label after the banner mounts. */}
+        <script is:inline>
+          (function() {
+            function ensureLabels() {
+              var n = document.getElementById('klaro-cookie-notice');
+              if (n && !n.getAttribute('aria-label')) n.setAttribute('aria-label', 'Cookie consent');
+              var m = document.getElementById('klaro-cookie-modal');
+              if (m && !m.getAttribute('aria-label')) m.setAttribute('aria-label', 'Cookie settings');
+            }
+            // Klaro mounts asynchronously; check a few times after load.
+            window.addEventListener('load', function() {
+              ensureLabels();
+              setTimeout(ensureLabels, 200);
+              setTimeout(ensureLabels, 800);
+            });
+          })();
+        </script>
         {/* GA4 scripts — controlled by Klaro via data-name. They sit inert
             (type=text/plain) until Klaro flips them to executable on consent. */}
         <script

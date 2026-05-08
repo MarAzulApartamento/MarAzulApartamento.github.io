@@ -10,9 +10,12 @@ const pool = all.length > 0 ? all : fallback;
 const featured = pool.filter((r) => r.data.featured);
 const items = (featured.length > 0 ? featured : pool).slice(0, 5);
 
+// Darker platform variants so the source pill text passes WCAG AA on the cream
+// review-card background (#F1EEE7). The original brand colours (#4285F4, #FF5A5F)
+// failed at 11px text. These darker variants preserve recognisability.
 const sourceBadgeColor: Record<string, string> = {
-  Google: '#4285F4',
-  Airbnb: '#FF5A5F',
+  Google: '#1557B0',
+  Airbnb: '#B0252B',
   'Booking.com': '#003580',
   Direct: 'var(--color-atlantic-blue)',
 };

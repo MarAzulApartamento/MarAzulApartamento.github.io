@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopBar from '../components/TopBar.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../lib/config';
+
+// 404 served by Cloudflare Pages (per wrangler.jsonc not_found_handling: "404-page").
+// Single English page for all unmatched routes — simpler than 7 localised 404s and
+// the visitor at this point usually doesn't care about language; they just want a way out.
+---
+
+<BaseLayout
+  title={`Page not found · ${SITE.name}`}
+  description="The page you tried doesn't exist. Find what you're looking for from the homepage or check current availability."
+  lang="en"
+>
+  <TopBar lang="en" />
+
+  <main id="main">
+    <section class="not-found">
+      <div class="container nf-inner">
+        <p class="eyebrow">404</p>
+        <h1 class="h1">This page isn't here.</h1>
+        <p class="lede">
+          Either it moved, the link broke, or it never existed. The two places worth going next:
+        </p>
+        <div class="nf-actions">
+          <a class="btn btn-primary" href="/">Back to the homepage</a>
+          <a class="btn btn-ghost" href="/book">Check availability</a>
+        </div>
+        <p class="nf-meta muted small">
+          If you got here from a link on apartamentomarazul.com, please let us know on WhatsApp so we can fix it.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .not-found {
+    background: var(--color-warm-white);
+    padding: 96px 0 128px;
+    min-height: calc(100vh - 200px);
+  }
+  .nf-inner {
+    max-width: 640px;
+    text-align: left;
+  }
+  .h1 {
+    font: 700 clamp(40px, 5.4vw, 64px)/1.05 var(--font-display);
+    letter-spacing: -0.015em;
+    color: var(--color-deep-navy);
+    margin: 8px 0 16px;
+    text-wrap: balance;
+    max-width: 14ch;
+  }
+  .lede {
+    font: 400 18px/1.55 var(--font-body);
+    color: var(--color-slate-grey);
+    margin: 0 0 32px;
+    max-width: 50ch;
+  }
+  .nf-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-atlantic-blue);
+    border: 1px solid var(--color-atlantic-blue);
+  }
+  .btn-ghost:hover {
+    background: var(--color-atlantic-blue);
+    color: var(--color-warm-white);
+  }
+  .nf-meta {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  @media (max-width: 720px) {
+    .not-found { padding: 56px 0 96px; }
+  }
+</style>

@@ -15,7 +15,34 @@ const rendered = await Promise.all(
     return { entry, Content };
   })
 );
+
+// FAQPage JSON-LD — eligible for Google's rich-results FAQ snippet.
+// Strip markdown formatting for the answer text; Google wants plain or HTML.
+function stripMarkdown(md: string): string {
+  return md
+    .replace(/\r\n/g, '\n')
+    .replace(/\n{2,}/g, ' ')
+    .replace(/\n/g, ' ')
+    .replace(/[*_`]/g, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((entry) => ({
+    '@type': 'Question',
+    name: entry.data.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: stripMarkdown(entry.body || ''),
+    },
+  })),
+};
 ---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
 <section class="section">
   <div class="container">
