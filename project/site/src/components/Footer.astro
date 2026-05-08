@@ -12,6 +12,9 @@ const langPrefix = Astro.currentLocale && Astro.currentLocale !== DEFAULT_LOCALE
     <div class="footer-brand">
       <img class="footer-logo" src="/logo/logo-monocrome.svg" alt={SITE.name} width="200" height="48" />
       <p class="muted small">{PROPERTY.address}</p>
+      {PROPERTY.alNumber && (
+        <p class="muted small">AL {PROPERTY.alNumber}</p>
+      )}
       <div class="footer-social">
         <a href={SOCIAL.instagram} aria-label="Instagram" rel="noopener noreferrer" target="_blank">Instagram</a>
         <span aria-hidden="true">·</span>

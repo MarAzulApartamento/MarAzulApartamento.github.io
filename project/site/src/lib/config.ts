@@ -25,6 +25,11 @@ export const PROPERTY = {
   hostName: 'Stefania',
   hostNickname: 'Stefy',
   languagesSpoken: ['Portuguese', 'Italian', 'English', 'Spanish'],
+  // Portuguese law (Decreto-Lei 128/2014) requires the Alojamento Local
+  // registration number on every public-facing channel. Empty until Stefania
+  // supplies it (see questions-for-stefania.md item #18). Footer + Terms
+  // render the AL declaration only when this is non-empty.
+  alNumber: '',
   geo: {
     // From Lodgify property record. Used for VacationRental schema + map.
     latitude: 37.0997,
