@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { SITE, PROPERTY, LOCALES, DEFAULT_LOCALE } from '../lib/config';
+import { SITE, PROPERTY, ANALYTICS, LOCALES, DEFAULT_LOCALE } from '../lib/config';
 
 interface Props {
   title: string;
@@ -151,6 +151,15 @@ if (PROPERTY.alNumber) {
     />
 
     <script type="application/ld+json" set:html={JSON.stringify(vacationRentalSchema)} />
+
+    {/* Cloudflare Web Analytics — cookieless, no consent banner needed. */}
+    {ANALYTICS.cfAnalyticsToken && (
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={JSON.stringify({ token: ANALYTICS.cfAnalyticsToken })}
+      />
+    )}
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>

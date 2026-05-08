@@ -163,6 +163,25 @@ The welcome card sits inside the apartment for arriving guests. Needs:
 
 ## 🔵 Domain, deploy, accounts
 
+### 21. Cloudflare Web Analytics — create a site + paste the token (~5 minutes)
+
+**Discovered:** 2026-05-08. The CF Web Analytics beacon is now wired into the site code; it stays inactive until a token is set.
+
+**What to do:**
+1. Log in to Cloudflare dashboard (the same account hosting Cloudflare Pages).
+2. Sidebar → **Analytics & Logs** → **Web Analytics** → **Manage site** → **Add a site**.
+3. Hostname: `apartamentomarazul.com` (and any preview domain you want tracked, e.g. `*.pages.dev`).
+4. Cloudflare generates a **token** (a string of characters). Copy it.
+5. Cloudflare Pages dashboard → the Mar Azul project → **Settings** → **Environment Variables** → **Add variable**:
+   - Variable name: `PUBLIC_CF_ANALYTICS_TOKEN`
+   - Value: the token from step 4
+   - Apply to: **both Production and Preview**
+6. Trigger a redeploy (Pages → Deployments → ⋯ → Retry deployment) OR push any commit to `redesign/v2`. Once deployed, the beacon script appears in every page's HTML and Cloudflare starts collecting data.
+
+**No cookies, no consent banner, no GDPR review needed beyond what's already on the Privacy + Cookies pages.**
+
+**To verify it's working:** after the redeploy, open the site, then refresh Cloudflare's Web Analytics page. Within 30 seconds you should see at least 1 visit logged.
+
 ### 14. Domain ownership and DNS access ✅ RESOLVED
 
 **Resolved 2026-05-07.** Domain is registered at **Namecheap**. Stefania (or owner) will handle the DNS swap to Cloudflare Pages on cutover day. Sprint 9 (DNS cutover) plan: provide a step-by-step Namecheap walkthrough at the time, no surprises.

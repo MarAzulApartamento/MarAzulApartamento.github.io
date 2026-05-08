@@ -71,6 +71,20 @@ export const WHATSAPP = {
   responseTime: 'we may answer within 12 hours',
 };
 
+// Cloudflare Web Analytics token. Public site identifier (not a secret),
+// set in Cloudflare Pages dashboard → Environment Variables. When empty
+// the beacon is not injected, which is the right behaviour for local dev.
+// Cookieless, no consent banner needed; declared on the Privacy + Cookie
+// policy pages already.
+const _cfAnalyticsToken =
+  ((import.meta as any).env?.PUBLIC_CF_ANALYTICS_TOKEN as string | undefined) ||
+  process.env.PUBLIC_CF_ANALYTICS_TOKEN ||
+  '';
+
+export const ANALYTICS = {
+  cfAnalyticsToken: _cfAnalyticsToken,
+};
+
 export const LOCALES = ['en', 'pt', 'es', 'it', 'de', 'nl', 'fr'] as const;
 export const DEFAULT_LOCALE = 'en';
 
