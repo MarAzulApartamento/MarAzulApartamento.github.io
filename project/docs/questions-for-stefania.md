@@ -101,11 +101,9 @@ We are drafting the Privacy Notice, Cookie Policy, and Terms pages required for 
 
 **Alternative:** Stefania can email me the review text and I'll add them to the CMS for her.
 
-### 7. WhatsApp Business number
+### 7. WhatsApp Business number ✅ RESOLVED
 
-**Need:** the actual phone number Stefania uses for WhatsApp Business (international format with country code, no spaces, no `+`). Example: `351936083766`.
-**Where it goes:** `.env.local` → `PUBLIC_WHATSAPP_NUMBER`. Then every WhatsApp CTA on the site deep-links to her real number.
-**Don't paste in chat.** Stefania edits `.env.local` directly when ready.
+**Resolved 2026-05-08.** Number set in `.env.local` and Cloudflare Pages env vars (`PUBLIC_WHATSAPP_NUMBER`). Every WhatsApp CTA on the site now deep-links to Stefania's real number. To verify after the next production rebuild: click *WhatsApp Stefy* on the live site and confirm it opens a chat with the right contact.
 
 ### 8. Welcome card content (Sprint 5 print material)
 
@@ -117,9 +115,22 @@ The welcome card sits inside the apartment for arriving guests. Needs:
 - House rules summary (no smoking, no pets, max guests, quiet hours)
 - Check-out instructions (where to leave keys, lockbox code reset, etc.)
 
-### 9. Business card distribution context
+### 9. Business card brief — review before we go to print
 
-**Confirmed:** kept in print scope because Stefania is travelling in Italy and will distribute. Question: any specific events/audiences (boutique hotels, travel agents, friends and family, B&Bs)? That changes whether the card optimizes for trade contacts (richer info) or word-of-mouth (just QR + name).
+**Spec drafted 2026-05-08 at** `project/docs/print-business-card-spec.md`.
+
+That doc is the full brief: format (85 × 55 mm, double-sided, 350 gsm matte), proposed front/back content, brand palette + typography, two variants (trade vs word-of-mouth), production specs, vendor options, and quantity guidance.
+
+**What we need from Stefania (six quick decisions):**
+
+1. **Variant** — single design for everyone, or two cards (trade-pitch + word-of-mouth)?
+2. **Quantity** — how many to print? (Suggest 100 to start; reorder later costs almost the same.)
+3. **Side A content** — confirm the proposal (logo + place + Instagram) or substitute.
+4. **Side B content** — confirm the QR target URL and the contact details (name, phone, email, website).
+5. **Email address on the card** — use which? (`hello@apartamentomarazul.com` once the brand email forward is set up; otherwise her personal email.)
+6. **Print vendor** — preference? (Three vendors compared in the spec: MOO, Vistaprint, a local Lagos print shop.)
+
+The spec also flags a few items still blocked on her: legal name, NIF, optional AL number on the card (item #18). She can leave those blank for the WOM variant; the trade variant ideally includes the AL number for credibility.
 
 ---
 
@@ -163,24 +174,9 @@ The welcome card sits inside the apartment for arriving guests. Needs:
 
 ## 🔵 Domain, deploy, accounts
 
-### 23. GA4 — create a property + paste the Measurement ID (~10 minutes)
+### 23. GA4 — create a property + paste the Measurement ID ✅ RESOLVED
 
-**Discovered:** 2026-05-08. The Klaro consent banner + GA4 wiring are in the site code; both stay inactive until a Measurement ID is set. Once it's set, the consent banner appears for visitors and GA4 fires only after they accept the analytics purpose.
-
-**What to do:**
-1. Visit https://analytics.google.com/. Sign in with the same Google account that owns GBP and Hotel Center.
-2. **Admin** → **Create property** → name: `Apartamento Mar Azul`, time zone: `(GMT+00:00) Lisbon`, currency: `EUR`.
-3. Set **Industry category** to *Travel* and **Business size** to *Small*. Click **Next**, then select **Generate leads** + **Examine user behaviour** as objectives.
-4. Choose **Web** as the platform. Website URL: `https://apartamentomarazul.com`. Stream name: `Apartamento Mar Azul Site`.
-5. Cloudflare Pages dashboard → Mar Azul project → **Settings** → **Environment Variables** → **Add variable**:
-   - Variable name: `PUBLIC_GA4_ID`
-   - Value: the Measurement ID from step 4 (looks like `G-XXXXXXXXXX`)
-   - Apply to: **both Production and Preview**
-6. Trigger a redeploy. Once deployed, the Klaro consent banner appears for visitors. After they click **Accept all** (or accept the analytics purpose specifically), GA4 starts logging.
-
-**Verify:** open the site in an incognito window, accept the banner, refresh once, then check GA4 → **Reports** → **Realtime**. The visit should appear within ~30 seconds.
-
-**Privacy + Cookies pages** auto-update for the new state — they already mention GA4 as conditional on consent.
+**Resolved 2026-05-08.** GA4 property created, `PUBLIC_GA4_ID` set in both `.env.local` and Cloudflare Pages env vars (Production + Preview). Branded Klaro consent banner now appears for visitors; GA4 fires after the analytics purpose is accepted. Verify after the next production rebuild: open the site in an incognito window, accept the banner, refresh once, then check GA4 → Reports → Realtime — the visit should appear within ~30 seconds.
 
 ### 21. Cloudflare Web Analytics — create a site + paste the token (~5 minutes)
 
