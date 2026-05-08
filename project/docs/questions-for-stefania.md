@@ -105,15 +105,32 @@ We are drafting the Privacy Notice, Cookie Policy, and Terms pages required for 
 
 **Resolved 2026-05-08.** Number set in `.env.local` and Cloudflare Pages env vars (`PUBLIC_WHATSAPP_NUMBER`). Every WhatsApp CTA on the site now deep-links to Stefania's real number. To verify after the next production rebuild: click *WhatsApp Stefy* on the live site and confirm it opens a chat with the right contact.
 
-### 8. Welcome card content (Sprint 5 print material)
+### 8. Welcome card brief — review before we go to print
 
-The welcome card sits inside the apartment for arriving guests. Needs:
+**Spec drafted 2026-05-08 at** `project/docs/print-welcome-card-spec.md`.
+
+That doc is the full brief: A4 tri-fold, six-panel layout (cover + welcome + Wi-Fi/check-out on the front; house rules + recommendations + emergency on the back), four language variants (EN / PT / ES / IT — the languages Stefania actually speaks), uncoated 300gsm stock for the warmer "letter from the host" feel, eight decisions to confirm.
+
+**Property-specific content still needed from Stefania (the gaps the spec can't fill):**
 - Wi-Fi network name + password
-- Trash collection day(s)
-- Emergency contacts (her mobile + a local equivalent of 112)
-- Recommended local spots (3–5 specifics: tasca, padaria, supermarket, beach, pharmacy)
-- House rules summary (no smoking, no pets, max guests, quiet hours)
-- Check-out instructions (where to leave keys, lockbox code reset, etc.)
+- Trash collection day(s) + where to put bins
+- Check-out instructions (key location, lockbox reset, etc.)
+- Local hospital name + phone (Lagos)
+- Confirm or substitute the proposed welcome paragraph and house rules
+
+The local recommendations panel (tasca, padaria, beach, supermarket) defaults to the five places already on the homepage's Location section — Stefania confirms they match what she'd actually point a guest to.
+
+### 24. A6 review card brief — review before we go to print
+
+**Spec drafted 2026-05-08 at** `project/docs/print-review-card-spec.md`.
+
+A6 flat card, sits on the kitchen counter, single side, QR straight to the GBP review form. EN-only first batch (50 cards); add Portuguese later if used. Five quick decisions in the spec.
+
+### 25. A5 table tent brief — review before we go to print
+
+**Spec drafted 2026-05-08 at** `project/docs/print-table-tent-spec.md`.
+
+A5 folded tent, stands on the dining table. Front face = "leave a Google review" with QR; back face = brand reinforcement + "direct booking is the cheapest channel." 10 tents for the first batch, six quick decisions.
 
 ### 9. Business card brief — review before we go to print
 
