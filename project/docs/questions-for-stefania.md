@@ -187,6 +187,29 @@ These are captured in `project/docs/gbp-audit.md`. NOT to be acted on now. Liste
 
 ---
 
+## 📋 Pre-launch checks (do these once the redesign is finished)
+
+### 19. Review the three legal pages end-to-end
+
+**When:** after the redesign is locked and Stefania has supplied the operator-specific data (item #18).
+
+**Why:** the drafts at `/privacy`, `/cookies`, `/terms` were written with assumptions about processors, retention, and cookies that match today's stack. By the time we ship, Sprint 4 will have added GA4 (analytics consent), Google Hotel Ads (marketing consent), and possibly a Meta Pixel. The Cookie Policy and Privacy Notice need to match what the site actually does on launch day, not what it did on draft day.
+
+**Checklist:**
+- [ ] `[TO CONFIRM]` placeholders all filled (legal name, NIF, address, email, AL number, optional insurance)
+- [ ] Cookie Policy accurately lists every cookie set on launch day (compare against the live site's Application tab in browser devtools)
+- [ ] Privacy Notice processors list still complete (any new tools added in Sprint 4-5 must appear)
+- [ ] Retention periods match operational reality (Stefania confirms 10-year tax retention, others as written)
+- [ ] Cancellation policy in Terms still matches Lodgify dashboard settings
+- [ ] AL number on Terms matches the one declared on Booking.com/Airbnb listings
+- [ ] All three pages translated to PT/ES/IT/DE/NL/FR (translation pass after EN review)
+- [ ] CNPD link, Lodgify privacy URL, and EU ODR link still resolve
+- [ ] Last updated date refreshed on each page when content changes
+
+**Optional but recommended:** have a Portuguese lawyer skim the Privacy and Terms pages once, especially the AL declaration and the liability section. Even a 30-minute review reduces post-launch risk.
+
+---
+
 ## 📅 Open since this document was last updated
 
 _(none yet — this is the initial version, 2026-05-07)_
