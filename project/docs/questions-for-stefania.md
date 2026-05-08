@@ -216,6 +216,23 @@ These are captured in `project/docs/gbp-audit.md`. NOT to be acted on now. Liste
 
 ## 📋 Pre-launch checks (do these once the redesign is finished)
 
+### 22. Verify Cloudflare Web Analytics is collecting on production
+
+**When:** after the DNS cutover to apartamentomarazul.com (Sprint 9), so the production domain matches the hostname configured in Cloudflare's Web Analytics site.
+
+**Why:** the beacon was wired in Sprint 4 against the preview URL (item #21). After cutover, traffic flows to the real domain, and we want to confirm Cloudflare is logging hits there. Silent failure (beacon not loading, token mismatch, ad blocker noise) wouldn't surface unless we deliberately check.
+
+**Steps:**
+1. Visit `https://apartamentomarazul.com/` in a non-incognito browser.
+2. View source, search for `cloudflareinsights` — confirm the beacon script is present and the token matches the one in Cloudflare → Web Analytics → Manage site → Apartamento Mar Azul.
+3. Refresh once to generate a fresh hit.
+4. Open Cloudflare → Web Analytics → Apartamento Mar Azul. Within ~30 seconds the visit should appear in the live counter.
+5. Repeat from a mobile device on cellular (not Wi-Fi) to confirm mobile traffic is also logged.
+6. Repeat once more from a different geographic location if practical (VPN, friend in another country) — confirms there are no regional issues.
+7. If nothing logs after 2 minutes, the usual causes are: (a) the token env var wasn't set to **Production** in Cloudflare Pages (only Preview), (b) browser ad-blocker is dropping `cloudflareinsights.com`, (c) the beacon failed to load (check the Network tab in devtools).
+
+**Cadence after launch:** glance at the Web Analytics dashboard weekly for the first month to confirm steady collection. After that, monthly is enough.
+
 ### 19. Review the three legal pages end-to-end
 
 **When:** after the redesign is locked and Stefania has supplied the operator-specific data (item #18).
