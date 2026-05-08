@@ -64,6 +64,7 @@ We share data with the following processors and partners, only to the extent nee
 
 - **Lodgify Ltd** — booking management, payment processing (via Stripe), pre-arrival emails. Privacy policy: https://www.lodgify.com/privacy-policy
 - **Cloudflare, Inc.** — website hosting and security. Cloudflare Web Analytics is cookieless and does not identify individual visitors.
+- **OpenStreetMap Foundation** — the map of Lagos on the homepage is served from OpenStreetMap. Your IP address is logged by their tile servers when the map renders. They don't set cookies.
 - **GitHub, Inc.** — stores the website source code; the owner uses GitHub to manage site content. Personal data of visitors is not stored on GitHub.
 - **Google LLC** — Google Analytics 4 (only when you've granted analytics consent), Google reviews, and Google Business Profile interactions. Privacy policy: https://policies.google.com/privacy
 - **Meta Platforms Ireland Ltd** — when you message us via WhatsApp.

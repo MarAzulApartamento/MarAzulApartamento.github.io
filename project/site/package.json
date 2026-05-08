@@ -18,6 +18,7 @@
     "@tailwindcss/vite": "^4.2.4",
     "astro": "^6.2.2",
     "klaro": "^0.7.21",
+    "leaflet": "^1.9.4",
     "tailwindcss": "^4.2.4"
   }
 }

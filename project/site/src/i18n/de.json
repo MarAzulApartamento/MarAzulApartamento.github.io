@@ -77,7 +77,6 @@
     "eyebrow": "Lage",
     "title": "Lagos, zu Fuß.",
     "mapLabel": "Karte von Lagos mit der Wohnung",
-    "mapPlaceholder": "Karten-Platzhalter · Leaflet + OpenStreetMap in Produktion",
     "places": [
       { "type": "Tasca", "name": "Prato Cheio", "distance": "Zu Fuß" },
       { "type": "Supermarkt", "name": "Intermarché Lagos", "distance": "10 Min. zu Fuß" },

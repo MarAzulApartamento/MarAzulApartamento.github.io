@@ -77,7 +77,6 @@
     "eyebrow": "Localização",
     "title": "Lagos, a pé.",
     "mapLabel": "Mapa de Lagos com a localização do apartamento",
-    "mapPlaceholder": "Mapa em construção · Leaflet + OpenStreetMap em produção",
     "places": [
       { "type": "Tasca", "name": "Prato Cheio", "distance": "A pé" },
       { "type": "Mercearia", "name": "Intermarché Lagos", "distance": "10 min a pé" },
