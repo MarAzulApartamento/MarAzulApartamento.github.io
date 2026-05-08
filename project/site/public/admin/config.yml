@@ -326,6 +326,30 @@ collections:
           hint: 'Plain prose. Keep answers short and specific.'
         }
 
+  # ---------- Legal pages (Privacy / Cookies / Terms, per locale) ----------
+  - name: legal
+    label: 'Legal pages'
+    label_singular: 'Legal page'
+    description: 'Privacy Notice, Cookie Policy, and Booking Terms. One file per page per language. English is the master; translations follow.'
+    folder: project/site/src/content/legal
+    create: true
+    delete: false
+    slug: '{{page}}-{{language}}'
+    summary: '{{page}} ({{language}}) · updated {{lastUpdated}}'
+    sortable_fields: [page, language, lastUpdated]
+    view_filters:
+      - { label: Privacy, field: page,     pattern: 'privacy' }
+      - { label: Cookies, field: page,     pattern: 'cookies' }
+      - { label: Terms,   field: page,     pattern: 'terms' }
+      - { label: English, field: language, pattern: 'en' }
+    fields:
+      - { name: page,        label: Page,            widget: select, options: [privacy, cookies, terms], required: true }
+      - { name: language,    label: Language,        widget: select, options: [en, pt, es, it, de, nl, fr], required: true, default: en }
+      - { name: title,       label: Page title,      widget: string, required: true }
+      - { name: description, label: SEO description, widget: text,   required: true }
+      - { name: lastUpdated, label: Last updated,    widget: string, required: true, hint: 'Format: YYYY-MM-DD' }
+      - { name: body,        label: Body,            widget: markdown, required: true }
+
   # ---------- Site copy (per-language text) ----------
   - name: site_copy
     label: 'Site copy'

@@ -32,4 +32,20 @@ const faqs = defineCollection({
   }),
 });
 
-export const collections = { reviews, faqs };
+/**
+ * Legal pages — Privacy, Cookies, Terms. One markdown file per page per locale.
+ * Slug is `{page}-{lang}` so files coexist in a flat folder. Owner-editable
+ * via Sveltia CMS once translated.
+ */
+const legal = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/legal' }),
+  schema: z.object({
+    page: z.enum(['privacy', 'cookies', 'terms']),
+    language: z.enum(['en', 'pt', 'es', 'it', 'de', 'nl', 'fr']),
+    title: z.string(),
+    description: z.string(),
+    lastUpdated: z.string(), // YYYY-MM-DD
+  }),
+});
+
+export const collections = { reviews, faqs, legal };

@@ -59,6 +59,25 @@ The Portable Search Bar widget is saved in reserve for a future sticky-header / 
 
 ## 🟡 Content & assets needed
 
+### 18. GDPR / legal-page details (Phase 3 in progress, 2026-05-07)
+
+We are drafting the Privacy Notice, Cookie Policy, and Terms pages required for an EU-facing booking site. The English drafts are written with `[TO CONFIRM]` placeholders for the data only Stefania can supply. Once she fills these via the CMS (Site copy → English) we'll do the translation pass for PT/ES/IT/DE/NL/FR.
+
+**Needed:**
+- (a) **Full legal name** of the data controller (the person legally responsible for the processing). Stefania's full name as it appears on her ID/business registration.
+- (b) **NIF** (Portuguese tax ID number).
+- (c) **Legal address** of the data controller (may differ from the rental address — it's where she's registered as a sole trader / business).
+- (d) **Privacy contact email** (where guests can write with GDPR access/erasure requests). Suggest setting up `privacy@apartamentomarazul.com` once the brand email forward is configured (see #16).
+- (e) **AL number** (Alojamento Local registration number issued by the Portuguese tourism authority — required by law on every public-facing channel for short-stay rentals in Portugal). Already declared on Booking.com/Airbnb? Copy the same number.
+- (f) **Insurance** (optional disclosure): is there a third-party liability insurance policy covering guest stays? Needed for the Terms page liability section.
+- (g) **Lodgify business sub-processor confirmation:** Lodgify is the booking and payment processor (Stripe under the hood). Their privacy policy: https://www.lodgify.com/privacy-policy. Stefania confirms she's read and accepts that they're our processor.
+
+### 17. Stefania's GitHub username (for CMS access)
+
+**Discovered:** 2026-05-07 during Sveltia CMS production setup.
+**What's needed:** Stefania's GitHub username (or sign-up if she doesn't have an account yet — github.com/signup, free).
+**Why it's blocking:** Sveltia commits her edits via the GitHub API on her behalf. To do that, her GitHub account must be added as a Write collaborator on the `MarAzulApartamento/MarAzulApartamento.github.io` repo. Until then, she can sign in to `/admin/` but every Save will fail with "Bad credentials". Owner adds her via repo Settings → Collaborators → Add people.
+
 ### 5. Real photo of you for the trust strip and About section ✅ RESOLVED
 
 **Resolved 2026-05-07.** `owner_picture.jpg` provided by Stefania. Now used in the homepage trust strip (host bubble) and the About section. Stored at `project/site/public/photos/owner_picture.jpg`. If you ever want to swap it for a different photo, just replace that file.
