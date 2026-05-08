@@ -33,12 +33,16 @@ const tiles: Tile[] = site.gallery.items.map((item) => ({
           aria-label={`${t.gallery.openLabel} ${tile.cap}`}
           type="button"
         >
-          <img
-            src={tile.src}
-            alt={tile.cap}
-            loading={i === 0 ? 'eager' : 'lazy'}
-            decoding="async"
-          />
+          <picture>
+            <source type="image/avif" srcset={tile.src.replace(/\.jpe?g$/, '.avif')} />
+            <source type="image/webp" srcset={tile.src.replace(/\.jpe?g$/, '.webp')} />
+            <img
+              src={tile.src}
+              alt={tile.cap}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          </picture>
           <span class="cap">{tile.cap}</span>
         </button>
       ))}

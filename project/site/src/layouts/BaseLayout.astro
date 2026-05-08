@@ -141,7 +141,13 @@ if (PROPERTY.alNumber) {
     <meta name="twitter:image" content={ogImageURL} />
 
     {preloadImage && (
-      <link rel="preload" as="image" href={preloadImage} type="image/jpeg" fetchpriority="high" />
+      <Fragment>
+        {/* Preload the AVIF variant for the LCP image; modern browsers (Chrome,
+            Edge, Firefox, recent Safari) support AVIF and we use it via the
+            <picture> element. The JPG fallback ships alongside but is only
+            fetched if the browser rejects AVIF. */}
+        <link rel="preload" as="image" href={preloadImage.replace(/\.jpe?g$/, '.avif')} type="image/avif" fetchpriority="high" />
+      </Fragment>
     )}
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
