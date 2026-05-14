@@ -3,7 +3,7 @@ page: privacy
 language: en
 title: Privacy Notice
 description: How Apartamento Mar Azul collects and uses personal data of guests and visitors, and your rights under the GDPR.
-lastUpdated: '2026-05-07'
+lastUpdated: '2026-05-14'
 ---
 
 This Privacy Notice explains how we handle personal data on **apartamentomarazul.com** and during the booking and stay process. We follow the EU General Data Protection Regulation (Regulation 2016/679, "GDPR") and the Portuguese Data Protection Law (Lei 58/2019).
@@ -12,12 +12,12 @@ This Privacy Notice explains how we handle personal data on **apartamentomarazul
 
 The data controller is:
 
-- **Name:** [TO CONFIRM — Stefania's full legal name]
+- **Name:** Stefania Amidei
 - **Trading as:** Apartamento Mar Azul
-- **Address:** [TO CONFIRM — legal address of the controller]
-- **NIF:** [TO CONFIRM — Portuguese tax ID]
-- **Alojamento Local registration:** [TO CONFIRM — AL number]
-- **Email for privacy queries:** [TO CONFIRM — privacy contact email]
+- **Address:** Rua Dom Luís da Silveira, lote V 44 B, 8600-575 Lagos, Portugal
+- **NIF:** 297 932 713
+- **Alojamento Local registration:** 165912/AL
+- **Email for privacy queries:** marazulapartamento@gmail.com
 
 If you have a question about your data or want to exercise any of the rights described below, please write to the email above.
 
@@ -62,12 +62,12 @@ We do **not** use your data for marketing, profiling, or automated decision-maki
 
 We share data with the following processors and partners, only to the extent needed for them to do their part:
 
-- **Lodgify Ltd** — booking management, payment processing (via Stripe), pre-arrival emails. Privacy policy: https://www.lodgify.com/privacy-policy
-- **Cloudflare, Inc.** — website hosting and security. Cloudflare Web Analytics is cookieless and does not identify individual visitors.
-- **OpenStreetMap Foundation** — the map of Lagos on the homepage is served from OpenStreetMap. Your IP address is logged by their tile servers when the map renders. They don't set cookies.
-- **GitHub, Inc.** — stores the website source code; the owner uses GitHub to manage site content. Personal data of visitors is not stored on GitHub.
-- **Google LLC** — Google Analytics 4 (only when you've granted analytics consent), Google reviews, and Google Business Profile interactions. Privacy policy: https://policies.google.com/privacy
-- **Meta Platforms Ireland Ltd** — when you message us via WhatsApp.
+- **Lodgify Ltd:** booking management, payment processing (via Stripe), pre-arrival emails. Privacy policy: https://www.lodgify.com/privacy-policy
+- **Cloudflare, Inc.:** website hosting and security. Cloudflare Web Analytics is cookieless and does not identify individual visitors.
+- **OpenStreetMap Foundation:** the map of Lagos on the homepage is served from OpenStreetMap. Your IP address is logged by their tile servers when the map renders. They don't set cookies.
+- **GitHub, Inc.:** stores the website source code; the owner uses GitHub to manage site content. Personal data of visitors is not stored on GitHub.
+- **Google LLC:** Google Analytics 4 (only when you've granted analytics consent), Google reviews, and Google Business Profile interactions. Privacy policy: https://policies.google.com/privacy
+- **Meta Platforms Ireland Ltd:** when you message us via WhatsApp.
 
 We do not sell your data to anyone. We do not share it with third parties for their own marketing.
 
@@ -86,19 +86,19 @@ Some of our processors are based outside the European Economic Area (notably Clo
 
 Under the GDPR you have the right to:
 
-- **Access** — ask for a copy of the personal data we hold about you.
-- **Rectification** — ask us to correct inaccurate or incomplete data.
-- **Erasure** — ask us to delete your data, where the legal basis no longer applies. Note: booking records must be kept for tax purposes for 10 years.
-- **Restriction** — ask us to pause processing while a question is resolved.
-- **Portability** — receive a copy of the data you provided in a machine-readable format.
-- **Objection** — object to processing based on legitimate interest.
-- **Withdraw consent** — at any time, where consent is the legal basis. This does not affect processing carried out before withdrawal.
+- **Access:** ask for a copy of the personal data we hold about you.
+- **Rectification:** ask us to correct inaccurate or incomplete data.
+- **Erasure:** ask us to delete your data, where the legal basis no longer applies. Note: booking records must be kept for tax purposes for 10 years.
+- **Restriction:** ask us to pause processing while a question is resolved.
+- **Portability:** receive a copy of the data you provided in a machine-readable format.
+- **Objection:** object to processing based on legitimate interest.
+- **Withdraw consent:** at any time, where consent is the legal basis. This does not affect processing carried out before withdrawal.
 
 To exercise any of these rights, write to the privacy email above. We respond within one month.
 
 You also have the right to lodge a complaint with the Portuguese supervisory authority:
 
-**Comissão Nacional de Proteção de Dados (CNPD)** — https://www.cnpd.pt — Av. D. Carlos I, 134, 1.º · 1200-651 Lisboa, Portugal.
+**Comissão Nacional de Proteção de Dados (CNPD).** Website: https://www.cnpd.pt. Postal address: Av. D. Carlos I, 134, 1.º · 1200-651 Lisboa, Portugal.
 
 ## Cookies
 
@@ -110,4 +110,4 @@ If we change how we use personal data, we update this page and the "Last updated
 
 ---
 
-_Last updated: 7 May 2026._
+_Last updated: 14 May 2026._

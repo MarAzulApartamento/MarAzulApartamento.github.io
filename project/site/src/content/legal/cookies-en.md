@@ -18,13 +18,13 @@ The site uses two analytics tools and a consent manager. Together they may set t
 
 **Always present (essential):**
 
-- `klaro` — set the moment you interact with the consent banner. Stores your decision (accept or decline) so the banner doesn't reappear on every page. Lifetime: 1 year. This cookie is *strictly necessary* under the ePrivacy Directive and doesn't require consent — it's the cookie that records your consent.
+- `klaro`: set the moment you interact with the consent banner. Stores your decision (accept or decline) so the banner doesn't reappear on every page. Lifetime: 1 year. This cookie is *strictly necessary* under the ePrivacy Directive and doesn't require consent. It is the cookie that records your consent.
 
 **Set only if you accept analytics:**
 
-- `_ga` — Google Analytics, distinguishes unique visitors. Lifetime: 2 years.
-- `_ga_<container>` — Google Analytics, holds session state for the current site. Lifetime: 2 years.
-- `_gid` — Google Analytics, distinguishes users for the current 24-hour window. Lifetime: 24 hours.
+- `_ga`: Google Analytics, distinguishes unique visitors. Lifetime: 2 years.
+- `_ga_<container>`: Google Analytics, holds session state for the current site. Lifetime: 2 years.
+- `_gid`: Google Analytics, distinguishes users for the current 24-hour window. Lifetime: 24 hours.
 
 If you decline analytics in the banner, the three Google Analytics cookies above are not set; the `klaro` cookie still records your decline.
 
@@ -34,8 +34,8 @@ We also use **Cloudflare Web Analytics**, which counts traffic without setting a
 
 **Cookies you'll only encounter if you click through:**
 
-- **Booking checkout** — when you click *Book direct*, a new tab opens at `checkout.lodgify.com`. That page is operated by Lodgify Ltd and sets cookies needed for the checkout flow (session, fraud prevention, payment via Stripe). Their cookie policy applies on that page: https://www.lodgify.com/privacy-policy.
-- **WhatsApp** — when you click *WhatsApp Stefy*, you're redirected to `wa.me` (Meta Platforms Ireland Ltd). WhatsApp's own cookies and policies apply.
+- **Booking checkout:** when you click *Book direct*, a new tab opens at `checkout.lodgify.com`. That page is operated by Lodgify Ltd and sets cookies needed for the checkout flow (session, fraud prevention, payment via Stripe). Their cookie policy applies on that page: https://www.lodgify.com/privacy-policy.
+- **WhatsApp:** when you click *WhatsApp Stefy*, you're redirected to `wa.me` (Meta Platforms Ireland Ltd). WhatsApp's own cookies and policies apply.
 
 If you don't click those buttons, those third-party cookies don't appear on your machine.
 

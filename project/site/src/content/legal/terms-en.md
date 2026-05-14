@@ -3,7 +3,7 @@ page: terms
 language: en
 title: Booking Terms
 description: The terms that apply when you book a stay at Apartamento Mar Azul. Plain language, no surprises.
-lastUpdated: '2026-05-07'
+lastUpdated: '2026-05-14'
 ---
 
 These are the terms that apply when you book a stay at **Apartamento Mar Azul** in Lagos, Algarve. They form the contract between you and the host. Please read them before booking. By completing a booking you confirm you've read and accepted them.
@@ -12,14 +12,14 @@ These are the terms that apply when you book a stay at **Apartamento Mar Azul** 
 
 - **Address:** Rua Dom Luís da Silveira lote V 44 B, 8600-575 Lagos, Portugal.
 - **Capacity:** 2 to 4 guests.
-- **Alojamento Local registration:** [TO CONFIRM — AL number]. Apartamento Mar Azul is registered as a short-stay rental with the Portuguese tourism authority.
+- **Alojamento Local registration:** 165912/AL. Apartamento Mar Azul is registered as a short-stay rental with the Portuguese tourism authority.
 
 ## How to book
 
 You can book through:
 
-- **This website** — the calendar on the homepage and the `/book` page show real-time availability and prices.
-- **Booking.com, Airbnb, Vrbo** — same calendar, same property.
+- **This website:** the calendar on the homepage and the `/book` page show real-time availability and prices.
+- **Booking.com, Airbnb, Vrbo:** same calendar, same property.
 
 Booking direct on this site usually gives you the best available rate and a few perks (free parking, late check-out and early check-in when the calendar allows, a direct WhatsApp line with the host).
 
@@ -37,8 +37,8 @@ To cancel a direct booking, write to the contact email or WhatsApp the host. For
 
 ## Check-in and check-out
 
-- **Check-in:** from 15:00. Earlier arrival is sometimes possible — message us in advance.
-- **Check-out:** by 11:00. Late check-out is sometimes possible — message us the day before.
+- **Check-in:** from 15:00. Earlier arrival is sometimes possible. Message us in advance.
+- **Check-out:** by 11:00. Late check-out is sometimes possible. Message us the day before.
 - Self check-in details (key location, code) are sent to you 48 hours before arrival.
 
 ## House rules
@@ -81,9 +81,9 @@ We'll update this page if anything changes. The booking you've already made is g
 
 ## Contact
 
-- **Email:** [TO CONFIRM — owner contact email]
+- **Email:** marazulapartamento@gmail.com
 - **WhatsApp:** via the button on apartamentomarazul.com (the host may answer within 12 hours)
 
 ---
 
-_Last updated: 7 May 2026._
+_Last updated: 14 May 2026._
