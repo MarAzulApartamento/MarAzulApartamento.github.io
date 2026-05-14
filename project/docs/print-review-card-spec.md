@@ -1,14 +1,18 @@
-# A6 review card — print spec
+# Fridge magnet — print spec
 
-**Last updated:** 2026-05-08
-**Status:** drafted, awaiting Stefania's review (item #24 in `questions-for-stefania.md`).
-**Goal:** sit on the kitchen counter during the stay; the moment a guest is mid-coffee enjoying the apartment is the moment they're most likely to leave a five-star review. Quick scan, single action.
+**Last updated:** 2026-05-14
+**Status:** drafted for Stefania's review. Replaces the original A6 review card (item #24 in `questions-for-stefania.md`, reformatted 2026-05-13).
+**Goal:** sit on the fridge for the entire stay. Guests open the fridge multiple times a day — by the third or fourth time, the calm "leave us a review" prompt has registered without ever being pushy. Lives forever (magnets don't get thrown out like cards do), so one design batch covers many guests.
 
 ---
 
-## Purpose
+## What this is
 
-Reviews drive direct-booking conversion (social proof) and Google Business Profile rank. We don't want to ask guests verbally — too pushy. Leaving a small, well-designed card that's easy to ignore but easier to scan reaches the willing without pressuring the rest.
+A printed flexible-magnet rectangle that sits on the fridge. Single-sided. One job: when the guest is ready to leave a Google review, the QR is right there, no app-hunting, no URL-typing.
+
+Replaces the original A6 paper card on the kitchen counter for two reasons:
+1. **Permanence** — magnets don't end up under the morning paper or in the recycling.
+2. **Visibility** — the fridge is opened more often than a counter is glanced at.
 
 ---
 
@@ -16,107 +20,117 @@ Reviews drive direct-booking conversion (social proof) and Google Business Profi
 
 | Spec | Value |
 |---|---|
-| Size | **A6 — 105 × 148 mm** (postcard-shaped, portrait) |
+| Size | **~70 × 90 mm** (portrait, postcard ratio shrunk to magnet scale) |
+| Material | Flexible vinyl magnet, ~0.6-0.8 mm thick |
 | Bleed | 3 mm each side |
-| Sides | **One-sided** (back is plain warm-white). Keeps the cost down and the message clear. |
-| Corners | Square |
-| Paper | **350 gsm matte coated** |
-| Finish | Matte both sides |
-| Colour | CMYK |
+| Sides | **One-sided** (magnetic back is uniform brown/black) |
+| Corners | **Rounded** (~3 mm radius) — magnets feel friendlier with rounded corners |
+| Finish | Matte vinyl (gloss reflects kitchen lights and degrades QR scan reliability) |
+| Colour | CMYK, full colour print |
 
 ---
 
 ## The single side
 
-```
-┌──────────────────────────────────┐
-│                                  │
-│      ENJOYED YOUR STAY?          │
-│                                  │
-│      Two minutes, Google,        │
-│      and a thank-you from us.    │
-│                                  │
-│         ┌──────────┐             │
-│         │          │             │
-│         │   QR     │             │
-│         │          │             │
-│         └──────────┘             │
-│                                  │
-│         scan to review           │
-│                                  │
-│      apartamentomarazul.com      │
-│                                  │
-└──────────────────────────────────┘
-```
+> **Loved your stay?**
+>
+> Leave us a Google review. It really helps.
+> (About 2 minutes.)
+>
+> [QR code]
+>
+> *scan to review*
+>
+> apartamentomarazul.com
 
-**Background:** Warm White (#FAFAF7) — the body palette, lets the QR pop.
+**Visual treatment:**
+- Background **Warm White (#FAFAF7)** with a thin Atlantic Blue rule along the top edge (~3 mm wide) — a small visual anchor that ties the magnet to the rest of the brand system.
+- Top headline **"Loved your stay?"** — Spectral 700, ~14pt, Deep Navy. Centred, ~6 mm from the top rule.
+- Sub-line **"Leave us a Google review. It really helps."** with a smaller second line **"(About 2 minutes.)"** — Manrope 400, ~9pt, Deep Navy.
+- QR code **35 × 35 mm**, centred, Atlantic Blue on warm-white.
+- Caption **"scan to review"** — Manrope 500, 7pt, Slate Grey, centred, ~3 mm under QR.
+- Footer **`apartamentomarazul.com`** — Manrope 600, 7pt, Atlantic Blue, centred, ~4 mm from the bottom.
 
-**Top label** — "ENJOYED YOUR STAY?" — Manrope 700, 11pt, all-caps, letter-spacing 0.08em, Atlantic Blue. Centred, ~18 mm from top.
+That's it. Seven lines including the QR — calm and one-purpose.
 
-**Subhead** — Spectral 700, 22pt, Deep Navy, two lines, centred, ~32 mm from top. Tight leading (line-height 1.15).
+---
 
-**QR code** — 50 × 50 mm, centred horizontally, ~70 mm from top. Atlantic Blue on warm-white.
-Targets: the GBP "leave a review" URL (get it from Cloudflare → Google Business Profile dashboard → **Read reviews** → **Get more reviews** → **Share review form** → copy URL).
+## QR target
 
-**Caption under QR** — "scan to review" — Manrope 500, 9pt, Slate Grey, centred, ~6 mm under QR.
+The Google Business Profile **"leave a review" short URL**: `https://g.page/r/Cewx9Po3sADdEBM/review`. The same URL is used on the table flip Panel 8, so there's only one QR target to maintain.
 
-**Footer** — `apartamentomarazul.com` — Manrope 600, 9pt, Atlantic Blue, centred, ~14 mm from bottom.
-
-That's everything. Eight lines of meaning total.
+If we want UTM tagging for analytics later (track which surface drove the review): the magnet can use `?utm_source=magnet&utm_medium=offline&utm_campaign=review`. Note: GBP review URLs don't pass UTM through to the review form, so the URL parameters are stripped — UTM here is mostly cosmetic. Skip it for the first batch.
 
 ---
 
 ## Per-locale variants
 
-A6 is small and physical — we don't want a multilingual stack of words on a single card. Two reasonable approaches:
+The magnet is small and lives on a metal surface, not in a drawer with siblings. **One English version only.** Adding PT/IT/ES/FR multiplies the cost and creates a "which magnet do we put up?" decision every changeover. International guests universally understand "Google review" — the headline is short enough that translation isn't necessary.
 
-1. **Single English card** — works for most of the international audience. Cheapest. Recommendation if budget is a factor.
-2. **Two language variants** — English + Portuguese. Stack 50/50 in the kitchen drawer; pick whichever matches the guest. Slight cost bump.
-
-If two variants, the Portuguese version reads:
-- Top label: `GOSTOU DA SUA ESTADIA?`
-- Subhead: `Dois minutos, Google, e o nosso obrigado.`
-- Caption: `digitalize para avaliar`
-- Footer: unchanged
-
-If we add German / Italian / French, we go 5+ variants and the kitchen drawer becomes a problem. Skip beyond PT.
+If Stefania wants to test a Portuguese version later, that's a separate small reorder.
 
 ---
 
-## Brand tokens (same as business card)
+## Brand tokens
 
-Atlantic Blue `#1E5B73`, Warm White `#FAFAF7`, Deep Navy `#1d2630`, Slate Grey `#5F6B77`. Spectral for the subhead, Manrope for everything else.
+Same locked set as the rest of the print line: Atlantic Blue, Warm White, Deep Navy, Slate Grey. Spectral for the short headline, Manrope for everything else.
 
 ---
 
 ## Production
 
-| Vendor | Cost (50 cards) | Lead time | Notes |
+| Vendor | Cost (~10 magnets) | Lead time | Notes |
 |---|---|---|---|
-| MOO | ~€45 | 5-7 days | Best paper feel; the QR scan reliability is best on MOO's matte. |
-| Vistaprint | ~€18 | 3-5 days | Good enough; QR reliability slightly lower on cheaper matte but acceptable. |
-| Local Lagos shop | ~€20-30 | 2 days | Pick-up convenience. |
+| Sticker Mule (Custom Magnets) | ~€20-25 | 4-7 days delivered EU | Best print quality, vibrant CMYK, no minimums. Recommended for the first batch. |
+| Vistaprint (Photo magnets / Custom magnets) | ~€15-20 | 5-7 days | Cheaper, perfectly serviceable. QR scan reliability slightly lower; ask for a proof. |
+| Local Lagos sign / print shop | ~€20-30 | 2-3 days | Walk-in, fast, supports local. Quality varies — ask to see a sample magnet before ordering. |
 
-**Quantity:** 50 cards lasts ~6 months at typical guest turnover (52 stays/year × 1 card per stay = 52 needed). Reorder when down to 10. If running EN + PT variants, 30 EN + 20 PT for the first batch.
+**Quantity:** **10 magnets** for the first run. The magnet doesn't get consumed (one stays on the fridge for the whole life of the apartment), so 10 covers replacements + a couple to put on Stefania's own fridge or hand to friends as a brand touchpoint.
 
-**Critical proof check** — the QR code MUST scan cleanly with both iPhone and Android cameras from 15 cm away in normal indoor light. Ask the printer for a physical proof and test it before approving the bulk run. If it doesn't scan, the whole card is wasted.
+**Critical proof check** — the QR code MUST scan cleanly with both iPhone and Android cameras from ~20-30 cm away in indoor kitchen light. Magnets often have slight surface texture that interferes with QR scanning. **Test the printed proof before approving the bulk run.** If the QR doesn't scan reliably, the whole magnet is wasted.
 
 ---
 
-## Five decisions for Stefania
+## What's needed from Stefania to lock the copy
 
-| # | Question | Recommendation |
-|---|---|---|
-| 1 | English only or EN + PT? | EN only for the first batch. Add PT later if the card sees real use. |
-| 2 | Quantity? | 50 |
-| 3 | Confirm the copy ("Enjoyed your stay? Two minutes, Google, and a thank-you from us.")? | Yes — calm, specific, not pushy. |
-| 4 | QR target — direct GBP review URL or a custom redirect? | Direct GBP review URL. Keeps it fast; no broken-redirect risk later. |
-| 5 | Print vendor? | MOO for the first batch (paper quality matters for a kitchen-display object); switch to Vistaprint if reordering doesn't justify the upcharge. |
+| Field | Source / status |
+|---|---|
+| Headline copy | ✅ Locked (proposal: "Loved your stay? Leave us a Google review. It really helps.") — Stefania to confirm or substitute |
+| QR target URL | ✅ `https://g.page/r/Cewx9Po3sADdEBM/review` (provided by Stefania, 2026-05-14) |
+| Footer URL | ✅ apartamentomarazul.com |
+
+---
+
+## Open decisions for Stefania
+
+1. **Confirm or substitute the copy.** Proposal: "Loved your stay? Leave us a Google review. It really helps. (About 2 minutes.)" Calm, specific, no pressure, with a small reassurance about the time cost. Alternative: "Enjoyed your stay? Two minutes on Google means the world to a small host." Slightly warmer but longer.
+2. **Photo or no photo?** A small photo of the apartment terrace at the top of the magnet would warm it up but reduces space for the QR. **Recommendation: no photo** — the fridge magnet is functional, the table flip is the warm one.
+3. **Size** — 70 × 90 mm fits most fridge real estate without dominating. Want bigger (more visible) or smaller (more discreet)? **Recommendation: 70 × 90 mm**, but if Stefania has a small fridge or already has lots of magnets, drop to 60 × 80 mm.
+4. **Vendor** — Sticker Mule (online, best quality), Vistaprint (online, cheapest), local Lagos (walk-in, fast)? **Recommendation: local Lagos for the first batch** so we can hold a physical proof and test the QR scan in person before bulk.
+5. **Quantity** — 10 magnets feels right. Want more (for branded giveaways)? Cost per magnet drops sharply above 25 units.
+
+---
+
+## Production notes (light — full design spec in the claude-design prompt later)
+
+- File deliverable: print-ready PDF at 300 DPI, CMYK, with crop marks and 3 mm bleed.
+- Atlantic Blue colour match: same Pantone 7700 C / CMYK 78/40/35/25 build as the business card and table flip.
+- Magnet thickness: 0.6-0.8 mm is the sweet spot. Thinner (0.3 mm) flexes too easily and the print can crease; thicker (1+ mm) looks heavy and won't stick well to slightly textured fridge surfaces.
 
 ---
 
 ## Cross-references
 
-- `questions-for-stefania.md` items #6 (existing reviews to backfill), #14 (DNS cutover — affects the footer URL line if we cite anything beyond `apartamentomarazul.com`), #24 (this brief).
-- `gbp-playbook.md` → Action #13 (Drive review collection) explains how this card slots into the broader review strategy.
-- `print-business-card-spec.md` — same vendor / paper / brand spec.
+- `questions-for-stefania.md` — items #6 (review backfill — the magnet drives this on the kitchen side), #24 (this brief).
+- `print-table-tent-spec.md` — Panel 8 has the same QR / review CTA. The magnet and table flip work together — magnet is "during the stay", table flip Panel 8 is "at the end of the stay."
+- `gbp-audit.md` — GBP review URL source.
+
+---
+
+## Next steps after Stefania approves
+
+1. We finalise the copy + QR target with Stefania.
+2. We write the claude-design prompt to produce the print-ready PDF.
+3. We send to the local Lagos print/sign shop for one proof.
+4. Stefania holds the proof on her own fridge, tests the QR scan from arm's length on her phone.
+5. Once the proof is approved, bulk-print 10 magnets.

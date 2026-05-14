@@ -1,10 +1,17 @@
 # Business card — print spec
 
-**Last updated:** 2026-05-08
-**Status:** drafted, awaiting Stefania's review (item #9 in `questions-for-stefania.md`).
+**Last updated:** 2026-05-14
+**Status:** confirmed in scope by Stefania (2026-05-13). Awaiting final copy review on Side B contact lines + vendor selection.
 **Companion to:** the print scope from CLAUDE.md (Sprint 5 print materials).
 
 The card sits in Stefania's bag while she's travelling in Italy or visiting Algarve neighbours. It hands off the brand and a route to direct booking in one quick exchange. This document is what we'd take to a printer once she signs off.
+
+**Owner data confirmed 2026-05-13 (was previously `[TO CONFIRM]`):**
+- Full name: **Stefania Amidei**
+- NIF: **297 932 713**
+- AL number: **165912/AL**
+- Email: **marazulapartamento@gmail.com** (confirmed 2026-05-14)
+- Phone: **+351 936 083 766**
 
 ---
 
@@ -88,19 +95,19 @@ The UTM parameters let us see in GA4 (once it's collecting) how many bookings co
 
 **Right column type stack** (top to bottom, left-aligned, ~3 mm to the right of the QR):
 - "APARTAMENTO MAR AZUL" — Manrope 700, 8pt, all-caps, letter-spacing 0.08em, Deep Navy (#1d2630). Acts as a label, not a brand mark (the brand mark lives on Side A).
-- *Stefania's full name* — Spectral 700, 12pt, Deep Navy. (Provisional; awaits item #18.)
+- *Stefania Amidei* — Spectral 700, 12pt, Deep Navy.
 - "Host" — Manrope 400, 8pt, Slate Grey (#5F6B77).
 
 **Bottom block, full width** (left-aligned, 4mm from bottom safe edge):
-- `apartamentomarazul.com` — Manrope 600, 9pt, Atlantic Blue (#1E5B73). 
+- `apartamentomarazul.com` — Manrope 600, 9pt, Atlantic Blue (#1E5B73).
 - `+351 936 083 766` — Manrope 500, 9pt, Deep Navy.
-- `hello@apartamentomarazul.com` — Manrope 500, 9pt, Deep Navy. *(Awaits item #16 — brand email forward.)*
+- `marazulapartamento@gmail.com` — Manrope 500, 9pt, Deep Navy. _(Working email; can be upgraded to `hello@apartamentomarazul.com` once item #16 — brand email forward — is configured.)_
 - `@apartamento_marazul` — Manrope 500, 9pt, Deep Navy.
 
 Line spacing 1.4. Fixed leading so the four lines stack visibly even at 9pt.
 
 **Trade variant adds, in a small footer line** (Manrope 400, 7pt, Slate Grey):
-- `AL <number> · NIF <number>` *(awaits item #18)*
+- `AL 165912/AL · NIF 297 932 713`
 
 ---
 
@@ -171,9 +178,8 @@ Before the final print run, the printer sends a digital proof (PDF or screen) an
 | 1 | One card for everyone, or two variants (WOM + trade)? | Two variants. Trade audience (hotels, agents) expects AL/NIF; WOM doesn't. Marginal extra cost. |
 | 2 | Quantity? | 100 + 100 (split between variants) for the first run. |
 | 3 | Confirm Side A content (logo + "Lagos · Algarve")? | Yes. Anything else dilutes the brand impression. |
-| 4 | Side B contact details — confirm the four lines? | Yes if email is set up; otherwise drop the email line until item #16 closes. |
-| 5 | Email address — `hello@apartamentomarazul.com` (after #16) or her personal email? | The brand-domain email, once set up. Personal email is fine as a stop-gap. |
-| 6 | Print vendor? | MOO for trade, Vistaprint for WOM. Or all-MOO if budget allows. |
+| 4 | Side B contact details — confirm the four lines? | Yes. Use `marazulapartamento@gmail.com` (confirmed 2026-05-14); upgrade to brand email later when item #16 closes. |
+| 5 | Print vendor? | MOO for trade, Vistaprint for WOM. Or all-MOO if budget allows. |
 
 ---
 

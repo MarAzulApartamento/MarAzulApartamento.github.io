@@ -2,11 +2,103 @@
 
 A single place to collect everything that needs the owner's input. Take this list to her in one conversation or email so we don't ping her repeatedly.
 
-Organised by urgency, then by topic. Newest items at the top of each section.
+**Structure:** open items at the top of the doc, resolved/archived/reference material at the bottom. Within each section, newest items first.
 
 ---
 
-## 🔴 Production-safety (Lodgify dashboard changes — never without explicit confirmation)
+# 🟦 OPEN — actions and decisions
+
+---
+
+## 📦 Print deliverables — ready for Stefy's review (2026-05-14)
+
+Four print spec documents are drafted, copy-edited, and ready for review. The proposed copy has been through a seven-sweep edit pass (em dashes removed per house style, voice consistency confirmed, PT translation first-pass polish applied). Stefy reviews, approves or substitutes, and then we move to the design/print phase.
+
+### Files to read in this order
+
+| # | File | What it is | Approx reading time |
+|---|---|---|---|
+| 1 | `project/docs/print-table-tent-spec.md` | **Table Flip** — the centrepiece, sits on the dining table, 8 panels EN side + 8 panels PT side. Welcome, useful info, rules, emergency, SUP, review CTA. | 10 min |
+| 2 | `project/docs/print-apartment-guide-folder-spec.md` | **Apartment Guide** — A5 saddle-stitched booklet, 20 pages, 5 languages (EN/PT/IT/ES/FR). Detailed reference. | 15 min |
+| 3 | `project/docs/print-review-card-spec.md` | **Fridge Magnet** — small, single-sided, Google review QR. Lives on the fridge. | 3 min |
+| 4 | `project/docs/print-business-card-spec.md` | **Business Card** — 85 × 55 mm, double-sided, two variants (WOM + trade). | 5 min |
+
+The obsolete `print-welcome-card-spec.md` is kept only as a pointer; safe to skip.
+
+### Cross-cutting questions (apply across multiple pieces)
+
+1. **Email** — ✅ Locked 2026-05-14: `marazulapartamento@gmail.com`. Used on the business card, folder, table flip Panel 6, and the legal pages.
+2. **GBP review URL** — ✅ Locked: `https://g.page/r/Cewx9Po3sADdEBM/review`. Used on table flip Panel 8, fridge magnet, and folder Page 20.
+3. **Brand voice** — does the proposed tone feel like Stefy (warm, calm, practical, not gushy)? If a specific line reads "off" anywhere, mark it on her copy and we rewrite.
+
+### Table Flip — Stefy's decisions (7)
+
+1. **Paper finish** — uncoated (warmer, stains) or lightly coated (wipeable). Recommendation: **lightly coated**.
+2. **Photo on Panel 7 (SUP)** — yes/no, and which photo. Recommendation: **yes**, once Stefy uploads `sup-01.jpeg`.
+3. **Panel 8 wording for the folder** — "Apartment Guide" / "Apartment Guide Folder" / "Mar Azul Guide". Recommendation: **"Apartment Guide"** (shorter, used on the table flip; longer "Apartment Guide Folder" used as the file/spec name).
+4. **Restaurants on Panel 4** — keep two (Os Lambertos, O Prato Cheio) or add a third for the flip stand. Recommendation: **two on the flip; more on the folder**.
+5. **Print vendor** — local Lagos shop (recommended) or online specialised flip-stand printer.
+6. **Quantity** — 1 stand + 1 spare = print 2. Recommendation: **2**.
+7. **Confirm Portuguese translation** — see the PT mirror table in the spec. First-pass polish applied today (Bem-vindos plural, eletrodomésticos modern spelling, champô, pela duração, Guia do Apartamento etc.) but Stefy is the native speaker. Specific items to confirm:
+   - **Bem-vindos** (plural) vs **Bem-vindo** (singular) on Panel 2.
+   - **Sintam-se em casa** (plural imperative) vs **Sinta-se em casa** (singular formal).
+   - **Champô** (PT-PT) vs **Shampoo** (international).
+   - **Horário de silêncio** (idiomatic PT-PT) vs **Horas de silêncio** (literal).
+   - **Avisem-nos** (warmer, plural) vs **Comuniquem** (more formal, plural) vs **Comunique** (original singular formal).
+   - **A Stefy aluga…** with article "A" before her name (PT-PT convention) vs without.
+   - **Guia do Apartamento** vs **Pasta de Guia do Apartamento**.
+
+### Fridge Magnet — Stefy's decisions (5)
+
+1. **Confirm copy** — proposal: *"Loved your stay? Leave us a Google review. It really helps. (About 2 minutes.)"*
+2. **Photo or no photo** on the magnet. Recommendation: **no photo** (functional, not warm; warmth lives on the table flip).
+3. **Size** — 70 × 90 mm. Want bigger or smaller?
+4. **Print vendor** — local Lagos sign/print shop (recommended), Sticker Mule, or Vistaprint.
+5. **Quantity** — 10. Want more for giveaways?
+
+### Apartment Guide Folder — Stefy's decisions (7) + content fill-ins
+
+**Format decisions:**
+1. **A5 vs A4** — Recommendation: **A5** (more like a guide, less like a leaflet).
+2. **Page count** — 20 pages. Want shorter or longer?
+3. **Language scope for first print run** — all 5 (EN/PT/IT/ES/FR) at once, or start with EN+PT+IT and add ES+FR later. Recommendation: **start with EN+PT+IT** (6 booklets) and add ES+FR once the EN master is field-tested.
+4. **Quantity per language** — 2 copies per language.
+5. **Photo style** — colour (functional) or duotone (editorial). Recommendation: **colour with a thin Atlantic Blue rule around each image**.
+6. **Cover design** — Atlantic Blue solid vs photo-led. Recommendation: **Atlantic Blue** (visual cohesion with the rest of the print line).
+7. **Binding** — saddle-stitched (recommended) vs fold-out.
+
+**Content fill-ins still needed from Stefy:**
+- **Page 4 (Key locker):** confirm the locker mechanics in the draft match how it actually works.
+- **Pages 5-13 (Appliances):** walk through each unit and either confirm the draft or replace with the actual operating steps. We can do this in a 30-minute call with Stefy at the apartment.
+- **Page 11 (Coffee machine):** upload `coffee-machine-01.jpeg` + `coffee-machine-02.jpeg`.
+- **Page 12 (Fireplace):** confirm type (wood / electric / decorative) and operation; safety wording added accordingly.
+- **Page 14:** confirm exact location of the electric panel and the fire extinguisher.
+- **Page 15 (Restaurants):** add 3-5 more recommendations beyond Os Lambertos and O Prato Cheio. Padaria, evening wine bar, special-occasion, vegetarian, Sunday-lunch.
+- **Page 17 (Taxis):** taxi cooperative number.
+- **Page 18 (SUP):** upload `sup-01.jpeg`.
+
+### Business Card — Stefy's decisions (6)
+
+1. **One card or two variants** (WOM + trade)? Recommendation: **two variants**.
+2. **Quantity** — 100 of each variant (~200 total). Or larger if Stefy expects a trade-show moment.
+3. **Side A** — logo + "Lagos · Algarve" only. Confirm.
+4. **Side B contact lines** — name (Stefania Amidei), phone (+351 936 083 766), email (marazulapartamento@gmail.com), Instagram (@apartamento_marazul), URL (apartamentomarazul.com). Confirm.
+5. **Print vendor** — MOO (trade), Vistaprint (WOM), or all-MOO. Recommendation: **MOO for trade, Vistaprint for WOM**.
+
+### When Stefy approves, here's what happens next
+
+1. We lock the copy per Stefy's edits.
+2. We write the **claude-design prompt** (separate document) to lay out each print piece as print-ready PDF, panel-by-panel and page-by-page.
+3. We run the design prompt, generate the PDFs.
+4. We send to the chosen print vendors and get one physical proof per piece.
+5. Stefy reviews the physical proofs in the apartment (QR codes scan, paper feels right, colours match).
+6. Approved → bulk print.
+
+The whole loop from "Stefy reviews the spec" to "physical pieces ready" is typically 2-3 weeks if vendors don't sit on the proof.
+
+---
+
+## 🔴 Production-safety (Lodgify dashboard — needs explicit confirmation)
 
 ### 1. Pet Nightly Fee — €20/night in Lodgify rate settings
 
@@ -17,120 +109,77 @@ Organised by urgency, then by topic. Newest items at the top of each section.
 - (a) Is this fee a leftover from an earlier policy you've changed? Should I ask you to remove it from the Lodgify dashboard?
 - (b) If you keep it: do you want it surfaced anywhere on the site, or stays invisible in Lodgify config?
 
-### 2. Lodgify Booking Engine widget — allow embedding on apartamentomarazul.com ✅ RESOLVED
+### 4. Phone number — `+351` country-code prefix on GBP
 
-**Resolved 2026-05-07.** Stefania pulled the embed snippets from her Lodgify dashboard (Website Builder → Settings → External widgets). Two widgets retrieved:
-- **Book Now Box** (`renderBookNowBox.js`) — full date picker + guest count + inline price + "Book Now" button
-- **Portable Search Bar** (`renderPortableSearchBar.js`) — compact date picker + "Search" button
+**Stefania's note 2026-05-13:** the GBP profile **already has the Portugal prefix set**, but GBP is **not displaying it** publicly.
 
-Both wired into `src/components/LodgifyBookNowBox.astro`. The Book Now Box is now live on:
-- Homepage `/#availability` section (replaces the static placeholder calendar)
-- `/book` page (replaces the placeholder shell)
-
-Brand-overridden via CSS variables: Atlantic Blue primary, Seafoam selection, our radius/shadow tokens. Widget script is `app.lodgify.com/book-now-box/stable/renderBookNowBox.js` with `data-rental-id=671442`, `data-website-id=581042`, `data-currency=EUR`.
-
-**Confirmed by Lodgify support 2026-05-07:** even on the Ultimate plan, **no widget with fully inline checkout exists**. The Book Now Box (with `data-new-tab="true"` opening Lodgify checkout in a new tab on the user's click) is the most brand-cohesive booking flow Lodgify supports. The user picks dates and sees the total on `apartamentomarazul.com`; they only leave for the actual payment step.
-
-**Plan correction:** Stefania's Lodgify subscription is **Ultimate** (not Professional, as initially recorded). Update memory and any references.
-
-The Portable Search Bar widget is saved in reserve for a future sticky-header / hero search use case (Sprint 4 polish).
-
-### 3. Active Lodgify promotions — keep, surface, or simplify?
-
-**Discovered:** the API returned 6 active promo rules:
-- `Desconto semanal` 10% (≥6 nights)
-- `Last minute` 15% (5 days out)
-- `Endless summer` 15% (specific autumn 2025 dates)
-- `August last minute` 30% (specific August 2025 dates)
-- `Monthly Stay Special` 30% (≥29 nights)
-- `Sunny Escape` 10% (winter 2025 + spring 2026 booking windows, autumn/spring stays)
-
-**Some of these have already expired by the displayed stay-date windows.** Questions:
-- (a) Do you want any of these promos surfaced on the site copy ("Stay 6+ nights, 10% off")? Note: doing so on the website while OTAs see different rates can violate Booking.com rate parity. Recommendation: keep promos invisible, let the booking engine apply them automatically.
-- (b) Should I ask you to clean up the expired ones in the Lodgify dashboard?
-
-### 20. Direct-booking pricing — pick a mechanism
-
-**Discovered:** 2026-05-08, while updating site copy to remove the (incorrect) "perks of direct booking" framing.
-
-**Background:** the homepage and `/book` page now state simply that direct is the **best rate available, every time**, and **always cheaper than booking through any other channel**. To make that true in practice, we need to choose one of three Lodgify configurations. This is a Lodgify dashboard change — owner-only.
-
-**Option A — Channel-specific automatic promotion in Lodgify.** Add a promo in the Promotions tab with channel filter = **Website only**. Applies automatically at checkout for direct bookings; OTAs don't see it. Quick to set up, but Booking.com's rate parity terms technically prohibit a lower public direct price. Many hosts do it without enforcement — long-running grey area.
-
-**Option B — Mark up OTA rates instead of discounting direct.** Set the base rate to the price you want direct guests to pay. Add a Booking.com / Airbnb channel mark-up of 15–20% in Lodgify's channel rate-adjustment settings. Direct stays at base; OTAs are higher. End result is the same; framed as "OTA pricing covers their commission" rather than "we discount direct," which is unambiguously rate-parity compliant.
-
-**Option C — Do nothing, message it differently.** Keep current parity. The "best rate available" wording on the site is honest under rate parity (the listed price matches Booking.com; the difference is the platform service fee Booking.com adds that we don't). The current site copy says "always cheaper than other channels" which only holds if the OTA is genuinely more expensive, so this option requires either A or B in practice — listed for completeness.
-
-**Recommendation:** **B** if you want direct to be visibly cheaper without any rate-parity ambiguity. **A** only if you're confident Booking.com won't push back. **C** is incompatible with the new site copy.
-
-### 4. Phone number — add `+351` country-code prefix on GBP
-
-**GBP currently shows:** `936 083 766` (no country code).
-**Recommendation:** edit GBP profile to `+351 936 083 766` so international guests can dial it directly from search results.
-**This is a GBP edit, not Lodgify. Owner does it directly.**
+**Next step (no owner action needed yet):** confirm what guests actually see on the live GBP listing (Google search panel + Maps), then file a GBP help-centre report if the prefix is genuinely being suppressed. Sometimes Google hides the country code when it matches the searcher's locale — verify from an EN-UK and DE-DE incognito search before reporting a bug. Tracked in `project/docs/gbp-audit.md`.
 
 ---
 
 ## 🟡 Content & assets needed
 
-### 18. GDPR / legal-page details (Phase 3 in progress, 2026-05-07)
-
-We are drafting the Privacy Notice, Cookie Policy, and Terms pages required for an EU-facing booking site. The English drafts are written with `[TO CONFIRM]` placeholders for the data only Stefania can supply. Once she fills these via the CMS (Site copy → English) we'll do the translation pass for PT/ES/IT/DE/NL/FR.
-
-**Needed:**
-- (a) **Full legal name** of the data controller (the person legally responsible for the processing). Stefania's full name as it appears on her ID/business registration.
-- (b) **NIF** (Portuguese tax ID number).
-- (c) **Legal address** of the data controller (may differ from the rental address — it's where she's registered as a sole trader / business).
-- (d) **Privacy contact email** (where guests can write with GDPR access/erasure requests). Suggest setting up `privacy@apartamentomarazul.com` once the brand email forward is configured (see #16).
-- (e) **AL number** (Alojamento Local registration number issued by the Portuguese tourism authority — required by law on every public-facing channel for short-stay rentals in Portugal). Already declared on Booking.com/Airbnb? Copy the same number.
-- (f) **Insurance** (optional disclosure): is there a third-party liability insurance policy covering guest stays? Needed for the Terms page liability section.
-- (g) **Lodgify business sub-processor confirmation:** Lodgify is the booking and payment processor (Stripe under the hood). Their privacy policy: https://www.lodgify.com/privacy-policy. Stefania confirms she's read and accepts that they're our processor.
-
-### 5. Real photo of you for the trust strip and About section ✅ RESOLVED
-
-**Resolved 2026-05-07.** `owner_picture.jpg` provided by Stefania. Now used in the homepage trust strip (host bubble) and the About section. Stored at `project/site/public/photos/owner_picture.jpg`. If you ever want to swap it for a different photo, just replace that file.
-
 ### 6. Reviews — manual entries from Airbnb + Booking.com
 
 **Background:** Airbnb and Booking.com have no public review APIs. Google Business Profile reviews can be auto-pulled (Sprint 4); the others must be manually copy-pasted.
+
+**Display decision 2026-05-13:** show **6 reviews total** with a chevron / arrow control that pages between **first 3** and **last 3** (a single click swaps the visible trio). No carousel auto-rotation, no dots — a single chevron is enough.
+
+**Implementation notes:**
+- The Reviews CMS collection should hold 6 entries (order-controlled).
+- Component: two slides of 3 reviews each, chevron toggles between them. Keep the layout symmetrical so the slide swap doesn't jolt page height.
+- Keep source tagging (Google / Airbnb / Booking.com / Direct) on each entry — visitors trust mixed-source reviews more.
+
 **Need from Stefania, in Sprint 2:**
-- Log into Airbnb host dashboard → reviews → copy your favourite 3–5 reviews verbatim (with first name + month + year)
-- Same from Booking.com extranet → reviews
-- Paste into Sveltia CMS (`apartamentomarazul.com/admin`) under the Reviews collection
-- Each review tagged with its source (Google / Airbnb / Booking.com / Direct) — visitors trust mixed-source reviews more
+- Log into Airbnb host dashboard → reviews → copy 3 favourite reviews verbatim (with first name + month + year).
+- Same from Booking.com extranet → reviews (3 more).
+- Optionally: pull 1-2 Google reviews when GBP gets more.
+- Paste into Sveltia CMS (`apartamentomarazul.com/admin`) under the Reviews collection.
 
 **Alternative:** Stefania can email me the review text and I'll add them to the CMS for her.
 
-### 7. WhatsApp Business number ✅ RESOLVED
+### 26. SEO content plan — review the article cluster before we write
 
-**Resolved 2026-05-08.** Number set in `.env.local` and Cloudflare Pages env vars (`PUBLIC_WHATSAPP_NUMBER`). Every WhatsApp CTA on the site now deep-links to Stefania's real number. To verify after the next production rebuild: click *WhatsApp Stefy* on the live site and confirm it opens a chat with the right contact.
+**Plan drafted 2026-05-08 at** `project/docs/seo-content-plan.md`.
 
-### 8. Welcome card brief — review before we go to print
+Twelve long-form articles in English (the master cluster), localised to the other six languages with 1-2 per-market substitutions, plus a publishing cadence (5 articles per sprint). The plan includes:
+- Title + slug + target search query + audience for each article
+- Chapter-by-chapter outline (4-6 H2s per article)
+- Internal-linking strategy and word-count estimate
+- Per-language substitutions for PT / IT / DE / NL / FR
+- A six-decision list at the end
 
-**Spec drafted 2026-05-08 at** `project/docs/print-welcome-card-spec.md`.
+**The articles span:** Lagos in shoulder / winter / summer; walking to beaches; the coast path; Ponta da Piedade; family travel; food (tascas + padaria + wine bar); quiet beaches; day trips; booking direct vs Booking.com; packing; and the brand "our story" piece.
 
-That doc is the full brief: A4 tri-fold, six-panel layout (cover + welcome + Wi-Fi/check-out on the front; house rules + recommendations + emergency on the back), four language variants (EN / PT / ES / IT — the languages Stefania actually speaks), uncoated 300gsm stock for the warmer "letter from the host" feel, eight decisions to confirm.
+**Stefania's input matters most for:**
+- Article #5 (where to eat) — needs her actual recommendations beyond the homepage's two named places.
+- Article #12 (our story) — best done as a short call where she talks, we transcribe.
+- Confirming the 12 topics feel right and aren't missing something specific to her experience hosting.
 
-**Property-specific content still needed from Stefania (the gaps the spec can't fill):**
-- Wi-Fi network name + password
-- Trash collection day(s) + where to put bins
-- Check-out instructions (key location, lockbox reset, etc.)
-- Local hospital name + phone (Lagos)
-- Confirm or substitute the proposed welcome paragraph and house rules
+Once she approves the plan, the writing starts in Sprint 4 (5 articles) and continues through Sprint 4.5.
 
-The local recommendations panel (tasca, padaria, beach, supermarket) defaults to the five places already on the homepage's Location section — Stefania confirms they match what she'd actually point a guest to.
+### 27. Email templates — strategy overview before we draft
 
-### 24. A6 review card brief — review before we go to print
+**Status:** strategy below for review; full templates written after Stefania approves the direction.
 
-**Spec drafted 2026-05-08 at** `project/docs/print-review-card-spec.md`.
+**What we'd build (post-approval):**
+- **Booking confirmation** — sent automatically by Lodgify the moment a direct booking completes. Brand-voiced version of the default Lodgify template.
+- **Pre-arrival** — sent 3 days before check-in. Includes Wi-Fi prep, parking, key/lockbox location, the walking-guide preview from the welcome card, link to a "before you arrive" mini-guide on the site.
+- **Post-stay review request** — sent 24h after check-out. One ask: leave a Google review. QR + direct link. Optionally an Instagram follow.
 
-A6 flat card, sits on the kitchen counter, single side, QR straight to the GBP review form. EN-only first batch (50 cards); add Portuguese later if used. Five quick decisions in the spec.
+**Voice + format intent:**
+- Tone: warm + practical, matches the welcome card and the WhatsApp microcopy
+- Mobile-first reading — short paragraphs, scannable headers, single primary CTA per email
+- Plain-text-friendly fallback (Lodgify's email rendering is uneven)
+- Multilingual — EN master, translated to PT / IT / ES (the languages Stefania actually corresponds in); DE / NL / FR get EN until volume justifies translation
 
-### 25. A5 table tent brief — review before we go to print
-
-**Spec drafted 2026-05-08 at** `project/docs/print-table-tent-spec.md`.
-
-A5 folded tent, stands on the dining table. Front face = "leave a Google review" with QR; back face = brand reinforcement + "direct booking is the cheapest channel." 10 tents for the first batch, six quick decisions.
+**Decisions for Stefania (six quick):**
+1. Send platform — Lodgify native (it handles confirmation + can do pre-arrival), or external (Mailchimp / Resend / dedicated tool) for full design control? Recommendation: Lodgify for the first two, manual or simple tool for the review request.
+2. Reply-to address — `hello@apartamentomarazul.com` once item #16 is set up; her personal email until then?
+3. Sign-off — "Stefania", "Stefania at Mar Azul", or just "Mar Azul"?
+4. Soft pitch for repeat-booking — include a "book direct next time, ask for our returning-guest rate" line in the post-stay email, or keep it pure? Note: any discount commitment should align with item #20 mechanism.
+5. Pre-arrival timing — 3 days before is standard; some hosts prefer 5 days for international guests still planning. Default 3 days unless preference.
+6. Add an optional Instagram follow nudge to the post-stay email, or keep it focused on the review ask only? Single-CTA emails convert better; two CTAs split attention.
 
 ### 28. Social media starter pack — strategy overview before we draft
 
@@ -158,127 +207,55 @@ A5 folded tent, stands on the dining table. Front face = "leave a Google review"
 5. Frequency — weekly in season is sustainable, or commit to biweekly year-round?
 6. Stories — yes, occasional behind-the-scenes when something happens? Or skip Stories entirely?
 
-### 27. Email templates — strategy overview before we draft
+### 30. Lodgify guest-notification message templates — brand-voice rewrite
 
-**Status:** strategy below for review; full templates written after Stefania approves the direction.
+**Discovered 2026-05-13.** Stefania listed every Lodgify guest-notification trigger that fires from her dashboard. Each currently uses Lodgify's default copy (Italian fallback in her account). We want to rewrite each in brand voice — warm, practical, mobile-first, no marketing-speak — and translate to **EN / PT / IT / ES** (her conversational set; DE / NL / FR can stay on Lodgify defaults or get EN until volume justifies more).
 
-**What we'd build (post-approval):**
-- **Booking confirmation** — sent automatically by Lodgify the moment a direct booking completes. Brand-voiced version of the default Lodgify template.
-- **Pre-arrival** — sent 3 days before check-in. Includes Wi-Fi prep, parking, key/lockbox location, the walking-guide preview from the welcome card, link to a "before you arrive" mini-guide on the site.
-- **Post-stay review request** — sent 24h after check-out. One ask: leave a Google review. QR + direct link. Optionally an Instagram follow.
+**Triggers Stefania confirmed are active:**
 
-**Voice + format intent:**
-- Tone: warm + practical, matches the welcome card and the WhatsApp microcopy
-- Mobile-first reading — short paragraphs, scannable headers, single primary CTA per email
-- Plain-text-friendly fallback (Lodgify's email rendering is uneven)
-- Multilingual — EN master, translated to PT / IT / ES (the languages Stefania actually corresponds in); DE / NL / FR get EN until volume justifies translation
+_Booking lifecycle (guest-facing):_
+- Guest makes a booking
+- Guest makes a booking request
+- Host sends a quote
+- Host confirms a booking
+- Host rejects a booking
+- Host cancels a booking
+- Host accepts a modification request
+- Host rejects a modification request
+- Booking changes to **Pending**
+- Booking changes to **Booked**
 
-**Decisions for Stefania (six quick):**
-1. Send platform — Lodgify native (it handles confirmation + can do pre-arrival), or external (Mailchimp / Resend / dedicated tool) for full design control? Recommendation: Lodgify for the first two, manual or simple tool for the review request.
-2. Reply-to address — `hello@apartamentomarazul.com` once item #16 is set up; her personal email until then?
-3. Sign-off — "Stefania", "Stefania at Mar Azul", or just "Mar Azul"?
-4. Soft pitch for repeat-booking — include a "book direct next time, ask for our returning-guest rate" line in the post-stay email, or keep it pure? Note: any discount commitment should align with item #20 mechanism.
-5. Pre-arrival timing — 3 days before is standard; some hosts prefer 5 days for international guests still planning. Default 3 days unless preference.
-6. Add an optional Instagram follow nudge to the post-stay email, or keep it focused on the review ask only? Single-CTA emails convert better; two CTAs split attention.
+_Payments:_
+- Guest makes a payment
+- Guest payment fails
+- Host issues a refund
+- Host cancels & refund applied per cancellation policy (guest cancels)
+- Host pre-authorises the guest's credit card
+- Host charges the guest's credit card for damages
 
-### 26. SEO content plan — review the article cluster before we write
+_Pre-arrival:_
+- Two days before guest arrival
 
-**Plan drafted 2026-05-08 at** `project/docs/seo-content-plan.md`.
+**Plan (Sprint 4 work, post-redesign-lock):**
+1. Pull each default Lodgify template from her dashboard (Stefania to export or screenshot).
+2. Rewrite EN master per trigger in brand voice (single primary CTA, scannable, plain-text-friendly fallback per item #27).
+3. Translate to PT / IT / ES.
+4. Stefania pastes into Lodgify dashboard (Settings → Messages → Templates).
+5. Test by triggering one of each in the Lodgify sandbox or by self-booking a dummy reservation.
 
-Twelve long-form articles in English (the master cluster), localised to the other six languages with 1-2 per-market substitutions, plus a publishing cadence (5 articles per sprint). The plan includes:
-- Title + slug + target search query + audience for each article
-- Chapter-by-chapter outline (4-6 H2s per article)
-- Internal-linking strategy and word-count estimate
-- Per-language substitutions for PT / IT / DE / NL / FR
-- A six-decision list at the end
-
-**The articles span:** Lagos in shoulder / winter / summer; walking to beaches; the coast path; Ponta da Piedade; family travel; food (tascas + padaria + wine bar); quiet beaches; day trips; booking direct vs Booking.com; packing; and the brand "our story" piece.
-
-**Stefania's input matters most for:**
-- Article #5 (where to eat) — needs her actual recommendations beyond the homepage's two named places.
-- Article #12 (our story) — best done as a short call where she talks, we transcribe.
-- Confirming the 12 topics feel right and aren't missing something specific to her experience hosting.
-
-Once she approves the plan, the writing starts in Sprint 4 (5 articles) and continues through Sprint 4.5.
-
-### 9. Business card brief — review before we go to print
-
-**Spec drafted 2026-05-08 at** `project/docs/print-business-card-spec.md`.
-
-That doc is the full brief: format (85 × 55 mm, double-sided, 350 gsm matte), proposed front/back content, brand palette + typography, two variants (trade vs word-of-mouth), production specs, vendor options, and quantity guidance.
-
-**What we need from Stefania (six quick decisions):**
-
-1. **Variant** — single design for everyone, or two cards (trade-pitch + word-of-mouth)?
-2. **Quantity** — how many to print? (Suggest 100 to start; reorder later costs almost the same.)
-3. **Side A content** — confirm the proposal (logo + place + Instagram) or substitute.
-4. **Side B content** — confirm the QR target URL and the contact details (name, phone, email, website).
-5. **Email address on the card** — use which? (`hello@apartamentomarazul.com` once the brand email forward is set up; otherwise her personal email.)
-6. **Print vendor** — preference? (Three vendors compared in the spec: MOO, Vistaprint, a local Lagos print shop.)
-
-The spec also flags a few items still blocked on her: legal name, NIF, optional AL number on the card (item #18). She can leave those blank for the WOM variant; the trade variant ideally includes the AL number for credibility.
-
----
-
-## 🟢 Brand & strategy decisions
-
-### 10. Brand.md still has older language — update to match current decisions? ✅ RESOLVED
-
-**Resolved 2026-05-07.** `project/website/assets/Brand (1).md` rewritten as v2.0 with all current decisions reconciled. Decision log section at the bottom captures the major changes (typography, Slate Grey, Error Red, address, owner name, languages, location framing, cancellation, Lodgify plan, etc.).
-
----
-
-### 10. ARCHIVED — original question about Brand.md reconciliation
-
-**Three contradictions between Brand.md (your owner-edited file) and current project decisions:**
-
-| In Brand.md | Current decision |
-|---|---|
-| Display: Playfair Display, Body: Inter | Spectral + Manrope (after impeccable skill review + EULA fix) |
-| Beach distance: "5 min by car to Dona Ana", "4 min by car / 20 min on foot to Praia da Batata" | "Walking distance from the centre of Lagos and the beaches" (your update on 2026-05-07) |
-| Direct-booking incentives include "welcome bottle of vinho verde, free parking, late checkout" | You removed welcome bottle. Now: free parking, late checkout AND early check-in, WhatsApp line, best-rate, walking guide |
-
-**Question:** want me to update Brand.md to reflect these (it's owner-edited so I haven't touched it without permission), or leave Brand.md as a historical reference?
-
-### 11. Air conditioning scope — confirm ✅ RESOLVED
-
-**Resolved 2026-05-07.** A/C is in the **bedroom only**, not living room or kitchen. Site copy already correct.
-
-### 12. Languages spoken — final list ✅ RESOLVED
-
-**Resolved 2026-05-07.** Stefy speaks **Portuguese, Italian, English, Spanish**. Trust strip and FAQ copy reflect this.
-
-### 13. Cancellation policy — confirm wording ✅ RESOLVED
-
-**Resolved 2026-05-07.**
-- **Payment:** 100% at the time of booking.
-- **Cancellation:** more than 7 days before arrival = full refund. Within 7 days of arrival = 50% of the booking is non-refundable (the other 50% IS refunded).
-- FAQ updated to: "Payment in full at the time of booking. Cancel more than 7 days before arrival for a full refund. Within 7 days of arrival, 50% of the booking is non-refundable."
-- Brand.md updated. CMS faqs/04-cancellation.md updated.
+**Stefania-side asks:**
+- Confirm tone match against the welcome card welcome paragraph (item #8) — same voice across email + print + WhatsApp.
+- Decide whether the **2-days-before-arrival** email should also include a teaser of the apartment guide PDF or just a "looking forward to having you" note.
+- Decide whether the **payment-failed** email should include her direct WhatsApp number or only the generic "please update your card" Lodgify link.
 
 ---
 
 ## 🔵 Domain, deploy, accounts
 
-### 23. GA4 — create a property + paste the Measurement ID ✅ RESOLVED
+### 16. Email — `hello@apartamentomarazul.com` or similar
 
-**Resolved 2026-05-08.** GA4 property created, `PUBLIC_GA4_ID` set in both `.env.local` and Cloudflare Pages env vars (Production + Preview). Branded Klaro consent banner now appears for visitors; GA4 fires after the analytics purpose is accepted. Verify after the next production rebuild: open the site in an incognito window, accept the banner, refresh once, then check GA4 → Reports → Realtime — the visit should appear within ~30 seconds.
-
-### 29. Daily rebuild build-hook (~5 minutes)
-
-**Discovered:** 2026-05-08. The site's rates + availability calendar are read from Lodgify at build time, so without periodic deploys the calendar drifts up to 7 days behind reality. A scheduled GitHub Actions workflow now fires once a day to trigger a Cloudflare Pages rebuild, but the workflow needs a secret to call.
-
-**What to do:**
-1. Cloudflare dashboard → Workers & Pages → Mar Azul Pages project → **Settings** → **Builds & deployments** → **Deploy hooks** → **Add deploy hook**.
-2. Name: `Daily rebuild`. Branch: `main` (or whichever branch serves production after cutover; for now `redesign/v2`).
-3. Cloudflare gives a URL. Copy it.
-4. GitHub repo `MarAzulApartamento/MarAzulApartamento.github.io` → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
-5. Name: `CLOUDFLARE_BUILD_HOOK`. Value: the URL from step 3.
-6. Save. The workflow at `.github/workflows/daily-rebuild.yml` runs at 04:00 UTC daily and fires the hook.
-
-**To test immediately:** GitHub repo → **Actions** tab → **Daily rebuild** workflow → **Run workflow** → confirm green result. Cloudflare Pages should show a new deployment within a couple of minutes.
-
-**To change the time / cadence:** edit the cron expression in `.github/workflows/daily-rebuild.yml`. Currently `0 4 * * *` (04:00 UTC). For Lisbon, that's 04:00 UTC = 04:00 WET (winter) or 05:00 WEST (summer) — guests typically aren't browsing then so the rebuild doesn't compete with traffic.
+**Currently:** no email address forwards to Stefania's inbox.
+**Question:** does she want a brand email like `hello@apartamentomarazul.com` set up? Most registrars + Cloudflare offer email forwarding for free. If yes: a one-line entry in the registrar console + her Gmail address as the destination. We use this for: form submissions, review-collection auto-replies, footer contact link.
 
 ### 21. Cloudflare Web Analytics — create a site + paste the token (~5 minutes)
 
@@ -299,18 +276,21 @@ The spec also flags a few items still blocked on her: legal name, NIF, optional 
 
 **To verify it's working:** after the redeploy, open the site, then refresh Cloudflare's Web Analytics page. Within 30 seconds you should see at least 1 visit logged.
 
-### 14. Domain ownership and DNS access ✅ RESOLVED
+### 29. Daily rebuild build-hook (~5 minutes)
 
-**Resolved 2026-05-07.** Domain is registered at **Namecheap**. Stefania (or owner) will handle the DNS swap to Cloudflare Pages on cutover day. Sprint 9 (DNS cutover) plan: provide a step-by-step Namecheap walkthrough at the time, no surprises.
+**Discovered:** 2026-05-08. The site's rates + availability calendar are read from Lodgify at build time, so without periodic deploys the calendar drifts up to 7 days behind reality. A scheduled GitHub Actions workflow now fires once a day to trigger a Cloudflare Pages rebuild, but the workflow needs a secret to call.
 
-### 15. Cloudflare account ownership ✅ RESOLVED
+**What to do:**
+1. Cloudflare dashboard → Workers & Pages → Mar Azul Pages project → **Settings** → **Builds & deployments** → **Deploy hooks** → **Add deploy hook**.
+2. Name: `Daily rebuild`. Branch: `main` (or whichever branch serves production after cutover; for now `redesign/v2`).
+3. Cloudflare gives a URL. Copy it.
+4. GitHub repo `MarAzulApartamento/MarAzulApartamento.github.io` → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+5. Name: `CLOUDFLARE_BUILD_HOOK`. Value: the URL from step 3.
+6. Save. The workflow at `.github/workflows/daily-rebuild.yml` runs at 04:00 UTC daily and fires the hook.
 
-**Resolved 2026-05-07.** Owner will handle Cloudflare environment variables. Already added: `LODGIFY_API_KEY`, `LODGIFY_PROPERTY_ID`. Pending (when each tool is set up): `PUBLIC_WHATSAPP_NUMBER`, `PUBLIC_GA4_ID`, `PUBLIC_CLARITY_ID`, `PUBLIC_CF_ANALYTICS_TOKEN`.
+**To test immediately:** GitHub repo → **Actions** tab → **Daily rebuild** workflow → **Run workflow** → confirm green result. Cloudflare Pages should show a new deployment within a couple of minutes.
 
-### 16. Email — `hello@apartamentomarazul.com` or similar
-
-**Currently:** no email address forwards to Stefania's inbox.
-**Question:** does she want a brand email like `hello@apartamentomarazul.com` set up? Most registrars + Cloudflare offer email forwarding for free. If yes: a one-line entry in the registrar console + her Gmail address as the destination. We use this for: form submissions, review-collection auto-replies, footer contact link.
+**To change the time / cadence:** edit the cron expression in `.github/workflows/daily-rebuild.yml`. Currently `0 4 * * *` (04:00 UTC). For Lisbon, that's 04:00 UTC = 04:00 WET (winter) or 05:00 WEST (summer) — guests typically aren't browsing then so the rebuild doesn't compete with traffic.
 
 ---
 
@@ -333,6 +313,25 @@ These are captured in `project/docs/gbp-audit.md`. NOT to be acted on now. Liste
 
 ## 📋 Pre-launch checks (do these once the redesign is finished)
 
+### 19. Review the three legal pages end-to-end
+
+**When:** after the redesign is locked and Stefania has supplied the operator-specific data (item #18, mostly resolved).
+
+**Why:** the drafts at `/privacy`, `/cookies`, `/terms` were written with assumptions about processors, retention, and cookies that match today's stack. By the time we ship, Sprint 4 will have added GA4 (analytics consent), Google Hotel Ads (marketing consent), and possibly a Meta Pixel. The Cookie Policy and Privacy Notice need to match what the site actually does on launch day, not what it did on draft day.
+
+**Checklist:**
+- [ ] `[TO CONFIRM]` placeholders all filled (legal name, NIF, address, email, AL number, optional insurance)
+- [ ] Cookie Policy accurately lists every cookie set on launch day (compare against the live site's Application tab in browser devtools)
+- [ ] Privacy Notice processors list still complete (any new tools added in Sprint 4-5 must appear)
+- [ ] Retention periods match operational reality (Stefania confirms 10-year tax retention, others as written)
+- [ ] Cancellation policy in Terms still matches Lodgify dashboard settings
+- [ ] AL number on Terms matches the one declared on Booking.com/Airbnb listings
+- [ ] All three pages translated to PT/ES/IT/DE/NL/FR (translation pass after EN review)
+- [ ] CNPD link, Lodgify privacy URL, and EU ODR link still resolve
+- [ ] Last updated date refreshed on each page when content changes
+
+**Optional but recommended:** have a Portuguese lawyer skim the Privacy and Terms pages once, especially the AL declaration and the liability section. Even a 30-minute review reduces post-launch risk.
+
 ### 22. Verify Cloudflare Web Analytics is collecting on production
 
 **When:** after the DNS cutover to apartamentomarazul.com (Sprint 9), so the production domain matches the hostname configured in Cloudflare's Web Analytics site.
@@ -350,36 +349,344 @@ These are captured in `project/docs/gbp-audit.md`. NOT to be acted on now. Liste
 
 **Cadence after launch:** glance at the Web Analytics dashboard weekly for the first month to confirm steady collection. After that, monthly is enough.
 
-### 19. Review the three legal pages end-to-end
-
-**When:** after the redesign is locked and Stefania has supplied the operator-specific data (item #18).
-
-**Why:** the drafts at `/privacy`, `/cookies`, `/terms` were written with assumptions about processors, retention, and cookies that match today's stack. By the time we ship, Sprint 4 will have added GA4 (analytics consent), Google Hotel Ads (marketing consent), and possibly a Meta Pixel. The Cookie Policy and Privacy Notice need to match what the site actually does on launch day, not what it did on draft day.
-
-**Checklist:**
-- [ ] `[TO CONFIRM]` placeholders all filled (legal name, NIF, address, email, AL number, optional insurance)
-- [ ] Cookie Policy accurately lists every cookie set on launch day (compare against the live site's Application tab in browser devtools)
-- [ ] Privacy Notice processors list still complete (any new tools added in Sprint 4-5 must appear)
-- [ ] Retention periods match operational reality (Stefania confirms 10-year tax retention, others as written)
-- [ ] Cancellation policy in Terms still matches Lodgify dashboard settings
-- [ ] AL number on Terms matches the one declared on Booking.com/Airbnb listings
-- [ ] All three pages translated to PT/ES/IT/DE/NL/FR (translation pass after EN review)
-- [ ] CNPD link, Lodgify privacy URL, and EU ODR link still resolve
-- [ ] Last updated date refreshed on each page when content changes
-
-**Optional but recommended:** have a Portuguese lawyer skim the Privacy and Terms pages once, especially the AL declaration and the liability section. Even a 30-minute review reduces post-launch risk.
-
----
-
-## 📅 Open since this document was last updated
-
-_(none yet — this is the initial version, 2026-05-07)_
-
 ---
 
 ## How to use this doc
 
 1. When something comes up that needs Stefania's input, **add it here** rather than messaging her immediately. Batches reduce friction for her.
-2. When she answers, mark the question with ✅ and the answer below it. Don't delete — preserves the decision log.
-3. Group conversations by week or sprint. If she's around for a 30-min call, walk through the open list.
+2. When she answers, mark the question with ✅ and move it down to the **Resolved** section at the bottom of this doc. Don't delete — preserves the decision log.
+3. Group conversations by week or sprint. If she's around for a 30-min call, walk through the open list at the top.
 4. Items that change brand or scope → also update `.impeccable.md` and `project_facts` memory.
+
+---
+
+# 🟩 RESOLVED / ARCHIVED / REFERENCE
+
+Everything below has been resolved, archived, or is reference material. Kept here for the decision log.
+
+---
+
+## ✅ Resolved items
+
+### 18. GDPR / legal-page details ✅ MOSTLY RESOLVED 2026-05-13
+
+We are drafting the Privacy Notice, Cookie Policy, and Terms pages required for an EU-facing booking site. The English drafts are written with `[TO CONFIRM]` placeholders for the data only Stefania can supply. Once she fills these via the CMS (Site copy → English) we'll do the translation pass for PT/ES/IT/DE/NL/FR.
+
+**Stefania's answers 2026-05-13:**
+- (a) **Full legal name:** Stefania Amidei
+- (b) **NIF:** 297932713
+- (c) **Legal address:** Rua Dom Luís da Silveira, lote V 44 B, 8600-575 Lagos, Portugal _(same as rental address)_
+- (d) **Privacy contact email:** marazulapartamento@gmail.com _(can be upgraded to `privacy@apartamentomarazul.com` once the brand-email forward in #16 is configured — same Gmail destination)_
+- (e) **AL number:** 165912/AL
+- (f) **Insurance:** _(no answer yet — leave the Terms liability section without insurance disclosure; revisit if a policy is later added)_
+- (g) **Lodgify sub-processor:** ✅ confirmed, Stefania accepts.
+
+**Next step:** wire these values into the EN Privacy / Cookies / Terms drafts (replace every `[TO CONFIRM]` placeholder), then start the translation pass for PT / ES / IT / DE / NL / FR.
+
+### 9. Business card brief ✅ RESOLVED — moved to print review batch above
+
+**Confirmed 2026-05-13:** business card stays in the deliverables list. **Spec drafted 2026-05-08, copy-edited 2026-05-14, at** `project/docs/print-business-card-spec.md`.
+
+Stefy's decisions for this piece are now consolidated in the **📦 Print deliverables — ready for review** section at the top of this doc.
+
+### 8. Welcome card ✅ MERGED 2026-05-14 into the Table Flip (item #25)
+
+**Decision (Stefania, 2026-05-14):** drop the standalone welcome card. All 8 panels of welcome content (cover, welcome paragraph, useful info, rules, emergency, SUP, folder pointer, review CTA) move to the **table flip** (item #25). One in-apartment piece, two languages (EN/PT side flip), centred on the dining table.
+
+**Full spec:** `project/docs/print-table-tent-spec.md` (rewritten 2026-05-14).
+
+**Why:** simpler print set. The original three-piece plan (welcome card + table tent + folder) collapses to a two-piece set (table flip + apartment guide folder) without losing content.
+
+### 8b. Apartment Guide Folder ✅ SPECCED 2026-05-14
+
+**Renamed 2026-05-14** from "Companion language folder" to **Apartment Guide Folder**. **Full spec:** `project/docs/print-apartment-guide-folder-spec.md` (created 2026-05-14).
+
+Contents now include detailed appliance operating instructions in addition to the original restaurants / beaches / taxi / SUP / transit / supermarket content. Stefania has uploaded 31 photos of the appliances + apartment systems to `project/website/assets/images/apartment-guide/` (parent folder still named `appliance/` pending Windows file lock).
+
+Stefy's decisions and content fill-ins for this piece are now consolidated in the **📦 Print deliverables — ready for review** section at the top of this doc.
+
+### 24. A6 review card ✅ REPLACED 2026-05-13 with fridge magnet
+
+**Decision (Stefania, 2026-05-13):** drop the A6 flat review card. Replace with a **fridge magnet** — smaller, more practical, guests see it every time they open the kitchen.
+
+**Full spec:** `project/docs/print-review-card-spec.md` (rewritten 2026-05-14 as the fridge magnet spec).
+
+### 25. A5 table tent ✅ REPLACED 2026-05-13 with smaller table flip stand → MERGED with welcome card 2026-05-14
+
+**Final form (2026-05-14):** the original A5 table tent and the welcome card collapsed into a single **table flip stand** that lives on the dining table. 8 panels per side, EN on one side, PT on the other.
+
+**Full spec:** `project/docs/print-table-tent-spec.md` (rewritten 2026-05-14).
+
+### 3. Active Lodgify promotions ✅ RESOLVED 2026-05-13
+
+- Only the **`Desconto semanal` 10% (≥6 nights)** rule remains active. The other five have been deactivated in the Lodgify dashboard.
+- (a) **Keep promos invisible** on the site copy. The 10% weekly discount applies automatically through the Lodgify booking engine when a guest selects 6+ nights — no hard-coded "10% off!" banner. Aligns with Booking.com rate parity.
+- (b) ✅ done — expired promos already cleaned up.
+
+### 20. Direct-booking pricing ✅ RESOLVED 2026-05-13
+
+- Mechanism: **Option B** — base rate stays at the direct price; Booking.com / Airbnb get a channel mark-up in Lodgify. Rate-parity-safe.
+- Copy change: drop the line **"always cheaper than booking through any other channel"** everywhere on the site. Keep only **"best rate available, every time."**
+- Follow-up: sweep the site code for any remaining "cheaper than other channels" / "skip Airbnb" phrasing and remove. Also update `CLAUDE.md` Voice & Content Rules to reflect the softer phrasing.
+
+### 23. GA4 — create a property + paste the Measurement ID ✅ RESOLVED 2026-05-08
+
+GA4 property created, `PUBLIC_GA4_ID` set in both `.env.local` and Cloudflare Pages env vars (Production + Preview). Branded Klaro consent banner now appears for visitors; GA4 fires after the analytics purpose is accepted. Verify after the next production rebuild: open the site in an incognito window, accept the banner, refresh once, then check GA4 → Reports → Realtime — the visit should appear within ~30 seconds.
+
+### 7. WhatsApp Business number ✅ RESOLVED 2026-05-08
+
+Number set in `.env.local` and Cloudflare Pages env vars (`PUBLIC_WHATSAPP_NUMBER`). Every WhatsApp CTA on the site now deep-links to Stefania's real number. To verify after the next production rebuild: click *WhatsApp Stefy* on the live site and confirm it opens a chat with the right contact.
+
+### 5. Real photo of you for the trust strip and About section ✅ RESOLVED 2026-05-07
+
+`owner_picture.jpg` provided by Stefania. Now used in the homepage trust strip (host bubble) and the About section. Stored at `project/site/public/photos/owner_picture.jpg`. If you ever want to swap it for a different photo, just replace that file.
+
+### 2. Lodgify Booking Engine widget — allow embedding ✅ RESOLVED 2026-05-07
+
+Stefania pulled the embed snippets from her Lodgify dashboard (Website Builder → Settings → External widgets). Two widgets retrieved:
+- **Book Now Box** (`renderBookNowBox.js`) — full date picker + guest count + inline price + "Book Now" button
+- **Portable Search Bar** (`renderPortableSearchBar.js`) — compact date picker + "Search" button
+
+Both wired into `src/components/LodgifyBookNowBox.astro`. The Book Now Box is now live on:
+- Homepage `/#availability` section (replaces the static placeholder calendar)
+- `/book` page (replaces the placeholder shell)
+
+Brand-overridden via CSS variables: Atlantic Blue primary, Seafoam selection, our radius/shadow tokens. Widget script is `app.lodgify.com/book-now-box/stable/renderBookNowBox.js` with `data-rental-id=671442`, `data-website-id=581042`, `data-currency=EUR`.
+
+**Confirmed by Lodgify support 2026-05-07:** even on the Ultimate plan, **no widget with fully inline checkout exists**. The Book Now Box (with `data-new-tab="true"` opening Lodgify checkout in a new tab on the user's click) is the most brand-cohesive booking flow Lodgify supports. The user picks dates and sees the total on `apartamentomarazul.com`; they only leave for the actual payment step.
+
+**Plan correction:** Stefania's Lodgify subscription is **Ultimate** (not Professional, as initially recorded). Update memory and any references.
+
+The Portable Search Bar widget is saved in reserve for a future sticky-header / hero search use case (Sprint 4 polish).
+
+### 10. Brand.md still has older language ✅ RESOLVED 2026-05-07
+
+`project/website/assets/Brand (1).md` rewritten as v2.0 with all current decisions reconciled. Decision log section at the bottom captures the major changes (typography, Slate Grey, Error Red, address, owner name, languages, location framing, cancellation, Lodgify plan, etc.).
+
+### 11. Air conditioning scope ✅ RESOLVED 2026-05-07
+
+A/C is in the **bedroom only**, not living room or kitchen. Site copy already correct.
+
+### 12. Languages spoken ✅ RESOLVED 2026-05-07
+
+Stefy speaks **Portuguese, Italian, English, Spanish**. Trust strip and FAQ copy reflect this.
+
+### 13. Cancellation policy ✅ RESOLVED 2026-05-07
+
+- **Payment:** 100% at the time of booking.
+- **Cancellation:** more than 7 days before arrival = full refund. Within 7 days of arrival = 50% of the booking is non-refundable (the other 50% IS refunded).
+- FAQ updated to: "Payment in full at the time of booking. Cancel more than 7 days before arrival for a full refund. Within 7 days of arrival, 50% of the booking is non-refundable."
+- Brand.md updated. CMS faqs/04-cancellation.md updated.
+
+### 14. Domain ownership and DNS access ✅ RESOLVED 2026-05-07
+
+Domain is registered at **Namecheap**. Stefania (or owner) will handle the DNS swap to Cloudflare Pages on cutover day. Sprint 9 (DNS cutover) plan: provide a step-by-step Namecheap walkthrough at the time, no surprises.
+
+### 15. Cloudflare account ownership ✅ RESOLVED 2026-05-07
+
+Owner will handle Cloudflare environment variables. Already added: `LODGIFY_API_KEY`, `LODGIFY_PROPERTY_ID`. Pending (when each tool is set up): `PUBLIC_WHATSAPP_NUMBER`, `PUBLIC_GA4_ID`, `PUBLIC_CLARITY_ID`, `PUBLIC_CF_ANALYTICS_TOKEN`.
+
+---
+
+## 🗄️ Archived early specs (superseded — kept for decision history)
+
+### 8. ARCHIVED — original spec for the standalone welcome flip stand (2026-05-13)
+
+**Format change (Stefania, 2026-05-13):** the A4 tri-fold is dropped. Replace with a **desk flip stand** in this format: https://www.joom.com/pt/products/69c501704ea9ac017df807d7 (vertical multi-panel flip display that sits on the apartment desk / console table).
+
+**Layout — 8 panels total, printed on both sides. One side in Portuguese, the other side in English. Single stand, two languages: the guest flips it to read whichever language they need. Quantity: 1 stand per apartment.**
+
+| Panel | Content |
+|---|---|
+| 1 | Cover (visible when closed) — brand mark + "Welcome." headline |
+| 2 | First inside view — Welcome paragraph (see Welcome paragraph below) |
+| 3 | Second inside view — Welcome continued / brand reinforcement |
+| 4 | **USEFUL INFORMATION FOR YOUR STAY** — Wi-Fi credentials, coffee, bathroom, trash & recycling, wine, nearby restaurant |
+| 5 | **RENTAL RULES** — house rules |
+| 6 | **EMERGENCY CONTACT** |
+| 7 | **SUP TO RENT** — Stefania rents the SUP herself. **€50 for the entire stay + €100 refundable deposit, paid in cash on delivery.** Reserve by WhatsApp; Stefania drops the SUP at the apartment and collects the deposit. Return arranged together at the end of the stay — Stefania comes back to collect the SUP and refund the deposit. |
+| 8 | "Do you have more questions? Check the folder →" pointer to the language folder |
+
+**Welcome paragraph (Panel 2 / 3 spec):**
+- Header (Manrope 700, 11pt, all-caps, Atlantic Blue):
+  > "Welcome.
+  >  Feel at home."
+- Body (Spectral 400, 14pt, Deep Navy):
+  > "Need anything?
+  >  Message Stefy on WhatsApp.
+  >  I'll get back to you as soon as possible."
+
+### 8b. ARCHIVED — original spec wording for the companion language folder (2026-05-13)
+
+**Separate print piece.** A multi-page folder (saddle-stitched booklet or sleeve with loose sheets — TBD in the spec). One folder per language, so a guest can pick the language they read in and take it from the desk.
+
+**Languages (confirmed 2026-05-13):** EN / PT / IT / ES / FR — five variants. French added at Stefania's request for the high-traffic French market. DE / NL stay on Lodgify defaults for now (revisit if volume grows).
+
+**Contents per folder:**
+- **House instructions** — how to use the fire (lareira), A/C, lavatrice (washing machine), lavastoviglie (dishwasher), deumidificatore (dehumidifier).
+- **Restaurants** — curated list with addresses + walking distance.
+- **Beaches** — Lagos beach guide with how to get there.
+- **Taxi numbers** — local taxi cooperative numbers.
+- **SUP rental** — provided by Stefania directly. **€50 for the entire stay + €100 refundable deposit, paid in cash on delivery.** How it works:
+  1. Message Stefania on WhatsApp to reserve.
+  2. Stefania brings the SUP to the apartment, collects the €100 deposit in cash, and leaves the bag with the board.
+  3. At the end of the stay, agree a time with Stefania for her to come back, collect the SUP, and return the deposit in cash.
+  (Folder page should include the SUP photo, the rental terms, and a "message Stefania on WhatsApp to reserve" CTA.)
+- **Train / bus timetables** — links (QR codes to live timetables, since paper schedules go stale).
+- **Supermercato** — nearest supermarket(s) + opening hours.
+
+**Quantity:** 2 folders per language _(so two guests can browse simultaneously)._
+
+**Follow-up:** rewrite `project/docs/print-welcome-card-spec.md` to match the new flip-stand format, then draft the language folder spec as a separate file. The old A4 tri-fold spec is now obsolete.
+
+### 10. ARCHIVED — original question about Brand.md reconciliation (2026-05-07)
+
+**Three contradictions between Brand.md (your owner-edited file) and current project decisions:**
+
+| In Brand.md | Current decision |
+|---|---|
+| Display: Playfair Display, Body: Inter | Spectral + Manrope (after impeccable skill review + EULA fix) |
+| Beach distance: "5 min by car to Dona Ana", "4 min by car / 20 min on foot to Praia da Batata" | "Walking distance from the centre of Lagos and the beaches" (your update on 2026-05-07) |
+| Direct-booking incentives include "welcome bottle of vinho verde, free parking, late checkout" | You removed welcome bottle. Now: free parking, late checkout AND early check-in, WhatsApp line, best-rate, walking guide |
+
+**Question:** want me to update Brand.md to reflect these (it's owner-edited so I haven't touched it without permission), or leave Brand.md as a historical reference?
+
+---
+
+## 📰 Session log — 2026-05-13
+
+Stefania reviewed the open question list and came back with answers that closed several items, redirected a few, and seeded the print + email work with real source content.
+
+On the Lodgify side, she confirmed she's keeping only the **weekly 10% discount for stays of 6+ nights** (the other five promo rules are now switched off in the dashboard) and chose **Option B** for the direct-booking pricing — base rate stays at the direct price, OTAs get a channel mark-up. She also asked us to stop saying *"always cheaper than booking through any other channel"* on the site and keep only *"best rate available, every time"* — softer, rate-parity-safe, and frankly more elegant.
+
+The GBP phone-prefix question got a useful clarification: the `+351` is **already set** on her GBP profile, but the listing isn't displaying it publicly. So it's not a profile edit — it's a display-side investigation, and the action moves into the GBP audit doc rather than her to-do.
+
+The big content unlock was the legal data for the EU pages. She supplied her **full legal name, NIF, address, AL number, and Lodgify sub-processor confirmation**, which means the `[TO CONFIRM]` placeholders in the Privacy, Cookies, and Terms drafts can finally be filled. The only open question on that front is **insurance** — whether her home policy carries a third-party liability rider for short-stay use. If yes, one sentence in Terms; if no, we leave it out.
+
+The reviews component got a small UX direction: **six reviews total, paged in two slides of three** with a single chevron toggle. No carousel auto-rotate, no dots. Calmer, more editorial.
+
+The biggest shift was the welcome card. The A4 tri-fold spec we'd written is dropped entirely. In its place: a **vertical desk flip stand** (the Joom product she linked) sitting on the apartment desk, with **eight panels — one side in Portuguese, one side in English**. One stand, two sides, two languages. Panel content is locked: cover, welcome paragraph, useful-stay info, rental rules, emergency contacts, SUP rental, pointer to the folder. The welcome paragraph has typography baked in (Manrope 700 11pt all-caps in Atlantic Blue for the header, Spectral 400 14pt Deep Navy for the body).
+
+Sitting alongside the flip stand is a new piece: a **companion language folder** with deeper, more practical content — appliance instructions, restaurants, beaches, taxi numbers, SUP, transit timetables, supermarkets. **Five language variants: EN, PT, IT, ES, and FR** (French added today). The folder is where a guest who wants real detail goes; the flip stand is the at-a-glance reference.
+
+The SUP detail she added today: **Stefania rents the SUP herself** — €50 for the entire stay plus a €100 refundable deposit, paid in cash. The mechanics are hands-on rather than self-serve: the guest agrees the rental on WhatsApp, Stefania brings the SUP to the apartment in person and collects the cash deposit on drop-off, and at the end of the stay they agree a time for her to come back, collect the board, and return the deposit. Cash is the working assumption — revisit later if MB Way / Revolut would help guests without euros on hand. Panel 7 on the flip stand and the SUP page in the folder both lead with that.
+
+Two print pieces got swapped: the **A6 review card becomes a fridge magnet** (smaller, more practical, guests see it every time they open the kitchen), and the **A5 table tent becomes a smaller table flip stand** — same flip format as the welcome card, smaller footprint, sits on the dining or coffee table. The **business card** stays in the deliverables list, no format change — Stefania confirmed she still wants it.
+
+Finally, she sent the **current Lodgify message text** she uses today for check-out, emergency contacts, rental rules, and the useful-info guide. That's our seed content for the Lodgify message-template rewrite (item #30) and for the welcome flip-stand panels 4-6. The flip stand will use this text near-verbatim in English and Portuguese; the language folder will expand it across all five languages. See the **Source content from Stefania** appendix below for the raw text.
+
+---
+
+## 📨 Source content from Stefania — raw text (2026-05-13)
+
+The text below is what Stefania sends to guests **today** via Lodgify. It's the starting point for: (a) the Lodgify message-template rewrite (item #30), (b) the welcome flip-stand panels 4-6 (item #8), and (c) the language folder (item #8b). Don't paste it verbatim into deliverables — rewrite in brand voice (no em dashes, mobile-first, single primary CTA, Spectral/Manrope typography), then translate to PT / IT / ES / FR.
+
+### Check-out instructions (Lodgify message — current EN draft)
+
+> Hi Mickael!
+> I hope you had a pleasant stay! 😊
+> Just a reminder that check-out is scheduled for tomorrow by 10:00 AM.
+>
+> Before you leave, please:
+> - Return all keys to the key locker.
+> - Make sure windows and shutters are closed.
+> - Turn off lights, air conditioning, and appliances.
+> - Take out trash if possible.
+> - Double-check that you have all your personal belongings with you.
+>
+> Thank you again for choosing to stay in my apartment!
+>
+> I wish you a safe journey home (or a wonderful continuation of your trip) and hope to see you again soon.
+> Feel free to leave us a review, it means a lot!
+>
+> Best regards,
+> Stefania Amidei — Apartamento Mar Azul
+> Telephone: +351 936 083 766
+
+**Rewrite notes:** drop the em dash in the signature (house rule). Use guest's first name dynamically from Lodgify merge field. Add the GBP review QR / link as the trailing single CTA. Soften the "please" list into a short paragraph + bulleted checklist for skimmability.
+
+### Emergency contacts (Welcome flip-stand panel 6 + language folder)
+
+> In case of emergency, please contact the appropriate service:
+>
+> **Emergency services (ambulance, police, fire):**
+> ☎️ 112 (free, available 24/7)
+>
+> **Local police station (PSP Lagos):**
+> 📍 Sítio da Horta do Trigo, 8600-324 Lagos
+> ☎️ +351 282 078 160
+>
+> **Hospital (Hospital Terras do Infante):**
+> 📍 Av. Dom Sebastião, 8600-654 Lagos
+> ☎️ +351 282 770 100
+>
+> **Pharmacy (Farmácia Lacobrigense):**
+> 📍 R. Prof. Joaquim Alberto Taquelim 8 loja e, 8600-762 Lagos
+> ☎️ +351 282 762 901
+>
+> **Your host, Stefania:**
+> 📱 +351 936 083 766
+> 📧 marazulapartamento@gmail.com
+
+**Rewrite notes:** Stefania's working contact email is `marazulapartamento@gmail.com` (confirmed 2026-05-14). Format the phone numbers consistently with country-code spacing. Localise the institution names per language (e.g., "Pronto Soccorso" for IT, "Pharmacie" for FR).
+
+### Rental rules (Welcome flip-stand panel 5 + language folder)
+
+> Hi Amine!
+> Welcome once again!
+>
+> To help you make the most of your stay, here are some important details to read before you get started:
+> I want you to feel at home, but kindly ask you to respect the following rules during your stay:
+>
+> - No smoking inside the house.
+> - No parties or events allowed.
+> - Please respect the quiet hours: 10:00 PM – 8:00 AM.
+> - Please take care of the furniture and appliances.
+>
+> **Trash disposal:** please do not leave garbage inside upon check-out. You can find the bins on Rua do Nuno de Mascarenhas, in front of the restaurant Os Lambertos, just a 2-minute walk from the house.
+>
+> - Always lock the door when you leave.
+> - Report any damage or issue as soon as possible so we can assist you.
+>
+> Best regards,
+> Stefania Amidei — Apartamento Mar Azul
+> Telephone: +351 936 083 766
+
+**Rewrite notes:** drop em dashes. Strong, calm rule statements — no "kindly," no "I want you to feel at home" preamble on the flip stand (move that warmth to the welcome panel). Quiet hours stay as 22:00 – 08:00. Trash-bin location goes onto the **useful info panel (4)** rather than the rules panel — it's information, not a rule.
+
+### Useful info / Guide (Welcome flip-stand panel 4 + language folder "house instructions" page)
+
+> 📶 **Wi-Fi:**
+> Network name: `MEO-CO2AAO`
+> Password: `8ab1e3947d`
+>
+> ☕ **Coffee:**
+> There is a Dolce Gusto coffee machine with some capsules in the kitchen cupboard.
+>
+> 🛁 **Bathroom:**
+> Shampoo, conditioner, and shower gel are available for use.
+>
+> 🗑️ **Trash and recycling:**
+> Trash and recycling bins are located on Rua Dom Nuno de Mascarenhas.
+>
+> 🍽️ **Nearby restaurants:**
+> There are two very good restaurants close to the house: **Os Lambertos** and **O Prato Cheio**.
+>
+> Best regards,
+> Stefania Amidei — Apartamento Mar Azul
+> WhatsApp: +351 936 083 766
+
+**Rewrite notes:** this is most of panel 4. Emoji icons are warm but they should be replaced with hand-picked Lucide-style icons (or simple flat illustrations) for the print piece so the visual language matches the website. Wi-Fi password gets large readable type — guests typing it in are mildly stressed, large type reduces friction. Restaurant list goes onto the **folder restaurants page** in expanded form (with walking distance + a sentence on each).
+
+---
+
+**Cross-reference for the print deliverables:**
+
+| Source paragraph | Flip stand (item #8 → #25) | Apartment guide folder (item #8b) | Lodgify template (item #30) |
+|---|---|---|---|
+| Check-out instructions | — | — | ✅ "Check-out reminder" template |
+| Emergency contacts | ✅ Panel 6 | ✅ "Emergency" page | — |
+| Rental rules | ✅ Panel 5 | ✅ "House rules" page | — |
+| Useful info / Wi-Fi / Coffee | ✅ Panel 4 | ✅ "House instructions" page | — |
+| Welcome / "Feel at home" | ✅ Panels 2-3 | — | ✅ "Booking confirmed" template |
+| SUP rental (€50 + €100 deposit) | ✅ Panel 7 | ✅ "SUP rental" page | ✅ Pre-arrival upsell template |
