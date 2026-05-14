@@ -71,7 +71,7 @@
   "perks": {
     "eyebrow": "Direktbuchung",
     "title": "Bester verfügbarer Preis, jederzeit.",
-    "lede": "Immer günstiger als über andere Plattformen zu buchen."
+    "lede": "Echtzeit-Verfügbarkeit, direkt von der Gastgeberin. Keine Plattformgebühr, kein Aufschlag."
   },
   "location": {
     "eyebrow": "Lage",
@@ -88,7 +88,9 @@
   },
   "reviews": {
     "eyebrow": "Bewertungen",
-    "title": "Was Gäste sagen."
+    "title": "Was Gäste sagen.",
+    "showMoreLabel": "Weitere Bewertungen anzeigen",
+    "showPreviousLabel": "Vorherige Bewertungen anzeigen"
   },
   "availability": {
     "eyebrow": "Deine Daten",

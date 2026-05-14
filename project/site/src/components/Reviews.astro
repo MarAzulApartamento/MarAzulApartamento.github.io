@@ -8,7 +8,11 @@ const all = await getCollection('reviews', ({ data }) => data.language === lang)
 const fallback = lang !== 'en' ? await getCollection('reviews', ({ data }) => data.language === 'en') : [];
 const pool = all.length > 0 ? all : fallback;
 const featured = pool.filter((r) => r.data.featured);
-const items = (featured.length > 0 ? featured : pool).slice(0, 5);
+const items = (featured.length > 0 ? featured : pool).slice(0, 6);
+
+const firstSlide = items.slice(0, 3);
+const secondSlide = items.slice(3, 6);
+const hasSecondSlide = secondSlide.length > 0;
 
 // Darker platform variants so the source pill text passes WCAG AA on the cream
 // review-card background (#F1EEE7). The original brand colours (#4285F4, #FF5A5F)
@@ -19,44 +23,138 @@ const sourceBadgeColor: Record<string, string> = {
   'Booking.com': '#003580',
   Direct: 'var(--color-atlantic-blue)',
 };
+
+const showMoreLabel = tr.reviews.showMoreLabel ?? 'Show more reviews';
+const showPreviousLabel = tr.reviews.showPreviousLabel ?? 'Show previous reviews';
 ---
 
 <section class="section">
   <div class="container">
     <p class="eyebrow">{tr.reviews.eyebrow}</p>
     <h2 class="h2">{tr.reviews.title}</h2>
-    <div class="reviews">
-      {items.map((r) => (
-        <article class="review">
-          <div class="review-head">
-            <span class="review-name">{r.data.name}</span>
-            <span class="review-date">{r.data.date}</span>
+
+    <div
+      class="reviews-viewport"
+      data-reviews-viewport
+      data-slides={hasSecondSlide ? '2' : '1'}
+    >
+      <div class="reviews-track" data-reviews-track>
+        <div class="reviews-slide" data-slide="0" aria-hidden="false">
+          {firstSlide.map((r) => (
+            <article class="review">
+              <div class="review-head">
+                <span class="review-name">{r.data.name}</span>
+                <span class="review-date">{r.data.date}</span>
+              </div>
+              <div class="review-meta">
+                <div class="stars" aria-hidden="true">
+                  {Array.from({ length: r.data.rating }).map(() => (
+                    <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                      <path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z" />
+                    </svg>
+                  ))}
+                </div>
+                <span class="review-source" style={`color: ${sourceBadgeColor[r.data.source]};`}>
+                  {r.data.source}
+                </span>
+              </div>
+              <p class="review-quote">{r.data.quote}</p>
+            </article>
+          ))}
+        </div>
+        {hasSecondSlide && (
+          <div class="reviews-slide" data-slide="1" aria-hidden="true">
+            {secondSlide.map((r) => (
+              <article class="review">
+                <div class="review-head">
+                  <span class="review-name">{r.data.name}</span>
+                  <span class="review-date">{r.data.date}</span>
+                </div>
+                <div class="review-meta">
+                  <div class="stars" aria-hidden="true">
+                    {Array.from({ length: r.data.rating }).map(() => (
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                        <path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <span class="review-source" style={`color: ${sourceBadgeColor[r.data.source]};`}>
+                    {r.data.source}
+                  </span>
+                </div>
+                <p class="review-quote">{r.data.quote}</p>
+              </article>
+            ))}
           </div>
-          <div class="review-meta">
-            <div class="stars" aria-hidden="true">
-              {Array.from({ length: r.data.rating }).map(() => (
-                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
-                  <path d="M12 2l2.9 6.9L22 10l-5.5 4.8L18 22l-6-3.6L6 22l1.5-7.2L2 10l7.1-1.1z" />
-                </svg>
-              ))}
-            </div>
-            <span class="review-source" style={`color: ${sourceBadgeColor[r.data.source]};`}>
-              {r.data.source}
-            </span>
-          </div>
-          <p class="review-quote">{r.data.quote}</p>
-        </article>
-      ))}
+        )}
+      </div>
     </div>
+
+    {hasSecondSlide && (
+      <div class="reviews-nav">
+        <button
+          type="button"
+          class="reviews-chevron"
+          data-reviews-chevron
+          data-state="next"
+          aria-label={showMoreLabel}
+          data-label-next={showMoreLabel}
+          data-label-prev={showPreviousLabel}
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 6 15 12 9 18"></polyline>
+          </svg>
+        </button>
+      </div>
+    )}
   </div>
 </section>
 
+<script>
+  const viewport = document.querySelector<HTMLElement>('[data-reviews-viewport]');
+  const track = document.querySelector<HTMLElement>('[data-reviews-track]');
+  const chevron = document.querySelector<HTMLButtonElement>('[data-reviews-chevron]');
+
+  if (viewport && track && chevron) {
+    const slides = track.querySelectorAll<HTMLElement>('.reviews-slide');
+    let current = 0;
+    const total = slides.length;
+
+    function goToSlide(index: number) {
+      current = index;
+      track!.style.transform = `translateX(-${index * 100}%)`;
+      slides.forEach((slide, i) => {
+        slide.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+      });
+      const isShowingFirst = index === 0;
+      chevron!.dataset.state = isShowingFirst ? 'next' : 'prev';
+      const nextLabel = chevron!.dataset.labelNext ?? 'Show more reviews';
+      const prevLabel = chevron!.dataset.labelPrev ?? 'Show previous reviews';
+      chevron!.setAttribute('aria-label', isShowingFirst ? nextLabel : prevLabel);
+    }
+
+    chevron.addEventListener('click', () => {
+      goToSlide(current === 0 ? 1 : 0);
+    });
+  }
+</script>
+
 <style>
-  .reviews {
+  .reviews-viewport {
+    margin-top: 24px;
+    overflow: hidden;
+  }
+  .reviews-track {
+    display: flex;
+    width: 100%;
+    transition: transform 320ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reviews-slide {
+    flex: 0 0 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    margin-top: 24px;
+    min-width: 0;
   }
   .review {
     background: #F1EEE7;
@@ -99,7 +197,50 @@ const sourceBadgeColor: Record<string, string> = {
     margin: 6px 0 0;
     max-width: none;
   }
+
+  /* Single chevron control. Rotates 180° when second slide is showing. */
+  .reviews-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
+  .reviews-chevron {
+    appearance: none;
+    background: var(--color-warm-white);
+    border: 1px solid #E5DED1;
+    border-radius: 999px;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-atlantic-blue);
+    cursor: pointer;
+    transition: background-color 160ms ease, border-color 160ms ease, transform 320ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reviews-chevron:hover {
+    background: #F1EEE7;
+    border-color: #D5CDBC;
+  }
+  .reviews-chevron:focus-visible {
+    outline: 2px solid var(--color-atlantic-blue);
+    outline-offset: 2px;
+  }
+  .reviews-chevron[data-state="prev"] {
+    transform: rotate(180deg);
+  }
+
   @media (max-width: 900px) {
-    .reviews { grid-template-columns: 1fr; }
+    .reviews-slide {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Respect reduced-motion preferences. */
+  @media (prefers-reduced-motion: reduce) {
+    .reviews-track,
+    .reviews-chevron {
+      transition: none;
+    }
   }
 </style>

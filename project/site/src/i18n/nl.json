@@ -71,7 +71,7 @@
   "perks": {
     "eyebrow": "Direct boeken",
     "title": "Beste tarief beschikbaar, altijd.",
-    "lede": "Altijd voordeliger dan boeken via een ander kanaal."
+    "lede": "Real-time beschikbaarheid, rechtstreeks van de gastvrouw. Geen platformcommissie, geen opslag."
   },
   "location": {
     "eyebrow": "Locatie",
@@ -88,7 +88,9 @@
   },
   "reviews": {
     "eyebrow": "Reviews",
-    "title": "Wat gasten zeggen."
+    "title": "Wat gasten zeggen.",
+    "showMoreLabel": "Meer beoordelingen tonen",
+    "showPreviousLabel": "Vorige beoordelingen tonen"
   },
   "availability": {
     "eyebrow": "Jouw data",

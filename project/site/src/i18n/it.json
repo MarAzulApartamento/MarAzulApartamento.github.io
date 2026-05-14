@@ -71,7 +71,7 @@
   "perks": {
     "eyebrow": "Prenotazione diretta",
     "title": "Miglior tariffa disponibile, sempre.",
-    "lede": "Sempre più conveniente che prenotare tramite qualsiasi altro canale."
+    "lede": "Disponibilità in tempo reale, direttamente dalla host. Senza commissioni di piattaforma, senza ricarichi."
   },
   "location": {
     "eyebrow": "Posizione",
@@ -88,7 +88,9 @@
   },
   "reviews": {
     "eyebrow": "Recensioni",
-    "title": "Cosa dicono gli ospiti."
+    "title": "Cosa dicono gli ospiti.",
+    "showMoreLabel": "Vedi altre recensioni",
+    "showPreviousLabel": "Vedi recensioni precedenti"
   },
   "availability": {
     "eyebrow": "Le tue date",

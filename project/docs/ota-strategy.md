@@ -51,7 +51,7 @@ Two compliant mechanisms. Pick one.
 
 **Mechanism A — risky.** Direct-only promo code or automatic discount in Lodgify with channel = "Website only." Lodgify lets you do this. Booking.com generally doesn't. Long-running grey area; many hosts use it; enforcement is sporadic. Don't recommend without explicit owner appetite for risk.
 
-The current site copy says **"always cheaper than booking through any other channel"** which only holds under A or B. The plan is B. Configuration tracked in `questions-for-stefania.md` item #20.
+The site copy is **"best rate available, every time"** (locked 2026-05-13 after dropping the stronger "always cheaper than other channels" line). This phrasing is rate-parity-safe under Mechanism B (and even under C if OTAs ever happen to display a lower total). Mechanism B is the chosen plan. Configuration tracked in `questions-for-stefania.md` item #20.
 
 ---
 
@@ -188,7 +188,7 @@ A short list of things that look like good ideas and aren't.
 
 These are tracked in `questions-for-stefania.md`, surfaced here for context:
 
-- **Item #20** — pick the pricing mechanism. **B is recommended.** Without it, the "always cheaper on direct" copy isn't true and risks rate-parity issues.
+- **Item #20** ✅ RESOLVED 2026-05-13. Mechanism **B** locked (OTA channel mark-up). Site copy softened to "best rate available, every time" (dropped the stronger "always cheaper" line).
 - **Item #18** — AL number for OTA listings. Once Stefania supplies it, the AL must appear on every channel (legal requirement in Portugal).
 - **Item #6** — backfill the best Booking.com / Airbnb reviews into the site Reviews collection. ~30 minutes of copy-pasting.
 - **Item #3** — clean up expired Lodgify promotions. Reduces operational complexity.

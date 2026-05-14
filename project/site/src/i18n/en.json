@@ -71,7 +71,7 @@
   "perks": {
     "eyebrow": "Direct booking",
     "title": "Best rate available, every time.",
-    "lede": "Always cheaper than booking through any other channel."
+    "lede": "Real-time availability, direct from the host. No platform commission, no markup."
   },
   "location": {
     "eyebrow": "Location",
@@ -88,7 +88,9 @@
   },
   "reviews": {
     "eyebrow": "Reviews",
-    "title": "What guests say."
+    "title": "What guests say.",
+    "showMoreLabel": "Show more reviews",
+    "showPreviousLabel": "Show previous reviews"
   },
   "availability": {
     "eyebrow": "Your dates",
