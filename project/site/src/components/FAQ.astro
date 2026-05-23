@@ -49,8 +49,8 @@ const faqSchema = {
     <p class="eyebrow">{t.faq.eyebrow}</p>
     <h2 class="h2">{t.faq.title}</h2>
     <div class="faq" data-faq>
-      {rendered.map(({ entry, Content }, i) => (
-        <details class="faq-item" open={i < 2}>
+      {rendered.map(({ entry, Content }) => (
+        <details class="faq-item">
           <summary class="faq-row">
             <span class="faq-q">{entry.data.question}</span>
             <span class="faq-chev" aria-hidden="true"></span>

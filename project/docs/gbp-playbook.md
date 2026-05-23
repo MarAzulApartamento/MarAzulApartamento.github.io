@@ -250,7 +250,7 @@ GBP only takes one description per profile. Strategy: write one in **English** (
 
 1. **Welcome to Mar Azul** — short intro to the apartment + link to `/book`.
 2. **Why Lagos in shoulder season** — May, June, October specifically. Quieter, cheaper, still warm.
-3. **Inside the apartment** — terrace photo + one paragraph about the south-facing view.
+3. **Inside the apartment** — terrace photo + one paragraph about the east-facing view (morning sun).
 4. **Booking direct** — link to the site, "best rate available, every time."
 5. **What's nearby** — five specific places (Prato Cheio, Praia da Batata, Padaria Central, Marina, Intermarché).
 

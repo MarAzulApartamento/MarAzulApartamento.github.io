@@ -34,7 +34,7 @@
     "facts": [
       { "label": "Capacidad", "value": "2 a 4 personas", "neg": false },
       { "label": "Habitaciones", "value": "1 más sofá cama", "neg": false },
-      { "label": "Terraza", "value": "Orientación sur", "neg": false },
+      { "label": "Terraza", "value": "Orientación este", "neg": false },
       { "label": "Aire acondicionado", "value": "En el dormitorio", "neg": false },
       { "label": "Wi-Fi", "value": "Fibra, 200 Mbps", "neg": false },
       { "label": "Aparcamiento", "value": "Gratuito", "neg": false },
@@ -48,7 +48,8 @@
     "eyebrow": "Sobre el apartamento",
     "title": "A pie del centro y de las playas.",
     "body": "El apartamento se encuentra en una calle residencial tranquila. Baja hasta el centro de Lagos para desayunar, cruza el centro para darte un baño en el mar, y sigue el sendero costero hasta la Ponta da Piedade antes de que llegue la gente por la mañana.",
-    "hostedBy": "Anfitriona: Stefania."
+    "hostedBy": "Anfitriona: Stefania.",
+    "responseTime": "Respondemos en menos de 12 horas."
   },
   "gallery": {
     "eyebrow": "Por dentro",
@@ -95,7 +96,9 @@
   "availability": {
     "eyebrow": "Tus fechas",
     "title": "Elige tus fechas.",
-    "ledeWithPrice": "Disponibilidad en tiempo real. Precios desde €{priceFrom} por noche. Estancia mínima de {minStay} noches."
+    "ledeWithPrice": "Disponibilidad en tiempo real. Precios desde €{priceFrom} por noche. Estancia mínima de {minStay} noches.",
+    "shortGapNotePrefix": "¿Ves un hueco más corto en el calendario?",
+    "shortGapNoteLink": "Escríbeme para reservar."
   },
   "faq": {
     "eyebrow": "Preguntas frecuentes",

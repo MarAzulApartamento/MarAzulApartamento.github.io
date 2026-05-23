@@ -34,7 +34,7 @@
     "facts": [
       { "label": "Capacidade", "value": "2 a 4 hóspedes", "neg": false },
       { "label": "Quartos", "value": "1 mais sofá-cama", "neg": false },
-      { "label": "Terraço", "value": "Virado a sul", "neg": false },
+      { "label": "Terraço", "value": "Virado a este", "neg": false },
       { "label": "Ar condicionado", "value": "No quarto", "neg": false },
       { "label": "Wi-Fi", "value": "Fibra, 200 Mbps", "neg": false },
       { "label": "Estacionamento", "value": "Gratuito", "neg": false },
@@ -48,7 +48,8 @@
     "eyebrow": "Sobre",
     "title": "A pé do centro e das praias.",
     "body": "O apartamento situa-se numa rua residencial calma. Desça até ao centro de Lagos para o pequeno-almoço, atravesse o centro até ao mar para um mergulho, e siga o caminho costeiro até à Ponta da Piedade antes da multidão da manhã.",
-    "hostedBy": "Anfitriã: Stefania."
+    "hostedBy": "Anfitriã: Stefania.",
+    "responseTime": "Respondemos em 12 horas."
   },
   "gallery": {
     "eyebrow": "Por dentro",
@@ -95,7 +96,9 @@
   "availability": {
     "eyebrow": "As suas datas",
     "title": "Escolha as suas datas.",
-    "ledeWithPrice": "Disponibilidade em tempo real. Preços a partir de €{priceFrom} por noite. Estadia mínima de {minStay} noites."
+    "ledeWithPrice": "Disponibilidade em tempo real. Preços a partir de €{priceFrom} por noite. Estadia mínima de {minStay} noites.",
+    "shortGapNotePrefix": "Vê um intervalo mais curto no calendário?",
+    "shortGapNoteLink": "Contacte-me para reservar."
   },
   "faq": {
     "eyebrow": "FAQ",

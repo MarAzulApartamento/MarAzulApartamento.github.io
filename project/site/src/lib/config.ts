@@ -29,7 +29,7 @@ export const PROPERTY = {
   // registration number on every public-facing channel. Empty until Stefania
   // supplies it (see questions-for-stefania.md item #18). Footer + Terms
   // render the AL declaration only when this is non-empty.
-  alNumber: '',
+  alNumber: '165912/AL',
   // Public phone in international display format. Same number as WHATSAPP.number
   // but human-readable. Used in JSON-LD `telephone` and any future visible
   // phone display. Already public on GBP, Booking.com, Airbnb, Lodgify.

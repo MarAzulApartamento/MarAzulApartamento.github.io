@@ -34,7 +34,7 @@
     "facts": [
       { "label": "Belegung", "value": "2 bis 4 Personen", "neg": false },
       { "label": "Schlafzimmer", "value": "1 plus Schlafsofa", "neg": false },
-      { "label": "Terrasse", "value": "Südausrichtung", "neg": false },
+      { "label": "Terrasse", "value": "Ostausrichtung", "neg": false },
       { "label": "Klimaanlage", "value": "Im Schlafzimmer", "neg": false },
       { "label": "WLAN", "value": "Glasfaser, 200 Mbit/s", "neg": false },
       { "label": "Parkplatz", "value": "Kostenlos", "neg": false },
@@ -48,7 +48,8 @@
     "eyebrow": "Über die Wohnung",
     "title": "Zu Fuß zum Zentrum und zu den Stränden.",
     "body": "Die Wohnung liegt in einer ruhigen Wohnstraße. Spaziere zum Frühstück ins Zentrum von Lagos, durchquere die Altstadt für ein Bad im Meer, und folge dem Küstenpfad zur Ponta da Piedade, bevor die Menschenmenge am Morgen ankommt.",
-    "hostedBy": "Gastgeberin: Stefania."
+    "hostedBy": "Gastgeberin: Stefania.",
+    "responseTime": "Antwort innerhalb von 12 Stunden."
   },
   "gallery": {
     "eyebrow": "Innen",
@@ -95,7 +96,9 @@
   "availability": {
     "eyebrow": "Deine Daten",
     "title": "Wähle deine Daten.",
-    "ledeWithPrice": "Verfügbarkeit in Echtzeit. Preise ab €{priceFrom} pro Nacht. Mindestaufenthalt {minStay} Nächte."
+    "ledeWithPrice": "Verfügbarkeit in Echtzeit. Preise ab €{priceFrom} pro Nacht. Mindestaufenthalt {minStay} Nächte.",
+    "shortGapNotePrefix": "Eine kürzere Lücke im Kalender entdeckt?",
+    "shortGapNoteLink": "Schreib mir, um zu buchen."
   },
   "faq": {
     "eyebrow": "FAQ",

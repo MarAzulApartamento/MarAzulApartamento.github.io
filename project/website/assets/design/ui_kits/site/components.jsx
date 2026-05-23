@@ -117,7 +117,7 @@ function FactsGrid() {
   const items = [
     ["Sleeps", "2 to 4"],
     ["Bedrooms", "1 plus sofa bed"],
-    ["Terrace", "South-facing"],
+    ["Terrace", "East-facing"],
     ["Air conditioning", "In the bedroom"],
     ["Wi-Fi", "Fibre, 200 Mbps"],
     ["Parking", "Free, reserved"],

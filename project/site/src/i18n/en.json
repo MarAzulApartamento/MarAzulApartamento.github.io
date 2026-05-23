@@ -34,7 +34,7 @@
     "facts": [
       { "label": "Sleeps", "value": "2 to 4", "neg": false },
       { "label": "Bedrooms", "value": "1 plus sofa bed", "neg": false },
-      { "label": "Terrace", "value": "South-facing", "neg": false },
+      { "label": "Terrace", "value": "East-facing", "neg": false },
       { "label": "Air conditioning", "value": "In the bedroom", "neg": false },
       { "label": "Wi-Fi", "value": "Fibre, 200 Mbps", "neg": false },
       { "label": "Parking", "value": "Free", "neg": false },
@@ -48,11 +48,12 @@
     "eyebrow": "About",
     "title": "Walking distance from the centre and the beaches.",
     "body": "The apartment sits on a quiet residential street. Walk down to the city centre for breakfast, cut through the centre for a dive in the sea, and follow the coast path to Ponta da Piedade before the morning crowds arrive.",
-    "hostedBy": "Hosted by Stefania."
+    "hostedBy": "Hosted by Stefania.",
+    "responseTime": "We may answer within 12 hours."
   },
   "gallery": {
     "eyebrow": "Inside",
-    "title": "Inside the apartment.",
+    "title": "Bright spaces, modern comforts, and a calm atmosphere.",
     "openLabel": "Open photo:",
     "captions": [
       { "id": "marazul-01", "caption": "Living, looking out" },
@@ -95,7 +96,9 @@
   "availability": {
     "eyebrow": "Your dates",
     "title": "Pick your dates.",
-    "ledeWithPrice": "Real-time availability. Prices update from €{priceFrom} per night. {minStay}-night minimum."
+    "ledeWithPrice": "Real-time availability. Prices update from €{priceFrom} per night. {minStay}-night minimum.",
+    "shortGapNotePrefix": "See a shorter gap in the calendar?",
+    "shortGapNoteLink": "Contact me to book."
   },
   "faq": {
     "eyebrow": "FAQ",
