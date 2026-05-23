@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/* Self-hosted brand fonts — Spectral (display) and Manrope (body), SIL OFL.
+   Bundled with the build via @fontsource so we don't depend on Google Fonts
+   at runtime. font-display: swap is the default in @fontsource (FOUT, not
+   FOIT), which beats invisible text while the font loads. */
+@import "@fontsource/spectral/400.css";
+@import "@fontsource/spectral/700.css";
+@import "@fontsource/spectral/400-italic.css";
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+
+/* Brand tokens — single source of truth.
+   Colours expressed in OKLCH-equivalent hex (OKLCH shown in comments for
+   perceptually uniform shade computation via color-mix() at the call site). */
+@theme {
+  /* Colours */
+  --color-atlantic-blue: #1E5B73;  /* oklch(0.41 0.06 220) — primary, CTAs, links */
+  --color-seafoam: #CFE3DE;        /* section tints, hover */
+  --color-sun-sand: #D8B98A;       /* oklch(0.78 0.07 80)  — accent, sparingly */
+  --color-warm-white: #F8F6F1;     /* oklch(0.97 0.005 80) — page background */
+  --color-deep-navy: #1D2630;      /* oklch(0.21 0.015 235) — body text */
+  --color-slate-grey: #4F5A65;     /* muted text, WCAG AA on warm-white AND on Seafoam tint */
+
+  /* Display + body fonts — self-hosted via @fontsource (SIL OFL).
+     Bundle imported at the top of this file. */
+  --font-display: 'Spectral', Georgia, serif;
+  --font-body: 'Manrope', system-ui, 'Helvetica Neue', sans-serif;
+
+  /* Type scale */
+  --text-hero: clamp(2.5rem, 5vw, 4.5rem);
+  --text-h2: clamp(1.8rem, 3vw, 2.5rem);
+  --text-h3: clamp(1.1rem, 1.5vw, 1.4rem);
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(29, 38, 48, 0.08);
+  --shadow-md: 0 4px 14px rgba(29, 38, 48, 0.10);
+  --shadow-lg: 0 12px 32px rgba(29, 38, 48, 0.13);
+}
+
+/* Body defaults — light-only design, warm tones. */
+html {
+  background: var(--color-warm-white);
+  color: var(--color-deep-navy);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Display headings only above 24px per brand rules. */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-deep-navy);
+  letter-spacing: -0.01em;
+}
+
+/* ----- Shared layout utilities ----- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+@media (max-width: 720px) {
+  .container { padding: 0 16px; }
+}
+
+.section {
+  padding: 80px 0;
+}
+.section-tint {
+  background: var(--color-seafoam);
+}
+@media (max-width: 720px) {
+  .section { padding: 48px 0; }
+}
+
+.eyebrow {
+  font: 600 13px/1 var(--font-body);
+  letter-spacing: 0.06em;
+  color: var(--color-slate-grey);
+  margin: 0 0 12px;
+}
+.eyebrow-light { color: rgba(248, 246, 241, 0.85); }
+
+.h2 {
+  font: 700 clamp(28px, 3.4vw, 40px)/1.15 var(--font-display);
+  letter-spacing: -0.01em;
+  color: var(--color-deep-navy);
+  margin: 0 0 16px;
+  text-wrap: balance;
+  max-width: 22ch;
+}
+.h2-light { color: var(--color-warm-white); }
+
+p {
+  margin: 0 0 12px;
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+p.lede { font-size: 18px; }
+p.lede-light { color: rgba(248, 246, 241, 0.85); }
+p.muted, .muted { color: var(--color-slate-grey); }
+.small { font-size: 14px; }
+
+a { color: var(--color-atlantic-blue); }
+
+:focus-visible {
+  outline: 2px solid var(--color-atlantic-blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ----- Buttons ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 600 15px/1 var(--font-body);
+  padding: 14px 22px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-atlantic-blue);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out;
+}
+.btn-primary { background: var(--color-atlantic-blue); color: var(--color-warm-white); }
+.btn-primary:hover { background: color-mix(in oklch, var(--color-atlantic-blue) 92%, black); }
+.btn-primary:active { background: color-mix(in oklch, var(--color-atlantic-blue) 85%, black); }
+.btn-primary-light { background: var(--color-warm-white); color: var(--color-atlantic-blue); }
+.btn-primary-light:hover { background: color-mix(in oklch, var(--color-warm-white) 95%, black); }
+.btn-secondary { color: var(--color-atlantic-blue); border-color: var(--color-atlantic-blue); }
+.btn-secondary:hover { background: var(--color-seafoam); }
+.btn-ghost { background: transparent; color: var(--color-atlantic-blue); flex-direction: column; align-items: flex-start; gap: 2px; padding: 8px 4px; }
+.btn-ghost .micro { font-weight: 400; font-size: 12px; opacity: 0.72; color: var(--color-slate-grey); }
+.btn-ghost:hover { text-decoration: underline; text-underline-offset: 4px; }
+.btn-ghost-light {
+  color: var(--color-warm-white);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 8px 4px;
+}
+.btn-ghost-light .micro { font-weight: 400; font-size: 12px; opacity: 0.78; }
+.btn-ghost-light:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.btn-block { width: 100%; justify-content: center; margin-top: 16px; }

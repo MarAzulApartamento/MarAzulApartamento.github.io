@@ -1,0 +1,47 @@
+# Daily rebuild — fires the Cloudflare Pages build hook once a day so Lodgify
+# rates and availability stay fresh on the site even when no commits land.
+#
+# Why: site rates and the calendar are fetched at build time (lib/lodgify.ts).
+# Without periodic rebuilds the calendar drifts: a guest viewing the site in
+# week N sees prices from the last deploy. Daily rebuilds keep the homepage
+# calendar within 24 hours of reality.
+#
+# Setup (one-time, owner-side — see questions-for-stefania.md item #29):
+#   1. Cloudflare dashboard -> Workers & Pages -> Mar Azul project -> Settings
+#      -> Builds & deployments -> Deploy hooks -> Add deploy hook.
+#   2. Name: "Daily rebuild". Branch: main (or whichever serves production).
+#   3. Copy the hook URL.
+#   4. GitHub repo Settings -> Secrets and variables -> Actions -> New
+#      repository secret. Name: CLOUDFLARE_BUILD_HOOK. Value: the URL.
+#
+# Once the secret is in place this workflow runs daily at 04:00 UTC. Manual
+# trigger from the Actions tab is also available via workflow_dispatch.
+
+name: Daily rebuild
+
+on:
+  schedule:
+    - cron: '0 4 * * *'   # 04:00 UTC every day
+  workflow_dispatch:       # manual trigger available from the Actions tab
+
+jobs:
+  trigger-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fire Cloudflare Pages build hook
+        env:
+          HOOK: ${{ secrets.CLOUDFLARE_BUILD_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::error::CLOUDFLARE_BUILD_HOOK secret is not set. See questions-for-stefania.md item #29."
+            exit 1
+          fi
+          response=$(curl -sw "\n%{http_code}" -X POST "$HOOK")
+          status=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | sed '$d')
+          echo "Hook responded with HTTP $status"
+          echo "$body"
+          if [ "$status" != "200" ] && [ "$status" != "201" ]; then
+            echo "::error::Build hook returned non-2xx status."
+            exit 1
+          fi

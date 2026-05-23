@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Color usage</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:20px;background:var(--bg);font-family:var(--font-body);color:var(--fg)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .panel{border-radius:var(--r-md);padding:18px 20px;border:1px solid var(--border);min-height:88px;display:flex;flex-direction:column;justify-content:space-between}
+  .lbl{font-size:12px;font-weight:600;letter-spacing:0.06em;opacity:0.85}
+  h3{font-family:var(--font-display);font-weight:700;font-size:24px;line-height:1.2;margin:0}
+  .p1{background:var(--warm-white)} .p1 .lbl{color:var(--fg-muted)}
+  .p2{background:var(--seafoam);border-color:transparent} .p2 .lbl{color:#3a5d63}
+  .p3{background:var(--atlantic-blue);border-color:transparent;color:var(--warm-white)} .p3 .lbl{color:#cfe3de}
+  .p4{background:var(--warm-white)} .p4 .lbl{color:var(--fg-muted)}
+  .accent{display:inline-block;width:36px;height:6px;background:var(--sun-sand);border-radius:2px;margin-top:8px}
+  .small{font-size:13px;color:var(--fg-muted);margin-top:6px}
+  .p3 .small{color:rgba(248,246,241,0.8)}
+</style></head>
+<body class="dsx">
+  <div class="row">
+    <div class="panel p1"><span class="lbl">Surface · Warm White</span><h3>A quiet apartment in Lagos.</h3><span class="small">Body on page background.</span></div>
+    <div class="panel p2"><span class="lbl">Tint · Seafoam</span><h3>Walking distance from the centre.</h3><span class="small">Section tint, no border.</span></div>
+    <div class="panel p3"><span class="lbl">Reverse · Atlantic Blue</span><h3>Ready when you are.</h3><span class="small">Final CTA full-bleed.</span></div>
+    <div class="panel p4"><span class="lbl">Accent · Sun Sand (sparingly)</span><h3>Booking direct.</h3><span class="accent"></span></div>
+  </div>
+</body></html>

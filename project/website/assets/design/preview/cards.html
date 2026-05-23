@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Cards</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:20px;background:var(--bg);font-family:var(--font-body);color:var(--fg)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:var(--warm-white);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+  .card.tinted{background:var(--seafoam);border-color:transparent}
+  .card.elev{box-shadow:0 4px 14px rgba(29,38,48,0.10);border-color:transparent}
+  .eyebrow{font:600 12px/1 var(--font-body);letter-spacing:0.06em;color:var(--fg-muted)}
+  h3{font:700 22px/1.2 var(--font-display);letter-spacing:-0.01em;margin:0;color:var(--fg)}
+  p{font:400 14.5px/1.55 var(--font-body);color:var(--fg);margin:0}
+  .meta{font:400 13px/1 var(--font-body);color:var(--fg-muted);margin-top:4px}
+</style></head>
+<body class="dsx">
+  <div class="row">
+    <div class="card"><span class="eyebrow">Hairline</span><h3>Free parking, guaranteed.</h3><p>One reserved spot under the building.</p></div>
+    <div class="card tinted"><span class="eyebrow" style="color:#3a5d63">Tinted surface</span><h3>Walking distance.</h3><p>Eight minutes to Praça Gil Eanes.</p></div>
+    <div class="card elev"><span class="eyebrow">Elevated</span><h3>Welcome bottle.</h3><p>A glass of vinho verde on arrival.</p></div>
+    <div class="card"><span class="eyebrow">With caption</span><h3>Hosted by Stefania.</h3><p>We may answer within 12 hours.</p><span class="meta">Speaks PT · IT · EN</span></div>
+  </div>
+</body></html>

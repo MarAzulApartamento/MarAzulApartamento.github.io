@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>At-a-glance facts</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:20px 22px;background:var(--bg);font-family:var(--font-body);color:var(--fg)}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  .cell{background:var(--bg);padding:14px 14px 16px;display:flex;flex-direction:column;gap:4px}
+  .lbl{font:600 12px/1 var(--font-body);letter-spacing:0.06em;color:var(--fg-muted)}
+  .val{font:700 17px/1.2 var(--font-display);color:var(--fg);letter-spacing:-0.01em}
+  .neg .val{color:var(--fg-muted);font-weight:400;font-style:italic}
+</style></head>
+<body class="dsx">
+  <div class="grid">
+    <div class="cell"><span class="lbl">Sleeps</span><span class="val">2 to 4</span></div>
+    <div class="cell"><span class="lbl">Bedrooms</span><span class="val">1 plus sofa bed</span></div>
+    <div class="cell"><span class="lbl">Terrace</span><span class="val">East-facing</span></div>
+    <div class="cell"><span class="lbl">A/C</span><span class="val">In every room</span></div>
+    <div class="cell"><span class="lbl">Wi-Fi</span><span class="val">Fibre, 200 Mbps</span></div>
+    <div class="cell"><span class="lbl">Parking</span><span class="val">Free, reserved</span></div>
+    <div class="cell"><span class="lbl">Linens</span><span class="val">Provided</span></div>
+    <div class="cell neg"><span class="lbl">Pets</span><span class="val">Not allowed</span></div>
+  </div>
+</body></html>

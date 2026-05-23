@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Brand colors</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:24px;background:var(--bg);font-family:var(--font-body);color:var(--fg)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .sw{background:var(--bg-inset);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden}
+  .chip{height:72px}
+  .meta{padding:10px 12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .name{font-weight:600;font-size:13px;color:var(--fg)}
+  .hex{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;color:var(--fg-muted);letter-spacing:0.02em}
+</style></head>
+<body class="dsx">
+  <div class="grid">
+    <div class="sw"><div class="chip" style="background:#1E5B73"></div><div class="meta"><span class="name">Atlantic Blue</span><span class="hex">#1E5B73</span></div></div>
+    <div class="sw"><div class="chip" style="background:#CFE3DE"></div><div class="meta"><span class="name">Seafoam</span><span class="hex">#CFE3DE</span></div></div>
+    <div class="sw"><div class="chip" style="background:#D8B98A"></div><div class="meta"><span class="name">Sun Sand</span><span class="hex">#D8B98A</span></div></div>
+    <div class="sw"><div class="chip" style="background:#F8F6F1;box-shadow:inset 0 0 0 1px var(--border)"></div><div class="meta"><span class="name">Warm White</span><span class="hex">#F8F6F1</span></div></div>
+    <div class="sw"><div class="chip" style="background:#1D2630"></div><div class="meta"><span class="name">Deep Navy</span><span class="hex">#1D2630</span></div></div>
+    <div class="sw"><div class="chip" style="background:#6F7A86"></div><div class="meta"><span class="name">Slate Grey</span><span class="hex">#6F7A86</span></div></div>
+  </div>
+</body></html>

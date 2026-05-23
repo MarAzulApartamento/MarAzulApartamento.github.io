@@ -1,0 +1,10 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import { getCollection } from 'astro:content';
+
+const all = await getCollection('legal', ({ data }) => data.page === 'privacy');
+const entry = all.find((e) => e.data.language === 'en');
+if (!entry) throw new Error('Missing privacy-en.md');
+---
+
+<LegalLayout entry={entry} lang="en" />

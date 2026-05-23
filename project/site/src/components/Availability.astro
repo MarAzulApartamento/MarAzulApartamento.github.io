@@ -1,0 +1,49 @@
+---
+import CalendarPicker from './CalendarPicker.astro';
+import type { CalendarData } from '../lib/lodgify';
+import { getStrings, interp } from '../lib/i18n';
+import { WHATSAPP } from '../lib/config';
+
+interface Props {
+  data: CalendarData;
+}
+
+const { data } = Astro.props;
+const t = getStrings(Astro.currentLocale);
+const priceFrom = Object.values(data.rates).length > 0 ? Math.min(...Object.values(data.rates)) : 100;
+const lede = interp(t.availability.ledeWithPrice, { priceFrom, minStay: data.minStay });
+const whatsappHref = WHATSAPP.number
+  ? `https://wa.me/${WHATSAPP.number}?text=${encodeURIComponent(WHATSAPP.defaultMessage)}`
+  : '#whatsapp';
+---
+
+<section class="section" id="availability">
+  <div class="container">
+    <p class="eyebrow">{t.availability.eyebrow}</p>
+    <h2 class="h2">{t.availability.title}</h2>
+    <p class="lede">{lede}</p>
+    <p class="short-gap">
+      {t.availability.shortGapNotePrefix}{' '}
+      <a href={whatsappHref} target={WHATSAPP.number ? '_blank' : undefined} rel={WHATSAPP.number ? 'noopener noreferrer' : undefined}>
+        {t.availability.shortGapNoteLink}
+      </a>
+    </p>
+
+    <CalendarPicker data={data} visibleMonths={2} ctaLabel={t.common.continueToBooking} />
+  </div>
+</section>
+
+<style>
+  .short-gap {
+    margin-top: 8px;
+    font: 400 15px/1.55 var(--font-body);
+    color: var(--color-slate-grey);
+    max-width: 60ch;
+  }
+  .short-gap a {
+    color: var(--color-atlantic-blue);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .short-gap a:hover { text-decoration-thickness: 2px; }
+</style>

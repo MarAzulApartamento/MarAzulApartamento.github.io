@@ -1,0 +1,156 @@
+---
+import { getStrings } from '../lib/i18n';
+import { site } from '../lib/site';
+const t = getStrings(Astro.currentLocale);
+---
+
+<section class="section section-tint">
+  <div class="container about">
+    <div class="about-media" style={`--about-poster: url(${site.about.poster})`}>
+      <video
+        class="about-video"
+        data-src={site.about.video}
+        poster={site.about.poster}
+        muted
+        loop
+        playsinline
+        preload="none"
+        aria-label="Apartamento Mar Azul, the entrance and living area"
+      >
+      </video>
+      <button class="about-play" data-about-play type="button" aria-label="Play video">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </button>
+    </div>
+    <div class="about-text">
+      <p class="eyebrow">{t.about.eyebrow}</p>
+      <h2 class="h2">{t.about.title}</h2>
+      <p>{t.about.body}</p>
+      <p class="muted">{t.about.hostedBy} {t.about.responseTime}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .about-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 4px 24px rgba(29, 38, 48, 0.08);
+  }
+  .about-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* Play button: hidden on desktop (autoplay handles it), shown on mobile
+     where autoplay is unreliable and we'd rather let the user opt in. */
+  .about-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 4px; /* nudge play triangle to optical centre */
+    background: rgba(248, 246, 241, 0.92);
+    border: 0;
+    border-radius: 50%;
+    color: var(--color-atlantic-blue);
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(29, 38, 48, 0.25);
+    transition: transform 160ms ease-out, background 160ms ease-out;
+    z-index: 2;
+  }
+  .about-play:hover { background: var(--color-warm-white); transform: translate(-50%, -50%) scale(1.05); }
+  .about-play:focus-visible { outline: 3px solid var(--color-warm-white); outline-offset: 3px; }
+  .about-play[hidden] { display: none !important; }
+  @media (max-width: 720px) {
+    .about-play { display: flex; }
+  }
+  /* Respect users who prefer reduced motion: pause autoplay, show poster only. */
+  @media (prefers-reduced-motion: reduce) {
+    .about-video { display: none; }
+    .about-play { display: none !important; }
+    .about-media { background: var(--about-poster) center/cover; }
+  }
+  @media (max-width: 900px) {
+    .about { grid-template-columns: 1fr; gap: 24px; }
+    .about-media { aspect-ratio: 16 / 9; }
+  }
+</style>
+
+<script>
+  // Lazy-load + lazy-autoplay the About video.
+  // The video file is ~8 MB; loading it eagerly on page load tanks the
+  // Largest Contentful Paint score. We:
+  //   1. Skip preload entirely (preload="none") and defer src assignment.
+  //   2. When the .about-media element scrolls within ~50% of the viewport,
+  //      swap data-src -> src so the browser starts fetching.
+  //   3. On desktop, attempt autoplay-muted as soon as it's ready. On mobile,
+  //      keep the play-button overlay so the user opts in.
+  //   4. prefers-reduced-motion: never play; only the poster is shown.
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const mobile = window.matchMedia('(max-width: 720px)');
+
+  document.querySelectorAll<HTMLDivElement>('.about-media').forEach((media) => {
+    const video = media.querySelector<HTMLVideoElement>('.about-video');
+    const button = media.querySelector<HTMLButtonElement>('[data-about-play]');
+    if (!video || !button) return;
+
+    if (reduce.matches) {
+      // Don't even load the video file.
+      return;
+    }
+
+    let loaded = false;
+    function loadVideo() {
+      if (loaded) return;
+      const src = video!.getAttribute('data-src');
+      if (src) {
+        video!.setAttribute('src', src);
+        video!.load();
+        loaded = true;
+      }
+    }
+
+    // Hover the desktop play button if autoplay isn't desired on mobile.
+    if (mobile.matches) {
+      button.addEventListener('click', () => {
+        loadVideo();
+        video.play().then(() => { button.hidden = true; }).catch(() => {});
+      });
+    } else {
+      // Desktop: when the section nears the viewport, load + autoplay-muted.
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          loadVideo();
+          video.play().then(() => { button.hidden = true; }).catch(() => {});
+          observer.disconnect();
+        }
+      }, { rootMargin: '0px 0px 200px 0px' });
+      observer.observe(media);
+    }
+
+    // If anything pauses the video on mobile, surface the button again.
+    video.addEventListener('pause', () => {
+      if (mobile.matches && !video.ended && loaded) button.hidden = false;
+    });
+    video.addEventListener('playing', () => { button.hidden = true; });
+  });
+</script>

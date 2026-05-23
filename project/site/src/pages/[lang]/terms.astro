@@ -1,0 +1,18 @@
+---
+import LegalLayout from '../../layouts/LegalLayout.astro';
+import { getCollection } from 'astro:content';
+import { LOCALES, DEFAULT_LOCALE } from '../../lib/config';
+
+export function getStaticPaths() {
+  return LOCALES
+    .filter((l) => l !== DEFAULT_LOCALE)
+    .map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params;
+const all = await getCollection('legal', ({ data }) => data.page === 'terms');
+const entry = all.find((e) => e.data.language === lang) || all.find((e) => e.data.language === 'en');
+if (!entry) throw new Error('Missing terms-en.md');
+---
+
+<LegalLayout entry={entry} lang={lang} />

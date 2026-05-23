@@ -1,0 +1,160 @@
+{
+  "common": {
+    "whatsappCta": "WhatsApp con Stefy",
+    "whatsappMicro": "rispondiamo entro 12 ore",
+    "whatsappFallback": "Oppure scrivici su WhatsApp",
+    "bookDirect": "Prenota direttamente",
+    "bookDirectArrow": "Prenota direttamente →",
+    "checkAvailability": "Verifica disponibilità",
+    "continueToBooking": "Procedi con la prenotazione →",
+    "from": "Da",
+    "perNight": "a notte",
+    "minStayShort": "soggiorno minimo di {n} notti"
+  },
+  "topBar": {
+    "siteNameAria": "Apartamento Mar Azul"
+  },
+  "home": {
+    "metaTitle": "Apartamento Mar Azul · Appartamento tranquillo a Lagos per coppie e piccole famiglie",
+    "metaDescription": "Un appartamento tranquillo a Lagos, in Algarve. A piedi dal centro e dalle spiagge. Posti letto da 2 a 4 ospiti. Terrazzo, aria condizionata, Wi-Fi, parcheggio gratuito. Da €{priceFrom} a notte."
+  },
+  "hero": {
+    "eyebrow": "Lagos · Algarve",
+    "title": "Un appartamento tranquillo a Lagos per coppie e piccole famiglie.",
+    "subtitle": "A piedi dal centro e dalle spiagge. Posti letto da 2 a 4 ospiti."
+  },
+  "trustStrip": {
+    "ratingLabel": "{rating} su {count} recensioni Google",
+    "openSince": "Aperto da giugno 2025",
+    "languages": "Parliamo PT · IT · EN · ES"
+  },
+  "factsGrid": {
+    "eyebrow": "In sintesi",
+    "title": "Cosa offre l'appartamento, in breve.",
+    "facts": [
+      { "label": "Posti letto", "value": "Da 2 a 4", "neg": false },
+      { "label": "Camere", "value": "1 più divano letto", "neg": false },
+      { "label": "Terrazzo", "value": "Esposto a est", "neg": false },
+      { "label": "Aria condizionata", "value": "In camera", "neg": false },
+      { "label": "Wi-Fi", "value": "Fibra, 200 Mbps", "neg": false },
+      { "label": "Parcheggio", "value": "Gratuito", "neg": false },
+      { "label": "Lenzuola e asciugamani", "value": "Inclusi", "neg": false },
+      { "label": "Culla e seggiolone", "value": "Su richiesta", "neg": false },
+      { "label": "A piedi", "value": "Centro e spiagge", "neg": false },
+      { "label": "Animali", "value": "Non ammessi", "neg": true }
+    ]
+  },
+  "about": {
+    "eyebrow": "Informazioni",
+    "title": "A piedi dal centro e dalle spiagge.",
+    "body": "L'appartamento si trova in una via residenziale tranquilla. Scendi al centro di Lagos per la colazione, attraversa il centro per un tuffo in mare, e segui il sentiero costiero fino a Ponta da Piedade prima della folla del mattino.",
+    "hostedBy": "Padrona di casa: Stefania.",
+    "responseTime": "Rispondiamo entro 12 ore."
+  },
+  "gallery": {
+    "eyebrow": "Dentro",
+    "title": "Dentro l'appartamento.",
+    "openLabel": "Apri foto:",
+    "captions": [
+      { "id": "marazul-01", "caption": "Soggiorno, con vista" },
+      { "id": "marazul-02", "caption": "Zona living" },
+      { "id": "marazul-03", "caption": "Dall'ingresso" },
+      { "id": "marazul-04", "caption": "Cucina e zona pranzo" },
+      { "id": "marazul-05", "caption": "Cucina, dettaglio" },
+      { "id": "marazul-06", "caption": "Dettaglio" },
+      { "id": "marazul-07", "caption": "Soggiorno, seconda vista" },
+      { "id": "marazul-08", "caption": "Camera" },
+      { "id": "marazul-09", "caption": "Angolo della camera" },
+      { "id": "marazul-10", "caption": "Vista in profondità" },
+      { "id": "marazul-11", "caption": "Bagno" }
+    ]
+  },
+  "perks": {
+    "eyebrow": "Prenotazione diretta",
+    "title": "Miglior tariffa disponibile, sempre.",
+    "lede": "Disponibilità in tempo reale, direttamente dalla host. Senza commissioni di piattaforma, senza ricarichi."
+  },
+  "location": {
+    "eyebrow": "Posizione",
+    "title": "Lagos, a piedi.",
+    "mapLabel": "Mappa di Lagos con la posizione dell'appartamento",
+    "places": [
+      { "type": "Tasca", "name": "Prato Cheio", "distance": "A piedi" },
+      { "type": "Supermercato", "name": "Intermarché Lagos", "distance": "10 min a piedi" },
+      { "type": "Spiaggia", "name": "Praia da Batata", "distance": "A piedi" },
+      { "type": "Spiaggia", "name": "Praia Dona Ana", "distance": "A piedi" },
+      { "type": "Marina", "name": "Marina de Lagos", "distance": "A piedi" },
+      { "type": "Panificio", "name": "Padaria Central", "distance": "A piedi" }
+    ]
+  },
+  "reviews": {
+    "eyebrow": "Recensioni",
+    "title": "Cosa dicono gli ospiti.",
+    "showMoreLabel": "Vedi altre recensioni",
+    "showPreviousLabel": "Vedi recensioni precedenti"
+  },
+  "availability": {
+    "eyebrow": "Le tue date",
+    "title": "Scegli le tue date.",
+    "ledeWithPrice": "Disponibilità in tempo reale. Prezzi da €{priceFrom} a notte. Soggiorno minimo di {minStay} notti.",
+    "shortGapNotePrefix": "Vedi uno spazio più breve nel calendario?",
+    "shortGapNoteLink": "Contattami per prenotare."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Le domande più frequenti."
+  },
+  "finalCta": {
+    "eyebrow": "Prenotazione diretta",
+    "title": "Quando vuoi tu."
+  },
+  "stickyCta": {
+    "priceLabel": "Da €{priceFrom} a notte",
+    "meta": "Miglior tariffa disponibile, sempre."
+  },
+  "calendarPicker": {
+    "pickHeadline": "Scegli una data di check-in.",
+    "pickMeta": "Soggiorno minimo di {minStay} notti.",
+    "pickMetaLive": "Soggiorno minimo di {minStay} notti. Disponibilità in tempo reale.",
+    "checkInPrefix": "Check-in:",
+    "checkInPickout": "Ora scegli la data di check-out. Minimo {minStay} notti.",
+    "nightSingular": "notte",
+    "nightsLabel": "notti",
+    "totalLabelTemplate": "€{total} in totale (media €{ppn}/notte)",
+    "minStayWarning": "Seleziona almeno {minStay} notti per continuare.",
+    "blockedError": "Alcune date in questo intervallo non sono disponibili.",
+    "clearDates": "Cancella date",
+    "navPrevious": "Precedente",
+    "navNext": "Successivo",
+    "navAriaPrevious": "Mesi precedenti",
+    "navAriaNext": "Mesi successivi",
+    "datesEnRoute": "Ora scegli la data di check-out. Minimo {minStay} notti.",
+    "minNights": "{nights} notte (minimo {minStay})",
+    "minNightsPlural": "{nights} notti (minimo {minStay})"
+  },
+  "footer": {
+    "languagesHeading": "Lingue",
+    "legalHeading": "Note legali",
+    "legalPrivacy": "Privacy",
+    "legalCookies": "Cookie",
+    "legalTerms": "Termini",
+    "cookieSettings": "Impostazioni cookie",
+    "hostedNote": "Hosting su Cloudflare. Prenotazioni tramite Lodgify."
+  },
+  "bookPage": {
+    "metaTitle": "Prenota direttamente · Apartamento Mar Azul",
+    "metaDescription": "Prenota direttamente il tuo soggiorno all'Apartamento Mar Azul. Miglior tariffa disponibile, sempre. Parcheggio gratuito, late check-out, linea WhatsApp diretta con la padrona di casa.",
+    "ctaLabel": "Prenota direttamente →",
+    "back": "Torna all'appartamento",
+    "eyebrow": "Prenotazione",
+    "title": "Scegli le tue date.",
+    "lede": "Miglior tariffa disponibile, sempre.",
+    "perksList": [
+      "Cancellazione gratuita fino a 7 giorni prima dell'arrivo"
+    ],
+    "perkPriceLine": "Da €{priceFrom} a notte · soggiorno minimo di {minStay} notti",
+    "helpLine": "Domande prima di prenotare?",
+    "widgetNote": "La prenotazione apre il checkout sicuro di Lodgify in una nuova scheda quando clicchi su \"Prenota direttamente\"."
+  },
+  "skipLink": "Vai al contenuto"
+}

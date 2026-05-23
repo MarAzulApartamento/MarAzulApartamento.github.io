@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Apartamento Mar Azul · Visual style guide</title>
+<meta name="viewport" content="width=1920, initial-scale=1" />
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  /* ==========================================================
+     Style Guide Canvas — deliverable #1
+     1920 px wide. Left: 375 mobile column. Right: 1440 desktop.
+     ========================================================== */
+  html, body { margin: 0; padding: 0; background: var(--warm-white); color: var(--deep-navy); font-family: var(--font-body); }
+  body { width: 1920px; }
+
+  .canvas { display: grid; grid-template-columns: 375px 1px 1440px; gap: 0; padding: 0; }
+  .gutter { background: var(--line); }
+
+  .col-head { padding: 28px 24px 14px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+  .col-head .lbl { font: 600 12px/1 var(--font-body); letter-spacing: 0.08em; color: var(--slate-grey); text-transform: none; }
+  .col-head .px { font: 500 12px/1 ui-monospace, Menlo, monospace; color: var(--slate-grey); }
+  .col-head h1 { font: 700 22px/1.2 var(--font-display); letter-spacing: -0.01em; margin: 0; color: var(--deep-navy); }
+
+  .col { padding-bottom: 64px; }
+  .col-mobile { width: 375px; }
+  .col-desk { width: 1440px; }
+
+  .doc-head { padding: 32px 48px 24px; background: var(--warm-white); border-bottom: 1px solid var(--line); grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; }
+  .doc-title { font: 700 36px/1.1 var(--font-display); letter-spacing: -0.01em; margin: 0; color: var(--deep-navy); }
+  .doc-sub { font: 400 16px/1.5 var(--font-body); color: var(--slate-grey); margin: 8px 0 0; max-width: 60ch; }
+  .doc-meta { font: 500 12px/1.5 var(--font-body); color: var(--slate-grey); letter-spacing: 0.04em; text-align: right; }
+  .doc-meta strong { color: var(--deep-navy); display: block; font-weight: 600; font-size: 13px; letter-spacing: 0.06em; }
+
+  /* Section frames */
+  .sect { padding: 28px 24px 32px; border-bottom: 1px solid var(--line); }
+  .col-desk .sect { padding: 36px 48px 44px; }
+  .sect:last-child { border-bottom: 0; }
+
+  .sect-eye { display: flex; align-items: baseline; gap: 14px; margin: 0 0 18px; }
+  .sect-num { font: 600 11px/1 var(--font-body); letter-spacing: 0.12em; color: var(--slate-grey); }
+  .sect h2 { font: 700 22px/1.15 var(--font-display); letter-spacing: -0.01em; color: var(--deep-navy); margin: 0; }
+  .col-desk .sect h2 { font-size: 28px; }
+  .sect .desc { font: 400 14px/1.5 var(--font-body); color: var(--slate-grey); margin: 6px 0 22px; max-width: 56ch; }
+
+  /* ---------- 1. Colour ---------- */
+  .swatch-grid-m { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .swatch-grid-d { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .sw { background: var(--warm-white); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .sw-chip { height: 76px; }
+  .sw-meta { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 2px; border-top: 1px solid var(--line); }
+  .sw-row1 { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .sw-name { font: 600 14px/1.2 var(--font-body); color: var(--deep-navy); }
+  .sw-hex { font: 500 12px/1 ui-monospace, Menlo, monospace; color: var(--slate-grey); letter-spacing: 0.02em; }
+  .sw-role { font: 400 12.5px/1.4 var(--font-body); color: var(--slate-grey); margin-top: 2px; }
+
+  /* In-context sample inside each swatch */
+  .sw-sample { padding: 12px 14px; border-top: 1px solid var(--line); background: var(--warm-white); display: flex; align-items: center; min-height: 56px; }
+  .mini-btn { font: 600 13px/1 var(--font-body); padding: 9px 14px; border-radius: 6px; border: 1px solid transparent; }
+  .mini-btn.primary { background: var(--atlantic-blue); color: var(--warm-white); }
+  .mini-btn.outline { background: var(--warm-white); color: var(--atlantic-blue); border-color: var(--atlantic-blue); }
+  .mini-tinted { background: var(--seafoam); color: var(--deep-navy); padding: 9px 12px; border-radius: 6px; font: 500 13px/1.3 var(--font-body); }
+  .mini-card { background: var(--warm-white); padding: 10px 12px; border-radius: 6px; border: 1px solid var(--line); font: 500 13px/1.3 var(--font-body); color: var(--deep-navy); width: 100%; }
+  .mini-text { font: 400 13.5px/1.4 var(--font-body); }
+  .mini-rev { background: var(--atlantic-blue); color: var(--warm-white); padding: 9px 12px; border-radius: 6px; font: 500 13px/1.3 var(--font-body); }
+  .mini-sand-acc { display: inline-flex; align-items: center; gap: 8px; font: 500 13px/1.3 var(--font-body); color: var(--deep-navy); }
+  .mini-sand-acc::before { content: ""; width: 28px; height: 4px; background: var(--sun-sand); border-radius: 2px; }
+  .mini-error { font: 500 13px/1.3 var(--font-body); color: var(--error-red); display: inline-flex; align-items: center; gap: 8px; }
+  .mini-error::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--error-red); }
+
+  /* ---------- 2. Type ramp ---------- */
+  .ramp-row { display: grid; grid-template-columns: 96px 1fr; align-items: baseline; padding: 12px 0; border-bottom: 1px dashed var(--line); gap: 16px; }
+  .col-desk .ramp-row { grid-template-columns: 132px 1fr 220px; padding: 16px 0; }
+  .ramp-row:last-child { border-bottom: 0; }
+  .ramp-label { font: 600 11px/1 var(--font-body); letter-spacing: 0.08em; color: var(--slate-grey); }
+  .ramp-spec { font: 500 11px/1.4 ui-monospace, Menlo, monospace; color: var(--slate-grey); display: none; }
+  .col-desk .ramp-spec { display: block; }
+  .ramp-sample { color: var(--deep-navy); }
+  .r-hero-m { font: 700 36px/1.05 var(--font-display); letter-spacing: -0.015em; }
+  .r-hero-d { font: 700 64px/1.05 var(--font-display); letter-spacing: -0.015em; }
+  .r-h2-m { font: 700 26px/1.15 var(--font-display); letter-spacing: -0.01em; }
+  .r-h2-d { font: 700 40px/1.1 var(--font-display); letter-spacing: -0.01em; }
+  .r-h3 { font: 700 24px/1.25 var(--font-display); letter-spacing: -0.01em; }
+  .r-body { font: 400 16px/1.55 var(--font-body); color: var(--deep-navy); }
+  .r-caption { font: 400 13px/1.45 var(--font-body); color: var(--slate-grey); }
+  .r-button { font: 600 15px/1 var(--font-body); }
+
+  /* ---------- 3. Spacing scale ---------- */
+  .sp-row { display: flex; align-items: center; gap: 12px; padding: 5px 0; }
+  .sp-tok { flex: 0 0 56px; font: 600 11px/1 var(--font-body); letter-spacing: 0.04em; color: var(--slate-grey); }
+  .sp-px { flex: 0 0 44px; font: 500 11px/1 ui-monospace, Menlo, monospace; color: var(--slate-grey); }
+  .sp-bar { height: 14px; background: var(--atlantic-blue); border-radius: 2px; }
+
+  /* ---------- 4. Radius scale ---------- */
+  .rad-row { display: flex; gap: 18px; align-items: flex-end; flex-wrap: wrap; }
+  .rad-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .rad-box { width: 80px; height: 80px; background: var(--seafoam); border: 1px solid var(--border-strong); }
+  .col-desk .rad-box { width: 96px; height: 96px; }
+  .rad-lbl { font: 600 12px/1.2 var(--font-body); color: var(--deep-navy); }
+  .rad-px { font: 500 11px/1 ui-monospace, Menlo, monospace; color: var(--slate-grey); }
+
+  /* ---------- 5. Shadow scale ---------- */
+  .shd-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .col-mobile .shd-row { gap: 10px; }
+  .shd-card { background: var(--warm-white); border-radius: 10px; padding: 16px 14px; min-height: 96px; display: flex; flex-direction: column; justify-content: space-between; }
+  .shd-sm { box-shadow: 0 1px 3px rgba(29,38,48,0.08); }
+  .shd-md { box-shadow: 0 4px 14px rgba(29,38,48,0.10); }
+  .shd-lg { box-shadow: 0 12px 32px rgba(29,38,48,0.13); }
+  .shd-name { font: 600 13px/1 var(--font-body); color: var(--deep-navy); }
+  .shd-spec { font: 500 11px/1.4 ui-monospace, Menlo, monospace; color: var(--slate-grey); }
+  .shd-use { font: 400 12px/1.4 var(--font-body); color: var(--slate-grey); }
+
+  /* ---------- 6. Buttons ---------- */
+  /* Mobile: stacked by role, each state inline with its label.
+     Fixes the overflow caused by the previous 4-column grid at 375px. */
+  .btn-grid-m { display: flex; flex-direction: column; }
+  .btn-grid-m .btn-row-h { margin: 16px 0 8px; }
+  .btn-grid-m > .btn-row-h:first-child { margin-top: 0; }
+  .btn-grid-m .btn-state-row { display: grid; grid-template-columns: 76px 1fr; gap: 12px; align-items: center; padding: 4px 0; }
+  .btn-grid-m .btn-state-row .ds-btn { width: 100%; }
+  .btn-grid-d { display: grid; grid-template-columns: 110px repeat(4, 1fr); gap: 14px 18px; align-items: center; }
+  .btn-state-h { font: 600 11px/1 var(--font-body); letter-spacing: 0.08em; color: var(--slate-grey); text-align: left; padding: 4px 0; }
+  .btn-row-h { font: 600 12px/1 var(--font-body); color: var(--deep-navy); }
+
+  .ds-btn { display: inline-flex; align-items: center; justify-content: center; font: 600 14px/1 var(--font-body); padding: 12px 18px; border: 1px solid transparent; border-radius: 8px; cursor: pointer; background: transparent; color: var(--atlantic-blue); transition: background 160ms var(--ease-out); white-space: nowrap; }
+  .ds-btn.primary { background: var(--atlantic-blue); color: var(--warm-white); }
+  .ds-btn.primary.is-hover { background: #194e62; }
+  .ds-btn.primary.is-focus { background: var(--atlantic-blue); outline: 2px solid var(--atlantic-blue); outline-offset: 2px; }
+  .ds-btn.primary.is-disabled { background: #b6c4cb; color: #f0ece4; cursor: not-allowed; }
+  .ds-btn.secondary { background: var(--warm-white); color: var(--atlantic-blue); border-color: var(--atlantic-blue); }
+  .ds-btn.secondary.is-hover { background: var(--seafoam); }
+  .ds-btn.secondary.is-focus { outline: 2px solid var(--atlantic-blue); outline-offset: 2px; }
+  .ds-btn.secondary.is-disabled { color: #aab4bd; border-color: #d4d8dd; background: var(--warm-white); cursor: not-allowed; }
+  .ds-btn.ghost { background: transparent; color: var(--atlantic-blue); padding: 10px 6px; text-decoration: underline; text-decoration-color: rgba(30,91,115,0.35); text-underline-offset: 3px; }
+  .ds-btn.ghost.is-hover { text-decoration-color: var(--atlantic-blue); }
+  .ds-btn.ghost.is-focus { outline: 2px solid var(--atlantic-blue); outline-offset: 2px; border-radius: 4px; }
+  .ds-btn.ghost.is-disabled { color: #aab4bd; text-decoration-color: rgba(170,180,189,0.45); cursor: not-allowed; }
+
+  /* ---------- 7. Form elements ---------- */
+  .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+  .field-label { font: 600 13px/1 var(--font-body); color: var(--deep-navy); }
+  .field-hint { font: 400 12.5px/1.4 var(--font-body); color: var(--slate-grey); }
+  .field-error { font: 500 12.5px/1.4 var(--font-body); color: var(--error-red); display: inline-flex; align-items: center; gap: 6px; }
+  .field-error::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--error-red); flex: 0 0 auto; }
+  .ds-input { font: 400 16px/1.2 var(--font-body); color: var(--deep-navy); background: var(--warm-white); border: 1px solid var(--border-strong); border-radius: 8px; padding: 12px 14px; width: 100%; }
+  .ds-input::placeholder { color: var(--slate-grey); }
+  .ds-input.is-focus { outline: 2px solid var(--atlantic-blue); outline-offset: 2px; border-color: var(--atlantic-blue); }
+  .ds-input.is-error { border-color: var(--error-red); }
+  .ds-input.is-error.is-focus { outline-color: var(--error-red); }
+  .ds-input.is-disabled { background: #f0ece4; color: var(--slate-grey); cursor: not-allowed; }
+
+  /* Date-range picker */
+  .drp { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border-strong); border: 1px solid var(--border-strong); border-radius: 8px; overflow: hidden; }
+  .drp-cell { background: var(--warm-white); padding: 10px 14px; display: flex; flex-direction: column; gap: 2px; }
+  .drp-cell.is-focus { outline: 2px solid var(--atlantic-blue); outline-offset: -2px; background: var(--warm-white); position: relative; z-index: 1; }
+  .drp-lbl { font: 600 11px/1 var(--font-body); letter-spacing: 0.06em; color: var(--slate-grey); }
+  .drp-val { font: 500 15px/1.2 var(--font-body); color: var(--deep-navy); }
+  .drp-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; padding: 16px; background: var(--warm-white); border: 1px solid var(--border-strong); border-radius: 8px; }
+  .drp-cal-name { grid-column: 1 / -1; font: 600 13px/1 var(--font-body); color: var(--deep-navy); margin: 0 0 4px; }
+  .cal-d { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font: 400 13px/1 var(--font-body); color: var(--deep-navy); border-radius: 4px; }
+  .cal-d.dim { color: var(--slate-grey); opacity: 0.45; }
+  .cal-d.is-sel { background: var(--seafoam); }
+  .cal-d.is-edge { background: var(--atlantic-blue); color: var(--warm-white); font-weight: 600; }
+  .cal-d.is-today { box-shadow: inset 0 0 0 1px var(--atlantic-blue); }
+
+  /* Select */
+  .ds-select { position: relative; }
+  .ds-select select { appearance: none; -webkit-appearance: none; }
+  .ds-select::after { content: ""; position: absolute; right: 16px; top: 50%; width: 8px; height: 8px; border-right: 1.5px solid var(--deep-navy); border-bottom: 1.5px solid var(--deep-navy); transform: translateY(-75%) rotate(45deg); pointer-events: none; }
+
+  /* Stepper */
+  .stepper { display: flex; align-items: center; border: 1px solid var(--border-strong); border-radius: 8px; overflow: hidden; background: var(--warm-white); width: max-content; }
+  .stepper button { width: 44px; height: 44px; font: 500 18px/1 var(--font-body); background: var(--warm-white); border: 0; color: var(--atlantic-blue); cursor: pointer; }
+  .stepper button:hover { background: var(--seafoam); }
+  .stepper button:disabled { color: #b6c4cb; cursor: not-allowed; }
+  .stepper button:focus-visible { outline: 2px solid var(--atlantic-blue); outline-offset: -2px; }
+  .stepper .val { width: 56px; height: 44px; display: flex; align-items: center; justify-content: center; font: 600 16px/1 var(--font-body); color: var(--deep-navy); border-left: 1px solid var(--border-strong); border-right: 1px solid var(--border-strong); }
+  .step-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; }
+  .step-row .meta { display: flex; flex-direction: column; gap: 2px; }
+  .step-row .meta-name { font: 500 14px/1 var(--font-body); color: var(--deep-navy); }
+  .step-row .meta-hint { font: 400 12.5px/1.3 var(--font-body); color: var(--slate-grey); }
+  .step-row + .step-row { border-top: 1px solid var(--line); }
+
+  /* Two-up grid for desktop sub-layouts */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .three { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+  .four { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px; }
+
+  /* Footnote pill */
+  .pill-warn { display: inline-flex; align-items: center; gap: 8px; font: 500 12px/1.3 var(--font-body); color: var(--deep-navy); background: var(--bg-inset); border: 1px solid var(--line-strong); padding: 6px 10px; border-radius: 999px; }
+  .pill-warn::before { content: "·"; font-weight: 700; color: var(--error-red); }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+
+  <!-- DOC HEAD -->
+  <header class="doc-head">
+    <div>
+      <p class="ramp-label" style="margin:0 0 6px">Deliverable 01 · Visual style guide</p>
+      <h1 class="doc-title">Apartamento Mar Azul</h1>
+      <p class="doc-sub">Working specification. Mobile column at 375 px, desktop column at 1440 px, side by side. Tokens, type, spacing, radius, shadow, buttons and form elements only. Photography lives elsewhere.</p>
+    </div>
+    <div class="doc-meta">
+      <strong>v1 · 7 May 2026</strong>
+      Lagos, Algarve · single-property short-stay
+    </div>
+  </header>
+
+  <!-- ========== 375 MOBILE COLUMN ========== -->
+  <div class="col col-mobile">
+    <div class="col-head">
+      <div><span class="lbl">Mobile</span><h1>375 px column</h1></div>
+      <span class="px">375 × auto</span>
+    </div>
+
+    <!-- 1. Colour -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">01</span><h2>Colour</h2></div>
+      <p class="desc">Seven brand tokens. Maximum two non-neutral hues per viewport.</p>
+      <div class="swatch-grid-m">
+        <div class="sw">
+          <div class="sw-chip" style="background:#1E5B73"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Atlantic Blue</span><span class="sw-hex">#1E5B73</span></div><span class="sw-role">Primary · CTAs, links, brand mark</span></div>
+          <div class="sw-sample"><button class="mini-btn primary">Check availability</button></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#CFE3DE"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Seafoam</span><span class="sw-hex">#CFE3DE</span></div><span class="sw-role">Section tint, hover surface</span></div>
+          <div class="sw-sample"><span class="mini-tinted">Walking distance from the centre.</span></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#D8B98A"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Sun Sand</span><span class="sw-hex">#D8B98A</span></div><span class="sw-role">Accent · sparingly, as 1px detail</span></div>
+          <div class="sw-sample"><span class="mini-sand-acc">Best rate, every time.</span></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#F8F6F1;box-shadow:inset 0 0 0 1px var(--line)"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Warm White</span><span class="sw-hex">#F8F6F1</span></div><span class="sw-role">Page background, card surface</span></div>
+          <div class="sw-sample"><span class="mini-card">Hosted by Stefania.</span></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#1D2630"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Deep Navy</span><span class="sw-hex">#1D2630</span></div><span class="sw-role">Body text, headings</span></div>
+          <div class="sw-sample"><span class="mini-text" style="color:var(--deep-navy)">A quiet apartment in Lagos.</span></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#6F7A86"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Slate Grey</span><span class="sw-hex">#6F7A86</span></div><span class="sw-role">Muted text, captions</span></div>
+          <div class="sw-sample"><span class="mini-text" style="color:var(--slate-grey)">We may answer within 12 hours.</span></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#B0392A"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Error Red</span><span class="sw-hex">#B0392A</span></div><span class="sw-role">Inline validation only</span></div>
+          <div class="sw-sample"><span class="mini-error">Please pick a check-out date.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Type -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">02</span><h2>Type</h2></div>
+      <p class="desc">Spectral display from 24 px up. Manrope body and UI from 13 px up.</p>
+      <div class="ramp-row"><span class="ramp-label">Hero / 36</span><span class="ramp-sample r-hero-m">A quiet apartment in Lagos.</span></div>
+      <div class="ramp-row"><span class="ramp-label">H2 / 26</span><span class="ramp-sample r-h2-m">For couples and small families.</span></div>
+      <div class="ramp-row"><span class="ramp-label">H3 / 24</span><span class="ramp-sample r-h3">Hosted by Stefania.</span></div>
+      <div class="ramp-row"><span class="ramp-label">Body / 16</span><span class="ramp-sample r-body">Walking distance from the centre and the beaches.</span></div>
+      <div class="ramp-row"><span class="ramp-label">Caption / 13</span><span class="ramp-sample r-caption">We may answer within 12 hours.</span></div>
+      <div class="ramp-row"><span class="ramp-label">Button / 15</span><span class="ramp-sample r-button" style="color:var(--atlantic-blue)">Check availability</span></div>
+    </section>
+
+    <!-- 3. Spacing -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">03</span><h2>Spacing</h2></div>
+      <p class="desc">4 px base. Section padding 48 on mobile, 80 on desktop.</p>
+      <div class="sp-row"><span class="sp-tok">s-1</span><span class="sp-px">4</span><span class="sp-bar" style="width:4px"></span></div>
+      <div class="sp-row"><span class="sp-tok">s-2</span><span class="sp-px">8</span><span class="sp-bar" style="width:8px"></span></div>
+      <div class="sp-row"><span class="sp-tok">s-3</span><span class="sp-px">12</span><span class="sp-bar" style="width:12px"></span></div>
+      <div class="sp-row"><span class="sp-tok">s-4</span><span class="sp-px">16</span><span class="sp-bar" style="width:16px"></span></div>
+      <div class="sp-row"><span class="sp-tok">s-6</span><span class="sp-px">24</span><span class="sp-bar" style="width:24px"></span></div>
+      <div class="sp-row"><span class="sp-tok">s-8</span><span class="sp-px">32</span><span class="sp-bar" style="width:32px"></span></div>
+      <div class="sp-row"><span class="sp-tok">s-12</span><span class="sp-px">48</span><span class="sp-bar" style="width:48px"></span></div>
+      <div class="sp-row"><span class="sp-tok">s-16</span><span class="sp-px">64</span><span class="sp-bar" style="width:64px"></span></div>
+      <div class="sp-row"><span class="sp-tok">s-20</span><span class="sp-px">80</span><span class="sp-bar" style="width:80px"></span></div>
+    </section>
+
+    <!-- 4. Radius -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">04</span><h2>Radius</h2></div>
+      <p class="desc">Cards and inputs at 8. Buttons at 8 (no pills).</p>
+      <div class="rad-row">
+        <div class="rad-item"><div class="rad-box" style="border-radius:4px"></div><span class="rad-lbl">r-sm</span><span class="rad-px">4</span></div>
+        <div class="rad-item"><div class="rad-box" style="border-radius:8px"></div><span class="rad-lbl">r-md</span><span class="rad-px">8</span></div>
+        <div class="rad-item"><div class="rad-box" style="border-radius:14px"></div><span class="rad-lbl">r-lg</span><span class="rad-px">14</span></div>
+        <div class="rad-item"><div class="rad-box" style="border-radius:9999px"></div><span class="rad-lbl">r-pill</span><span class="rad-px">9999</span></div>
+      </div>
+    </section>
+
+    <!-- 5. Shadow -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">05</span><h2>Shadow</h2></div>
+      <p class="desc">Anchored on Deep Navy. Never combined with a thick border.</p>
+      <div class="shd-row">
+        <div class="shd-card shd-sm"><span class="shd-name">sm</span><span class="shd-spec">0 1 3 / 0.08</span><span class="shd-use">Hairline</span></div>
+        <div class="shd-card shd-md"><span class="shd-name">md</span><span class="shd-spec">0 4 14 / 0.10</span><span class="shd-use">Cards</span></div>
+        <div class="shd-card shd-lg"><span class="shd-name">lg</span><span class="shd-spec">0 12 32 / 0.13</span><span class="shd-use">Lightbox</span></div>
+      </div>
+    </section>
+
+    <!-- 6. Buttons -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">06</span><h2>Buttons</h2></div>
+      <p class="desc">Solid colours only. Three roles, four states each. No gradients.</p>
+      <div class="btn-grid-m">
+        <p class="btn-row-h">Primary</p>
+        <div class="btn-state-row"><span class="btn-state-h">Default</span><button class="ds-btn primary">Book direct</button></div>
+        <div class="btn-state-row"><span class="btn-state-h">Hover</span><button class="ds-btn primary is-hover">Book direct</button></div>
+        <div class="btn-state-row"><span class="btn-state-h">Focus</span><button class="ds-btn primary is-focus">Book direct</button></div>
+        <div class="btn-state-row"><span class="btn-state-h">Disabled</span><button class="ds-btn primary is-disabled" disabled>Book direct</button></div>
+
+        <p class="btn-row-h">Secondary</p>
+        <div class="btn-state-row"><span class="btn-state-h">Default</span><button class="ds-btn secondary">Read more</button></div>
+        <div class="btn-state-row"><span class="btn-state-h">Hover</span><button class="ds-btn secondary is-hover">Read more</button></div>
+        <div class="btn-state-row"><span class="btn-state-h">Focus</span><button class="ds-btn secondary is-focus">Read more</button></div>
+        <div class="btn-state-row"><span class="btn-state-h">Disabled</span><button class="ds-btn secondary is-disabled" disabled>Read more</button></div>
+
+        <p class="btn-row-h">Ghost</p>
+        <div class="btn-state-row"><span class="btn-state-h">Default</span><button class="ds-btn ghost">WhatsApp Stefy</button></div>
+        <div class="btn-state-row"><span class="btn-state-h">Hover</span><button class="ds-btn ghost is-hover">WhatsApp Stefy</button></div>
+        <div class="btn-state-row"><span class="btn-state-h">Focus</span><button class="ds-btn ghost is-focus">WhatsApp Stefy</button></div>
+        <div class="btn-state-row"><span class="btn-state-h">Disabled</span><button class="ds-btn ghost is-disabled" disabled>WhatsApp Stefy</button></div>
+      </div>
+    </section>
+
+    <!-- 7. Forms -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">07</span><h2>Forms</h2></div>
+      <p class="desc">Inputs at 16 px to prevent iOS zoom. Focus uses a 2 px Atlantic Blue ring.</p>
+
+      <div class="field"><label class="field-label">Email</label><input class="ds-input" placeholder="you@example.com" /><span class="field-hint">We may answer within 12 hours.</span></div>
+      <div class="field"><label class="field-label">Email</label><input class="ds-input is-focus" value="guest@" /><span class="field-hint">Focused state.</span></div>
+      <div class="field"><label class="field-label">Email</label><input class="ds-input is-error" value="guest@" /><span class="field-error">That email looks incomplete.</span></div>
+      <div class="field"><label class="field-label">Email</label><input class="ds-input is-disabled" value="guest@example.com" disabled /><span class="field-hint">Disabled.</span></div>
+
+      <div class="field"><label class="field-label">Stay</label>
+        <div class="drp">
+          <div class="drp-cell is-focus"><span class="drp-lbl">Check-in</span><span class="drp-val">Sat 13 Jun</span></div>
+          <div class="drp-cell"><span class="drp-lbl">Check-out</span><span class="drp-val">Sat 20 Jun</span></div>
+        </div>
+        <span class="field-hint">7 nights. Free cancellation up to 14 days before arrival.</span>
+      </div>
+
+      <div class="field"><label class="field-label">Country</label>
+        <div class="ds-select"><select class="ds-input"><option>Portugal</option><option>Germany</option><option>Netherlands</option><option>France</option></select></div>
+      </div>
+
+      <div class="field"><label class="field-label">Guests</label>
+        <div class="step-row">
+          <div class="meta"><span class="meta-name">Adults</span><span class="meta-hint">14 and older</span></div>
+          <div class="stepper"><button aria-label="decrease">−</button><span class="val">2</span><button aria-label="increase">+</button></div>
+        </div>
+        <div class="step-row">
+          <div class="meta"><span class="meta-name">Children</span><span class="meta-hint">2 to 13</span></div>
+          <div class="stepper"><button disabled aria-label="decrease">−</button><span class="val">0</span><button aria-label="increase">+</button></div>
+        </div>
+        <div class="step-row">
+          <div class="meta"><span class="meta-name">Infants</span><span class="meta-hint">Under 2 · cot on request</span></div>
+          <div class="stepper"><button disabled aria-label="decrease">−</button><span class="val">0</span><button aria-label="increase">+</button></div>
+        </div>
+        <span class="field-hint">Sleeps up to 4. <span class="pill-warn">Pets not allowed</span></span>
+      </div>
+    </section>
+  </div>
+
+  <div class="gutter"></div>
+
+  <!-- ========== 1440 DESKTOP COLUMN ========== -->
+  <div class="col col-desk">
+    <div class="col-head">
+      <div><span class="lbl">Desktop</span><h1>1440 px column</h1></div>
+      <span class="px">1440 × auto</span>
+    </div>
+
+    <!-- 1. Colour -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">01</span><h2>Colour</h2></div>
+      <p class="desc">Seven brand tokens. Atlantic Blue is the only saturated voice; Sun Sand is sparing; Error Red appears in inline validation only.</p>
+      <div class="swatch-grid-d">
+        <div class="sw">
+          <div class="sw-chip" style="background:#1E5B73"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Atlantic Blue</span><span class="sw-hex">#1E5B73</span></div><span class="sw-role">Primary · CTAs, links, brand mark, focus rings</span></div>
+          <div class="sw-sample"><button class="mini-btn primary">Check availability</button></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#CFE3DE"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Seafoam</span><span class="sw-hex">#CFE3DE</span></div><span class="sw-role">Section tint, hover surface, calendar range</span></div>
+          <div class="sw-sample"><span class="mini-tinted">Walking distance from the centre.</span></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#D8B98A"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Sun Sand</span><span class="sw-hex">#D8B98A</span></div><span class="sw-role">Accent · 1 px details, star ratings</span></div>
+          <div class="sw-sample"><span class="mini-sand-acc">Best rate, every time.</span></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#F8F6F1;box-shadow:inset 0 0 0 1px var(--line)"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Warm White</span><span class="sw-hex">#F8F6F1</span></div><span class="sw-role">Page background, card surface</span></div>
+          <div class="sw-sample"><span class="mini-card">Hosted by Stefania since June 2025.</span></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#1D2630"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Deep Navy</span><span class="sw-hex">#1D2630</span></div><span class="sw-role">Body text, headings, lightbox backdrop</span></div>
+          <div class="sw-sample"><span class="mini-rev">A quiet apartment in Lagos.</span></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#6F7A86"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Slate Grey</span><span class="sw-hex">#6F7A86</span></div><span class="sw-role">Muted text, captions, hints</span></div>
+          <div class="sw-sample"><span class="mini-text" style="color:var(--slate-grey)">We may answer within 12 hours.</span></div>
+        </div>
+        <div class="sw">
+          <div class="sw-chip" style="background:#B0392A"></div>
+          <div class="sw-meta"><div class="sw-row1"><span class="sw-name">Error Red</span><span class="sw-hex">#B0392A</span></div><span class="sw-role">Inline form validation only</span></div>
+          <div class="sw-sample"><span class="mini-error">Please pick a check-out date.</span></div>
+        </div>
+        <div class="sw" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:18px;background:var(--bg-inset);border-style:dashed">
+          <span class="sw-name">Rules</span>
+          <span class="sw-role" style="margin-top:6px">Max 2 hues per viewport. No gradient buttons. No gradient text. Neutrals tint toward Atlantic Blue, never pure grey.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Type -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">02</span><h2>Type</h2></div>
+      <p class="desc">Spectral 700 for display from 24 px up. Manrope 400 / 500 / 600 for body and UI. Sentence case throughout. No ALL CAPS.</p>
+      <div class="ramp-row"><span class="ramp-label">Hero / 64</span><span class="ramp-sample r-hero-d">A quiet apartment in Lagos for couples and small families.</span><span class="ramp-spec">Spectral 700 · 64/68 · -0.015em</span></div>
+      <div class="ramp-row"><span class="ramp-label">H2 / 40</span><span class="ramp-sample r-h2-d">A quiet apartment in Lagos for couples and small families.</span><span class="ramp-spec">Spectral 700 · 40/44 · -0.01em</span></div>
+      <div class="ramp-row"><span class="ramp-label">H3 / 24</span><span class="ramp-sample r-h3">A quiet apartment in Lagos for couples and small families.</span><span class="ramp-spec">Spectral 700 · 24/30 · -0.01em</span></div>
+      <div class="ramp-row"><span class="ramp-label">Body / 16</span><span class="ramp-sample r-body">A quiet apartment in Lagos for couples and small families.</span><span class="ramp-spec">Manrope 400 · 16/26 · 0</span></div>
+      <div class="ramp-row"><span class="ramp-label">Caption / 13</span><span class="ramp-sample r-caption">A quiet apartment in Lagos for couples and small families.</span><span class="ramp-spec">Manrope 400 · 13/19 · Slate Grey</span></div>
+      <div class="ramp-row"><span class="ramp-label">Button / 15</span><span class="ramp-sample r-button" style="color:var(--atlantic-blue)">Check availability</span><span class="ramp-spec">Manrope 600 · 15/15 · 0</span></div>
+    </section>
+
+    <!-- 3. Spacing -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">03</span><h2>Spacing</h2></div>
+      <p class="desc">4 px base. Section padding 80 on desktop. Card internal padding 24. Hero gutter 48.</p>
+      <div class="two">
+        <div>
+          <div class="sp-row"><span class="sp-tok">s-1</span><span class="sp-px">4</span><span class="sp-bar" style="width:4px"></span></div>
+          <div class="sp-row"><span class="sp-tok">s-2</span><span class="sp-px">8</span><span class="sp-bar" style="width:8px"></span></div>
+          <div class="sp-row"><span class="sp-tok">s-3</span><span class="sp-px">12</span><span class="sp-bar" style="width:12px"></span></div>
+          <div class="sp-row"><span class="sp-tok">s-4</span><span class="sp-px">16</span><span class="sp-bar" style="width:16px"></span></div>
+          <div class="sp-row"><span class="sp-tok">s-6</span><span class="sp-px">24</span><span class="sp-bar" style="width:24px"></span></div>
+        </div>
+        <div>
+          <div class="sp-row"><span class="sp-tok">s-8</span><span class="sp-px">32</span><span class="sp-bar" style="width:32px"></span></div>
+          <div class="sp-row"><span class="sp-tok">s-12</span><span class="sp-px">48</span><span class="sp-bar" style="width:48px"></span></div>
+          <div class="sp-row"><span class="sp-tok">s-16</span><span class="sp-px">64</span><span class="sp-bar" style="width:64px"></span></div>
+          <div class="sp-row"><span class="sp-tok">s-20</span><span class="sp-px">80</span><span class="sp-bar" style="width:80px"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Radius -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">04</span><h2>Radius</h2></div>
+      <p class="desc">Cards 14, inputs 8, buttons 8, calendar day 4. No pills on buttons.</p>
+      <div class="rad-row">
+        <div class="rad-item"><div class="rad-box" style="border-radius:4px"></div><span class="rad-lbl">r-sm</span><span class="rad-px">4 px</span></div>
+        <div class="rad-item"><div class="rad-box" style="border-radius:8px"></div><span class="rad-lbl">r-md</span><span class="rad-px">8 px</span></div>
+        <div class="rad-item"><div class="rad-box" style="border-radius:14px"></div><span class="rad-lbl">r-lg</span><span class="rad-px">14 px</span></div>
+        <div class="rad-item"><div class="rad-box" style="border-radius:9999px"></div><span class="rad-lbl">r-pill</span><span class="rad-px">9999 px</span></div>
+      </div>
+    </section>
+
+    <!-- 5. Shadow -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">05</span><h2>Shadow</h2></div>
+      <p class="desc">Three steps, all anchored on Deep Navy. Subtle, never glow. Never combined with a thick border.</p>
+      <div class="shd-row">
+        <div class="shd-card shd-sm"><span class="shd-name">shadow-sm</span><span class="shd-spec">0 1px 3px rgba(29,38,48,0.08)</span><span class="shd-use">Hairline · sticky bar</span></div>
+        <div class="shd-card shd-md"><span class="shd-name">shadow-md</span><span class="shd-spec">0 4px 14px rgba(29,38,48,0.10)</span><span class="shd-use">Cards, dropdowns</span></div>
+        <div class="shd-card shd-lg"><span class="shd-name">shadow-lg</span><span class="shd-spec">0 12px 32px rgba(29,38,48,0.13)</span><span class="shd-use">Lightbox, modals</span></div>
+      </div>
+    </section>
+
+    <!-- 6. Buttons -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">06</span><h2>Buttons</h2></div>
+      <p class="desc">Solid colours only. Three roles, four states each. No gradients. Hover darkens via color-mix; never opacity. Press shrinks darken further. Never scale.</p>
+      <div class="btn-grid-d">
+        <span></span>
+        <span class="btn-state-h">Default</span>
+        <span class="btn-state-h">Hover</span>
+        <span class="btn-state-h">Focus</span>
+        <span class="btn-state-h">Disabled</span>
+
+        <span class="btn-row-h">Primary</span>
+        <button class="ds-btn primary">Check availability</button>
+        <button class="ds-btn primary is-hover">Check availability</button>
+        <button class="ds-btn primary is-focus">Check availability</button>
+        <button class="ds-btn primary is-disabled" disabled>Check availability</button>
+
+        <span class="btn-row-h">Secondary</span>
+        <button class="ds-btn secondary">Read the FAQ</button>
+        <button class="ds-btn secondary is-hover">Read the FAQ</button>
+        <button class="ds-btn secondary is-focus">Read the FAQ</button>
+        <button class="ds-btn secondary is-disabled" disabled>Read the FAQ</button>
+
+        <span class="btn-row-h">Ghost</span>
+        <button class="ds-btn ghost">WhatsApp Stefy</button>
+        <button class="ds-btn ghost is-hover">WhatsApp Stefy</button>
+        <button class="ds-btn ghost is-focus">WhatsApp Stefy</button>
+        <button class="ds-btn ghost is-disabled" disabled>WhatsApp Stefy</button>
+      </div>
+    </section>
+
+    <!-- 7. Forms -->
+    <section class="sect">
+      <div class="sect-eye"><span class="sect-num">07</span><h2>Forms</h2></div>
+      <p class="desc">Inputs at 16 px (prevents iOS zoom). 2 px Atlantic Blue focus ring on every interactive element. Error state replaces hint and uses Error Red.</p>
+
+      <div class="four">
+        <!-- Text input -->
+        <div>
+          <p class="btn-row-h" style="margin-bottom:14px">Text input</p>
+          <div class="field"><label class="field-label">Email · default</label><input class="ds-input" placeholder="you@example.com" /><span class="field-hint">We may answer within 12 hours.</span></div>
+          <div class="field"><label class="field-label">Email · focus</label><input class="ds-input is-focus" value="guest@" /><span class="field-hint">Cursor visible, ring active.</span></div>
+          <div class="field"><label class="field-label">Email · error</label><input class="ds-input is-error" value="guest@" /><span class="field-error">That email looks incomplete.</span></div>
+          <div class="field"><label class="field-label">Email · disabled</label><input class="ds-input is-disabled" value="guest@example.com" disabled /><span class="field-hint">Read-only.</span></div>
+        </div>
+
+        <!-- Date range -->
+        <div>
+          <p class="btn-row-h" style="margin-bottom:14px">Date-range picker</p>
+          <div class="field">
+            <label class="field-label">Stay · default</label>
+            <div class="drp">
+              <div class="drp-cell"><span class="drp-lbl">Check-in</span><span class="drp-val">Sat 13 Jun</span></div>
+              <div class="drp-cell"><span class="drp-lbl">Check-out</span><span class="drp-val">Sat 20 Jun</span></div>
+            </div>
+            <span class="field-hint">7 nights.</span>
+          </div>
+          <div class="field">
+            <label class="field-label">Stay · focused on check-out</label>
+            <div class="drp">
+              <div class="drp-cell"><span class="drp-lbl">Check-in</span><span class="drp-val">Sat 13 Jun</span></div>
+              <div class="drp-cell is-focus"><span class="drp-lbl">Check-out</span><span class="drp-val">Pick a date</span></div>
+            </div>
+            <span class="field-error">Please pick a check-out date.</span>
+          </div>
+          <div class="drp-cal" aria-hidden="true">
+            <p class="drp-cal-name">June 2026</p>
+            <span class="cal-d dim">1</span><span class="cal-d dim">2</span><span class="cal-d dim">3</span><span class="cal-d dim">4</span><span class="cal-d dim">5</span><span class="cal-d dim">6</span><span class="cal-d dim">7</span>
+            <span class="cal-d">8</span><span class="cal-d">9</span><span class="cal-d">10</span><span class="cal-d">11</span><span class="cal-d">12</span><span class="cal-d is-edge">13</span><span class="cal-d is-sel">14</span>
+            <span class="cal-d is-sel">15</span><span class="cal-d is-sel">16</span><span class="cal-d is-sel">17</span><span class="cal-d is-sel">18</span><span class="cal-d is-sel">19</span><span class="cal-d is-edge">20</span><span class="cal-d">21</span>
+            <span class="cal-d">22</span><span class="cal-d">23</span><span class="cal-d">24</span><span class="cal-d is-today">25</span><span class="cal-d">26</span><span class="cal-d">27</span><span class="cal-d">28</span>
+            <span class="cal-d">29</span><span class="cal-d">30</span>
+          </div>
+        </div>
+
+        <!-- Select -->
+        <div>
+          <p class="btn-row-h" style="margin-bottom:14px">Select</p>
+          <div class="field"><label class="field-label">Country · default</label><div class="ds-select"><select class="ds-input"><option>Portugal</option><option>Germany</option><option>Netherlands</option><option>France</option></select></div><span class="field-hint">Used for tax receipt only.</span></div>
+          <div class="field"><label class="field-label">Country · focus</label><div class="ds-select"><select class="ds-input is-focus"><option>Portugal</option></select></div><span class="field-hint">Ring on the wrapping input, dropdown unstyled.</span></div>
+          <div class="field"><label class="field-label">Country · error</label><div class="ds-select"><select class="ds-input is-error"><option>Pick a country</option></select></div><span class="field-error">Please pick a country.</span></div>
+          <div class="field"><label class="field-label">Country · disabled</label><div class="ds-select"><select class="ds-input is-disabled" disabled><option>Portugal</option></select></div><span class="field-hint">Read-only.</span></div>
+        </div>
+
+        <!-- Stepper -->
+        <div>
+          <p class="btn-row-h" style="margin-bottom:14px">Guest count</p>
+          <div class="field">
+            <label class="field-label">Guests · default</label>
+            <div class="step-row">
+              <div class="meta"><span class="meta-name">Adults</span><span class="meta-hint">14 and older</span></div>
+              <div class="stepper"><button aria-label="decrease">−</button><span class="val">2</span><button aria-label="increase">+</button></div>
+            </div>
+            <div class="step-row">
+              <div class="meta"><span class="meta-name">Children</span><span class="meta-hint">2 to 13</span></div>
+              <div class="stepper"><button disabled aria-label="decrease">−</button><span class="val">0</span><button aria-label="increase">+</button></div>
+            </div>
+            <div class="step-row">
+              <div class="meta"><span class="meta-name">Infants</span><span class="meta-hint">Under 2 · cot on request</span></div>
+              <div class="stepper"><button disabled aria-label="decrease">−</button><span class="val">0</span><button aria-label="increase">+</button></div>
+            </div>
+            <span class="field-hint">Sleeps up to 4. <span class="pill-warn">Pets not allowed</span></span>
+          </div>
+          <div class="field">
+            <label class="field-label">Guests · error</label>
+            <div class="step-row">
+              <div class="meta"><span class="meta-name">Adults</span><span class="meta-hint">14 and older</span></div>
+              <div class="stepper" style="border-color:var(--error-red)"><button disabled aria-label="decrease">−</button><span class="val">0</span><button aria-label="increase">+</button></div>
+            </div>
+            <span class="field-error">At least one adult.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+</body>
+</html>

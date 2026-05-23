@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Sticky CTA bar</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:0;background:#eee9dc;font-family:var(--font-body)}
+  .frame{position:relative;height:300px;background:#eee9dc;overflow:hidden}
+  .ph{position:absolute;inset:0;background:linear-gradient(180deg,#dccdb2 0,#eee9dc 100%);opacity:0.6}
+  .bar{position:absolute;left:0;right:0;bottom:0;background:rgba(248,246,241,0.95);backdrop-filter:blur(12px);border-top:1px solid var(--border);box-shadow:0 -4px 14px rgba(29,38,48,0.10);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .lhs{display:flex;flex-direction:column;gap:2px}
+  .price{font:700 17px/1 var(--font-display);color:var(--fg);letter-spacing:-0.01em}
+  .nights{font:400 13px/1 var(--font-body);color:var(--fg-muted)}
+  .btn{font:600 15px/1 var(--font-body);padding:13px 22px;background:var(--atlantic-blue);color:var(--warm-white);border-radius:8px;border:0}
+</style></head>
+<body class="dsx">
+  <div class="frame">
+    <div class="ph"></div>
+    <div class="bar">
+      <div class="lhs"><span class="price">€95 per night</span><span class="nights">7 nights · Sat 14 → Sat 21 Jun</span></div>
+      <button class="btn">Check availability</button>
+    </div>
+  </div>
+</body></html>

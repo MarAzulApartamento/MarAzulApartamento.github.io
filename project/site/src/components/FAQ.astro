@@ -1,0 +1,114 @@
+---
+import { getCollection, render } from 'astro:content';
+import { getStrings } from '../lib/i18n';
+
+const lang = Astro.currentLocale || 'en';
+const t = getStrings(lang);
+const all = await getCollection('faqs', ({ data }) => data.language === lang);
+const fallback = lang !== 'en' ? await getCollection('faqs', ({ data }) => data.language === 'en') : [];
+const pool = all.length > 0 ? all : fallback;
+const items = pool.sort((a, b) => a.data.order - b.data.order);
+
+const rendered = await Promise.all(
+  items.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  })
+);
+
+// FAQPage JSON-LD — eligible for Google's rich-results FAQ snippet.
+// Strip markdown formatting for the answer text; Google wants plain or HTML.
+function stripMarkdown(md: string): string {
+  return md
+    .replace(/\r\n/g, '\n')
+    .replace(/\n{2,}/g, ' ')
+    .replace(/\n/g, ' ')
+    .replace(/[*_`]/g, '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map((entry) => ({
+    '@type': 'Question',
+    name: entry.data.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: stripMarkdown(entry.body || ''),
+    },
+  })),
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">{t.faq.eyebrow}</p>
+    <h2 class="h2">{t.faq.title}</h2>
+    <div class="faq" data-faq>
+      {rendered.map(({ entry, Content }) => (
+        <details class="faq-item">
+          <summary class="faq-row">
+            <span class="faq-q">{entry.data.question}</span>
+            <span class="faq-chev" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-panel">
+            <div class="faq-a">
+              <Content />
+            </div>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    margin-top: 24px;
+    max-width: 760px;
+  }
+  .faq-item {
+    border-bottom: 1px solid #E5DED1;
+  }
+  .faq-item:first-child { border-top: 1px solid #E5DED1; }
+  .faq-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    cursor: pointer;
+    list-style: none;
+  }
+  .faq-row::-webkit-details-marker { display: none; }
+  .faq-q {
+    font: 600 17px/1.4 var(--font-body);
+    color: var(--color-deep-navy);
+  }
+  .faq-chev {
+    width: 12px;
+    height: 12px;
+    border-right: 1.5px solid var(--color-deep-navy);
+    border-bottom: 1.5px solid var(--color-deep-navy);
+    transform: rotate(45deg);
+    transition: transform 220ms ease-out;
+    flex-shrink: 0;
+  }
+  .faq-item[open] .faq-chev { transform: rotate(225deg); }
+  .faq-panel {
+    padding-bottom: 18px;
+  }
+  .faq-a {
+    font: 400 16px/1.6 var(--font-body);
+    color: var(--color-slate-grey);
+    max-width: 60ch;
+  }
+  .faq-a :global(p) { margin: 0; max-width: none; color: var(--color-slate-grey); }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-chev { transition: none; }
+  }
+</style>

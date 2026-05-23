@@ -1,0 +1,25 @@
+# Cloudflare Pages security headers.
+# Applied to every response served from this site.
+# Reference: https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob: https:; media-src 'self'; connect-src 'self' https://cloudflareinsights.com https://*.cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://github.com https://api.github.com https://*.githubusercontent.com https://marazul-cms-auth.marazulapartamento.workers.dev https://*.tile.openstreetmap.org; frame-src 'self' https://checkout.lodgify.com https://github.com https://marazul-cms-auth.marazulapartamento.workers.dev; form-action 'self' https://checkout.lodgify.com https://github.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+
+# Long cache for the vendored Klaro assets (immutable URL once the file is published)
+/klaro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Long cache for fonts and photos (also effectively immutable by filename)
+/photos/*
+  Cache-Control: public, max-age=31536000, immutable
+/logo/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Don't cache HTML aggressively — we want the next deploy to roll out fast
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

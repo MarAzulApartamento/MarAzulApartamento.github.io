@@ -1,0 +1,203 @@
+/* ==========================================================================
+   Apartamento Mar Azul — Colors & Type
+   Single source of truth for design tokens. Mirrors site/src/styles/global.css.
+   Loaded directly by preview cards and the UI kit.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600&display=swap');
+
+:root {
+  /* ---------- Brand colors (use exact HEX) ---------- */
+  --atlantic-blue: #1E5B73;   /* primary — CTAs, links, brand mark             */
+  --seafoam:       #CFE3DE;   /* section tints, hover surfaces                 */
+  --sun-sand:      #D8B98A;   /* accent — sparingly                            */
+  --warm-white:    #F8F6F1;   /* page background                               */
+  --deep-navy:     #1D2630;   /* body text, headings                           */
+  --slate-grey:    #5F6B77;   /* muted text, captions (WCAG AA on warm-white)  */
+  --error-red:     #B0392A;   /* inline validation only — never decorative      */
+
+  /* Subtle blue-tinted neutrals (per brand: tint neutrals toward Atlantic). */
+  --warm-white-2:  #F1EEE7;   /* card / inset surface                          */
+  --line:          #E5DED1;   /* hairline border on warm-white                 */
+  --line-strong:   #D6CFC0;   /* stronger hairline                             */
+
+  /* ---------- Semantic foreground / background roles ---------- */
+  --bg:            var(--warm-white);
+  --bg-inset:      var(--warm-white-2);
+  --bg-tint:       var(--seafoam);
+  --bg-deep:       var(--atlantic-blue);
+
+  --fg:            var(--deep-navy);
+  --fg-muted:      var(--slate-grey);
+  --fg-on-deep:    var(--warm-white);
+  --link:          var(--atlantic-blue);
+  --border:        var(--line);
+  --border-strong: var(--line-strong);
+  --focus:         var(--atlantic-blue);
+  --danger:        var(--error-red);
+
+  /* ---------- Type families ---------- */
+  --font-display:  'Spectral', Georgia, 'Times New Roman', serif;
+  --font-body:     'Manrope', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+
+  /* ---------- Type scale (display only at 24px+) ---------- */
+  --fs-hero:    clamp(2.5rem, 5vw, 4.5rem);   /* 40 → 72 */
+  --fs-h1:      clamp(2rem, 3.6vw, 3rem);     /* 32 → 48 */
+  --fs-h2:      clamp(1.625rem, 2.6vw, 2.25rem); /* 26 → 36 */
+  --fs-h3:      1.5rem;                        /* 24 — the floor for display */
+  --fs-eyebrow: 0.8125rem;                     /* 13, Manrope, tracked       */
+  --fs-body-lg: 1.125rem;                      /* 18 */
+  --fs-body:    1rem;                          /* 16 — body floor            */
+  --fs-small:   0.9375rem;                     /* 15 — caption                */
+  --fs-micro:   0.8125rem;                     /* 13 — labels, microcopy      */
+
+  --lh-tight:   1.15;
+  --lh-snug:    1.35;
+  --lh-normal:  1.6;
+  --lh-loose:   1.75;
+
+  --tracking-tight:  -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.06em;   /* eyebrows / small labels                     */
+
+  /* ---------- Spacing (4px base) ---------- */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  20px;
+  --s-6:  24px;
+  --s-8:  32px;
+  --s-10: 40px;
+  --s-12: 48px;
+  --s-16: 64px;
+  --s-20: 80px;
+  --s-24: 96px;
+  --s-32: 128px;
+
+  /* ---------- Radii ---------- */
+  --r-sm:  4px;
+  --r-md:  8px;
+  --r-lg:  14px;
+  --r-xl:  20px;
+  --r-pill: 9999px;
+
+  /* ---------- Shadows (anchored on deep-navy, very subtle) ---------- */
+  --shadow-sm: 0 1px 3px rgba(29, 38, 48, 0.08);
+  --shadow-md: 0 4px 14px rgba(29, 38, 48, 0.10);
+  --shadow-lg: 0 12px 32px rgba(29, 38, 48, 0.13);
+
+  /* ---------- Layout ---------- */
+  --measure-prose: 68ch;       /* enforce ≤68 chars per line                   */
+  --container:     1200px;
+  --container-wide:1440px;
+  --gutter-mobile: 20px;
+  --gutter-desk:   48px;
+
+  /* ---------- Motion (subtle, never bouncy) ---------- */
+  --ease-standard: cubic-bezier(0.32, 0.72, 0, 1);   /* sticky CTA slide       */
+  --ease-out:      cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --d-fast:    160ms;
+  --d-quick:   220ms;
+  --d-base:    280ms;
+  --d-reveal:  450ms;
+}
+
+/* ==========================================================================
+   Element-level defaults — opt-in by adding the class `.dsx` to a wrapper,
+   so this file can be imported into preview cards without globally restyling
+   tools / hosts.
+   ========================================================================== */
+
+.dsx, .dsx * { box-sizing: border-box; }
+
+.dsx {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display headings — Spectral, only at ≥24px. Sentence case (no transforms). */
+.dsx h1, .dsx h2, .dsx h3, .dsx h4 {
+  font-family: var(--font-display);
+  color: var(--fg);
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--lh-tight);
+  margin: 0;
+  text-wrap: balance;
+}
+.dsx h1 { font-size: var(--fs-hero); line-height: 1.05; }
+.dsx h2 { font-size: var(--fs-h2); }
+.dsx h3 { font-size: var(--fs-h3); line-height: var(--lh-snug); }
+
+/* Body — Manrope, 16px floor, 68ch line cap. */
+.dsx p, .dsx li {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  max-width: var(--measure-prose);
+  margin: 0;
+  text-wrap: pretty;
+}
+.dsx p.lede { font-size: var(--fs-body-lg); color: var(--fg); }
+.dsx p.muted, .dsx .muted { color: var(--fg-muted); }
+
+/* Editorial italic pull-quote in Spectral italic. */
+.dsx .pull {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: var(--lh-snug);
+  color: var(--fg);
+  max-width: 36ch;
+}
+
+/* Eyebrow — small tracked Manrope, sentence case.
+   NOTE: brand rule says never ALL CAPS, so eyebrows stay sentence case but
+   slightly tracked for hierarchy. */
+.dsx .eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  color: var(--fg-muted);
+}
+
+/* Links — Atlantic Blue, underline on hover (calm, not playful). */
+.dsx a {
+  color: var(--link);
+  text-decoration-color: color-mix(in oklch, var(--link) 35%, transparent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color var(--d-fast) var(--ease-out),
+              text-decoration-color var(--d-fast) var(--ease-out);
+}
+.dsx a:hover {
+  text-decoration-color: var(--link);
+}
+
+/* Focus rings — visible everywhere, never removed. */
+.dsx :focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+
+/* Reduced motion — mandatory fallback. */
+@media (prefers-reduced-motion: reduce) {
+  .dsx *,
+  .dsx *::before,
+  .dsx *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

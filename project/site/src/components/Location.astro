@@ -1,0 +1,196 @@
+---
+import { getStrings } from '../lib/i18n';
+import { PROPERTY } from '../lib/config';
+const t = getStrings(Astro.currentLocale);
+const places = t.location.places as Array<{ type: string; name: string; distance: string }>;
+---
+
+<section class="section section-tint">
+  <div class="container">
+    <p class="eyebrow">{t.location.eyebrow}</p>
+    <h2 class="h2">{t.location.title}</h2>
+    <div
+      class="map"
+      data-map
+      data-lat={PROPERTY.geo.latitude}
+      data-lng={PROPERTY.geo.longitude}
+      aria-label={t.location.mapLabel}
+    ></div>
+    <ul class="places">
+      {places.map((p) => (
+        <li class="place">
+          <span class="place-type">{p.type}</span>
+          <span class="place-name">{p.name}</span>
+          <span class="place-dist">{p.distance}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .map {
+    position: relative;
+    height: 360px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #E5DED1;
+    margin-top: 24px;
+    background: #E8E3D8;
+  }
+  /* Brand the Leaflet attribution + zoom controls so the map blends in. */
+  .map :global(.leaflet-container) {
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+  .map :global(.leaflet-control-attribution) {
+    background: rgba(248, 246, 241, 0.85);
+    color: var(--color-slate-grey);
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  .map :global(.leaflet-control-attribution a) {
+    color: var(--color-atlantic-blue);
+  }
+  .map :global(.leaflet-control-zoom a) {
+    background: var(--color-warm-white);
+    color: var(--color-atlantic-blue);
+    border: 1px solid #E5DED1;
+  }
+  .map :global(.leaflet-control-zoom a:hover) {
+    background: var(--color-atlantic-blue);
+    color: var(--color-warm-white);
+  }
+  /* The custom marker sits inside a divIcon — scope below targets the marker SVG. */
+  .map :global(.mar-azul-marker svg) {
+    filter: drop-shadow(0 2px 4px rgba(29, 38, 48, 0.35));
+  }
+  .map :global(.leaflet-popup-content-wrapper) {
+    background: var(--color-warm-white);
+    color: var(--color-deep-navy);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(29, 38, 48, 0.18);
+  }
+  .map :global(.leaflet-popup-content) {
+    font: 500 13px/1.4 'Manrope', system-ui, sans-serif;
+    margin: 10px 14px;
+  }
+  .map :global(.leaflet-popup-content strong) {
+    color: var(--color-deep-navy);
+    font-weight: 700;
+  }
+  .map :global(.leaflet-popup-tip) {
+    background: var(--color-warm-white);
+  }
+
+  .places {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .place {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #D6CFC0;
+    align-items: baseline;
+  }
+  .place-type {
+    font: 600 12px/1 var(--font-body);
+    letter-spacing: 0.06em;
+    color: var(--color-slate-grey);
+  }
+  .place-name {
+    font: 500 16px/1.3 var(--font-body);
+    color: var(--color-deep-navy);
+  }
+  .place-dist {
+    font: 400 14px/1 var(--font-body);
+    color: var(--color-slate-grey);
+    white-space: nowrap;
+  }
+  @media (max-width: 720px) {
+    .places { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  /**
+   * Lazy-init Leaflet map when the section scrolls into view.
+   * Why lazy:
+   *   - Leaflet JS is ~150 KB and the OSM tile fetches add network weight.
+   *     Loading on first paint hurts LCP and the user may never reach this section.
+   *   - On the homepage, the map sits below the fold; scroll-triggered init is
+   *     the right trade-off.
+   *
+   * scrollWheelZoom is disabled by default — otherwise scrolling the page over
+   * the map traps the user inside it. They can still pinch-zoom on touch and
+   * use the +/- buttons.
+   */
+  document.querySelectorAll<HTMLDivElement>('[data-map]').forEach((root) => {
+    const lat = parseFloat(root.getAttribute('data-lat') || '0');
+    const lng = parseFloat(root.getAttribute('data-lng') || '0');
+    if (!lat || !lng) return;
+
+    let initialized = false;
+
+    const observer = new IntersectionObserver((entries) => {
+      if (!initialized && entries.some((e) => e.isIntersecting)) {
+        initialized = true;
+        observer.disconnect();
+        loadAndInit().catch(() => { /* network failure: keep the empty container, do not crash */ });
+      }
+    }, { rootMargin: '200px 0px' });
+    observer.observe(root);
+
+    async function loadAndInit() {
+      // Inject the Leaflet stylesheet
+      if (!document.querySelector('link[data-leaflet]')) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/leaflet/leaflet.css';
+        link.setAttribute('data-leaflet', '');
+        document.head.appendChild(link);
+      }
+      // Inject the Leaflet script
+      if (!(window as any).L) {
+        await new Promise<void>((resolve, reject) => {
+          const script = document.createElement('script');
+          script.src = '/leaflet/leaflet.js';
+          script.onload = () => resolve();
+          script.onerror = () => reject(new Error('leaflet load failed'));
+          document.head.appendChild(script);
+        });
+      }
+      const L = (window as any).L;
+      if (!L) return;
+
+      const map = L.map(root, {
+        scrollWheelZoom: false,
+        zoomControl: true,
+        attributionControl: true,
+      }).setView([lat, lng], 15);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 18,
+      }).addTo(map);
+
+      // Brand-coloured marker — Atlantic Blue with a warm-white outline.
+      const icon = L.divIcon({
+        className: 'mar-azul-marker',
+        html: '<svg viewBox="0 0 24 24" width="36" height="36" fill="#1E5B73" stroke="#FAFAF7" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c-3.9 0-7 3.1-7 7 0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>',
+        iconSize: [36, 36],
+        iconAnchor: [18, 36],
+        popupAnchor: [0, -32],
+      });
+
+      L.marker([lat, lng], { icon, alt: 'Apartamento Mar Azul' })
+        .addTo(map)
+        .bindPopup('<strong>Apartamento Mar Azul</strong><br>Lagos · Algarve');
+    }
+  });
+</script>

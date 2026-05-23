@@ -1,0 +1,27 @@
+{
+  "hero": {
+    "photo": "/photos/marazul-01.jpg"
+  },
+  "about": {
+    "video": "/photos/about-stefania.mp4",
+    "poster": "/photos/about-poster.jpg"
+  },
+  "trustStrip": {
+    "ownerPhoto": "/photos/owner_picture.jpg"
+  },
+  "gallery": {
+    "items": [
+      { "id": "marazul-01", "src": "/photos/marazul-01.jpg", "span": "wide tall" },
+      { "id": "marazul-02", "src": "/photos/marazul-02.jpg", "span": "" },
+      { "id": "marazul-08", "src": "/photos/marazul-08.jpg", "span": "" },
+      { "id": "marazul-04", "src": "/photos/marazul-04.jpg", "span": "" },
+      { "id": "marazul-05", "src": "/photos/marazul-05.jpg", "span": "" },
+      { "id": "marazul-09", "src": "/photos/marazul-09.jpg", "span": "" },
+      { "id": "marazul-11", "src": "/photos/marazul-11.jpg", "span": "" },
+      { "id": "marazul-07", "src": "/photos/marazul-07.jpg", "span": "" },
+      { "id": "marazul-03", "src": "/photos/marazul-03.jpg", "span": "" },
+      { "id": "marazul-10", "src": "/photos/marazul-10.jpg", "span": "" },
+      { "id": "marazul-06", "src": "/photos/marazul-06.jpg", "span": "" }
+    ]
+  }
+}

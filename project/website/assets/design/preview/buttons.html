@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:24px;background:var(--bg);font-family:var(--font-body)}
+  .row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:14px}
+  .row:last-child{margin-bottom:0}
+  .btn{font:600 15px/1 var(--font-body);padding:14px 22px;border-radius:8px;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background var(--d-fast) var(--ease-out),border-color var(--d-fast) var(--ease-out),color var(--d-fast) var(--ease-out)}
+  .primary{background:var(--atlantic-blue);color:var(--warm-white)}
+  .primary:hover{background:#194e62}
+  .primary.is-press{background:#143e4e}
+  .secondary{background:transparent;color:var(--atlantic-blue);border-color:var(--atlantic-blue)}
+  .secondary:hover{background:var(--seafoam)}
+  .ghost{background:transparent;color:var(--atlantic-blue);border-color:transparent;padding:10px 6px;text-decoration:underline;text-decoration-color:rgba(30,91,115,0.35);text-underline-offset:3px}
+  .ghost:hover{text-decoration-color:var(--atlantic-blue)}
+  .lbl{font:600 12px/1 var(--font-body);letter-spacing:0.06em;color:var(--fg-muted);min-width:74px}
+</style></head>
+<body class="dsx">
+  <div class="row"><span class="lbl">Default</span><button class="btn primary">Check availability</button><button class="btn secondary">Book direct</button><a class="btn ghost" href="#">WhatsApp Stefy</a></div>
+  <div class="row"><span class="lbl">Hover</span><button class="btn primary" style="background:#194e62">Check availability</button><button class="btn secondary" style="background:var(--seafoam)">Book direct</button><a class="btn ghost" href="#" style="text-decoration-color:var(--atlantic-blue)">WhatsApp Stefy</a></div>
+  <div class="row"><span class="lbl">Pressed</span><button class="btn primary is-press">Check availability</button><button class="btn secondary" style="background:#bcd6d0">Book direct</button></div>
+  <div class="row"><span class="lbl">Focus</span><button class="btn primary" style="outline:2px solid var(--atlantic-blue);outline-offset:2px">Check availability</button></div>
+</body></html>

@@ -1,0 +1,35 @@
+---
+import { getStrings } from '../lib/i18n';
+const t = getStrings(Astro.currentLocale);
+---
+
+<section class="section section-direct">
+  <div class="container direct-band">
+    <p class="eyebrow">{t.perks.eyebrow}</p>
+    <h2 class="h2">{t.perks.title}</h2>
+    <p class="lede">{t.perks.lede}</p>
+  </div>
+</section>
+
+<style>
+  .section-direct {
+    padding: 56px 0;
+    background: var(--color-warm-white);
+    border-top: 1px solid #E5DED1;
+    border-bottom: 1px solid #E5DED1;
+  }
+  .direct-band {
+    text-align: left;
+  }
+  .direct-band .eyebrow { margin-bottom: 8px; }
+  .direct-band .h2 {
+    margin: 0 0 8px;
+    max-width: 22ch;
+    text-wrap: balance;
+  }
+  .direct-band .lede {
+    margin: 0;
+    max-width: 50ch;
+    color: var(--color-slate-grey);
+  }
+</style>
