@@ -81,9 +81,9 @@ We'll update this page if anything changes. The booking you've already made is g
 
 ## Contact
 
-- **Email:** marazulapartamento@gmail.com
+- **Email:** stefy@apartamentomarazul.com
 - **WhatsApp:** via the button on apartamentomarazul.com (the host may answer within 12 hours)
 
 ---
 
-_Last updated: 14 May 2026._
+_Last updated: 16 May 2026._

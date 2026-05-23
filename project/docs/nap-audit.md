@@ -25,7 +25,7 @@ Use these exact strings everywhere. Anything that differs is a citation error.
 | **Latitude / Longitude** | `37.0997, -8.6745` | From Lodgify property record. Used for VacationRental schema + map. |
 | **Alojamento Local registration** | `[TO CONFIRM]` | Stefania to supply (item #18 in questions doc). Required by Portuguese law on every public-facing channel. |
 
-**Email canonical** is `[TO CONFIRM]` — pending the brand-email forward decision (item #16). Once set up (recommend `hello@apartamentomarazul.com`), use it consistently.
+**Email canonical** is **`stefy@apartamentomarazul.com`** — live 2026-05-16 (item #16). Forwards to `marazulapartamento@gmail.com`; Stefy sends from it via Gmail "Send mail as". Use the brand address everywhere public-facing.
 
 ---
 

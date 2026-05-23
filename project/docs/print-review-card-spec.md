@@ -1,7 +1,7 @@
 # Fridge magnet — print spec
 
-**Last updated:** 2026-05-14
-**Status:** drafted for Stefania's review. Replaces the original A6 review card (item #24 in `questions-for-stefania.md`, reformatted 2026-05-13).
+**Last updated:** 2026-05-15
+**Status:** LOCKED 2026-05-15 — Stefy's decisions applied. Copy shortened, no photo, 70×90 mm, vendor Frente e Verso, qty 2. Ready for the claude-design prompt → print-ready PDF.
 **Goal:** sit on the fridge for the entire stay. Guests open the fridge multiple times a day — by the third or fourth time, the calm "leave us a review" prompt has registered without ever being pushy. Lives forever (magnets don't get thrown out like cards do), so one design batch covers many guests.
 
 ---
@@ -34,8 +34,7 @@ Replaces the original A6 paper card on the kitchen counter for two reasons:
 
 > **Loved your stay?**
 >
-> Leave us a Google review. It really helps.
-> (About 2 minutes.)
+> Leave us a review.
 >
 > [QR code]
 >
@@ -46,12 +45,12 @@ Replaces the original A6 paper card on the kitchen counter for two reasons:
 **Visual treatment:**
 - Background **Warm White (#FAFAF7)** with a thin Atlantic Blue rule along the top edge (~3 mm wide) — a small visual anchor that ties the magnet to the rest of the brand system.
 - Top headline **"Loved your stay?"** — Spectral 700, ~14pt, Deep Navy. Centred, ~6 mm from the top rule.
-- Sub-line **"Leave us a Google review. It really helps."** with a smaller second line **"(About 2 minutes.)"** — Manrope 400, ~9pt, Deep Navy.
+- Sub-line **"Leave us a review."** — Manrope 400, ~10pt, Deep Navy.
 - QR code **35 × 35 mm**, centred, Atlantic Blue on warm-white.
 - Caption **"scan to review"** — Manrope 500, 7pt, Slate Grey, centred, ~3 mm under QR.
 - Footer **`apartamentomarazul.com`** — Manrope 600, 7pt, Atlantic Blue, centred, ~4 mm from the bottom.
 
-That's it. Seven lines including the QR — calm and one-purpose.
+Six lines including the QR — calm and one-purpose. Copy locked by Stefy 2026-05-15 (shorter than the draft).
 
 ---
 
@@ -79,35 +78,28 @@ Same locked set as the rest of the print line: Atlantic Blue, Warm White, Deep N
 
 ## Production
 
-| Vendor | Cost (~10 magnets) | Lead time | Notes |
-|---|---|---|---|
-| Sticker Mule (Custom Magnets) | ~€20-25 | 4-7 days delivered EU | Best print quality, vibrant CMYK, no minimums. Recommended for the first batch. |
-| Vistaprint (Photo magnets / Custom magnets) | ~€15-20 | 5-7 days | Cheaper, perfectly serviceable. QR scan reliability slightly lower; ask for a proof. |
-| Local Lagos sign / print shop | ~€20-30 | 2-3 days | Walk-in, fast, supports local. Quality varies — ask to see a sample magnet before ordering. |
+**Vendor:** **Frente e Verso (Lagos)** — locked 2026-05-15. Walk in with the print-ready PDF + colour proof reference for Atlantic Blue. Ask to see a sample flexible magnet from a previous job to confirm the QR scan quality on their stock before committing.
 
-**Quantity:** **10 magnets** for the first run. The magnet doesn't get consumed (one stays on the fridge for the whole life of the apartment), so 10 covers replacements + a couple to put on Stefania's own fridge or hand to friends as a brand touchpoint.
+**Quantity:** **2 magnets.** Locked by Stefy 2026-05-15 (one on the apartment fridge + one spare).
 
 **Critical proof check** — the QR code MUST scan cleanly with both iPhone and Android cameras from ~20-30 cm away in indoor kitchen light. Magnets often have slight surface texture that interferes with QR scanning. **Test the printed proof before approving the bulk run.** If the QR doesn't scan reliably, the whole magnet is wasted.
 
 ---
 
-## What's needed from Stefania to lock the copy
+## Locked decisions (2026-05-15)
 
-| Field | Source / status |
+| # | Decision | Locked value |
+|---|---|---|
+| 1 | Copy | **"Loved your stay? Leave us a review."** |
+| 2 | Photo | **None** |
+| 3 | Size | **70 × 90 mm** |
+| 4 | Vendor | **Frente e Verso** (Lagos) |
+| 5 | Quantity | **2** |
+
+| Field | Source |
 |---|---|
-| Headline copy | ✅ Locked (proposal: "Loved your stay? Leave us a Google review. It really helps.") — Stefania to confirm or substitute |
-| QR target URL | ✅ `https://g.page/r/Cewx9Po3sADdEBM/review` (provided by Stefania, 2026-05-14) |
-| Footer URL | ✅ apartamentomarazul.com |
-
----
-
-## Open decisions for Stefania
-
-1. **Confirm or substitute the copy.** Proposal: "Loved your stay? Leave us a Google review. It really helps. (About 2 minutes.)" Calm, specific, no pressure, with a small reassurance about the time cost. Alternative: "Enjoyed your stay? Two minutes on Google means the world to a small host." Slightly warmer but longer.
-2. **Photo or no photo?** A small photo of the apartment terrace at the top of the magnet would warm it up but reduces space for the QR. **Recommendation: no photo** — the fridge magnet is functional, the table flip is the warm one.
-3. **Size** — 70 × 90 mm fits most fridge real estate without dominating. Want bigger (more visible) or smaller (more discreet)? **Recommendation: 70 × 90 mm**, but if Stefania has a small fridge or already has lots of magnets, drop to 60 × 80 mm.
-4. **Vendor** — Sticker Mule (online, best quality), Vistaprint (online, cheapest), local Lagos (walk-in, fast)? **Recommendation: local Lagos for the first batch** so we can hold a physical proof and test the QR scan in person before bulk.
-5. **Quantity** — 10 magnets feels right. Want more (for branded giveaways)? Cost per magnet drops sharply above 25 units.
+| QR target URL | `https://g.page/r/Cewx9Po3sADdEBM/review` (Stefy, 2026-05-14) |
+| Footer URL | apartamentomarazul.com |
 
 ---
 
@@ -127,10 +119,9 @@ Same locked set as the rest of the print line: Atlantic Blue, Warm White, Deep N
 
 ---
 
-## Next steps after Stefania approves
+## Next steps
 
-1. We finalise the copy + QR target with Stefania.
-2. We write the claude-design prompt to produce the print-ready PDF.
-3. We send to the local Lagos print/sign shop for one proof.
-4. Stefania holds the proof on her own fridge, tests the QR scan from arm's length on her phone.
-5. Once the proof is approved, bulk-print 10 magnets.
+1. Write the claude-design prompt to produce the print-ready PDF.
+2. Hand the PDF to Frente e Verso for one proof magnet.
+3. Stefy holds the proof on her own fridge, tests the QR scan from arm's length on her phone.
+4. Once the proof is approved, print the 2-magnet run.

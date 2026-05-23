@@ -163,7 +163,7 @@ If the issue is non-critical but user-facing (e.g. legal page placeholders made 
 
 ## Common gotchas
 
-- **Email forwarding breaks during cutover.** If `hello@apartamentomarazul.com` was email-forwarded via Namecheap, swapping nameservers to Cloudflare can break that forwarding unless you also re-add the email MX records in Cloudflare DNS. Check Namecheap → Email Forwarding → note the existing settings → recreate them in Cloudflare DNS as MX records before the swap.
+- **Email forwarding breaks during cutover.** If `stefy@apartamentomarazul.com` was email-forwarded via Namecheap, swapping nameservers to Cloudflare can break that forwarding unless you also re-add the email MX records in Cloudflare DNS. Check Namecheap → Email Forwarding → note the existing settings → recreate them in Cloudflare DNS as MX records before the swap.
 - **Lodgify webhook URL.** Lodgify sometimes pings webhooks at `apartamentomarazul.com/lodgify-hook` or similar. We don't currently have one configured, but if Stefania ever did, the URL keeps working through the cutover (same hostname).
 - **Caching.** Browsers + ISPs cache DNS records aggressively. If `apartamentomarazul.com` looks broken on someone's machine but works elsewhere, it's almost always cached DNS. Tell them to flush: `ipconfig /flushdns` (Windows) or `sudo killall -HUP mDNSResponder` (macOS).
 - **HSTS preload.** Our `Strict-Transport-Security` header has `preload` enabled. After 6+ months on production, we can submit to https://hstspreload.org for browsers to hardcode HTTPS for our domain. Don't submit until 6+ months in — getting off the list is hard.

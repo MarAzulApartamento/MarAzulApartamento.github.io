@@ -1,7 +1,7 @@
 # Business card — print spec
 
-**Last updated:** 2026-05-14
-**Status:** confirmed in scope by Stefania (2026-05-13). Awaiting final copy review on Side B contact lines + vendor selection.
+**Last updated:** 2026-05-15
+**Status:** LOCKED 2026-05-15 — Stefy's decisions applied. One WOM card only, qty 100, vendor Frente e Verso (Lagos). Ready for the claude-design prompt → print-ready PDF.
 **Companion to:** the print scope from CLAUDE.md (Sprint 5 print materials).
 
 The card sits in Stefania's bag while she's travelling in Italy or visiting Algarve neighbours. It hands off the brand and a route to direct booking in one quick exchange. This document is what we'd take to a printer once she signs off.
@@ -10,19 +10,16 @@ The card sits in Stefania's bag while she's travelling in Italy or visiting Alga
 - Full name: **Stefania Amidei**
 - NIF: **297 932 713**
 - AL number: **165912/AL**
-- Email: **marazulapartamento@gmail.com** (confirmed 2026-05-14)
+- Email: **stefy@apartamentomarazul.com** (brand alias live 2026-05-16; forwards to `marazulapartamento@gmail.com`)
 - Phone: **+351 936 083 766**
 
 ---
 
 ## Purpose
 
-Two related jobs:
+**Word-of-mouth** — given to a friend, B&B owner, neighbour, or someone who asked "where do you stay in Lagos?" The card needs a fast brand impression and one easy action: scan QR → land on the direct site.
 
-1. **Word-of-mouth** — given to a friend, B&B owner, neighbour, or someone who asked "where do you stay in Lagos?" The card needs a fast brand impression and one easy action: scan QR → land on the direct site.
-2. **Trade contact** — given to a tour operator, travel-agent, or accommodation broker. Same brand impression but with the credentials they need (AL registration, contact email, NIF on request).
-
-We can either ship one card that handles both, or two variants. Stefania picks (decision #1 below).
+Stefy locked this as a **single WOM card** on 2026-05-15. No separate trade variant. AL/NIF stay off the printed card — when a trade contact needs them, Stefy shares verbally or by email.
 
 ---
 
@@ -76,22 +73,21 @@ The action side. QR + contact details.
 │  ┌──────┐   APARTAMENTO         │
 │  │      │   MAR AZUL            │
 │  │ QR   │                       │
-│  │      │   Stefania Pellizzoni │
+│  │      │   Stefania Amidei     │
 │  └──────┘   Host                │
 │                                 │
 │  apartamentomarazul.com         │
 │  +351 936 083 766               │
-│  hello@apartamentomarazul.com   │
+│  stefy@apartamentomarazul.com   │
 │  @apartamento_marazul           │
 └─────────────────────────────────┘
 ```
 
 **Background:** Warm White (#FAFAF7) — the body palette of the site.
-**QR code:** 22 × 22 mm, top-left, set in Atlantic Blue on warm-white. Targets:
-  - **Word-of-mouth variant:** `https://apartamentomarazul.com/?utm_source=card&utm_medium=offline&utm_campaign=wom`
-  - **Trade variant:** `https://apartamentomarazul.com/book?utm_source=card&utm_medium=offline&utm_campaign=trade`
+**QR code:** 22 × 22 mm, top-left, set in Atlantic Blue on warm-white. Target:
+  - `https://apartamentomarazul.com/?utm_source=card&utm_medium=offline&utm_campaign=wom`
 
-The UTM parameters let us see in GA4 (once it's collecting) how many bookings come from the card; trade and WOM are tagged separately so we can tell which audience converts.
+The UTM parameters let us see in GA4 (once it's collecting) how many bookings come from the card.
 
 **Right column type stack** (top to bottom, left-aligned, ~3 mm to the right of the QR):
 - "APARTAMENTO MAR AZUL" — Manrope 700, 8pt, all-caps, letter-spacing 0.08em, Deep Navy (#1d2630). Acts as a label, not a brand mark (the brand mark lives on Side A).
@@ -101,13 +97,10 @@ The UTM parameters let us see in GA4 (once it's collecting) how many bookings co
 **Bottom block, full width** (left-aligned, 4mm from bottom safe edge):
 - `apartamentomarazul.com` — Manrope 600, 9pt, Atlantic Blue (#1E5B73).
 - `+351 936 083 766` — Manrope 500, 9pt, Deep Navy.
-- `marazulapartamento@gmail.com` — Manrope 500, 9pt, Deep Navy. _(Working email; can be upgraded to `hello@apartamentomarazul.com` once item #16 — brand email forward — is configured.)_
+- `stefy@apartamentomarazul.com` — Manrope 500, 9pt, Deep Navy. _(Brand alias live 2026-05-16 — receives and sends through Stefy's Gmail.)_
 - `@apartamento_marazul` — Manrope 500, 9pt, Deep Navy.
 
 Line spacing 1.4. Fixed leading so the four lines stack visibly even at 9pt.
-
-**Trade variant adds, in a small footer line** (Manrope 400, 7pt, Slate Grey):
-- `AL 165912/AL · NIF 297 932 713`
 
 ---
 
@@ -139,23 +132,13 @@ We'll deliver:
 - One file per side, or a single 2-page PDF (matches printer preference)
 - A separate PNG mock-up for visual approval before the printer runs the job
 
-### Vendor options
+### Vendor
 
-Three reasonable routes — Stefania picks.
-
-| Vendor | Cost (100 cards) | Lead time | Notes |
-|---|---|---|---|
-| **MOO** (Luxe / Original 350 gsm) | ~€85 | 5-7 days delivered to PT | Best print quality. Their colour-matching is excellent. Worth it for the brand impression. |
-| **Vistaprint** (Premium matte 350 gsm) | ~€35 | 3-5 days | Cheaper, perfectly acceptable. Slight colour variability vs. MOO. |
-| **Local Lagos printshop** | ~€40-60 | 2 days | Supports a local business; pickup convenience. Quality varies — get a proof before bulk run. |
-
-For the WOM use case (where most cards are given casually), Vistaprint's quality is fine. For the trade variant (handed to a hotel concierge or tour operator), MOO's tactility is worth the upcharge.
+**Frente e Verso (Lagos)** — locked by Stefy 2026-05-15. Local pickup, one consolidated vendor across all four print pieces (table flip, fridge magnet, folder, business card). Brief them with the print-ready PDF + a calibrated colour proof reference for Atlantic Blue.
 
 ### Quantity
 
-Suggest **100 to start**, reorder same design later if needed. Reordering 100 more costs almost the same as the first 100, so don't over-order initially. If Stefania expects to give out hundreds (large trade event), bump to 250.
-
-If shipping two variants: 50 + 50.
+**100 cards.** Locked by Stefy 2026-05-15.
 
 ### Proof check before approval
 
@@ -167,19 +150,18 @@ Before the final print run, the printer sends a digital proof (PDF or screen) an
 - [ ] No blurry text — fonts are outlined/embedded
 - [ ] Bleed isn't visible after trim (no Atlantic Blue showing at the trim edges of the warm-white side)
 - [ ] Phone number reads `+351 936 083 766` (with the +)
-- [ ] AL number / NIF appear if trade variant
 
 ---
 
-## Six decisions for Stefania
+## Locked decisions (2026-05-15)
 
-| # | Question | Recommendation |
+| # | Decision | Locked value |
 |---|---|---|
-| 1 | One card for everyone, or two variants (WOM + trade)? | Two variants. Trade audience (hotels, agents) expects AL/NIF; WOM doesn't. Marginal extra cost. |
-| 2 | Quantity? | 100 + 100 (split between variants) for the first run. |
-| 3 | Confirm Side A content (logo + "Lagos · Algarve")? | Yes. Anything else dilutes the brand impression. |
-| 4 | Side B contact details — confirm the four lines? | Yes. Use `marazulapartamento@gmail.com` (confirmed 2026-05-14); upgrade to brand email later when item #16 closes. |
-| 5 | Print vendor? | MOO for trade, Vistaprint for WOM. Or all-MOO if budget allows. |
+| 1 | Variants | **One WOM card only** (no trade variant) |
+| 2 | Quantity | **100** |
+| 3 | Side A | Logo + "Lagos · Algarve" — confirmed |
+| 4 | Side B contact lines | Name, phone, email (`stefy@apartamentomarazul.com`), Instagram, URL — confirmed |
+| 5 | Print vendor | **Frente e Verso** (Lagos) |
 
 ---
 

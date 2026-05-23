@@ -17,7 +17,7 @@ The data controller is:
 - **Address:** Rua Dom Luís da Silveira, lote V 44 B, 8600-575 Lagos, Portugal
 - **NIF:** 297 932 713
 - **Alojamento Local registration:** 165912/AL
-- **Email for privacy queries:** marazulapartamento@gmail.com
+- **Email for privacy queries:** stefy@apartamentomarazul.com
 
 If you have a question about your data or want to exercise any of the rights described below, please write to the email above.
 
@@ -110,4 +110,4 @@ If we change how we use personal data, we update this page and the "Last updated
 
 ---
 
-_Last updated: 14 May 2026._
+_Last updated: 16 May 2026._

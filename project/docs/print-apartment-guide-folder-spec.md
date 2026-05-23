@@ -1,16 +1,14 @@
 # Apartment Guide Folder — print spec
 
-**Last updated:** 2026-05-14
-**Status:** new spec drafted for Stefania's review (item #8b in `questions-for-stefania.md`).
-**Goal:** sit on the dining table next to the table flip stand. Where the flip stand answers the at-a-glance questions, the folder answers the "how exactly do I use the washing machine" and "where should I have dinner tonight" questions. It is the apartment's detailed reference — appliances, restaurants, beaches, taxis, SUP, transit, supermarkets — in five languages.
+**Last updated:** 2026-05-17
+**Status:** LOCKED 2026-05-17 — Stefy's appliance copy applied (A/C, dehumidifier, washing machine, oven, induction hob). Format + production already locked 2026-05-15: A4, plastic sleeve folder, EN+PT+IT (3 languages × 2 copies = 6 booklets), Atlantic Blue cover, colour photos, vendor Frente e Verso. Key locker page removed. Coffee machine page removed. Fireplace stated as not working. Sunrays Kitchen added to vegetarian list. Page count ~18.
+**Goal:** sit on the dining table next to the table flip stand. Where the flip stand answers the at-a-glance questions, the folder answers the "how exactly do I use the washing machine" and "where should I have dinner tonight" questions. It is the apartment's detailed reference — appliances, restaurants, beaches, taxis, SUP, transit, supermarkets — in three languages.
 
 ---
 
 ## What this is
 
-A small printed booklet (A5 saddle-stitched, ~20 pages) that lives on the dining table beside the table flip. Five language variants: **English, Portuguese, Italian, Spanish, French**. Two copies per language so two guests can browse simultaneously without arguing over the same booklet. The folder is the long-form companion to the table flip's panel-by-panel summary.
-
-The five languages cover ~95% of guest origin. German and Dutch guests typically read English well enough; if volume from those markets justifies it later, we can add DE and NL as a second print run.
+A printed A4 guide held in a plastic sleeve folder, sitting on the dining table beside the table flip. Three language variants for the first print run: **English, Portuguese, Italian**. Two copies per language (6 booklets total) so two guests can browse simultaneously without arguing over the same booklet. Spanish and French stay on hold until the EN master is field-tested — typically a second print run after the first guest season.
 
 ---
 
@@ -18,14 +16,14 @@ The five languages cover ~95% of guest origin. German and Dutch guests typically
 
 | Spec | Value |
 |---|---|
-| Format | A5 saddle-stitched booklet (148 × 210 mm, portrait) |
-| Pages | **20 pages per booklet** (4 sheets × 4 sides + cover) — multiples of 4 are a saddle-stitch constraint |
-| Cover | Heavier 250 gsm matte coated stock with the brand on the front |
+| Format | A4 portrait (210 × 297 mm), loose pages in a plastic sleeve folder |
+| Pages | **~18 pages per booklet** (down from 20: key-locker page and standalone coffee-machine page removed per Stefy 2026-05-15) |
+| Cover | Atlantic Blue solid, 250 gsm matte coated stock |
 | Interior | 130 gsm uncoated stock — warmer to the touch, doesn't glare under kitchen lights |
-| Binding | Two saddle staples in the spine |
-| Quantity | **2 copies × 5 languages = 10 booklets total** |
+| Binding | **Plastic sleeve folder** (each page in its own clear sleeve, ring-bound). Pages are easy to wipe clean and replace individually if a single page needs updating. |
+| Quantity | **2 copies × 3 languages = 6 booklets total** |
 | Colour | CMYK throughout |
-| Photos | Embedded inline on appliance pages — sourced from `project/website/assets/images/apartment-guide/<appliance>/` |
+| Photos | Embedded inline on appliance pages — **colour (functional)** — sourced from `project/website/assets/images/apartment-guide/<appliance>/` |
 
 ---
 
@@ -65,16 +63,15 @@ A clean numbered contents list with page references:
 
 ```
 HOW THE APARTMENT WORKS
-  3   Wi-Fi
-  4   Key locker (check-in / check-out)
+  4   Wi-Fi
   5   Air conditioning
   6   Dehumidifier
   7   Washing machine
   8   Dishwasher
   9   Oven
- 10   Microwave
- 11   Coffee machine
- 12   Fireplace
+ 10   Induction hob
+ 11   Microwave
+ 12   Fireplace (not currently working)
  13   Television
 
 PRACTICAL THINGS
@@ -93,6 +90,8 @@ OUT IN LAGOS
  19   Emergency contacts
  20   Before you leave
 ```
+
+(Page numbers above will shift in the final design pass — key-locker and standalone coffee pages were removed, induction added; expect the working count to land around 18 pages.)
 
 ### Pages 4-13 — Appliances + apartment systems
 
@@ -120,68 +119,68 @@ Below is the **structure** for each page. The actual operating-instruction text 
 
 **Photo:** `wifi-router-01.jpeg` (router with sticker visible).
 
-#### Page 4 — Key locker
+#### Page 4 — ~~Key locker~~ REMOVED 2026-05-15
 
-> **KEY LOCKER (check-in & check-out)**
-> The smart locker outside the apartment door.
->
-> 1. The lockbox code is sent to you on WhatsApp the day before your check-in.
-> 2. Turn the dial to the four digits in order, then pull the latch down.
-> 3. Inside you'll find the apartment keys.
-> 4. On check-out, please put the keys back in the locker and spin the dial to scramble the code.
->
-> If the code doesn't work, message Stefy on WhatsApp.
+Stefy confirmed there is no key locker. Page dropped. Check-in / check-out logistics handled by Stefy directly via WhatsApp (and on the table flip Panel 7 "Before you leave").
 
-**Photos:** `key-locker-01.jpeg`, `key-locker-02.jpeg`.
-
-`[DRAFT — confirm the exact mechanics of the locker with Stefy; this is a best guess from the photos]`
-
-#### Page 5 — Air conditioning
+#### Page 5 — Air conditioning ✅ LOCKED 2026-05-17
 
 > **AIR CONDITIONING**
-> In the bedroom only. Cools the room within ~10 minutes on a hot day.
+> The air conditioner is in the bedroom. It is controlled with the remote, which is usually on the bedside table.
 >
-> 1. Find the remote (usually on the bedside table).
-> 2. Press the power button.
-> 3. Set the temperature with the up/down arrows. 24°C is comfortable for sleeping.
-> 4. The cool/heat icon switches mode if needed.
+> Press **ON/OFF** to turn it on or off.
 >
-> Please turn it off when you leave the apartment.
+> Use **MODE** to choose the setting:
+> - **Cool Mode** (snowflake symbol): cools the room.
+> - **Heat Mode** (sun symbol): warms the room.
+> - **Auto Mode**: automatically switches between heating and cooling to keep the selected temperature.
+>
+> Use **Fan Speed** to adjust how fast or slow the blower works.
+>
+> **Sleep / Night Mode** adjusts the temperature during the night for better comfort and energy saving.
+>
+> Please keep doors and windows closed while it is on.
 
 **Photos:** `air-conditioning-01.jpeg` (unit), `air-conditioning-02.jpeg` (remote).
 
-`[DRAFT — confirm model + remote button labels with photos]`
+Full copy from Stefy 2026-05-17.
 
-#### Page 6 — Dehumidifier
+#### Page 6 — Dehumidifier ✅ LOCKED 2026-05-17
 
 > **DEHUMIDIFIER**
-> Useful in winter and after a hot shower.
+> The dehumidifier is inside the built-in wardrobe in the living room.
 >
-> 1. Plug it in.
-> 2. Press the power button.
-> 3. Let it run until the indicator light shows the tank is full, then empty it.
+> In autumn and winter, Lagos can be very humid, so the dehumidifier helps reduce moisture in the air. In winter, it also warms the room more effectively than the air conditioner.
 >
-> The tank holds about 2 litres. When the apartment feels less damp, you can stop it. No need to run it constantly.
+> Press **Power** to turn it on or off.
+> Use **Mode** to choose the setting: **Auto**, **Dry**, or **Sleep**.
+> Use **Timer** to set the running time.
+>
+> When the water tank is full, empty it and put it back in place.
+>
+> Please keep doors and windows closed for best results.
 
 **Photos:** `dehumidifier-01.jpeg`, `dehumidifier-02.jpeg`, `dehumidifier-03.jpeg`.
 
-`[DRAFT — refine once we see the control panel close-up]`
+Full copy from Stefy 2026-05-17.
 
-#### Page 7 — Washing machine
+#### Page 7 — Washing machine ✅ LOCKED 2026-05-17
 
 > **WASHING MACHINE**
-> European-style front loader.
+> The washing machine is in the small storage room on the terrace, behind the white sliding door.
 >
-> 1. Load the clothes through the door at the front.
-> 2. Add detergent to the drawer at the top-left (the marked compartment).
-> 3. Turn the dial to a program. "Cotton 40°C" is good for most loads.
-> 4. Press start.
+> Open the **detergent drawer** and:
+> - Add detergent in the **main compartment**.
+> - Add fabric softener in the **blue middle compartment**.
+> - Use the **other compartment** only if you select a pre-wash program.
 >
-> Cycles can run 1-2 hours.
+> Choose the program with the **central dial**, then press **Start**.
+>
+> *Detergent isn't provided. There may be some left by previous guests in the storage room — feel free to use it. Otherwise the nearest supermarket sells small detergent bottles.*
 
-**Photos:** `washing-machine-01.jpeg` through `washing-machine-06.jpeg`.
+**Photos:** `washing-machine-01.jpeg` through `washing-machine-06.jpeg` — include a close-up of the control panel + detergent drawer, and a wide shot of the terrace storage room with the white sliding door open.
 
-`[DRAFT — refine once we see the detergent drawer + dial labels]`
+Full copy + location from Stefy 2026-05-17.
 
 #### Page 8 — Dishwasher
 
@@ -198,22 +197,37 @@ Below is the **structure** for each page. The actual operating-instruction text 
 
 `[DRAFT — refine once we see the controls + tablet compartment]`
 
-#### Page 9 — Oven
+#### Page 9 — Oven ✅ LOCKED 2026-05-17
 
 > **OVEN**
-> Electric oven in the kitchen.
 >
-> 1. Turn the left dial to select a mode (icon shown on the dial).
-> 2. Turn the right dial to set temperature.
-> 3. Wait for the indicator light to go out. The oven is at temperature.
+> Use the **first knob** to choose the program.
+> Use the **second knob** to set the timer.
+> Use the **third knob** to set the temperature.
 >
-> The grill function (top heating element) cooks fast. Keep an eye on whatever's inside.
+> After choosing the settings, wait for the oven to preheat if needed. Turn it off after use.
 
-**Photos:** `oven-01.jpeg` through `oven-05.jpeg`.
+**Photos:** `oven-01.jpeg` through `oven-05.jpeg` — include a close-up of the control panel showing all three knobs.
 
-`[DRAFT — refine once we see the dial icons and labels]`
+Full copy from Stefy 2026-05-17. **Optional enrichment** Stefy offered: if the photo of the first-knob symbols is clear enough, we can spell out each program (top/bottom heat, fan, grill, etc.) instead of just "choose the program". Decide during the design pass once we have the photo in hand.
 
-#### Page 10 — Microwave
+#### Page 10 — Induction hob ✅ LOCKED 2026-05-17
+
+> **INDUCTION HOB**
+>
+> Press **Power** (the button with the circle and vertical line symbol) to turn it on.
+>
+> If the panel is locked, press and hold the **lock button** (padlock symbol) to unlock it. If the pan is on the hob but it doesn't heat up, the panel is usually still locked.
+>
+> Select the cooking zone, then use **+** and **−** to adjust the heat.
+>
+> Turn it off after use.
+
+**Photos:** *to be uploaded — close-up of the control panel showing the power and lock symbols + the +/− buttons.*
+
+Full copy from Stefy 2026-05-17.
+
+#### Page 11 — Microwave
 
 > **MICROWAVE**
 >
@@ -227,29 +241,17 @@ Below is the **structure** for each page. The actual operating-instruction text 
 
 `[DRAFT]`
 
-#### Page 11 — Coffee machine
+#### Coffee machine — REMOVED 2026-05-15
 
-> **COFFEE: DOLCE GUSTO**
-> Capsule coffee machine.
->
-> 1. Lift the lever, drop in a capsule, close the lever.
-> 2. Put a cup under the spout.
-> 3. Choose your size with the dial on the side (espresso = short cup, lungo = long cup), press the button.
->
-> Capsules are in the cupboard above the machine. Used capsules go in the regular bin.
+Stefy: "nothing about coffee machine, is already in the other paper." Coffee instructions live only on the table flip Panel 3 (Wi-Fi + Coffee block). Removed from this folder to avoid duplication.
 
-**Photos:** (Stefy to take if needed — `coffee-machine-01.jpeg` not yet uploaded.)
-
-`[DRAFT]`
-
-#### Page 12 — Fireplace
+#### Page 12 — Fireplace ✅ LOCKED 2026-05-15
 
 > **FIREPLACE**
-> Working fireplace for cooler evenings.
+>
+> The fireplace is not currently working. Please don't try to light it.
 
-`[DRAFT — Stefy: is this wood-burning, electric, or decorative? Photos show the unit but I need to see how it's operated. If wood-burning, there's safety wording to add (don't leave unattended, where the flue control is, where firewood is kept).]`
-
-**Photos:** `fireplace-01.jpeg`, `fireplace-02.jpeg`.
+**Photos:** none needed for this page (the closed unit is visible in the apartment anyway).
 
 #### Page 13 — Television
 
@@ -263,10 +265,10 @@ Below is the **structure** for each page. The actual operating-instruction text 
 
 ---
 
-### Page 14 — Practical things (combined page)
+### Page 14 — Practical things (combined page) ✅ LOCKED 2026-05-15
 
 > **IF THE POWER GOES OUT**
-> The electric panel is `[LOCATION — Stefy to confirm: hallway? kitchen?]`. If a breaker has tripped (one switch flipped down while the others are up), push it back up. If the whole apartment is dark and pushing the breaker back doesn't help, message Stefy on WhatsApp.
+> The electric panel is **behind the sofa in the living room** (see the photo opposite). If a breaker has tripped (one switch flipped down while the others are up), push it back up. If the whole apartment is dark and pushing the breaker back doesn't help, message Stefy on WhatsApp.
 >
 > **TRASH & RECYCLING**
 > Bins are on Rua Dom Nuno de Mascarenhas, in front of the restaurant *Os Lambertos*, 2 minutes' walk from the door. Recycling: yellow for plastic + metal, blue for paper, green for glass.
@@ -274,18 +276,41 @@ Below is the **structure** for each page. The actual operating-instruction text 
 > **FIRE EXTINGUISHER**
 > Located `[LOCATION — Stefy to confirm]`. In a small fire, aim the nozzle at the base of the flames and squeeze. If the fire is larger than a stovetop pan, leave the apartment and call 112.
 
-**Photos:** `electric-panel-01.jpeg`, `fire-extinguisher-01.jpeg`.
+**Photos:** `electric-panel-01.jpeg` (Stefy's "on the sofa" attachment), `fire-extinguisher-01.jpeg`.
 
-### Page 15 — Restaurants
+### Page 15 — Restaurants ✅ LOCKED 2026-05-15 (Stefy's full list)
 
 > **NEARBY RESTAURANTS**
-> A short walk from the apartment.
+> A short walk from the apartment. Stefy's own list.
 >
+> **Portuguese**
 > **Os Lambertos.** Traditional Portuguese tasca, ~2 minutes' walk. Grilled fish, peri-peri chicken, house wine.
+> **O Prato Cheio.** Walkable, slightly more refined. Good portions, friendly service.
+> **A Forja.** Local favourite for charcoal-grilled meats.
+> **Escondidinho.** Quieter, off the main streets.
 >
-> **O Prato Cheio.** Another walkable option, slightly more refined. Good portions, friendly service.
+> **Italian**
+> **Pomo.** Pizza and pasta in the centre. (There is also a takeaway branch just outside the city centre.)
 >
-> `[Stefy to add 3-5 more recommendations: a padaria for breakfast pastries, an evening wine bar, a special-occasion place, a vegetarian option, a Sunday-lunch spot. Each one with a 1-line description.]`
+> **Pizza**
+> **Pepperino.** Casual pizza in town. Delivery available via **Megapizza**.
+>
+> **Brunch & breakfast**
+> **Abigail's.** Brunch spot for a slower start to the day.
+>
+> **Bakery**
+> **Padaria Central.** Morning pastries and bread.
+>
+> **Gelato**
+> **Gelicia.** Locally made gelato.
+>
+> **Mexican**
+> **Green Room.** Mexican kitchen.
+>
+> **Vegetarian**
+> **Sunrays Kitchen.** Vegetarian / plant-based.
+
+Short addresses + walking distances will be added in the design pass; Stefy can sense-check before print.
 
 ### Page 16 — Beaches
 
@@ -303,18 +328,16 @@ Below is the **structure** for each page. The actual operating-instruction text 
 
 ### Page 17 — Supermarkets & Taxis
 
-> **SUPERMARKETS**
+> **SUPERMARKETS** ✅ LOCKED 2026-05-15
 >
-> **Pingo Doce** (Lagos centre). The closest full supermarket, ~10 minutes' walk. Open 8:00–22:00 daily.
-> **Continente** (Lagos outskirts). Larger, cheaper for big shops. ~5 minutes by taxi.
-> **Mini-mercados.** Small grocery shops scattered around the neighbourhood for milk-and-bread runs.
+> **Intermarché** is the closest supermarket. Walking distance from the apartment.
 >
-> **TAXIS**
+> **TAXIS** ✅ LOCKED 2026-05-15
 >
-> Lagos taxi rank: Largo do Estaler (next to the marina). Pick one up at the rank, or call:
-> `[Stefy to add taxi cooperative number]`
+> Lagos taxi rank: Largo do Estaler (next to the marina). Or call:
+> **Táxis em Lagos (24h): 282 037 037**
 >
-> Uber and Bolt both work in Lagos.
+> Other options: **Uber** or **Xclusiv4u** (private hire).
 
 ### Page 18 — Trains, buses, SUP
 
@@ -324,14 +347,16 @@ Below is the **structure** for each page. The actual operating-instruction text 
 >
 > Buses leave from the central bus terminal next to the train station. Routes serve Sagres, Aljezur, Portimão, and Faro: `[QR code → Vamus Algarve timetables]`.
 >
-> **STAND-UP PADDLEBOARD (SUP) RENTAL**
+> **STAND-UP PADDLEBOARD (SUP) RENTAL** ✅ LOCKED 2026-05-15
 >
 > Stefy rents stand-up paddleboards for the whole stay.
 >
-> €50 for the entire stay
-> €100 refundable deposit (cash, returned on pickup)
+> **€50 for the entire stay**
+> **€100 refundable deposit** (cash, returned on pickup)
 >
 > Message Stefy on WhatsApp at +351 936 083 766 to reserve. She'll bring the board to the apartment and collect the deposit; on your last day she'll come back to collect the board and refund the deposit.
+
+**Photo:** `sup-01.jpeg` — Stefy to shoot at the beach and upload.
 
 ### Page 19 — Emergency contacts
 
@@ -345,7 +370,7 @@ Below is the **structure** for each page. The actual operating-instruction text 
 > **Hospital (Hospital Terras do Infante):** Av. Dom Sebastião, 8600-654 Lagos · +351 282 770 100
 > **Pharmacy (Farmácia Lacobrigense):** R. Prof. Joaquim Alberto Taquelim 8 loja e, 8600-762 Lagos · +351 282 762 901
 >
-> **Stefy (host):** +351 936 083 766 · marazulapartamento@gmail.com
+> **Stefy (host):** +351 936 083 766 · stefy@apartamentomarazul.com
 
 ### Page 20 — Inside back cover / Before you leave
 
@@ -381,81 +406,80 @@ Currently uploaded by Stefania:
 | `dishwasher/` | 4 images | Page 8 |
 | `electric-panel/` | 4 images | Page 14 |
 | `fire-extinguisher/` | 1 image | Page 14 |
-| `fireplace/` | 2 images | Page 12 |
-| `key-locker/` | 2 images | Page 4 |
-| `microwave/` | 2 images | Page 10 |
+| `fireplace/` | 2 images | ~~Page 12~~ — no longer used (fireplace not working) |
+| `microwave/` | 2 images | Page 11 |
 | `oven/` | 5 images | Page 9 |
 | `television/` | 1 image | Page 13 |
 | `washing-machine/` | 6 images | Page 7 |
-| `wifi-router/` | 1 image | Page 3 |
+| `wifi-router/` | 1 image | Page 4 |
 
-**Still needed from Stefania:**
-- Coffee machine — overview + capsule cupboard shot (`coffee-machine-01.jpeg`, `coffee-machine-02.jpeg`)
-- SUP — board + bag shot, for page 18 (`sup-01.jpeg`)
+The `key-locker/` folder is no longer referenced — the page was removed 2026-05-15.
+
+**Still needed from Stefania (2026-05-15):**
+- `sup-01.jpeg` — board photo at the beach (Page 18)
+- A/C remote close-up — ideally a clear shot of the ON/OFF, MODE, TEMP, FAN buttons (Page 5)
+- Washing-machine **location wide shot + control-panel close-up** (Page 7)
+- Dehumidifier control-panel close-up (Page 6)
+- Induction-hob control-panel close-up + a pan-on-hob shot (Page 10)
+- Oven control-panel close-up (Page 9)
 
 ---
 
 ## Translations
 
-Five languages: EN (master), PT, IT, ES, FR.
+**Three languages for the first print run** (locked 2026-05-15): EN (master), PT, IT.
 
 **Process:**
-1. Stefania reviews + locks the English master copy.
-2. Translation pass produces PT (Stefania native-checks, since she speaks it).
-3. IT (Stefania native-checks — she's Italian).
-4. ES (Stefania speaks Spanish; she can review).
-5. FR (Stefania may need to ask a French-speaking friend or use a paid review; we draft, then native-check before print).
+1. Stefy reviews + locks the English master copy.
+2. Translation pass produces PT — Stefy native-checks.
+3. IT — Stefy native-checks (Italian native).
 
-If Stefania doesn't want to handle FR review herself, we can either skip FR for the first print run (rely on EN for French guests) or run a quick paid native review through a service like Smartling / Gengo (~€30-40 for a 20-page booklet).
+ES and FR are deferred to a second print run after the EN master is field-tested. If French / Spanish guests arrive in the meantime, they read the EN copy.
 
 ---
 
-## What's needed from Stefania to lock the copy
+## Locked decisions (2026-05-15)
 
-| Section | Field | Status |
+| # | Decision | Locked value |
 |---|---|---|
-| Welcome (page 2) | Confirm tone + signature | ⏳ Review with Stefy |
-| Page 4 | Key locker mechanics — confirm draft against the actual locker | ⏳ Stefy to review |
-| Pages 5-13 | Appliance operating quirks for **each** unit (anything a guest commonly gets wrong) | ⏳ Stefy to walk through each appliance |
-| Page 11 | Coffee machine photo | ⏳ Stefy to upload |
-| Page 12 | Fireplace — confirm type (wood / electric / decorative), operation, safety wording | ⏳ Stefy to clarify |
-| Page 14 | Electric panel location | ⏳ Stefy to confirm |
-| Page 14 | Fire extinguisher location | ⏳ Stefy to confirm |
-| Page 15 | 3-5 more restaurant recommendations | ⏳ Stefy to add |
-| Page 17 | Taxi cooperative number | ⏳ Stefy to confirm |
-| Page 18 | SUP photo | ⏳ Stefy to upload |
-| Pages 19, 20 | Confirm | ✅ Locked (source content from Stefania's Lodgify text) |
+| 1 | Format | **A4 portrait** |
+| 2 | Page count | **~18 pages** (drops from 20: key-locker + coffee removed, induction added) |
+| 3 | Languages (first run) | **EN + PT + IT** |
+| 4 | Quantity per language | **2 copies** (6 booklets total) |
+| 5 | Photo style | **Colour, functional** |
+| 6 | Cover | **Atlantic Blue solid** |
+| 7 | Binding | **Plastic sleeve folder** |
+| 8 | Print vendor | **Frente e Verso** (Lagos) |
 
----
+## Still open (content fill-ins from Stefy)
 
-## Open decisions for Stefania
-
-1. **A5 vs A4 booklet** — A5 reads more like an intimate guide; A4 holds more content per page but feels less personal. **Recommendation: A5.**
-2. **Page count** — 20 pages covers the proposed structure. Want to go shorter (16 pages) by combining sections, or longer (24 pages) for fuller restaurant + beach guides? **Recommendation: 20 pages.**
-3. **All 5 languages in the first print run** — or start with EN + PT + IT (Stefania's own languages) and add ES + FR in a second run once the EN master is field-tested? **Recommendation: start with EN + PT + IT for the first physical run** (3 languages × 2 copies = 6 booklets), then add ES + FR once the EN master is proven.
-4. **Quantity per language** — 2 copies per language (10 total at 5 languages; 6 at 3 languages). Want more? **Recommendation: 2 per language is enough — guests don't all read at once.**
-5. **Photo style** — appliance photos in colour (more useful, more honest) or duotone (more editorial, more brand-cohesive)? **Recommendation: colour for utility, with a thin Atlantic Blue rule around each photo for brand consistency.**
-6. **Cover design — Atlantic Blue or photo-led?** Blue is calmer, matches the rest of the print line. A photo cover (e.g., the apartment terrace) is warmer but breaks the visual rhythm of the other print pieces. **Recommendation: Atlantic Blue cover** (visual cohesion).
-7. **Binding** — saddle-stitched (two staples) is standard. Want a folded fold-out instead (no binding, opens like a map)? **Recommendation: saddle-stitched** — feels more like a real guide, holds up better.
+| Section | Status |
+|---|---|
+| Page 5 A/C remote close-up photo | ⏳ |
+| Page 6 dehumidifier control-panel close-up photo | ⏳ |
+| Page 7 washing-machine control-panel + detergent-drawer + terrace-storage-room photos | ⏳ |
+| Page 9 oven control-panel close-up photo (Stefy may then expand the program-knob descriptions) | ⏳ |
+| Page 10 induction-hob control-panel close-up photo | ⏳ |
+| Page 14 fire-extinguisher location | ⏳ |
+| Page 18 `sup-01.jpeg` (beach shoot) | ⏳ |
+| Page count Q from Stefy ("Want shorter or longer?") | Recommendation back: **~18 pages** after the two removals. If she wants shorter, drop the Television page (single line, fits onto Page 11 microwave panel). If longer, expand the Restaurants and Beaches pages with addresses and one-sentence descriptions per place — gets to ~22 pages comfortably. |
 
 ---
 
 ## Production
 
-| Vendor | Cost (10 booklets, 20 pages, 5 languages) | Lead time | Notes |
-|---|---|---|---|
-| Local Lagos print shop | ~€80-120 | 3-5 days | Easiest to walk in, see a proof, adjust. **Recommended for first run.** |
-| Online (Pixartprinting, Printful, Vistaprint booklet) | ~€90-130 | 7-10 days | Cheaper at scale; lead time is the constraint. |
+**Vendor:** **Frente e Verso (Lagos)** — locked 2026-05-15. Walk in with the print-ready PDFs (one per language). Consolidates all four print pieces with one local vendor.
 
-**Quantity:** 10 booklets total — 2 per language × 5 languages. Reorder when one wears out (probably annually).
+**Quantity:** 6 booklets (3 languages × 2). Reorder when one wears out, or expand to ES / FR if guest mix justifies it.
 
 **Proof check:**
-- [ ] Page numbering matches the contents page across all 5 languages.
-- [ ] All photos render sharp at print size (no pixellation).
+- [ ] Page numbering matches the contents page across all 3 languages.
+- [ ] All photos render sharp at A4 print size (no pixellation).
 - [ ] QR codes for transit links + review URL scan cleanly from arm's length.
 - [ ] Atlantic Blue colour matches the other print pieces (Pantone 7700 C / CMYK 78/40/35/25).
 - [ ] No orphaned headings on a final page.
-- [ ] Native speakers have reviewed each translation.
+- [ ] Stefy has native-checked the PT and IT translations.
+- [ ] Plastic sleeves hold each A4 page flat (no curl); ring binding opens to 180° on the dining table.
 
 ---
 
@@ -468,13 +492,13 @@ If Stefania doesn't want to handle FR review herself, we can either skip FR for 
 
 ---
 
-## Next steps after Stefania approves the structure
+## Next steps
 
-1. Stefania walks through each appliance page and either confirms my draft or replaces it with the actual operating steps for that unit. We can do this together in a 30-minute call.
-2. Stefania uploads the missing photos (coffee machine, SUP board).
-3. Stefania fills in the locations / numbers marked `[Stefy to confirm]` (electric panel, fire extinguisher, taxi cooperative).
+1. Stefy uploads the remaining photos (SUP, A/C remote close-up, washing machine + location, dehumidifier panel, induction panel, oven panel).
+2. Stefy confirms the fire-extinguisher location.
+3. Confirm final page count (the doc proposes 18; Stefy can ask for shorter / longer).
 4. EN master is locked.
-5. Translation pass → PT, IT, ES, FR with native-speaker reviews.
-6. We write the **claude-design prompt** to lay out the 20 pages in print-ready PDF form for each language.
-7. Proof at the local Lagos print shop.
-8. Bulk print 10 booklets (or 6 if we start with EN + PT + IT only).
+5. Translation pass → PT and IT; Stefy native-checks both.
+6. Write the **claude-design prompt** to lay out the pages in print-ready PDF form for each language.
+7. Proof at Frente e Verso.
+8. Print 6 booklets (2 × EN, 2 × PT, 2 × IT).

@@ -51,7 +51,7 @@ Per locale, also verify:
 ## 3. Legal pages
 
 - [ ] `/privacy/` renders with no `[TO CONFIRM]` placeholders. Same for `/cookies/`, `/terms/`.
-- [ ] Privacy contact email (`hello@apartamentomarazul.com` or chosen alternative) is functional — send a test email.
+- [ ] Privacy contact email (`stefy@apartamentomarazul.com`) is functional — send a test email and confirm it lands in `marazulapartamento@gmail.com`.
 - [ ] AL number appears on the Terms page and in the Footer (Portuguese law requirement).
 - [ ] Privacy notice processors list is current — Cloudflare, Lodgify, Google, GitHub, Meta (via WhatsApp) all listed.
 - [ ] CNPD (Portuguese DPA) link still resolves: https://www.cnpd.pt
